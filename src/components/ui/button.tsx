@@ -9,6 +9,8 @@ const button = tv({
       primary:
         'bg-violet-500 text-violet-50 hover:bg-violet-600 ring-violet-500',
       secondary: 'bg-zinc-900 text-zinc-400 hover:bg-zinc-800 ring-zinc-900',
+      ghost:
+        'rounded bg-secondary/15 px-3 py-2 font-bold uppercase shadow-xl active:bg-secondary/20 text-base',
     },
 
     size: {
