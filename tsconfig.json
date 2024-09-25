@@ -30,6 +30,9 @@
       ],
       "home/*": [
         "./src/components/pages/home/*"
+      ],
+      "ui/*": [
+        "./src/components/ui/*"
       ]
     }
   },
