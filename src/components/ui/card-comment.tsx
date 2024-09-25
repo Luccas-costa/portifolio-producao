@@ -51,43 +51,38 @@ export default function CardComment({
     // Define o valor da cor de acordo com a prop `color`
     switch (color) {
       case 0:
-        setColor('#B9D19D')
+        setColor('#225485')
         break
       case 1:
-        setColor('#CCB596')
+        setColor('#B9D19D')
         break
       case 2:
-        setColor('#3F493D')
-        break
-      case 3:
         setColor('#9999CC')
         break
-      default:
-        setColor('#225485')
     }
   }, [Emoji, color]) // Atualiza quando `Emoji` ou `color` mudam
 
   return (
     <div
       style={{ borderColor: Color }}
-      className="relative flex h-[200px] w-[350px] flex-col rounded-lg border-2 p-2 shadow-lg"
+      className="relative flex h-[150px] w-[300px] flex-col rounded-lg border-2 p-2 shadow-lg"
     >
       <div
         style={{ borderColor: Color, backgroundColor: Color }}
-        className="absolute right-0 top-0 flex size-[50px] -translate-y-[38%] translate-x-[38%] items-center justify-center overflow-hidden rounded-full border-2"
+        className="absolute right-0 top-0 flex size-[40px] -translate-y-[38%] translate-x-[38%] items-center justify-center overflow-hidden rounded-full border-2"
       >
         {EmojiType}
       </div>
       <div className="flex items-center gap-3">
         <div
           style={{ borderColor: Color }}
-          className="flex size-[70px] items-center justify-center overflow-hidden rounded-full border-2"
+          className="flex size-[54px] items-center justify-center overflow-hidden rounded-full border-2"
         >
           <User size={64} weight="thin" color={Color} />
         </div>
-        <div className="text-lg text-secondary/60">{name}</div>
+        <div className="truncate text-secondary/60">{name}</div>
       </div>
-      <div className="mx-1 flex h-full max-w-[90%] items-center overflow-hidden text-sm">
+      <div className="mx-1 flex h-full max-w-[90%] items-center overflow-hidden text-xs text-secondary/60">
         <div className="line-clamp-4">{comment}</div>
       </div>
     </div>

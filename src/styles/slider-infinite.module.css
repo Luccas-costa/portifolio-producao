@@ -1,0 +1,17 @@
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(-100%));
+    }
+}
+
+.slider {
+    animation: 30s scroll infinite linear;
+}
+
+/* .slider:hover {
+    animation-play-state: paused;
+} */
