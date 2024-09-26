@@ -15,7 +15,8 @@ const config: Config = {
 
         // variants
         variant_green: '#85B079',
-        variant_green2: '#227428',
+        variant_green2: '#BDD5B5',
+        variant_green3: '#227428',
 
         variant_blue: '#7B98B3',
         variant_blue2: '#225485',

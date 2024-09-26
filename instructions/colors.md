@@ -10,6 +10,7 @@
 ## variants
   # Greens
     => #85B079
+    => #BDD5B5
     => #227428
 
   # Pink
