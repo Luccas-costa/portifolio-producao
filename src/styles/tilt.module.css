@@ -1,0 +1,16 @@
+.customShapeDividerTop {
+
+    width: 100%;
+    overflow: hidden;
+}
+
+.customShapeDividerTop svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 150px;
+}
+
+.shapeFill {
+    fill: #D5DED3;
+}

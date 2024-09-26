@@ -2,9 +2,11 @@ import Hero from 'home/hero'
 import Navbar from 'home/navbar'
 import Products from 'home/products'
 import Testimonials from 'home/testimonials'
+import Popular from 'home/popular'
 
 import WavesOpacity from '@/assets/waves-opacity'
 import CurveAsymmstrical from '@/assets/curve-asymmstrical'
+import Tilt from '@/assets/tilt'
 
 export default function Home() {
   return (
@@ -23,6 +25,12 @@ export default function Home() {
 
         <Testimonials />
       </div>
+
+      <Tilt />
+      <div className="rotate-180">
+        <Tilt />
+      </div>
+      <Popular />
     </div>
   )
 }

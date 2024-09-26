@@ -14,7 +14,7 @@ export default function Products() {
         <div>
           <div className="grid w-full grid-cols-4 grid-rows-2 gap-8">
             {Array.from({ length: 8 }).map((_, index) => (
-              <CardProduct key={index} />
+              <CardProduct key={index} cor={0} />
             ))}
           </div>
         </div>
