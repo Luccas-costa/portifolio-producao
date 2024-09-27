@@ -4,7 +4,7 @@ import logo from '@/app/favicon.ico'
 
 export default function Footer() {
   return (
-    <div className="flex h-[30vh] w-full flex-col items-center gap-4 bg-zinc-800 px-[100px] py-[40px]">
+    <div className="flex h-[30vh] w-full flex-col items-center gap-6 bg-zinc-800 px-[100px] py-[40px]">
       <hr className="h-[3px] w-full rounded-lg border-none bg-zinc-200" />
       <div className="flex w-full justify-between">
         <div className="max-w-[350px]">

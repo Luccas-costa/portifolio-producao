@@ -3,7 +3,7 @@ import CardProduct from 'ui/card-product'
 
 export default function Popular() {
   return (
-    <div className="h-full w-full bg-zinc-200 pb-[50px] pt-[30px]">
+    <div className="h-full w-full bg-zinc-200 pb-[150px] pt-[30px]">
       <div className="flex flex-col items-center gap-[80px]">
         <div className="flex flex-col items-center gap-2">
           <div className="text-4xl font-bold text-zinc-700">Populares</div>

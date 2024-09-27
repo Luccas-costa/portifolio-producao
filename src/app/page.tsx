@@ -1,8 +1,10 @@
 import Hero from 'home/hero'
+import About from 'home/about'
 import Footer from 'home/footer'
 import Navbar from 'home/navbar'
 import Popular from 'home/popular'
 import Products from 'home/products'
+import Developed from 'home/developed'
 import Testimonials from 'home/testimonials'
 
 import Tilt from '@/assets/tilt'
@@ -35,8 +37,10 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <About />
       <Popular />
       <Footer />
+      <Developed />
     </div>
   )
 }
