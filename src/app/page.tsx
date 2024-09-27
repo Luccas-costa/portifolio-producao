@@ -27,10 +27,10 @@ export default function Home() {
       </div>
 
       <div className="bg-variant_green2/40 pt-[200px]">
-        <div className="h-full w-full bg-[url('/nome-da-imagem.jpg')] bg-repeat">
-          <Tilt />
+        <div className="h-full w-full bg-[url('/teste2.png')] bg-repeat">
+          <Tilt color={0} />
           <div className="rotate-180">
-            <Tilt />
+            <Tilt color={1} />
           </div>
         </div>
       </div>
