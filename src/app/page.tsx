@@ -1,8 +1,9 @@
 import Hero from 'home/hero'
+import Footer from 'home/footer'
 import Navbar from 'home/navbar'
+import Popular from 'home/popular'
 import Products from 'home/products'
 import Testimonials from 'home/testimonials'
-import Popular from 'home/popular'
 
 import Tilt from '@/assets/tilt'
 import WavesOpacity from '@/assets/waves-opacity'
@@ -26,8 +27,8 @@ export default function Home() {
         <Testimonials />
       </div>
 
-      <div className="bg-variant_green2/40 pt-[200px]">
-        <div className="h-full w-full bg-[url('/teste2.png')] bg-repeat">
+      <div className="bg-variant_green2/40 pt-[100px]">
+        <div className="h-full w-full bg-[url('/background-tilt.png')] bg-repeat">
           <Tilt color={0} />
           <div className="rotate-180">
             <Tilt color={1} />
@@ -35,6 +36,7 @@ export default function Home() {
         </div>
       </div>
       <Popular />
+      <Footer />
     </div>
   )
 }
