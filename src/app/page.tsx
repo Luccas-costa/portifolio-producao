@@ -4,9 +4,9 @@ import Products from 'home/products'
 import Testimonials from 'home/testimonials'
 import Popular from 'home/popular'
 
+import Tilt from '@/assets/tilt'
 import WavesOpacity from '@/assets/waves-opacity'
 import CurveAsymmstrical from '@/assets/curve-asymmstrical'
-import Tilt from '@/assets/tilt'
 
 export default function Home() {
   return (
@@ -26,9 +26,13 @@ export default function Home() {
         <Testimonials />
       </div>
 
-      <Tilt />
-      <div className="rotate-180">
-        <Tilt />
+      <div className="bg-variant_green2/40 pt-[200px]">
+        <div className="h-full w-full bg-[url('/nome-da-imagem.jpg')] bg-repeat">
+          <Tilt />
+          <div className="rotate-180">
+            <Tilt />
+          </div>
+        </div>
       </div>
       <Popular />
     </div>
