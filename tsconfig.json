@@ -33,7 +33,10 @@
       ],
       "ui/*": [
         "./src/components/ui/*"
-      ]
+      ],
+      "types/*": [
+        "./src/types/*"
+      ],
     }
   },
   "include": [
