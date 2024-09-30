@@ -1,9 +1,13 @@
 import type { InstagramMedia } from 'types/instagram-media'
+import dotenv from 'dotenv' // Importar dotenv
+
+dotenv.config() // Carregar as variáveis de ambiente
 
 export const fetchFeedInstagram = async (): Promise<InstagramMedia[]> => {
-  const token =
-    'IGQWROQzA0eUt3YVNFcWhiUHBGV3VOWVpmUlduM1JiSkxfZAmd3WnRMdmNRNkJMTHphclA2TnowNmpxb2h3aGdwVkNmTi1vRWRYU1FTS0N6LURsYlZAmcjc3cl9nRmxzSTRNSVhxLWhIVmo5VnpRWEc4Xy1XUDBWeEEZD'
-  const url = `https://graph.instagram.com/me/media?fields=id,media_type,media_url,thumbnail_url,caption,permalink&access_token=${token}`
+  // Usar a variável de ambiente
+  const token = process.env.INSTAGRAM_ACCESS_TOKEN
+
+  const url = `https://graph.instagram.com/me/media?fields=id,media_type,media_url,thumbnail_url,caption,permalink&access_token=${token}&limit=9`
 
   try {
     const response = await fetch(url)

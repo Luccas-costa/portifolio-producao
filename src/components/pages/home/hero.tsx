@@ -3,7 +3,7 @@ import Image from 'next/image'
 import React, { useState } from 'react'
 
 import { motion } from 'framer-motion'
-import HeroImage from 'public/background-bags.jpg'
+import HeroImage from 'public/backgrounds/background-bags.jpg'
 import Link from 'next/link'
 
 export default function Hero() {

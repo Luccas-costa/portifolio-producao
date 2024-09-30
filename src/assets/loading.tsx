@@ -1,10 +1,14 @@
 import Image from 'next/image'
-import Spinner from '../../public/Spinner.svg'
+import Spinner from 'public/assets/Spinner.svg'
 
-const Loader = () => {
+interface LoaderProps {
+  size: number
+}
+
+const Loader = ({ size }: LoaderProps = { size: 50 }) => {
   return (
     <div className="flex h-screen items-center justify-center">
-      <Image src={Spinner} alt="loading" width={50} height={50} />
+      <Image src={Spinner} alt="loading" width={size} height={size} />
     </div>
   )
 }

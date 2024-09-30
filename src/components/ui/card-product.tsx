@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import Imagem from 'public/testebag.png'
+import Imagem from 'public/bags/testebag.png'
 
 interface CardProductProps {
   cor: number
