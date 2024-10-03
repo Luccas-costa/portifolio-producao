@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import CardProduct from 'ui/card-product'
 import { FavoriteBags } from '@/utils/favorite-bags'
 
@@ -19,16 +19,18 @@ export default function FavoriteProducts() {
         </div>
         <div>
           <div className="grid w-full grid-cols-4 grid-rows-1 gap-8">
-            {displayedBags.map((bag) => (
-              <CardProduct
-                key={bag.id}
-                cor={0} // Pode ser ajustado conforme necessário
-                id={bag.id}
-                title={bag.title}
-                description={bag.description}
-                price={bag.price}
-              />
-            ))}
+            <Suspense fallback={<div>Loading...</div>}>
+              {displayedBags.map((bag) => (
+                <CardProduct
+                  key={bag.id}
+                  cor={0} // Pode ser ajustado conforme necessário
+                  id={bag.id}
+                  title={bag.title}
+                  description={bag.description}
+                  price={bag.price}
+                />
+              ))}
+            </Suspense>
           </div>
         </div>
       </div>

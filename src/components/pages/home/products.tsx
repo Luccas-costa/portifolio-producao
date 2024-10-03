@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import CardProduct from 'ui/card-product'
 import { Bags } from '@/utils/bags' // Importando a lista de Bags
 
@@ -17,16 +17,18 @@ export default function Products() {
         </div>
         <div>
           <div className="grid w-full grid-cols-4 grid-rows-2 gap-8">
-            {displayedBags.map((bag) => (
-              <CardProduct
-                key={bag.id}
-                cor={0}
-                id={bag.id}
-                title={bag.title}
-                description={bag.description}
-                price={bag.price}
-              />
-            ))}
+            <Suspense fallback={<div>Loading...</div>}>
+              {displayedBags.map((bag) => (
+                <CardProduct
+                  key={bag.id}
+                  cor={0}
+                  id={bag.id}
+                  title={bag.title}
+                  description={bag.description}
+                  price={bag.price}
+                />
+              ))}
+            </Suspense>
           </div>
         </div>
       </div>
