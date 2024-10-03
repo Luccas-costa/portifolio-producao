@@ -1,7 +1,11 @@
 import React from 'react'
 import CardProduct from 'ui/card-product'
+import { Bags } from '@/utils/bags' // Importando a lista de Bags
 
 export default function Products() {
+  // Limitando a exibição de até 8 produtos
+  const displayedBags = Bags.slice(0, 8)
+
   return (
     <div className="mt-[30px] h-full w-full pb-[50px]">
       <div className="flex flex-col items-center gap-[80px]">
@@ -13,8 +17,15 @@ export default function Products() {
         </div>
         <div>
           <div className="grid w-full grid-cols-4 grid-rows-2 gap-8">
-            {Array.from({ length: 8 }).map((_, index) => (
-              <CardProduct key={index} cor={0} />
+            {displayedBags.map((bag) => (
+              <CardProduct
+                key={bag.id}
+                cor={0}
+                id={bag.id}
+                title={bag.title}
+                description={bag.description}
+                price={bag.price}
+              />
             ))}
           </div>
         </div>

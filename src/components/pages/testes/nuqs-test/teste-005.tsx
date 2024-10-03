@@ -1,5 +1,5 @@
 'use client'
-import { useCoordinates } from '@/hooks/useCoordinates'
+import { useCoordinates } from '@/hooks/teste/useCoordinates'
 
 export default function Teste005() {
   const [{ lat, lng }, setCoordinates] = useCoordinates()

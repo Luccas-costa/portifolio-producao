@@ -9,7 +9,7 @@ interface InstagramFeedProps {
 
 export default function InstagramFeed({ feed }: InstagramFeedProps) {
   return (
-    <div className="relative flex h-[800px] w-full flex-col items-center justify-center gap-4 bg-zinc-200">
+    <div className="relative mb-[150px] flex h-[800px] w-full flex-col items-center justify-center gap-4 bg-zinc-200">
       <div className="text-4xl font-bold text-zinc-700">
         Um pouco mais sobre tekobag
       </div>
@@ -17,42 +17,20 @@ export default function InstagramFeed({ feed }: InstagramFeedProps) {
         Clique para ver mais e conhecer nosso Instagram e nossos conteúdos
       </div>
       <div className="grid grid-cols-3 grid-rows-3 gap-10">
-        {feed.map((item) => (
-          <a
+        {feed.slice(0, 9).map((item) => (
+          <div
             key={item.id}
-            href={item.permalink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="size-[200px] overflow-hidden rounded-xl bg-black shadow-xl"
+            className="size-[200px] overflow-hidden rounded-xl bg-black shadow-xl" // Adicionei cursor-pointer
           >
-            {item.media_type === 'IMAGE' && (
-              <Image
-                src={item.media_url}
-                alt={item.caption || 'Instagram image'}
-                width={200}
-                height={200}
-                className="h-full w-full object-cover"
-              />
-            )}
-            {item.media_type === 'VIDEO' && (
-              <Image
-                src={item.thumbnail_url || item.media_url}
-                alt={item.caption || 'Instagram video thumbnail'}
-                width={200}
-                height={200}
-                className="h-full w-full object-cover"
-              />
-            )}
-            {item.media_type === 'CAROUSEL_ALBUM' && (
-              <Image
-                src={item.thumbnail_url || item.media_url}
-                alt={item.caption || 'Instagram carousel thumbnail'}
-                width={200}
-                height={200}
-                className="h-full w-full object-cover"
-              />
-            )}
-          </a>
+            <Image
+              src={item.thumbnail_url || item.media_url} // Usando thumbnail_url ou media_url
+              alt={item.caption || 'Instagram media'}
+              layout="responsive"
+              width={200} // Ajuste conforme necessário
+              height={200} // Ajuste conforme necessário
+              className="object-cover" // Para cobrir o espaço do contêiner
+            />
+          </div>
         ))}
       </div>
     </div>

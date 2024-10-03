@@ -12,11 +12,19 @@ export default function GenerateFeed() {
 
   useEffect(() => {
     const fetchFeed = async () => {
+      const cachedFeed = localStorage.getItem('instagramFeed')
+      if (cachedFeed) {
+        setFeed(JSON.parse(cachedFeed)) // Usar cache se disponível
+        setLoading(false)
+        return
+      }
+
       try {
         const data = await fetchFeedInstagram()
         setFeed(data)
+        localStorage.setItem('instagramFeed', JSON.stringify(data)) // Armazenar no cache
       } catch (err) {
-        console.error(err) // Adicione essa linha para usar o erro
+        console.error(err)
         setError('Failed to load feed.')
       } finally {
         setLoading(false)
@@ -25,6 +33,7 @@ export default function GenerateFeed() {
 
     fetchFeed()
   }, [])
+
   return (
     <div>
       {loading && (
