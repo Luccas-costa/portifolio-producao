@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { Suspense } from 'react'
 import { useQueryState } from 'nuqs'
 
 export default function Vitrine() {
@@ -9,7 +9,9 @@ export default function Vitrine() {
   return (
     <div>
       <h1>Vitrine</h1>
-      <p>idBags: {idBags}</p>
+      <Suspense fallback={<div>Loading...</div>}>
+        <p>idBags: {idBags}</p>
+      </Suspense>
     </div>
   )
 }
