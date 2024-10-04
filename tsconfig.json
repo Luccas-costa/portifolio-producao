@@ -1,5 +1,9 @@
 {
   "compilerOptions": {
+    "typeRoots": [
+      "./node_modules/@types",
+      "./@types"
+    ],
     "lib": [
       "dom",
       "dom.iterable",
@@ -43,7 +47,8 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    "src/components/pages/testes/splide/teste-001.jsx"
   ],
   "exclude": [
     "node_modules"
