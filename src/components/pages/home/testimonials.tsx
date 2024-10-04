@@ -3,7 +3,10 @@ import React from 'react'
 
 export default function Testimonials() {
   return (
-    <div className="h-[100vh] w-full bg-variant_green2/40 pt-[220px]">
+    <div
+      className="h-[100vh] w-full bg-variant_green2/40 pt-[220px]"
+      id="testimonials"
+    >
       <div className="flex flex-col items-center gap-16">
         <div className="flex flex-col items-center justify-center gap-2">
           <div className="text-4xl font-bold text-zinc-700">Depoimentos</div>

@@ -18,9 +18,15 @@ export default function Navbar() {
         <div className="mt-2 flex items-center gap-4">
           <div>
             <ul className="flex gap-3 text-base font-semibold">
-              <li className={`${styles.navItemlight}`}>Home</li>
-              <li className={`${styles.navItemlight}`}>Sobre</li>
-              <li className={`${styles.navItemlight}`}>Contato</li>
+              <li className={`${styles.navItemlight}`}>
+                <a href="#products">Produtos</a>
+              </li>
+              <li className={`${styles.navItemlight}`}>
+                <a href="#testimonials">Depoimentos</a>
+              </li>
+              <li className={`${styles.navItemlight}`}>
+                <a href="#footer">Contato</a>
+              </li>
             </ul>
           </div>
           <div>

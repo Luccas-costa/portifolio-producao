@@ -28,6 +28,8 @@ export default function FavoriteProducts() {
                   title={bag.title}
                   description={bag.description}
                   price={bag.price}
+                  image={bag.image}
+                  variantImages={bag.variant_images}
                 />
               ))}
             </Suspense>

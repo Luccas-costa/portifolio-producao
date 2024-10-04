@@ -7,7 +7,14 @@ export default function Developed() {
         ©TekoBag All Rights Reserved.
       </div>
       <div className="font-medium text-zinc-600">
-        Developed by luccas.comercial@gmail.com
+        Developed by{' '}
+        <a
+          href="mailto:luccascosta.comercial@gmail.com?subject=Ol%C3%A1%20luccas%20vim%20pelo%20site%20da%20tekobags"
+          target="_blank"
+          rel="noreferrer"
+        >
+          luccascosta.comercial@gmail.com
+        </a>
       </div>
     </div>
   )

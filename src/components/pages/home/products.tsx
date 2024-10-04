@@ -7,7 +7,7 @@ export default function Products() {
   const displayedBags = Bags.slice(0, 8)
 
   return (
-    <div className="mt-[30px] h-full w-full pb-[50px]">
+    <div className="mt-[30px] h-full w-full pb-[50px]" id="products">
       <div className="flex flex-col items-center gap-[80px]">
         <div className="flex flex-col items-center gap-2">
           <div className="text-4xl font-bold text-zinc-700">Produtos</div>
@@ -26,6 +26,8 @@ export default function Products() {
                   title={bag.title}
                   description={bag.description}
                   price={bag.price}
+                  image={bag.image}
+                  variantImages={bag.variant_images}
                 />
               ))}
             </Suspense>
