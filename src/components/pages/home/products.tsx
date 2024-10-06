@@ -1,10 +1,34 @@
-import React, { Suspense } from 'react'
+'use client'
+import React, { useState, useEffect, Suspense } from 'react'
 import CardProduct from 'ui/card-product'
-import { Bags } from '@/utils/bags' // Importando a lista de Bags
+import { Bags } from '@/utils/bags'
 
 export default function Products() {
-  // Limitando a exibição de até 8 produtos
-  const displayedBags = Bags.slice(0, 8)
+  const [displayCount, setDisplayCount] = useState(8)
+
+  useEffect(() => {
+    const updateDisplayCount = () => {
+      if (window.innerWidth < 1300) {
+        setDisplayCount(6)
+      } else {
+        setDisplayCount(8)
+      }
+    }
+
+    // Atualiza o valor inicial
+    updateDisplayCount()
+
+    // Adiciona um listener de resize
+    window.addEventListener('resize', updateDisplayCount)
+
+    // Remove o listener quando o componente é desmontado
+    return () => {
+      window.removeEventListener('resize', updateDisplayCount)
+    }
+  }, [])
+
+  // Limitando a exibição dos produtos de acordo com o estado atual
+  const displayedBags = Bags.slice(0, displayCount)
 
   return (
     <div className="mt-[30px] h-full w-full pb-[50px]" id="products">
@@ -16,7 +40,7 @@ export default function Products() {
           </div>
         </div>
         <div>
-          <div className="grid w-full grid-cols-4 grid-rows-2 gap-8">
+          <div className="screen1300:grid-cols-4 screen1300:grid-rows-2 grid w-full grid-cols-3 grid-rows-2 gap-8">
             <Suspense fallback={<div>Loading...</div>}>
               {displayedBags.map((bag) => (
                 <CardProduct

@@ -8,6 +8,14 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        screen1550: '1550px',
+        screen1460: '1460px',
+        screen1300: '1300px',
+        screen1200: '1200px',
+
+        'max-1460': { max: '1460px' },
+      },
       animation: {
         'spin-slow': 'spin 8s linear infinite',
       },

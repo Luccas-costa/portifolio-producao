@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import type { InstagramMedia } from 'types/instagram-media'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { CaretRight } from '@phosphor-icons/react/dist/ssr'
+import { CaretDown, CaretRight } from '@phosphor-icons/react/dist/ssr'
 
 interface InstagramFeedProps {
   feed: InstagramMedia[]
@@ -54,7 +54,7 @@ export default function InstagramFeed({ feed }: InstagramFeedProps) {
   }
 
   return (
-    <div className="relative mb-[150px] flex h-[800px] w-full flex-col items-center justify-center gap-4 bg-zinc-200">
+    <div className="relative mb-[150px] flex min-h-[800px] w-full flex-col items-center justify-center gap-4 bg-zinc-200">
       <div className="text-4xl font-bold text-zinc-700">
         Um pouco mais sobre tekobag
       </div>
@@ -71,7 +71,7 @@ export default function InstagramFeed({ feed }: InstagramFeedProps) {
           &#8592; {/* seta para a esquerda */}
         </button>
 
-        <div className="flex items-center gap-10 overflow-hidden">
+        <div className="screen1550:gap-10 max-1460:flex-col flex items-center gap-5 overflow-hidden">
           {visibleImages.map((item, index) => (
             <motion.div
               key={item.id}
@@ -108,9 +108,14 @@ export default function InstagramFeed({ feed }: InstagramFeedProps) {
 
         <button
           onClick={handleNext}
-          className="absolute right-0 cursor-pointer rounded-full bg-zinc-300/50 p-2"
+          className="screen1460:translate-x-0 screen1460:h-auto screen1460:rounded-full screen1460:bg-zinc-300/50 absolute right-0 h-[600px] translate-x-[60px] cursor-pointer rounded-xl bg-zinc-300/70 p-2"
         >
-          <CaretRight size={35} color="white" />
+          <div className="max-1460:hidden">
+            <CaretRight size={35} color="white" />
+          </div>
+          <div className="screen1460:hidden">
+            <CaretDown size={35} color="white" />
+          </div>
         </button>
       </div>
     </div>

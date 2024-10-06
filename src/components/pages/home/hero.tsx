@@ -18,9 +18,10 @@ export default function Hero() {
           <Image
             src={HeroImage}
             alt="Imagem de fundo principal"
-            objectFit="cover"
+            // objectFit="cover"
             onLoad={handleImageLoad}
             style={{ opacity: loaded ? 1 : 0, transition: 'opacity 1s ease' }}
+            className="h-full max-h-[200%] w-full"
           />
           <motion.div
             className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 transform flex-col text-center text-7xl font-bold text-white"

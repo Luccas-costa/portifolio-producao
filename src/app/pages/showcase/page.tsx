@@ -1,8 +1,8 @@
 'use client'
 import React, { Suspense } from 'react'
-import Aindanada from '@/components/pages/vitrine/aindanada'
+import Aindanada from '@/components/pages/showcase/aindanada'
 
-export default function Vitrine() {
+export default function Showcase() {
   // Obter o valor do parâmetro 'idBags' da URL
 
   return (

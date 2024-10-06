@@ -1,10 +1,34 @@
-import React, { Suspense } from 'react'
+'use client'
+import React, { Suspense, useEffect, useState } from 'react'
 import CardProduct from 'ui/card-product'
 import { FavoriteBags } from '@/utils/favorite-bags'
 
 export default function FavoriteProducts() {
-  // Limitando a exibição de até 8 produtos
-  const displayedBags = FavoriteBags.slice(0, 8)
+  const [displayCount, setDisplayCount] = useState(8)
+
+  useEffect(() => {
+    const updateDisplayCount = () => {
+      if (window.innerWidth < 1200) {
+        setDisplayCount(3)
+      } else {
+        setDisplayCount(4)
+      }
+    }
+
+    // Atualiza o valor inicial
+    updateDisplayCount()
+
+    // Adiciona um listener de resize
+    window.addEventListener('resize', updateDisplayCount)
+
+    // Remove o listener quando o componente é desmontado
+    return () => {
+      window.removeEventListener('resize', updateDisplayCount)
+    }
+  }, [])
+
+  // Limitando a exibição dos produtos de acordo com o estado atual
+  const displayedBags = FavoriteBags.slice(0, displayCount)
 
   return (
     <div className="mt-[30px] h-full w-full pb-[150px]">
@@ -18,7 +42,7 @@ export default function FavoriteProducts() {
           </div>
         </div>
         <div>
-          <div className="grid w-full grid-cols-4 grid-rows-1 gap-8">
+          <div className="screen1300:gap-8 screen1200:grid-cols-4 screen1200:gap-4 grid w-full grid-cols-3 grid-rows-1 gap-8">
             <Suspense fallback={<div>Loading...</div>}>
               {displayedBags.map((bag) => (
                 <CardProduct
