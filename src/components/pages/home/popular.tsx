@@ -42,7 +42,7 @@ export default function FavoriteProducts() {
           </div>
         </div>
         <div>
-          <div className="screen1300:gap-8 screen1200:grid-cols-4 screen1200:gap-4 grid w-full grid-cols-3 grid-rows-1 gap-8">
+          <div className="grid w-full grid-cols-3 grid-rows-1 gap-8 screen1300:gap-8 screen1200:grid-cols-4 screen1200:gap-4">
             <Suspense fallback={<div>Loading...</div>}>
               {displayedBags.map((bag) => (
                 <CardProduct

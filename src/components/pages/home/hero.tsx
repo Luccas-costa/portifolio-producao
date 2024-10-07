@@ -33,7 +33,7 @@ export default function Hero() {
             Venha conhecer sua TekoBag{"'"}s
             <div className="mt-4">
               <button className="rounded border-2 border-white px-4 py-2 text-4xl hover:bg-white hover:text-primary">
-                <Link href="/">Montagem</Link>
+                <Link href="/pages/showcase/">Ver Bags</Link>
               </button>
             </div>
           </motion.div>

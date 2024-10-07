@@ -14,7 +14,7 @@ export default function Testimonials() {
             Algumas citações de nossos clientes satisfeitos
           </div>
         </div>
-        <div className="screen1550:gap-10 screen1460:grid screen1460:grid-cols-3 screen1460:gap-5 flex flex-wrap items-center justify-center gap-10">
+        <div className="flex flex-wrap items-center justify-center gap-10 screen1550:gap-10 screen1460:grid screen1460:grid-cols-3 screen1460:gap-5">
           <div className="flex h-[418px] w-[470px] flex-col items-center justify-center gap-3 rounded-lg bg-white p-2 shadow-xl">
             <div className="mb-8 size-[100px] rounded-full bg-primary shadow-lg"></div>
             <div className="my-2 flex items-center gap-1">

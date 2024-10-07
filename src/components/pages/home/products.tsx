@@ -40,7 +40,7 @@ export default function Products() {
           </div>
         </div>
         <div>
-          <div className="screen1300:grid-cols-4 screen1300:grid-rows-2 grid w-full grid-cols-3 grid-rows-2 gap-8">
+          <div className="grid w-full grid-cols-3 grid-rows-2 gap-8 screen1300:grid-cols-4 screen1300:grid-rows-2">
             <Suspense fallback={<div>Loading...</div>}>
               {displayedBags.map((bag) => (
                 <CardProduct

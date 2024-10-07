@@ -35,11 +35,17 @@
       "home/*": [
         "./src/components/pages/home/*"
       ],
+      "showcase/*": [
+        "./src/components/pages/showcase/*"
+      ],
       "ui/*": [
         "./src/components/ui/*"
       ],
       "types/*": [
         "./src/types/*"
+      ],
+      "assets/*": [
+        "./src/assets/*"
       ],
     }
   },

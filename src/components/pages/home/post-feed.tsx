@@ -71,7 +71,7 @@ export default function InstagramFeed({ feed }: InstagramFeedProps) {
           &#8592; {/* seta para a esquerda */}
         </button>
 
-        <div className="screen1550:gap-10 max-1460:flex-col flex items-center gap-5 overflow-hidden">
+        <div className="flex items-center gap-5 overflow-hidden screen1550:gap-10 max-1460:flex-col">
           {visibleImages.map((item, index) => (
             <motion.div
               key={item.id}
@@ -108,7 +108,7 @@ export default function InstagramFeed({ feed }: InstagramFeedProps) {
 
         <button
           onClick={handleNext}
-          className="screen1460:translate-x-0 screen1460:h-auto screen1460:rounded-full screen1460:bg-zinc-300/50 absolute right-0 h-[600px] translate-x-[60px] cursor-pointer rounded-xl bg-zinc-300/70 p-2"
+          className="absolute right-0 h-[600px] translate-x-[60px] cursor-pointer rounded-xl bg-zinc-300/70 p-2 screen1460:h-auto screen1460:translate-x-0 screen1460:rounded-full screen1460:bg-zinc-300/50"
         >
           <div className="max-1460:hidden">
             <CaretRight size={35} color="white" />
