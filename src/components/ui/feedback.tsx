@@ -31,11 +31,13 @@ export default function Feedback() {
 
           <AnimatePresence>
             {isClose && (
-              <FeedbackModal
-                isOpen={isClose}
-                onClose={() => setIsClose(false)}
-                handlerCloseMaster={handlerCloseMaster}
-              />
+              <div style={{ zIndex: 99 }}>
+                <FeedbackModal
+                  isOpen={isClose}
+                  onClose={() => setIsClose(false)}
+                  handlerCloseMaster={handlerCloseMaster}
+                />
+              </div>
             )}
           </AnimatePresence>
         </div>

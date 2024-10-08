@@ -5,18 +5,25 @@ import Background1 from '@/utils/showcase-slides/background-1'
 import Background2 from '@/utils/showcase-slides/background-2'
 import { CaretLeft, CaretRight } from '@phosphor-icons/react/dist/ssr'
 
+interface HeroProps {
+  onSlideChange: (index: number) => void
+}
+
 const slides = [<Background1 key="slide1" />, <Background2 key="slide2" />]
 
-export default function Hero() {
+export default function Hero({ onSlideChange }: HeroProps) {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isHovering, setIsHovering] = useState(false)
 
   // Função para mudar de slide
   const nextSlide = useCallback(() => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length)
-  }, [])
+    setCurrentSlide((prev) => {
+      const nextSlide = (prev + 1) % slides.length
+      onSlideChange(nextSlide)
+      return nextSlide
+    })
+  }, [onSlideChange])
 
-  // Auto-play a cada 5 segundos
   useEffect(() => {
     const interval = setInterval(() => {
       if (!isHovering) nextSlide()
@@ -40,7 +47,7 @@ export default function Hero() {
       <AnimatePresence initial={false}>
         <motion.div
           key={currentSlide}
-          className="absolute h-full w-full"
+          className="absolute left-0 top-0 h-full w-full"
           drag="x"
           dragListener={true}
           onDragEnd={(e, { offset }) => {

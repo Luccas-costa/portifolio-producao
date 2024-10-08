@@ -74,6 +74,7 @@ const FeedbackModal: React.FC<FeedbackModalProps> = ({
       exit={{ x: '100%', opacity: 0 }}
       transition={{ type: 'spring', stiffness: 300, damping: 30 }}
       className="fixed right-0 top-[44%] w-[320px] -translate-y-1/2 transform rounded-lg border bg-white p-4 shadow-lg"
+      style={{ zIndex: 90 }}
     >
       {!submitted ? (
         <div className="space-y-4">

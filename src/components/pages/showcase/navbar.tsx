@@ -11,7 +11,7 @@ import {
 import Link from 'next/link'
 
 interface NavbarProps {
-  theme: 'light' | 'dark'
+  theme: string
 }
 
 export default function Navbar({ theme }: NavbarProps) {
