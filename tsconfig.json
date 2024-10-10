@@ -38,6 +38,9 @@
       "showcase/*": [
         "./src/components/pages/showcase/*"
       ],
+      "dashboard/*": [
+        "./src/components/pages/dashboard/*"
+      ],
       "ui/*": [
         "./src/components/ui/*"
       ],
