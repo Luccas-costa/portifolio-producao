@@ -1,8 +1,8 @@
 'use client'
 import React, { useState, useEffect } from 'react'
 
-import { HouseLine } from '@phosphor-icons/react/dist/ssr'
-import { CalendarPlus, UtensilsCrossed } from 'lucide-react'
+import { HouseLine, Bag } from '@phosphor-icons/react/dist/ssr'
+import { CalendarPlus } from 'lucide-react'
 
 import LogoTransparentGray from '@/assets/logos/logo-transparent-gray'
 
@@ -56,10 +56,7 @@ export default function NavBar({ handlerChosen }: NavBarProps) {
           } cursor-pointer font-semibold`}
           onClick={() => setpage('pedidos')}
         >
-          <UtensilsCrossed
-            size={24}
-            color={page === 'pedidos' ? 'white' : '#71717a'}
-          />
+          <Bag size={28} color={page === 'pedidos' ? 'white' : '#71717a'} />
           <span>Pedidos</span>
         </div>
       </div>
