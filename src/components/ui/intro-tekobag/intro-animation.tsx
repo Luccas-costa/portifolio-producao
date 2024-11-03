@@ -4,7 +4,7 @@ import React from 'react'
 
 export default function IntroAnimation() {
   return (
-    <div className="font-montserrat fixed left-1/2 top-1/2 flex h-[160px] max-h-36 w-[900px] -translate-x-1/2 -translate-y-[70%] items-center justify-center gap-0 overflow-hidden text-[160px] font-black text-zinc-200">
+    <div className="fixed left-1/2 top-1/2 flex h-[160px] max-h-36 w-[900px] -translate-x-1/2 -translate-y-[70%] items-center justify-center gap-0 overflow-hidden font-montserrat text-[160px] font-black text-zinc-200">
       <motion.div
         initial={{ y: 0 }}
         animate={{ y: -320 }}
