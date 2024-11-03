@@ -45,26 +45,27 @@ export default function Dashboard() {
         <IntroAnimationUse />
       ) : (
         <>
-          <div className="relative size-full min-h-screen bg-zinc-900 text-zinc-200">
-            <Navbar handlerChosen={handlerChosen} />
-            <div className="mb-6 mt-4 h-[1px] w-screen bg-zinc-500 shadow-2xl" />
-            {page === 'inicio' && (
-              <>
-                <div>teste</div>
-              </>
-            )}
-            {page === 'adicionar' && <div>teste2</div>}
-            {page === 'pedidos' && (
-              <div>
-                <div className="px-7 text-3xl font-semibold">Pedidos</div>
-                <Filters onFilterChange={handleFilterChange} />
-                <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<div>Loading...</div>}>
+            <div className="relative size-full min-h-screen bg-zinc-900 text-zinc-200">
+              <Navbar handlerChosen={handlerChosen} />
+              <div className="mb-6 mt-4 h-[1px] w-screen bg-zinc-500 shadow-2xl" />
+              {page === 'inicio' && (
+                <>
+                  <div>teste</div>
+                </>
+              )}
+              {page === 'adicionar' && <div>teste2</div>}
+              {page === 'pedidos' && (
+                <div>
+                  <div className="px-7 text-3xl font-semibold">Pedidos</div>
+                  <Filters onFilterChange={handleFilterChange} />
+
                   <Requested filters={filters} />
-                </Suspense>
-                {/* <Pagination /> */}
-              </div>
-            )}
-          </div>
+                  {/* <Pagination /> */}
+                </div>
+              )}
+            </div>
+          </Suspense>
         </>
       )}
     </>
