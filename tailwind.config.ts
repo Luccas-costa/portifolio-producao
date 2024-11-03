@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        montserrat: ['Montserrat', 'sans-serif'], // Adiciona a classe personalizada para a fonte
+      },
       screens: {
         screen1200: '1200px',
         screen1300: '1300px',

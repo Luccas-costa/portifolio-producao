@@ -92,36 +92,3 @@ export default function Dashboard({ filters }: DashboardProps) {
     </div>
   )
 }
-
-// import React from 'react'
-// import { SearchPedidosBD } from '@/database/teste-pedidos'
-// import { formatDate } from '@/lib/format-date'
-// import { SearchPedidos } from '@/types/teste-pedidos'
-
-// interface RequestedProps {
-//   filters: {
-//     id: string
-//     name: string
-//     status: string
-//   }
-// }
-
-// // eslint-disable-next-line @typescript-eslint/no-unused-vars
-// export default function Requested({ filters }: RequestedProps) {
-//   return (
-//     <div className="h-[calc(100vh-210px)] w-full px-6">
-//       <div className="h-full w-full rounded-lg border border-zinc-500">
-//         <div>
-//           <div className="flex h-[40px] items-center border-b border-zinc-500 text-zinc-400">
-//             <div className="pl-[85px] text-center">Indentificador</div>
-//             <div className="pl-[135px] text-center">Realizado há</div>
-//             <div className="pl-[115px] text-center">Status</div>
-//             <div className="pl-[100px] text-center">Cliente</div>
-//             <div className="pl-[660px] text-center">Total pedido</div>
-//           </div>
-//         </div>
-//         <div></div>
-//       </div>
-//     </div>
-//   )
-// }
