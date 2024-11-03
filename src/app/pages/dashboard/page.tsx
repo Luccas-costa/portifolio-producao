@@ -6,7 +6,7 @@ import Filters from 'dashboard/filters'
 import Requested from 'dashboard/requested'
 import IntroAnimationUse from 'ui/intro-tekobag/intro-animation-use'
 // import Pagination from 'dashboard/pagination'
-import { useEffect, useState } from 'react'
+import { Suspense, useEffect, useState } from 'react'
 
 export default function Dashboard() {
   const [isintro, setIsintro] = useState(true)
@@ -58,7 +58,9 @@ export default function Dashboard() {
               <div>
                 <div className="px-7 text-3xl font-semibold">Pedidos</div>
                 <Filters onFilterChange={handleFilterChange} />
-                <Requested filters={filters} />
+                <Suspense fallback={<div>Loading...</div>}>
+                  <Requested filters={filters} />
+                </Suspense>
                 {/* <Pagination /> */}
               </div>
             )}
