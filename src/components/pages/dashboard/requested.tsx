@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, Suspense } from 'react'
 
 import { SearchPedidosBD } from '@/database/teste-pedidos'
 
@@ -66,21 +66,23 @@ export default function Dashboard({ filters }: DashboardProps) {
           </div>
         </div>
         <div className="flex flex-col">
-          {currentData.map((pedido, index) => (
-            <DashboardMain
-              key={pedido.identificador} // Use identificador como chave
-              id={pedido.identificador}
-              time={formatDate(pedido.data_pedido)} // Usa a função de formatação de data
-              status={pedido.status}
-              name={pedido.nome_cliente}
-              price={pedido.valor.toString()}
-              last={
-                index === currentData.length - 1 &&
-                (startIndex + index) % itemsPerPage === itemsPerPage - 1
-              } // Ajusta a lógica para passar `last={true}` apenas para o último item da página
-              handlerRefrash={() => setRefresh(!refresh)}
-            />
-          ))}
+          <Suspense fallback={<div>Loading...</div>}>
+            {currentData.map((pedido, index) => (
+              <DashboardMain
+                key={pedido.identificador} // Use identificador como chave
+                id={pedido.identificador}
+                time={formatDate(pedido.data_pedido)} // Usa a função de formatação de data
+                status={pedido.status}
+                name={pedido.nome_cliente}
+                price={pedido.valor.toString()}
+                last={
+                  index === currentData.length - 1 &&
+                  (startIndex + index) % itemsPerPage === itemsPerPage - 1
+                } // Ajusta a lógica para passar `last={true}` apenas para o último item da página
+                handlerRefrash={() => setRefresh(!refresh)}
+              />
+            ))}
+          </Suspense>
         </div>
       </div>
       <Pagination
