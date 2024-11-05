@@ -1,9 +1,10 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 'use client'
 import { useQueryState } from 'nuqs'
 
 import Navbar from 'dashboard/navbar'
 import Filters from 'dashboard/filters'
-import Requested from 'dashboard/requested'
+// import Requested from 'dashboard/requested'
 import IntroAnimationUse from 'ui/intro-tekobag/intro-animation-use'
 // import Pagination from 'dashboard/pagination'
 import { Suspense, useEffect, useState } from 'react'
@@ -60,7 +61,7 @@ export default function Dashboard() {
                   <div className="px-7 text-3xl font-semibold">Pedidos</div>
                   <Filters onFilterChange={handleFilterChange} />
 
-                  <Requested filters={filters} />
+                  {/* <Requested filters={filters} /> */}
                   {/* <Pagination /> */}
                 </div>
               )}
