@@ -1,5 +1,5 @@
 // /* eslint-disable @typescript-eslint/no-unused-vars */
-// 'use client'
+'use client'
 // import { useQueryState } from 'nuqs'
 
 // import Navbar from 'dashboard/navbar'
@@ -73,8 +73,29 @@
 //   )
 // }
 
-import React from 'react'
+import IntroAnimationUse from 'ui/intro-tekobag/intro-animation-use'
+import React, { useEffect, useState } from 'react'
 
 export default function Dashboard() {
-  return <div>Dashboard</div>
+  const [isintro, setIsintro] = useState(true)
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsintro(false)
+    }, 1500) // 0.5 segundos
+
+    return () => clearTimeout(timer) // Limpa o timer ao desmontar o componente
+  }, [])
+
+  return (
+    <div>
+      {isintro ? (
+        <IntroAnimationUse />
+      ) : (
+        <>
+          <div>teste</div>
+        </>
+      )}
+    </div>
+  )
 }
