@@ -74,10 +74,13 @@
 // }
 
 import IntroAnimationUse from 'ui/intro-tekobag/intro-animation-use'
+import Navbar from 'dashboard/navbar'
 import React, { useEffect, useState } from 'react'
+import { useQueryState } from 'nuqs'
 
 export default function Dashboard() {
   const [isintro, setIsintro] = useState(true)
+  const [, setPage] = useQueryState('inicio')
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -87,13 +90,22 @@ export default function Dashboard() {
     return () => clearTimeout(timer) // Limpa o timer ao desmontar o componente
   }, [])
 
+  // cima intro
+
+  const handlerChosen = (page: 'inicio' | 'pedidos' | 'adicionar') => {
+    console.log(page)
+    setPage(page)
+  }
+
   return (
     <div>
       {isintro ? (
         <IntroAnimationUse />
       ) : (
         <>
-          <div>teste</div>
+          <div className="relative size-full min-h-screen bg-zinc-900 text-zinc-200">
+            <Navbar handlerChosen={handlerChosen} />
+          </div>
         </>
       )}
     </div>
