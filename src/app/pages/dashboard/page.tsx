@@ -78,7 +78,15 @@ import Navbar from 'dashboard/navbar'
 import React, { Suspense, useEffect, useState } from 'react'
 import { useQueryState } from 'nuqs'
 
-export default function Dashboard() {
+export default function Page() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <Dashboard />
+    </Suspense>
+  )
+}
+
+function Dashboard() {
   const [isintro, setIsintro] = useState(true)
   const [, setPage] = useQueryState('inicio')
 
@@ -98,18 +106,16 @@ export default function Dashboard() {
   }
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <div>
-        {isintro ? (
-          <IntroAnimationUse />
-        ) : (
-          <>
-            <div className="relative size-full min-h-screen bg-zinc-900 text-zinc-200">
-              <Navbar handlerChosen={handlerChosen} />
-            </div>
-          </>
-        )}
-      </div>
-    </Suspense>
+    <div>
+      {isintro ? (
+        <IntroAnimationUse />
+      ) : (
+        <>
+          <div className="relative size-full min-h-screen bg-zinc-900 text-zinc-200">
+            <Navbar handlerChosen={handlerChosen} />
+          </div>
+        </>
+      )}
+    </div>
   )
 }
