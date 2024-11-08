@@ -203,7 +203,7 @@ export default function IntroAnimation() {
         <div className="translate-y-[-40px] screen450:translate-y-[-47px] screen700:translate-y-[-65px] screen900:translate-y-[-120px]">
           G
         </div>
-        <div className="translate-y-[-66px] screen450:translate-y-[-90px] screen700:translate-y-[-135px] screen900:translate-y-[-200px]">
+        <div className="translate-y-[-60px] screen450:translate-y-[-90px] screen700:translate-y-[-135px] screen900:translate-y-[-200px]">
           G
         </div>
         <div className="translate-y-[-92px] screen450:translate-y-[-136px] screen700:translate-y-[-205px] screen900:translate-y-[-280px]">
