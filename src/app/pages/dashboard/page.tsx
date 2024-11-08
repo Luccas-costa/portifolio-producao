@@ -75,7 +75,7 @@
 
 import IntroAnimationUse from 'ui/intro-tekobag/intro-animation-use'
 import Navbar from 'dashboard/navbar'
-import React, { useEffect, useState } from 'react'
+import React, { Suspense, useEffect, useState } from 'react'
 import { useQueryState } from 'nuqs'
 
 export default function Dashboard() {
@@ -98,16 +98,18 @@ export default function Dashboard() {
   }
 
   return (
-    <div>
-      {isintro ? (
-        <IntroAnimationUse />
-      ) : (
-        <>
-          <div className="relative size-full min-h-screen bg-zinc-900 text-zinc-200">
-            <Navbar handlerChosen={handlerChosen} />
-          </div>
-        </>
-      )}
-    </div>
+    <Suspense fallback={<div>Loading...</div>}>
+      <div>
+        {isintro ? (
+          <IntroAnimationUse />
+        ) : (
+          <>
+            <div className="relative size-full min-h-screen bg-zinc-900 text-zinc-200">
+              <Navbar handlerChosen={handlerChosen} />
+            </div>
+          </>
+        )}
+      </div>
+    </Suspense>
   )
 }
