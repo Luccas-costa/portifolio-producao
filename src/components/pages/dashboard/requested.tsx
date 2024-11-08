@@ -28,6 +28,7 @@ export default function Dashboard({ filters }: DashboardProps) {
       try {
         const data = await SearchPedidosBD({
           identificador: filters.id,
+          name: filters.name,
           status: filters.status,
         })
         setFilteredData(data)

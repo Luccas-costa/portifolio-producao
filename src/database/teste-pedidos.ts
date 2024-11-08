@@ -7,9 +7,11 @@ import { SearchPedidos } from '@/types/teste-pedidos'
 export async function SearchPedidosBD({
   identificador,
   status,
+  name,
 }: {
   identificador?: string
   status?: string
+  name?: string
 }): Promise<SearchPedidos[]> {
   try {
     let query = sql`SELECT * FROM pizza_shop_pedidos`
@@ -18,6 +20,8 @@ export async function SearchPedidosBD({
       query = sql`SELECT * FROM pizza_shop_pedidos WHERE identificador = ${identificador}`
     } else if (status) {
       query = sql`SELECT * FROM pizza_shop_pedidos WHERE status = ${status}`
+    } else if (name) {
+      query = sql`SELECT * FROM pizza_shop_pedidos WHERE name = ${name}`
     }
 
     const result = await query

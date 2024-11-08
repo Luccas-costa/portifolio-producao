@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { CaretDown, MagnifyingGlass, X } from '@phosphor-icons/react'
 
 interface FiltersProps {
@@ -8,13 +8,25 @@ interface FiltersProps {
     name: string
     status: string
   }) => void
+  filters: {
+    id: string
+    name: string
+    status: string
+  }
 }
 
-export default function Filters({ onFilterChange }: FiltersProps) {
+export default function Filters({ onFilterChange, filters }: FiltersProps) {
   const [OpenStatus, setOpenStatus] = useState(false)
-  const [id, setId] = useState('')
-  const [name, setName] = useState('')
-  const [status, setStatus] = useState('')
+  const [id, setId] = useState(filters.id)
+  const [name, setName] = useState(filters.name)
+  const [status, setStatus] = useState(filters.status)
+
+  // Atualiza os valores de estado quando os filtros mudam
+  useEffect(() => {
+    setId(filters.id)
+    setName(filters.name)
+    setStatus(filters.status)
+  }, [filters])
 
   const applyFilters = () => {
     onFilterChange({ id, name, status })
@@ -31,11 +43,6 @@ export default function Filters({ onFilterChange }: FiltersProps) {
     setStatus(statusValue)
     onFilterChange({ id, name, status: statusValue })
   }
-
-  // const handleShowAllStatus = () => {
-  //   setStatus('')
-  //   onFilterChange({ id, name, status: '' })
-  // }
 
   return (
     <div className="relative mb-4 mt-4 w-full px-7 transition-all duration-200">
@@ -64,9 +71,7 @@ export default function Filters({ onFilterChange }: FiltersProps) {
             size={18}
             weight="bold"
             color="#71717A"
-            className={`transition-all duration-200 ${
-              OpenStatus && 'rotate-180'
-            }`}
+            className={`transition-all duration-200 ${OpenStatus && 'rotate-180'}`}
           />
         </div>
         <div
