@@ -49,7 +49,7 @@ export default function CardProduct({
 
   const handlerIsModalAdd = (id: number) => {
     setIsModal(true)
-    setBags({ idBags: id })
+    setBags({ idBags: id, addingToCart: true })
   }
 
   const handlerIsModalRemove = () => {

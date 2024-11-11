@@ -1,5 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 'use client'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import LogoTransparentBlack from 'assets/logos/logo-transparent-black'
 import LogoTransparentWhite from 'assets/logos/logo-transparent-white'
 import {
@@ -9,6 +10,9 @@ import {
   Camera,
 } from '@phosphor-icons/react/dist/ssr'
 import Link from 'next/link'
+import { motion } from 'framer-motion'
+import { useUrlBags } from '@/hooks/useUrlBags'
+import { useCart } from '@/hooks/useCart'
 
 interface NavbarProps {
   theme: string
@@ -16,6 +20,35 @@ interface NavbarProps {
 
 export default function Navbar({ theme }: NavbarProps) {
   const [isHovered, setIsHovered] = useState<boolean>(false)
+  const [notification, setNotification] = useState<boolean>(false)
+  const [UrlBags, setUrlBags] = useUrlBags()
+  const [Cart, setCart] = useCart()
+
+  const handlerNotification = () => {
+    setCart((prevCart) => {
+      // Verifica se o id já existe no array antes de adicionar
+      if (!prevCart.idBagsCart.includes(UrlBags.idBags)) {
+        return {
+          ...prevCart,
+          idBagsCart: [...prevCart.idBagsCart, UrlBags.idBags],
+        }
+      }
+      return prevCart
+    })
+    setUrlBags(null)
+    setNotification(true)
+    setTimeout(() => {
+      setNotification(false)
+    }, 3000)
+  }
+
+  useEffect(() => {
+    if (UrlBags.addingToCart) {
+      handlerNotification()
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [UrlBags.addingToCart])
+
   return (
     <div
       className={`flex h-[60px] w-full items-center justify-between px-[14vw] ${
@@ -80,8 +113,34 @@ export default function Navbar({ theme }: NavbarProps) {
           >
             <HeartStraight size={18} weight={isHovered ? 'fill' : 'regular'} />
           </div>
-          <div className="cursor-pointer">
-            <Tote size={18} />
+          <div className="relative cursor-pointer">
+            <Tote size={18} style={{ zIndex: 3 }} />
+
+            {/* Exibe o contador apenas se houver itens no carrinho */}
+            {Cart.idBagsCart.length > 0 && (
+              <div
+                style={{ zIndex: 2 }}
+                className="absolute left-[11px] top-[-3px] flex size-[15px] items-center justify-center rounded-full bg-zinc-400/40 text-xs"
+              >
+                {Math.min(Cart.idBagsCart.length, 9)}
+              </div>
+            )}
+
+            {notification && (
+              <motion.div
+                initial={{ opacity: 1 }}
+                animate={{ opacity: 0 }}
+                transition={{ delay: 1.5, duration: 1.5 }}
+                className="absolute left-1/2 top-full mt-2 flex h-[90px] w-[320px] -translate-x-1/2 translate-y-[10px] flex-col rounded-md bg-white px-2 py-1 text-center text-zinc-950 shadow-xl"
+              >
+                <div className="absolute left-1/2 top-0 size-[10px] -translate-x-1/2 -translate-y-1/2 rotate-45 bg-zinc-400" />
+                <span className="pt-1 text-xl font-bold">adicionado</span>
+                <p className="text-sm">
+                  você adicionou uma nova peça ao se carrinho abra ele para
+                  continuar
+                </p>
+              </motion.div>
+            )}
           </div>
         </div>
       </div>

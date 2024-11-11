@@ -142,7 +142,7 @@ export default function CardModal({
           </div>
 
           <div className="absolute bottom-[40px] w-[30%]">
-            <Link href={`/pages/showcase/?idBags=${idBags}`}>
+            <Link href={`/pages/showcase/?idBags=${idBags}&addingToCart=true`}>
               <button className="flex w-full items-center justify-center gap-1 rounded-lg bg-zinc-300 py-3 hover:bg-zinc-400/40">
                 <div>Levar para Compras</div>
                 <ArrowRight size={25} color="#52525b" />
