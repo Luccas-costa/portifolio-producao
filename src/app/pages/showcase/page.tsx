@@ -42,7 +42,7 @@ export default function Showcase() {
         <Aindanada />
         </Suspense> */}
             <div style={{ zIndex: 10 }}>
-              <div className="absolute w-full pt-2" style={{ zIndex: 2 }}>
+              <div className="absolute w-full pt-2" style={{ zIndex: 91 }}>
                 <Navbar theme={themes[currentSlide]} />
               </div>
               <Hero onSlideChange={setCurrentSlide} />

@@ -13,6 +13,8 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { useUrlBags } from '@/hooks/useUrlBags'
 import { useCart } from '@/hooks/useCart'
+import InputAnimatedTypewriter from 'ui/input-animated-typewriter'
+import Carrinho from 'ui/cart'
 
 interface NavbarProps {
   theme: string
@@ -21,20 +23,27 @@ interface NavbarProps {
 export default function Navbar({ theme }: NavbarProps) {
   const [isHovered, setIsHovered] = useState<boolean>(false)
   const [notification, setNotification] = useState<boolean>(false)
+  const [isOpenCart, setIsOpenCart] = useState<boolean>(false)
+  const [animatedCloseCard, setAnimatedCloseCard] = useState<boolean>(false)
+
   const [UrlBags, setUrlBags] = useUrlBags()
   const [Cart, setCart] = useCart()
 
   const handlerNotification = () => {
     setCart((prevCart) => {
-      // Verifica se o id já existe no array antes de adicionar
-      if (!prevCart.idBagsCart.includes(UrlBags.idBags)) {
+      // Garantir que idBags seja um número
+      const formattedId = Number(`1${UrlBags.idBags}`) // Adiciona 1 antes e converte para número, o 1 neste caso e a quantidade
+
+      // Verifica se o ID já existe no array antes de adicionar
+      if (!prevCart.bagsCart.includes(formattedId)) {
         return {
           ...prevCart,
-          idBagsCart: [...prevCart.idBagsCart, UrlBags.idBags],
+          bagsCart: [...prevCart.bagsCart, formattedId],
         }
       }
       return prevCart
     })
+
     setUrlBags(null)
     setNotification(true)
     setTimeout(() => {
@@ -48,6 +57,17 @@ export default function Navbar({ theme }: NavbarProps) {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [UrlBags.addingToCart])
+
+  const handlerOpenCart = () => {
+    setAnimatedCloseCard(false)
+    setIsOpenCart(true)
+  }
+  const handlerCloseCart = () => {
+    setAnimatedCloseCard(true)
+    setTimeout(() => {
+      setIsOpenCart(false)
+    }, 500)
+  }
 
   return (
     <div
@@ -76,15 +96,7 @@ export default function Navbar({ theme }: NavbarProps) {
             theme === 'light' ? 'border-zinc-200' : 'border-zinc-950'
           }`}
         >
-          <input
-            type="text"
-            placeholder="Bag da temporada"
-            className={`w-full flex-1 bg-transparent text-sm ${
-              theme === 'light'
-                ? 'placeholder:text-zinc-200'
-                : 'placeholder:text-zinc-950'
-            } outline-none focus:ring-0`}
-          />
+          <InputAnimatedTypewriter theme={theme} />
           <div className="flex items-center gap-2">
             <div className="cursor-pointer">
               <MagnifyingGlass size={16} />
@@ -113,16 +125,16 @@ export default function Navbar({ theme }: NavbarProps) {
           >
             <HeartStraight size={18} weight={isHovered ? 'fill' : 'regular'} />
           </div>
-          <div className="relative cursor-pointer">
+          <div className="relative cursor-pointer" onClick={handlerOpenCart}>
             <Tote size={18} style={{ zIndex: 3 }} />
 
             {/* Exibe o contador apenas se houver itens no carrinho */}
-            {Cart.idBagsCart.length > 0 && (
+            {Cart.bagsCart.length > 0 && (
               <div
                 style={{ zIndex: 2 }}
                 className="absolute left-[11px] top-[-3px] flex size-[15px] items-center justify-center rounded-full bg-zinc-400/40 text-xs"
               >
-                {Math.min(Cart.idBagsCart.length, 9)}
+                {Math.min(Cart.bagsCart.length, 9)}
               </div>
             )}
 
@@ -142,6 +154,15 @@ export default function Navbar({ theme }: NavbarProps) {
               </motion.div>
             )}
           </div>
+          {isOpenCart && (
+            <div
+              style={{ zIndex: 100 }}
+              className="fixed inset-0 z-40 flex h-full"
+              onClick={handlerCloseCart}
+            >
+              <Carrinho isOpen={isOpenCart} isClose={animatedCloseCard} />
+            </div>
+          )}
         </div>
       </div>
     </div>
