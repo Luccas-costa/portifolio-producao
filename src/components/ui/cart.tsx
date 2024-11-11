@@ -1,4 +1,3 @@
-import { ArrowFatLeft } from '@phosphor-icons/react/dist/ssr'
 import { motion } from 'framer-motion'
 import React from 'react'
 
