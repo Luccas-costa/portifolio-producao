@@ -14,7 +14,7 @@ import GenerateFeed from 'home/generate-feed'
 import Tilt from '@/assets/tilt'
 import WavesOpacity from '@/assets/waves-opacity'
 import CurveAsymmstrical from '@/assets/curve-asymmstrical'
-import IntroAnimationUse from 'ui/intro-tekobag/intro-animation-use'
+import IntroAnimationUse from '@/assets/intro-tekobag/intro-animation-use'
 
 export default function Home() {
   const [isintro, setIsintro] = useState(true)

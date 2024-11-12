@@ -1,6 +1,6 @@
 'use client'
 
-import IntroAnimationUse from 'ui/intro-tekobag/intro-animation-use'
+import IntroAnimationUse from '@/assets/intro-tekobag/intro-animation-use'
 import Navbar from 'dashboard/navbar'
 import React, { Suspense, useEffect, useState } from 'react'
 import { useQueryState } from 'nuqs'

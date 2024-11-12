@@ -160,7 +160,11 @@ export default function Navbar({ theme }: NavbarProps) {
               className="fixed inset-0 z-40 flex h-full"
               onClick={handlerCloseCart}
             >
-              <Carrinho isOpen={isOpenCart} isClose={animatedCloseCard} />
+              <Carrinho
+                isOpen={isOpenCart}
+                isClose={animatedCloseCard}
+                handlerClose={handlerCloseCart}
+              />
             </div>
           )}
         </div>

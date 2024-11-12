@@ -4,7 +4,7 @@
 import { useEffect, useState } from 'react'
 
 import Feedback from 'ui/feedback'
-import IntroAnimationUse from 'ui/intro-tekobag/intro-animation-use'
+import IntroAnimationUse from '@/assets/intro-tekobag/intro-animation-use'
 
 import Hero from 'showcase/hero'
 import Navbar from 'showcase/navbar'

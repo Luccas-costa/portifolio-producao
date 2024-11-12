@@ -1,12 +1,18 @@
 import { motion } from 'framer-motion'
 import React from 'react'
+import SemNomeAinda from 'showcase/sem-nome-ainda'
 
 interface CarrinhoProps {
   isOpen: boolean
   isClose: boolean
+  handlerClose: () => void
 }
 
-export default function Carrinho({ isOpen, isClose }: CarrinhoProps) {
+export default function Carrinho({
+  isOpen,
+  isClose,
+  handlerClose,
+}: CarrinhoProps) {
   return (
     <motion.div
       initial={{ right: '0%' }}
@@ -19,7 +25,9 @@ export default function Carrinho({ isOpen, isClose }: CarrinhoProps) {
       <div
         className={`relative left-[1px] flex w-[43vw] rounded-l-[6%] bg-zinc-300 bg-cover`}
         style={{ zIndex: 100 }}
-      ></div>
+      >
+        <SemNomeAinda handlerClose={handlerClose} />
+      </div>
     </motion.div>
   )
 }
