@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import IntroAnimation from '@/assets/intro-tekobag/intro-animation'
+import IntroAnimation from '@/components/ui/intro-tekobag/intro-animation'
 import { motion } from 'framer-motion'
 
 export default function IntroTekobag() {
