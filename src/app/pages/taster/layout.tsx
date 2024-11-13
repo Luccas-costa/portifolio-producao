@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 // import localFont from 'next/font/local'
-import './globals.css'
+import './global.css'
 import { Inter } from 'next/font/google'
 
 // const geistSans = localFont({
@@ -20,7 +20,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Teko Bag',
+  title: 'Teko Bag | Taster',
   description: 'Ecomerce de eco bags',
 }
 

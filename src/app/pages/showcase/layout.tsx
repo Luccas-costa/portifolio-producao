@@ -20,7 +20,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Teko Bag | Vitrine',
+  title: 'Teko Bag | Showcase',
   description: 'Ecomerce de eco bags',
 }
 
@@ -31,7 +31,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt">
-      <body className={`${inter.className} bg-zinc-200 antialiased`}>
+      <body
+        className={`${inter.className} bg-zinc-200 antialiased transition-all duration-200`}
+      >
         {children}
       </body>
     </html>

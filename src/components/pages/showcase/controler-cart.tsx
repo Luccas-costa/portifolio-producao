@@ -1,15 +1,15 @@
 import LogoTransparentBlack from '@/assets/logos/logo-transparent-black'
 import CardCart from 'ui/card-cart'
 import React from 'react'
-import { Tote } from '@phosphor-icons/react/dist/ssr'
+import { CoatHanger, Tote } from '@phosphor-icons/react/dist/ssr'
 import { useCart } from '@/hooks/useCart'
 import { AllBags } from '@/utils/all-bags'
 
-interface SemNomeAindaProps {
+interface ControlerCartProps {
   handlerClose: () => void
 }
 
-export default function SemNomeAinda({ handlerClose }: SemNomeAindaProps) {
+export default function ControlerCart({ handlerClose }: ControlerCartProps) {
   const [Cart, setCart] = useCart()
 
   const items = Cart.bagsCart
@@ -60,22 +60,30 @@ export default function SemNomeAinda({ handlerClose }: SemNomeAindaProps) {
       </div>
 
       <div className="flex max-h-[100%] flex-col gap-[20px] overflow-y-auto px-3 py-[20px]">
-        {items.map((item, index) => (
-          <CardCart
-            key={index}
-            picture={item.image}
-            title={item.title}
-            description={item.description}
-            price={item.price}
-            amount={item.quantity}
-            id={item.id}
-            updateQuantity={updateCartQuantity}
-          />
-        ))}
+        {items.length === 0 ? (
+          <div className="flex flex-col items-center justify-center text-zinc-500/80">
+            <CoatHanger weight="thin" size={200} color="#BBBBC1" />
+            <div className="text-3xl font-light">
+              Sem itens por aqui <span className="text-3xl font-thin">ಥ_ಥ</span>
+            </div>
+          </div>
+        ) : (
+          items.map((item, index) => (
+            <CardCart
+              key={index}
+              picture={item.image}
+              title={item.title}
+              description={item.description}
+              price={item.price}
+              amount={item.quantity}
+              id={item.id}
+              updateQuantity={updateCartQuantity}
+            />
+          ))
+        )}
       </div>
 
       <div className="min-h-[100px]">
-        <hr className="mx-3 mt-1 border border-zinc-500/80" />
         <div className="flex items-center justify-end gap-3 pr-3 pt-4">
           <button
             onClick={handlerClose}
@@ -83,9 +91,13 @@ export default function SemNomeAinda({ handlerClose }: SemNomeAindaProps) {
           >
             Fechar
           </button>
-          <button className="rounded-lg bg-zinc-400/50 px-10 py-3 text-lg font-medium text-zinc-800 hover:bg-zinc-400/70 active:bg-zinc-400/70">
-            Avançar
-          </button>
+          {items.length === 0 ? (
+            <div></div>
+          ) : (
+            <button className="rounded-lg bg-zinc-400/50 px-10 py-3 text-lg font-medium text-zinc-800 hover:bg-zinc-400/70 active:bg-zinc-400/70">
+              Avançar
+            </button>
+          )}
         </div>
       </div>
     </div>
