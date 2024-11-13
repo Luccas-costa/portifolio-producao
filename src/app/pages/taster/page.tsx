@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useState } from 'react'
+import { Suspense, useEffect, useState } from 'react'
 
 import Feedback from 'ui/feedback'
 import IntroAnimationUse from 'ui/intro-tekobag/intro-animation-use'
@@ -10,7 +10,15 @@ import { CaretRight } from '@phosphor-icons/react'
 import { useTaster } from '@/hooks/useTaster'
 import { AllBags } from '@/utils/all-bags'
 
-export default function Showcase() {
+export default function Page() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <Taster />
+    </Suspense>
+  )
+}
+
+function Taster() {
   const [isintro, setIsintro] = useState(true)
   const [taster] = useTaster()
 
