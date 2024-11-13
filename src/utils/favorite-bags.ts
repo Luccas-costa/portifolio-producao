@@ -1,6 +1,6 @@
 export const FavoriteBags = [
   {
-    id: 22221,
+    id: 90000,
     title: 'Bag foto do medina',
     description:
       'Bolsa produzida a mão personalizada com um desenho da bolsa do media',
@@ -14,7 +14,7 @@ export const FavoriteBags = [
     ],
   },
   {
-    id: 22222,
+    id: 10000,
     title: 'Bag foto do medina',
     description:
       'Bolsa produzida a mão personalizada com um desenho da bolsa do media',
@@ -28,7 +28,7 @@ export const FavoriteBags = [
     ],
   },
   {
-    id: 22223,
+    id: 11000,
     title: 'Bag foto do medina',
     description:
       'Bolsa produzida a mão personalizada com um desenho da bolsa do media',
@@ -42,7 +42,7 @@ export const FavoriteBags = [
     ],
   },
   {
-    id: 22224,
+    id: 12000,
     title: 'Bag foto do medina',
     description:
       'Bolsa produzida a mão personalizada com um desenho da bolsa do media',

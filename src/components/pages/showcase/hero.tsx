@@ -1,8 +1,8 @@
 'use client'
 import { useState, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import Background1 from '@/utils/showcase-slides/background-1'
-import Background2 from '@/utils/showcase-slides/background-2'
+import Background1 from '@/assets/showcase-slides/background-1'
+import Background2 from '@/assets/showcase-slides/background-2'
 import { CaretLeft, CaretRight } from '@phosphor-icons/react/dist/ssr'
 
 interface HeroProps {
