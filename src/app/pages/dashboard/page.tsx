@@ -53,7 +53,7 @@ function Dashboard() {
       {isintro ? (
         <IntroAnimationUse />
       ) : (
-        <div className="relative size-full min-h-screen bg-zinc-900 text-zinc-200">
+        <div className="relative size-full min-h-screen bg-zinc-900 text-zinc-200 antialiased transition-all duration-200">
           <Navbar
             page={page as 'inicio' | 'pedidos' | 'adicionar'}
             handlerChosen={handlerChosen}

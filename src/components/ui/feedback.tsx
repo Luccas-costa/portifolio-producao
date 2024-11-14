@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import { AnimatePresence } from 'framer-motion'
 import FeedbackModal from './feedback-modal'
 
-export default function Feedback() {
+export default function Feedback({ theme }: { theme: string }) {
   const [isClose, setIsClose] = useState<boolean>(false)
   const [isCloseMaster, setIsCloseMaster] = useState<boolean>(false)
 
@@ -19,7 +19,7 @@ export default function Feedback() {
           {!isClose && (
             <div
               onClick={() => setIsClose(true)}
-              className="fixed right-[-50px] top-1/2 flex h-[50px] w-[140px] rotate-[90deg] cursor-pointer items-center justify-center gap-2 rounded bg-zinc-200 text-zinc-900"
+              className={`fixed right-[-50px] top-1/2 flex h-[50px] w-[140px] rotate-[90deg] cursor-pointer items-center justify-center gap-2 rounded ${theme === 'dark' ? 'bg-zinc-300' : theme === 'light' && 'bg-zinc-200'} text-zinc-900`}
               style={{ zIndex: 50 }}
             >
               <div className="text-base">feedback</div>

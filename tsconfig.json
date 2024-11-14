@@ -41,6 +41,9 @@
       "dashboard/*": [
         "./src/components/pages/dashboard/*"
       ],
+      "taster/*": [
+        "./src/components/pages/taster/*"
+      ],
       "ui/*": [
         "./src/components/ui/*"
       ],

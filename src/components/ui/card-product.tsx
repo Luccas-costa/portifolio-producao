@@ -1,8 +1,10 @@
 'use client'
 import Image from 'next/image'
 import React, { useState, useEffect } from 'react'
-import { useUrlBags } from '@/hooks/useUrlBags'
-import CardModal from './card-modal'
+// import { useUrlBags } from '@/hooks/useUrlBags'
+// import CardModal from './card-modal'
+import Link from 'next/link'
+import { useCart } from '@/hooks/useCart'
 
 interface CardProductProps {
   cor: number
@@ -18,14 +20,20 @@ export default function CardProduct({
   cor,
   id,
   title,
-  description,
+  // description,
   price,
   image,
-  variantImages,
+  // variantImages,
 }: CardProductProps) {
-  const [isModal, setIsModal] = useState(false)
   const [priceFormatted, setPriceFormatted] = useState('')
-  const [{ idBags }, setBags] = useUrlBags() // Acessa o id da URL
+  const [verification, setVerification] = useState(false)
+  const [cart] = useCart()
+
+  useEffect(() => {
+    if (cart.bagsCart.length > 0) {
+      setVerification(true)
+    }
+  }, [cart])
 
   // Função para formatar o preço
   const formatPrice = (price: number | undefined): string => {
@@ -40,40 +48,14 @@ export default function CardProduct({
     setPriceFormatted(formatPrice(price))
   }, [price])
 
-  // Verifica o idBags da URL para abrir o modal automaticamente
-  useEffect(() => {
-    if (idBags === id) {
-      setIsModal(true)
-    }
-  }, [idBags, id])
-
-  const handlerIsModalAdd = (id: number) => {
-    setIsModal(true)
-    setBags({ idBags: id, addingToCart: true })
-  }
-
-  const handlerIsModalRemove = () => {
-    setIsModal(false)
-    setBags({ idBags: null }) // Limpa todos os parâmetros da URL
-  }
-
   return (
-    <>
-      {isModal && (
-        <CardModal
-          id={id}
-          title={title}
-          description={description}
-          price={price}
-          Imagem={image}
-          handlerIsModalRemove={handlerIsModalRemove}
-          variantImages={variantImages}
-        />
-      )}
-      <a href="#products">
-        <div
-          className="h-[386px] w-[290px] cursor-pointer rounded-xl shadow-xl transition-all duration-200 hover:scale-110"
-          onClick={() => handlerIsModalAdd(id)}
+    <a
+      href="#products"
+      className="h-[386px] w-[290px] cursor-pointer rounded-xl shadow-xl transition-all duration-200 hover:scale-110"
+    >
+      {verification ? (
+        <Link
+          href={`/pages/taster/?bagsCart=${cart.bagsCart}&idBagsTaster=${id}`}
         >
           <div
             className={`h-[290px] w-full rounded-t-xl ${
@@ -92,8 +74,32 @@ export default function CardProduct({
               </div>
             </div>
           </div>
-        </div>
-      </a>
-    </>
+        </Link>
+      ) : (
+        <Link
+          href={`/pages/taster/?idBagsTaster=${id}`}
+          className="h-[386px] w-[290px] cursor-pointer rounded-xl shadow-xl transition-all duration-200 hover:scale-110"
+          // onClick={() => handlerIsModalAdd(id)}
+        >
+          <div
+            className={`h-[290px] w-full rounded-t-xl ${
+              cor > 0 ? 'bg-zinc-100/40' : 'bg-zinc-300/40'
+            }`}
+          >
+            <Image src={image} alt="Imagem" width={290} height={290} />
+          </div>
+          <div className="h-[96px] w-full rounded-xl bg-white/60">
+            <div className="flex h-full w-full flex-col justify-center gap-1 px-3">
+              <div className="text-lg font-semibold">{title}</div>
+              <div className="flex justify-end">
+                <div className="font-bold text-primary">
+                  R$ {priceFormatted}
+                </div>
+              </div>
+            </div>
+          </div>
+        </Link>
+      )}
+    </a>
   )
 }

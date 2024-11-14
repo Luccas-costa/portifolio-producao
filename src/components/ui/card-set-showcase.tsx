@@ -1,7 +1,10 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
+'use client'
+import HeartAnimated from '@/assets/heart-animated'
+import { useAddingToCart } from '@/hooks/useAddingToCart'
 import { useCart } from '@/hooks/useCart'
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 
 interface CardSetShowcaseProps {
   id: number
@@ -17,8 +20,14 @@ export default function CardSetShowcase({
   imagem,
 }: CardSetShowcaseProps) {
   const [cart, setCart] = useCart()
+  const [addingToCart, setAddingToCart] = useAddingToCart()
+  const [liked, setLiked] = useState(false)
 
   const handlerNotification = () => {
+    setAddingToCart({
+      addingToCart: true,
+    })
+
     setCart((prevCart) => {
       const currentBags = prevCart.bagsCart
       const currentValue = currentBags.find(
@@ -61,8 +70,23 @@ export default function CardSetShowcase({
 
   return (
     <div className="flex flex-col justify-center transition-all duration-200">
-      <div className="flex h-[400px] w-[300px] items-center justify-center rounded border-2 border-zinc-400 shadow-lg">
+      <div className="relative flex h-[400px] w-[300px] items-center justify-center rounded border-2 border-zinc-400 shadow-lg">
         <Image src={imagem} alt={title} width={300} height={400} />
+        <button
+          onClick={(e) => {
+            e.preventDefault() // Evita a navegação padrão
+            // Coloque aqui qualquer outra lógica de salvar favorito
+          }}
+          className={`group absolute right-2 top-2 rounded-full bg-zinc-400/20 p-2 font-medium text-zinc-500/80`}
+        >
+          <div
+            onClick={() => setLiked(!liked)}
+            className="flex items-center gap-2"
+          >
+            <div className="hidden group-hover:flex">salvar favorito</div>
+            <HeartAnimated liked={liked} />
+          </div>
+        </button>
       </div>
       <div className="pl-1 pt-1 text-lg font-medium text-zinc-600">{title}</div>
       <div className="flex items-center gap-4 pl-1">

@@ -32,7 +32,7 @@ export default function Home() {
       {isintro ? (
         <IntroAnimationUse />
       ) : (
-        <>
+        <div className="bg-zinc-200 antialiased transition-all duration-200">
           <Navbar />
           <Hero />
 
@@ -60,7 +60,7 @@ export default function Home() {
           <Popular />
           <Footer />
           <Developed />
-        </>
+        </div>
       )}
     </div>
   )

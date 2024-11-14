@@ -1,9 +1,19 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from '@/styles/heart-animated.module.css'
 
-const HeartAnimated = () => {
+interface HeartAnimatedProps {
+  liked?: boolean
+}
+
+const HeartAnimated = ({ liked }: HeartAnimatedProps) => {
   const [isChecked, setIsChecked] = useState(false)
+
+  useEffect(() => {
+    if (liked) {
+      setIsChecked(true)
+    }
+  }, [liked])
 
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked)

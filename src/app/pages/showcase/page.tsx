@@ -33,10 +33,10 @@ export default function Showcase() {
       {isintro ? (
         <IntroAnimationUse />
       ) : (
-        <>
+        <div className="bg-zinc-200 antialiased transition-all duration-200">
           <div className="relative size-full min-h-screen">
             <div style={{ zIndex: 90 }}>
-              <Feedback />
+              <Feedback theme="light" />
             </div>
             {/* <Suspense fallback={<div>Loading...</div>}>
         <Aindanada />
@@ -54,7 +54,7 @@ export default function Showcase() {
               <Section2 />
             </div>
           </div>
-        </>
+        </div>
       )}
     </>
   )

@@ -11,7 +11,7 @@ import {
 } from '@phosphor-icons/react/dist/ssr'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { useUrlBags } from '@/hooks/useUrlBags'
+import { useAddingToCart } from '@/hooks/useAddingToCart'
 import { useCart } from '@/hooks/useCart'
 import InputAnimatedTypewriter from 'ui/input-animated-typewriter'
 import Carrinho from 'ui/cart'
@@ -26,25 +26,10 @@ export default function Navbar({ theme }: NavbarProps) {
   const [isOpenCart, setIsOpenCart] = useState<boolean>(false)
   const [animatedCloseCard, setAnimatedCloseCard] = useState<boolean>(false)
 
-  const [UrlBags, setUrlBags] = useUrlBags()
-  const [Cart, setCart] = useCart()
+  const [addingToCart, setAddingToCart] = useAddingToCart()
+  const [Cart] = useCart()
 
   const handlerNotification = () => {
-    setCart((prevCart) => {
-      // Garantir que idBags seja um número
-      const formattedId = Number(`1${UrlBags.idBags}`) // Adiciona 1 antes e converte para número, o 1 neste caso e a quantidade
-
-      // Verifica se o ID já existe no array antes de adicionar
-      if (!prevCart.bagsCart.includes(formattedId)) {
-        return {
-          ...prevCart,
-          bagsCart: [...prevCart.bagsCart, formattedId],
-        }
-      }
-      return prevCart
-    })
-
-    setUrlBags(null)
     setNotification(true)
     setTimeout(() => {
       setNotification(false)
@@ -52,11 +37,12 @@ export default function Navbar({ theme }: NavbarProps) {
   }
 
   useEffect(() => {
-    if (UrlBags.addingToCart) {
+    if (addingToCart.addingToCart) {
       handlerNotification()
+      setAddingToCart({ addingToCart: null })
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [UrlBags.addingToCart])
+  }, [addingToCart.addingToCart])
 
   const handlerOpenCart = () => {
     setAnimatedCloseCard(false)

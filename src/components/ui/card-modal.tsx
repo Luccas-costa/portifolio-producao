@@ -9,7 +9,7 @@ import {
   CaretRight,
 } from '@phosphor-icons/react/dist/ssr'
 
-import { useUrlBags } from '@/hooks/useUrlBags'
+import { useUrlBags } from '@/hooks/useAddingToCart'
 
 import Link from 'next/link'
 import Image from 'next/image'
