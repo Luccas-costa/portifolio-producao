@@ -3,15 +3,15 @@ import {
   X,
   Star,
   Binoculars,
-  ArrowRight,
+  // ArrowRight,
   TiktokLogo,
   InstagramLogo,
   CaretRight,
 } from '@phosphor-icons/react/dist/ssr'
 
-import { useUrlBags } from '@/hooks/useAddingToCart'
+// import { useAddingToCart } from '@/hooks/useAddingToCart'
 
-import Link from 'next/link'
+// import Link from 'next/link'
 import Image from 'next/image'
 
 interface CardModalProps {
@@ -33,7 +33,7 @@ export default function CardModal({
   handlerIsModalRemove,
   variantImages,
 }: CardModalProps) {
-  const [{ idBags }] = useUrlBags()
+  // const [{ idBags }] = useUrlBags()
 
   const [selectedImage, setSelectedImage] = useState(Imagem)
   const [activeDot, setActiveDot] = useState(0) // Estado para controlar o dot ativo
@@ -142,12 +142,12 @@ export default function CardModal({
           </div>
 
           <div className="absolute bottom-[40px] w-[30%]">
-            <Link href={`/pages/showcase/?idBags=${idBags}&addingToCart=true`}>
+            {/* <Link href={`/pages/showcase/?idBags=${idBags}&addingToCart=true`}>
               <button className="flex w-full items-center justify-center gap-1 rounded-lg bg-zinc-300 py-3 hover:bg-zinc-400/40">
                 <div>Levar para Compras</div>
                 <ArrowRight size={25} color="#52525b" />
               </button>
-            </Link>
+            </Link> */}
 
             <div className="flex w-full items-center justify-between px-4 pt-2 text-sm">
               <div>Curtiu? Compartilhe essa peça!</div>
