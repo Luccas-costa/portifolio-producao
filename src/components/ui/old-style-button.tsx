@@ -1,15 +1,16 @@
-import React from 'react'
+/* eslint-disable prettier/prettier */
+import React from 'react';
 
-import { DotsThreeVertical } from '@phosphor-icons/react'
+import { DotsThreeVertical } from '@phosphor-icons/react';
 
 interface OldStyleButtonProps {
-  title: string
+  title: string;
 }
 
 export default function OldStyleButton({ title }: OldStyleButtonProps) {
   return (
     <div className="flex h-full w-full flex-col items-center gap-[50px]">
-      <div className="screen520:w-[470px] group relative h-[80px] w-[400px] transition-all duration-300 screen700:w-[535px]">
+      <div className="group relative h-[80px] w-[400px] transition-all duration-300 screen520:w-[470px] screen700:w-[535px]">
         {/* Conteudo div */}
         <div
           className="absolute h-[80px] w-full rounded-2xl bg-[#dccfe9] group-hover:translate-x-[4px] group-hover:translate-y-[4px]"
@@ -28,5 +29,5 @@ export default function OldStyleButton({ title }: OldStyleButtonProps) {
         ></div>
       </div>
     </div>
-  )
+  );
 }
