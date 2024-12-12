@@ -9,7 +9,7 @@ interface OldStyleButtonProps {
 export default function OldStyleButton({ title }: OldStyleButtonProps) {
   return (
     <div className="flex h-full w-full flex-col items-center gap-[50px]">
-      <div className="group relative h-[80px] w-[70%] transition-all duration-300">
+      <div className="screen520:w-[470px] group relative h-[80px] w-[400px] transition-all duration-300 screen700:w-[535px]">
         {/* Conteudo div */}
         <div
           className="absolute h-[80px] w-full rounded-2xl bg-[#dccfe9] group-hover:translate-x-[4px] group-hover:translate-y-[4px]"
