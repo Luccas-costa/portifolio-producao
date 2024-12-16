@@ -2,11 +2,13 @@ import React from 'react'
 import styles from '@/styles/Hero.module.css'
 import OldStyleButton from 'ui/old-style-button'
 import { GithubLogo, InstagramLogo } from '@phosphor-icons/react'
+import Image from 'next/image'
+import FotoPerfil from 'public/my/my2.jpg'
 
 export default function IndexMobile() {
   return (
     <div
-      className={`h-screen w-screen bg-black text-zinc-200 ${styles.degrade}`}
+      className={`min-h-screen w-screen bg-black text-zinc-200 ${styles.degrade}`}
     >
       {/* Background */}
       <div
@@ -20,14 +22,21 @@ export default function IndexMobile() {
 
       {/* Conteudo */}
       <div style={{ zIndex: 2 }}>
-        <div className="flex h-full w-full flex-col items-center">
-          <div className="mt-[10vh] size-[170px] rounded-full bg-neutral-950 shadow-xl"></div>
+        <div className="flex h-full max-h-max w-full flex-col items-center">
+          <div className="mt-[10vh] size-[170px] overflow-hidden rounded-full bg-neutral-950 shadow-xl">
+            <Image src={FotoPerfil} alt="Luccas" width={170} height={170} />
+          </div>
 
           <div className="mt-[20px] text-lg text-zinc-300">Luccas</div>
 
           <div className="mt-[50px] flex h-full w-full flex-col gap-[30px]">
-            <OldStyleButton title="Portifolio pessoal | Luccas" />
-            <OldStyleButton title="Portifolio proficional | Luccas" />
+            <OldStyleButton title="Portifolio pessoal" />
+            <OldStyleButton title="Portifolio profissional" />
+            <OldStyleButton title="teste" />
+            <OldStyleButton title="teste" />
+            <OldStyleButton title="teste" />
+            <OldStyleButton title="teste" />
+            <OldStyleButton title="teste" />
             <OldStyleButton title="teste" />
           </div>
         </div>
@@ -45,7 +54,7 @@ export default function IndexMobile() {
             />
           </a>
           <a
-            href="https://www.instagram.com/l1uccas/"
+            href="https://github.com/Luccas-costa"
             target="_blank"
             rel="noreferrer"
           >

@@ -12,6 +12,7 @@ const config: Config = {
         montserrat: ['Montserrat', 'sans-serif'], // Adiciona a classe personalizada para a fonte
       },
       screens: {
+        screen400: '400px',
         screen450: '450px',
         screen520: '520px',
         screen700: '700px',
