@@ -79,6 +79,11 @@ export default function IndexMobile() {
               Imagem={GitImage}
               link="https://github.com/Luccas-costa"
             />
+            <OldStyleButton
+              title="GitHub"
+              Imagem={GitImage}
+              link="https://github.com/Luccas-costa"
+            />
           </div>
         </div>
       </div>

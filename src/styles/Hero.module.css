@@ -1,5 +1,5 @@
 .degrade {
-    background: linear-gradient(to bottom, #000000, #200D42 24%, #4F21A1 55%, #A46EDB 78%);
+    background: linear-gradient(to bottom, #000000, #200D42 24%, #4F21A1 35%, #A46EDB 58%);
 }
 .degrade2 {
     background: radial-gradient(closest-side, #000 82%, #9560EB);
