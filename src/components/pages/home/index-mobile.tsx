@@ -63,7 +63,7 @@ export default function IndexMobile() {
             </a>
           </div>
 
-          <div className="mt-[30px] flex h-full w-full flex-col gap-[30px]">
+          <div className="mt-[30px] flex h-full min-h-[100vh] w-full flex-col gap-[30px]">
             <OldStyleButton
               title="Portifolio pessoal"
               Imagem="/logos/favicon.ico"
