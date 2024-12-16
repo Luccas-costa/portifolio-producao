@@ -1,9 +1,14 @@
 import React from 'react'
 import styles from '@/styles/Hero.module.css'
 import OldStyleButton from 'ui/old-style-button'
-import { GithubLogo, InstagramLogo } from '@phosphor-icons/react'
+import {
+  DotsThreeVertical,
+  GithubLogo,
+  InstagramLogo,
+} from '@phosphor-icons/react'
 import Image from 'next/image'
 import FotoPerfil from 'public/my/my2.jpg'
+import GitImage from '@/assets/logos/github-mark.svg'
 
 export default function IndexMobile() {
   return (
@@ -22,6 +27,10 @@ export default function IndexMobile() {
 
       {/* Conteudo */}
       <div style={{ zIndex: 2 }}>
+        <div className="absolute right-[20px] top-[20px] flex size-[30px] rotate-90 items-center justify-center rounded-full bg-zinc-200/40 shadow-xl hover:bg-zinc-200/60">
+          <DotsThreeVertical size={22} weight="bold" color="white" />
+        </div>
+
         <div className="flex h-full max-h-max w-full flex-col items-center">
           <div className="mt-[10vh] size-[170px] overflow-hidden rounded-full bg-neutral-950 shadow-xl">
             <Image src={FotoPerfil} alt="Luccas" width={170} height={170} />
@@ -29,41 +38,48 @@ export default function IndexMobile() {
 
           <div className="mt-[20px] text-lg text-zinc-300">Luccas</div>
 
-          <div className="mt-[50px] flex h-full w-full flex-col gap-[30px]">
-            <OldStyleButton title="Portifolio pessoal" />
-            <OldStyleButton title="Portifolio profissional" />
-            <OldStyleButton title="teste" />
-            <OldStyleButton title="teste" />
-            <OldStyleButton title="teste" />
-            <OldStyleButton title="teste" />
-            <OldStyleButton title="teste" />
-            <OldStyleButton title="teste" />
+          <div className="mt-[10px] flex w-full cursor-pointer items-center justify-center gap-3">
+            <a
+              href="https://www.instagram.com/l1uccas/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <InstagramLogo
+                size={22}
+                weight="regular"
+                color="rgb(228 228 231 / 0.9)"
+              />
+            </a>
+            <a
+              href="https://github.com/Luccas-costa"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <GithubLogo
+                size={22}
+                weight="regular"
+                color="rgb(228 228 231 / 0.9)"
+              />
+            </a>
           </div>
-        </div>
 
-        <div className="mt-[20px] flex w-full cursor-pointer items-center justify-center gap-3">
-          <a
-            href="https://www.instagram.com/l1uccas/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <InstagramLogo
-              size={26}
-              weight="regular"
-              color="rgb(228 228 231 / 0.9)"
+          <div className="mt-[30px] flex h-full w-full flex-col gap-[30px]">
+            <OldStyleButton
+              title="Portifolio pessoal"
+              Imagem="/logos/favicon.ico"
+              link="/private"
             />
-          </a>
-          <a
-            href="https://github.com/Luccas-costa"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <GithubLogo
-              size={26}
-              weight="regular"
-              color="rgb(228 228 231 / 0.9)"
+            <OldStyleButton
+              title="Portifolio profissional"
+              Imagem="/logos/favicon.ico"
+              link="/professional"
             />
-          </a>
+            <OldStyleButton
+              title="GitHub"
+              Imagem={GitImage}
+              link="https://github.com/Luccas-costa"
+            />
+          </div>
         </div>
       </div>
     </div>

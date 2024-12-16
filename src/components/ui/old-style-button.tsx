@@ -2,14 +2,18 @@
 import React from 'react'
 
 import { DotsThreeVertical } from '@phosphor-icons/react'
+import Image from 'next/image'
+import Link from 'next/link'
 
 interface OldStyleButtonProps {
   title: string
+  Imagem: string
+  link: string
 }
 
-export default function OldStyleButton({ title }: OldStyleButtonProps) {
+export default function OldStyleButton({ title, Imagem, link }: OldStyleButtonProps) {
   return (
-    <div className="flex h-full w-full flex-col items-center gap-[50px]">
+    <Link href={link} className="flex h-full w-full flex-col items-center gap-[50px]">
       <div className=" group relative h-[80px] w-[350px] transition-all duration-300 screen400:w-[390px] screen520:w-[470px] screen700:w-[535px]">
         {/* Conteudo div */}
         <div
@@ -17,7 +21,9 @@ export default function OldStyleButton({ title }: OldStyleButtonProps) {
           style={{ zIndex: 2 }}
         >
           <div className="flex h-full w-full items-center justify-between px-[10px]">
-            <div className="size-[44px] rounded border-2 border-zinc-400/70"></div>
+            <div className="size-[50px] rounded overflow-hidden">
+              <Image src={Imagem} alt="Luccas" width={50} height={50} />
+            </div>
             <div className="screen400:text-xl text-lg font-medium text-zinc-600">{title}</div>
             <DotsThreeVertical size={24} weight="bold" color="#52525b " />
           </div>
@@ -28,6 +34,6 @@ export default function OldStyleButton({ title }: OldStyleButtonProps) {
           style={{ zIndex: 1 }}
         ></div>
       </div>
-    </div>
+    </Link>
   )
 }
