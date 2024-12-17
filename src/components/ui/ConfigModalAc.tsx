@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/ban-types */
 'use client'
@@ -52,7 +53,7 @@ export const ModalTrigger = ({
   return (
     <button
       className={cn(
-        'relative overflow-hidden rounded-md px-4 py-2 text-center text-black dark:text-white',
+        'relative overflow-hidden rounded-md  px-4 py-2 text-center text-black dark:text-white',
         className,
       )}
       onClick={() => setOpen(true)}
