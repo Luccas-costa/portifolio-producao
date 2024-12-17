@@ -9,6 +9,8 @@ import {
 import Image from 'next/image'
 import FotoPerfil from 'public/my/my2.jpg'
 import GitImage from '@/assets/logos/github-mark.svg'
+import { ShootingStars } from 'ui/shooting-stars'
+import { StarsBackground } from 'ui/stars-background'
 
 export default function IndexMobile() {
   return (
@@ -20,6 +22,8 @@ export default function IndexMobile() {
         style={{ zIndex: 1, pointerEvents: 'none' }}
         className="absolute bottom-0 flex h-full w-full flex-col items-center overflow-hidden"
       >
+        <ShootingStars />
+        <StarsBackground />
         <div
           className={`absolute left-1/2 top-[calc(100%-150px)] h-[400px] w-[1000px] -translate-x-1/2 rounded-[100%] border border-[#B48CDE] bg-black ${styles.degrade2}`}
         ></div>
@@ -73,11 +77,6 @@ export default function IndexMobile() {
               title="Portifolio profissional"
               Imagem="/logos/favicon.ico"
               link="/professional"
-            />
-            <OldStyleButton
-              title="GitHub"
-              Imagem={GitImage}
-              link="https://github.com/Luccas-costa"
             />
             <OldStyleButton
               title="GitHub"
