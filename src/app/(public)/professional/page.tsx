@@ -1,10 +1,11 @@
 'use client'
-import React, { useState, useEffect } from 'react'
+import IndexDesktop from '@/components/pages/professional/index-desktop'
+import IndexMobile from '@/components/pages/professional/index-mobile'
+import { useState, useEffect } from 'react'
 
-import IndexDesktop from 'home/index-desktop'
-import IndexMobile from 'home/index-mobile'
+// import { BackgroundSpotlightAC } from 'ui/Background-spotlightAC'
 
-export default function Home() {
+export default function Professional() {
   const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {

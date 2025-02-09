@@ -101,7 +101,7 @@ export default function IndexDesktop() {
           style={{ zIndex: 10 }}
         >
           <div className="z-10 rounded-lg bg-white px-2 py-1 font-semibold text-black">
-            <AnimatedModalDemo />
+            <AnimatedModalDemo darkis={true} />
           </div>
         </div>
       </div>

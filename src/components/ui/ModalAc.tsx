@@ -21,18 +21,18 @@ interface redesSociais {
   cor: string
 }
 
-export default function AnimatedModalDemo() {
+export default function AnimatedModalDemo({ darkis }: { darkis: boolean }) {
   return (
     <div className="flex items-center justify-center">
       <Modal>
-        <ModalTrigger className="group/modal-btn flex justify-center bg-white text-white dark:bg-white dark:text-black">
+        <ModalTrigger className={`group/modal-btn flex justify-center  ${darkis && 'bg-white'} ${darkis && 'text-black'}`}>
           Contato
         </ModalTrigger>
         <ModalBody>
           <ModalContent>
-            <h4 className="mb-5 text-center text-lg font-bold text-neutral-600 md:text-2xl dark:text-neutral-100">
-              Minhas
-              <span className="rounded-md border border-gray-200 bg-gray-100 px-1 py-0.5 dark:border-neutral-700 dark:bg-neutral-800">
+            <h4 className={`mb-5 text-center text-lg font-bold text-neutral-600 md:text-2xl ${darkis && 'text-neutral-100'}`}>
+              Minhas{' '}
+              <span className={`rounded-md border border-gray-200 bg-gray-100 px-1 py-0.5 ${darkis && 'border-neutral-700'} ${darkis && 'bg-neutral-800'}`}>
                 conexões
               </span>{' '}
             </h4>
@@ -57,22 +57,22 @@ export default function AnimatedModalDemo() {
               ))}
             </div>
             <div className="screen6:w-[70%] screen11_5:text-base mx-auto mt-8 w-full text-center text-sm text-white/15">
-              Se prefere a praticidade e
-              <span className="rounded-md border border-gray-200 bg-gray-100 px-1 py-0.5 dark:border-neutral-700 dark:bg-white/20">
+              Se prefere a praticidade e{' '}
+              <span className={`rounded-md border border-gray-200 bg-gray-100 px-1 py-0.5 ${darkis && 'border-neutral-700'} ${darkis && 'bg-white/20'}`}>
                 Certeza!
               </span>{' '}
-              de resposta
-              <span className="rounded-md border border-gray-200 bg-gray-100 px-1 py-0.5 dark:border-neutral-700 dark:bg-white/20">
-                Rapida!
+              de resposta{' '}
+              <span className={`rounded-md border border-gray-200 bg-gray-100 px-1 py-0.5 ${darkis && 'border-neutral-700'} ${darkis && 'bg-white/20'}`}>
+              Rapida!
               </span>{' '}
               Me mande uma mensagem clicando no botão abaixo.
             </div>
           </ModalContent>
           <ModalFooter className="gap-4">
-            {/* <button className="w-28 rounded-md border border-gray-300 bg-gray-200 px-2 py-1 text-sm text-black dark:border-black dark:bg-black dark:text-white">
+            {/* <button className="w-28 rounded-md border border-gray-300 bg-gray-200 px-2 py-1 text-sm text-black ${darkis && 'border-black ${darkis && 'bg-black ${darkis && 'text-white">
               Sair
             </button> */}
-            <button className="screen11_5:text-sm w-48 rounded-md border border-black bg-black px-2 py-1 text-xs text-white dark:bg-white dark:text-black">
+            <button className={`screen11_5:text-sm w-48 rounded-md border border-black bg-black px-2 py-1 text-xs  ${darkis && 'bg-white'} ${darkis && 'text-black'}`}>
               Mandar uma mensagem
             </button>
           </ModalFooter>

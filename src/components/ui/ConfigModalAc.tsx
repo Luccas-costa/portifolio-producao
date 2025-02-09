@@ -53,7 +53,7 @@ export const ModalTrigger = ({
   return (
     <button
       className={cn(
-        'relative overflow-hidden rounded-md  px-4 py-2 text-center text-black dark:text-white',
+        'relative overflow-hidden rounded-md  px-4 py-2 text-center text-black',
         className,
       )}
       onClick={() => setOpen(true)}
@@ -106,7 +106,7 @@ export const ModalBody = ({
           <motion.div
             ref={modalRef}
             className={cn(
-              'screen3:max-w-[40%] screen11:w-[80%] screen3:flex-1 relative z-50 flex max-h-[90%] min-h-[50%] w-[90%] flex-col overflow-hidden rounded-2xl border border-transparent bg-white dark:border-neutral-800 dark:bg-neutral-950',
+              'screen3:max-w-[40%] screen11:w-[80%] screen3:flex-1 relative z-50 flex max-h-[90%] min-h-[50%] w-[90%] flex-col overflow-hidden rounded-2xl border border-transparent border-neutral-800 bg-neutral-950',
               className,
             )}
             initial={{
@@ -165,7 +165,7 @@ export const ModalFooter = ({
   return (
     <div
       className={cn(
-        'flex justify-end bg-gray-100 p-4 dark:bg-neutral-900',
+        'flex justify-end p-4 bg-neutral-900',
         className,
       )}
     >
@@ -210,7 +210,7 @@ const CloseIcon = () => {
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className="h-4 w-4 text-black transition duration-200 group-hover:rotate-3 group-hover:scale-125 dark:text-white"
+        className="h-4 w-4  transition duration-200 group-hover:rotate-3 group-hover:scale-125 text-white"
       >
         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
         <path d="M18 6l-12 12" />
