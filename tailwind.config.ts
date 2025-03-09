@@ -27,6 +27,9 @@ const config: Config = {
       fontFamily: {
         montserrat: ['Montserrat', 'sans-serif'],
       },
+      fontSize: {
+        xxs: '0.625rem',
+      },
       screens: {
         screen400: '400px',
         screen450: '450px',

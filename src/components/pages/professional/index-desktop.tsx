@@ -6,6 +6,7 @@ import { ShootingStars } from 'ui/shooting-stars'
 import { StarsBackground } from 'ui/stars-background'
 
 import styles from '@/styles/professional.module.css'
+import Chatbot from './chatbot'
 
 export default function IndexDesktop() {
   return (
@@ -36,8 +37,10 @@ export default function IndexDesktop() {
 
           <div
             style={{ zIndex: 1 }}
-            className="relative h-[800px] translate-y-[-160px] bg-black"
-          ></div>
+            className="relative h-full translate-y-[-185px] bg-[#121212] pb-[400px]"
+          >
+            <Chatbot />
+          </div>
         </div>
       </div>
     </div>

@@ -10,7 +10,7 @@ export default function MouseAnimated() {
         playsInline
         className="h-[72px] w-[72px] object-contain"
       >
-        <source src="/assets/animationmouse3.webm" type="video/webm" />
+        <source src="/assets/animationmouse.webm" type="video/webm" />
         Seu navegador não suporta a reprodução de vídeos.
       </video>
     </div>

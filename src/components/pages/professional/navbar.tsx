@@ -7,7 +7,7 @@ import styles from '@/styles/menu-burger.module.css'
 export default function Navbar() {
   return (
     <div
-      className="fixed top-0 flex h-[65px] w-full items-center justify-between bg-black/5g px-[20px] text-zinc-200/60 screen1:px-[270px] screen9:px-[100px]"
+      className="fixed top-0 flex h-[65px] w-full items-center justify-between bg-black/5 px-[20px] text-zinc-200/60 screen1:px-[270px] screen9:px-[100px]"
       style={{ zIndex: 90 }}
     >
       <div className="min-w-[100px]">

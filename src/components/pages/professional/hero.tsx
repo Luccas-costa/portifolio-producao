@@ -9,7 +9,7 @@ export default function Hero() {
           Web Developer
         </div>
 
-        <div className="pt-6 text-center text-7xl font-light">
+        <div className="pt-6 text-center text-6xl font-light screen9:text-7xl">
           Redefining the Future one
           <br />
           <span className="text-[#ff8521]">Application</span> at a Time
