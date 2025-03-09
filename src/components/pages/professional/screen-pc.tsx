@@ -135,7 +135,7 @@ export default function ScreenPc() {
                   </button>
                 </div>
               </div>
-              <div className="text-xxs flex items-center gap-1 text-center font-light text-zinc-400/60">
+              <div className="flex items-center gap-1 text-center text-xxs font-light text-zinc-400/60">
                 <div>Powerded by</div>
                 <div className="flex items-center gap-[2px]">
                   <OpenAiLogo size={12} weight="regular" color="#52525b" />
@@ -143,7 +143,7 @@ export default function ScreenPc() {
                 </div>
               </div>
             </div>
-            <div className="text-xxs text-center font-light text-zinc-400/60">
+            <div className="text-center text-xxs font-light text-zinc-400/60">
               O LuccasGpt pode cometer erros. Considere verificar informações
               importantes.
             </div>
