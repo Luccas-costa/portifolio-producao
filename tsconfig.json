@@ -51,7 +51,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/components/pages/testes/splide/teste-001.jsx"
+    "src/components/pages/testes/splide/teste-001.jsx",
+    "src/app/api/chat/route.js"
   ],
   "exclude": [
     "node_modules"
