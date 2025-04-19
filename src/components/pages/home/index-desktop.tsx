@@ -16,12 +16,12 @@ import AnimatedModalDemo from '@/components/ui/ModalAc'
 export default function IndexDesktop() {
   return (
     <div
-      className={`min-h-screen w-screen bg-black text-zinc-200 ${styles.degradeold}`}
+      className={`h-full w-screen bg-black text-zinc-200 ${styles.degradeold}`}
     >
       {/* Background */}
       <div
         style={{ zIndex: 1, pointerEvents: 'none' }}
-        className="absolute bottom-0 flex h-full w-full flex-col items-center overflow-hidden"
+        className="absolute -bottom-0 flex min-h-full w-full flex-col items-center overflow-hidden"
       >
         <ShootingStars />
         <StarsBackground />

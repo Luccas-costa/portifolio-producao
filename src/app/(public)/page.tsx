@@ -22,7 +22,7 @@ export default function Home() {
   }, [])
 
   return (
-    <div className="min-h-screen w-screen bg-black pt-[65px] text-white">
+    <div className="h-screen w-screen bg-black pt-[65px] text-white">
       {isMobile ? <IndexMobile /> : <IndexDesktop />}
     </div>
   )
