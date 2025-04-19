@@ -16,7 +16,7 @@ import AnimatedModalDemo from '@/components/ui/ModalAc'
 export default function IndexDesktop() {
   return (
     <div
-      className={`h-full w-screen bg-black text-zinc-200 ${styles.degradeold}`}
+      className={`min-h-screen w-screen bg-black text-zinc-200 ${styles.degradeold}`}
     >
       {/* Background */}
       <div
