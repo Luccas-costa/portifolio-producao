@@ -80,7 +80,7 @@ export default function Iphone() {
               className={`flex-1 ${isChat ? 'overflow-hidden' : 'overflow-y-auto overflow-x-hidden'}`}
             >
               <div className="sticky top-0 z-10 flex h-[40px] items-center justify-between bg-[#121212] px-4 pt-4">
-                <div className="flex w-full items-center gap-1 font-normal text-zinc-500">
+                <div className="flex w-full translate-y-[-1px] items-center gap-1 font-normal text-zinc-500">
                   <div>LuccasGPT</div>
                   <CaretDown size={10} weight="bold" color="#71717a" />
                 </div>
