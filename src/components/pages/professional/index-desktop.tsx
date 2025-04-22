@@ -34,14 +34,14 @@ export default function IndexDesktop() {
         <div className="relative">
           <div
             style={{ zIndex: 2 }}
-            className="screen1070:left-0 screen1070:translate-x-[0%] relative overflow-visible screen1000:left-1/2 screen1000:translate-x-[-48.5%]"
+            className="relative overflow-visible screen1000:left-1/2 screen1000:translate-x-[-48.5%] screen1070:left-0 screen1070:translate-x-[0%]"
           >
             <Carousel />
           </div>
 
           <div
             style={{ zIndex: 1 }}
-            className="screen1070:translate-y-[-203px] relative h-full translate-y-[-403px] bg-[#121212] pb-[400px] screen1200:pb-0"
+            className="relative h-full translate-y-[-403px] bg-[#121212] pb-[400px] screen1070:translate-y-[-203px] screen1200:pb-0"
           >
             <div className="hidden pb-[400px] screen1200:block">
               <Imac />
