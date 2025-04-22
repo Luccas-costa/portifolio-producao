@@ -51,7 +51,7 @@ export default function Carousel() {
                 <div
                   style={{ userSelect: 'none' }}
                   className={clsx(
-                    'screen1070:aspect-[5/3] screen1070:max-w-[500px] mt-[80px] aspect-[3/5] w-full max-w-[300px] overflow-hidden rounded-lg bg-[radial-gradient(circle,_rgba(255,255,255,0.3),_rgba(255,255,255,0.2))] text-xl font-semibold shadow-md transition-all duration-300 ease-in-out',
+                    'mt-[80px] aspect-[3/5] w-full max-w-[300px] overflow-hidden rounded-lg bg-[radial-gradient(circle,_rgba(255,255,255,0.3),_rgba(255,255,255,0.2))] text-xl font-semibold shadow-md transition-all duration-300 ease-in-out screen1070:aspect-[5/3] screen1070:max-w-[500px]',
                     isActive
                       ? 'z-10 -translate-y-[50px] scale-105 opacity-100'
                       : 'translate-y-0 scale-100 opacity-60',
