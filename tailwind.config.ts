@@ -37,6 +37,7 @@ const config: Config = {
         screen700: '700px',
         screen900: '900px',
         screen1000: '1000px',
+        screen1070: '1070px',
         screen1100: '1100px',
         screen1200: '1200px',
         screen1300: '1300px',

@@ -1,7 +1,6 @@
 import NewChatIcon from '@/assets/new-chat-icon'
 import {
   ArrowClockwise,
-  ArrowRight,
   ArrowUp,
   CaretDown,
   CaretLeft,
@@ -16,6 +15,7 @@ import {
   ShieldCheck,
   Sidebar,
 } from '@phosphor-icons/react/dist/ssr'
+import Image from 'next/image'
 
 import React, { useState } from 'react'
 import Folder from 'ui/folder'
@@ -23,7 +23,6 @@ import Folder from 'ui/folder'
 export default function ScreenPc() {
   const [inputValue, setInputValue] = useState<string>('')
   const [isChat, setIsChat] = useState<boolean>(false)
-  const [isOpen, setIsOpen] = useState<boolean>(true)
   const [mensage, setMensage] = useState<string>('')
 
   const resposta = `Aqui estão algumas ideias para introduzir o tema combate à arquitetura hostil com repertório relevante:\n\n
@@ -121,7 +120,14 @@ export default function ScreenPc() {
                   <CaretDown size={10} weight="bold" color="#d4d4d8" />
                 </div>
               </div>
-              <div className="size-5 rounded-full bg-[#2E2E2E]"></div>
+              <div className="size-5 overflow-hidden rounded-full bg-[#2E2E2E]">
+                <Image
+                  src="/my/my1.jpg"
+                  alt="foto minha"
+                  width={20}
+                  height={20}
+                />
+              </div>
             </div>
             {isChat ? (
               <>
@@ -208,66 +214,24 @@ export default function ScreenPc() {
           <>
             <div className="flex w-[798px] translate-y-[-1px] items-center justify-center border-none bg-[#121212] shadow-none">
               <div
-                className={`mb-2 mt-2 flex h-[30px] w-[470px] flex-col rounded-l-2xl bg-[#2E2E2E]/40 ${isOpen ? 'px-3' : ''}`}
+                className={`mb-2 mt-2 flex h-[30px] w-[510px] flex-col rounded-2xl bg-[#2E2E2E]/40 px-3`}
               >
-                {isOpen ? (
-                  <div className="flex items-center">
-                    <input
-                      type="text"
-                      className="mr-[2%] h-[30px] w-[98%] bg-transparent text-xxs font-light text-zinc-300 outline-none placeholder:text-neutral-400/70"
-                      placeholder="Ask anything"
-                      value={inputValue}
-                      onChange={(e) => setInputValue(e.target.value)}
-                    />
-                    <button
-                      disabled={!inputValue.trim()}
-                      className="h-fit w-fit rounded-full bg-zinc-300 p-1 transition-all duration-200 disabled:bg-neutral-600"
-                    >
-                      <ArrowUp size={14} weight="bold" color="black" />
-                    </button>
-                  </div>
-                ) : (
-                  <div className="h-full w-full rounded-l-2xl bg-[#2E2E2E]/40 px-3">
-                    <div className="flex h-full items-center justify-between">
-                      <div className="flex items-center gap-2">
-                        <div className="group w-fit cursor-pointer rounded-full border border-[#52525b] p-1 transition-all duration-200 hover:bg-[#52525b]">
-                          <Plus
-                            size={12}
-                            weight="bold"
-                            className="text-[#52525b] group-hover:text-white"
-                          />
-                        </div>
-                        <div className="group flex w-fit cursor-pointer items-center gap-1 rounded-full border border-[#52525b] px-1 py-[3px] transition-all duration-200 hover:bg-[#52525b]">
-                          <Globe
-                            size={13}
-                            weight="bold"
-                            className="text-[#52525b] group-hover:text-white"
-                          />
-                          <div className="text-xxs font-light text-neutral-500 group-hover:text-white">
-                            Search
-                          </div>
-                        </div>
-                        <div className="group flex w-fit cursor-pointer items-center gap-1 rounded-full border border-[#52525b] px-1 py-[3px] transition-all duration-200 hover:bg-[#52525b]">
-                          <Lightbulb
-                            size={13}
-                            weight="bold"
-                            className="text-[#52525b] group-hover:text-white"
-                          />
-                          <div className="text-xxs font-light text-neutral-500 group-hover:text-white">
-                            Reason
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                )}
+                <div className="flex items-center">
+                  <input
+                    type="text"
+                    className="mr-[2%] h-[30px] w-[98%] bg-transparent text-xxs font-light text-zinc-300 outline-none placeholder:text-neutral-400/70"
+                    placeholder="Ask anything"
+                    value={inputValue}
+                    onChange={(e) => setInputValue(e.target.value)}
+                  />
+                  <button
+                    disabled={!inputValue.trim()}
+                    className="h-fit w-fit rounded-full bg-zinc-300 p-1 transition-all duration-200 disabled:bg-neutral-600"
+                  >
+                    <ArrowUp size={14} weight="bold" color="black" />
+                  </button>
+                </div>
               </div>
-              <button
-                className={`mb-2 mt-2 flex h-[28px] items-center justify-center rounded-r-2xl p-1 ${inputValue.trim() ? 'bg-zinc-300' : 'bg-zinc-400'} transition-all duration-200`}
-                onClick={() => setIsOpen(!isOpen)}
-              >
-                <ArrowRight size={14} weight="bold" color="black" />
-              </button>
             </div>
           </>
         )}

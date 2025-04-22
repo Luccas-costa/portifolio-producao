@@ -1,12 +1,13 @@
 import React from 'react'
 
-import { CarouselSize } from '@/components/pages/professional/carrousel'
 import Hero from '@/components/pages/professional/hero'
 import { ShootingStars } from 'ui/shooting-stars'
 import { StarsBackground } from 'ui/stars-background'
 
 import styles from '@/styles/professional.module.css'
-import Chatbot from './chatbot'
+import Carousel from '@/app/(public)/private/carossel'
+import Imac from './imac'
+import Ipad from './ipad'
 
 export default function IndexDesktop() {
   return (
@@ -31,15 +32,23 @@ export default function IndexDesktop() {
         <Hero />
 
         <div className="relative">
-          <div style={{ zIndex: 2 }} className="relative">
-            <CarouselSize />
+          <div
+            style={{ zIndex: 2 }}
+            className="screen1070:left-0 screen1070:translate-x-[0%] relative overflow-visible screen1000:left-1/2 screen1000:translate-x-[-48.5%]"
+          >
+            <Carousel />
           </div>
 
           <div
             style={{ zIndex: 1 }}
-            className="relative h-full translate-y-[-185px] bg-[#121212] pb-[400px]"
+            className="screen1070:translate-y-[-203px] relative h-full translate-y-[-403px] bg-[#121212] pb-[400px] screen1200:pb-0"
           >
-            <Chatbot />
+            <div className="hidden pb-[400px] screen1200:block">
+              <Imac />
+            </div>
+            <div className="block pb-[400px] screen1200:hidden">
+              <Ipad />
+            </div>
           </div>
         </div>
       </div>

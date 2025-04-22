@@ -1,11 +1,12 @@
 import React from 'react'
 
-import { CarouselSize } from '@/components/pages/professional/carrousel'
 import Hero from '@/components/pages/professional/hero'
 import { ShootingStars } from 'ui/shooting-stars'
 import { StarsBackground } from 'ui/stars-background'
 
 import styles from '@/styles/professional.module.css'
+import Carousel from '@/app/(public)/private/carossel'
+import Iphone from './iphone'
 
 export default function IndexMobile() {
   return (
@@ -31,13 +32,15 @@ export default function IndexMobile() {
 
         <div className="relative">
           <div style={{ zIndex: 2 }} className="relative">
-            <CarouselSize />
+            <Carousel />
           </div>
 
           <div
             style={{ zIndex: 1 }}
-            className="relative h-[800px] translate-y-[-160px] bg-black"
-          ></div>
+            className="relative translate-y-[-160px] bg-[#121212] pb-[600px]"
+          >
+            <Iphone />
+          </div>
         </div>
       </div>
     </div>

@@ -1,11 +1,7 @@
-// pages/index.js
-import Chatbot from './chatbot'
-
 export default function Private() {
   return (
-    <div>
+    <div className="h-screen w-screen">
       <h1>Bem-vindo ao meu portfólio</h1>
-      <Chatbot />
     </div>
   )
 }

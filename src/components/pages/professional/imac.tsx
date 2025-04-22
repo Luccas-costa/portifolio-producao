@@ -10,7 +10,7 @@ import {
 import Image from 'next/image'
 import Vscode from '@/assets/logos/visual-studio-code.svg'
 
-export default function Chatbot() {
+export default function Imac() {
   const [dateTime, setDateTime] = useState('')
   const [taskBarVisible] = useState(true)
 
@@ -53,7 +53,7 @@ export default function Chatbot() {
   ]
 
   return (
-    <div className="translate-y-[170px]">
+    <div className="translate-y-[370px] screen1070:translate-y-[170px]">
       <div className="mx-auto flex h-[700px] w-[1200px] translate-y-[170px] flex-col justify-center rounded-2xl border border-[#2E2E2E] bg-[#121212] p-3">
         <div
           className="relative flex-1 rounded-xl bg-cover bg-center"
