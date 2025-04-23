@@ -1,0 +1,58 @@
+[
+    {
+        "pergunta": "Qual o seu nome completo?",
+        "resposta": "Meu nome é Lucas Pereira Costa, e é com esse nome que venho construindo minha trajetória no mundo da tecnologia."
+    },
+    {
+        "pergunta": "Qual sua idade?",
+        "resposta": "Atualmente tenho 18 anos, e apesar da pouca idade, já venho acumulando experiências e conhecimentos que me movem cada vez mais na área da programação."
+    },
+    {
+        "pergunta": "De onde você é?",
+        "resposta": "Nasci em Carvalhópolis, no interior de Minas Gerais, mas hoje vivo em São José dos Campos – SP, uma cidade que tem contribuído bastante para minha formação e crescimento pessoal e profissional."
+    },
+    {
+        "pergunta": "Como você começou na área de desenvolvimento?",
+        "resposta": "Minha curiosidade por tecnologia nasceu ainda na infância, ao observar meu pai trabalhando na área. Sempre fui muito curioso, então comecei a explorar por conta própria. Aos poucos, fui descobrindo o mundo da programação, e me encantei. Desde então, sigo estudando e me aperfeiçoando constantemente, movido por paixão e vontade de evoluir."
+    },
+    {
+        "pergunta": "Quais linguagens de programação você domina?",
+        "resposta": "Tenho domínio sobre linguagens como HTML, CSS, JavaScript, Python e C#, além de trabalhar com diversas tecnologias modernas como React, Next.js, Node.js, ASP.NET e Arduino. Gosto de estar sempre aprendendo, pois acredito que o conhecimento é um caminho contínuo."
+    },
+    {
+        "pergunta": "Quais tecnologias você mais gosta de usar?",
+        "resposta": "Sou apaixonado pelo front-end, principalmente utilizando React e Next.js. Gosto da possibilidade de transformar ideias em interfaces vivas, funcionais e intuitivas."
+    },
+    {
+        "pergunta": "Você tem experiência com desenvolvimento front-end, back-end ou ambos?",
+        "resposta": "Tenho experiência principalmente com front-end, mas já participei de projetos completos, atuando também com back-end, o que me deu uma boa base como desenvolvedor fullstack."
+    },
+    {
+        "pergunta": "Qual projeto você mais se orgulha de ter feito?",
+        "resposta": "Um dos projetos que mais me orgulho é o Teko-Bag, um e-commerce que desenvolvi como trabalho escolar. Foi um desafio que encarei com dedicação, e o resultado final me mostrou do que sou capaz quando coloco paixão no que faço."
+    },
+    {
+        "pergunta": "Você já trabalhou em equipe? Como foi essa experiência?",
+        "resposta": "Já tive a oportunidade de trabalhar em equipes menores, o que me proporcionou um grande aprendizado. Aprendi a importância da colaboração, da escuta ativa e da comunicação clara para o sucesso de um projeto."
+    },
+    {
+        "pergunta": "Qual é o seu maior objetivo como desenvolvedor?",
+        "resposta": "Meu maior objetivo é usar a tecnologia como ferramenta para realizar sonhos, sejam eles meus ou de outras pessoas. Quero criar soluções que gerem impacto real na vida das pessoas."
+    },
+    {
+        "pergunta": "Como você lida com desafios ou bugs no código?",
+        "resposta": "Vejo cada bug como uma oportunidade de crescer. Gosto de analisar o problema com calma, explorar diferentes abordagens e encontrar a solução mais eficiente. Persistência e criatividade são minhas principais aliadas nesse processo."
+    },
+    {
+        "pergunta": "Quais ferramentas você costuma usar no seu dia a dia como dev?",
+        "resposta": "No meu dia a dia, costumo trabalhar com ferramentas como React, Next.js, TypeScript e Git. Elas fazem parte da minha rotina e me ajudam a construir aplicações modernas, escaláveis e bem estruturadas."
+    },
+    {
+        "pergunta": "Você tem alguma especialização ou certificação?",
+        "resposta": "Ainda estou concluindo o ensino médio, mas tenho planos sólidos para seguir me especializando. Pretendo cursar uma faculdade na área de tecnologia e continuar buscando novos conhecimentos ao longo da minha carreira."
+    },
+    {
+        "pergunta": "Quais são seus hobbies fora da programação?",
+        "resposta": "Fora da programação, sou praticante de Jiu-Jitsu há mais de 12 anos — um esporte que me ensinou disciplina, foco e respeito. Também tenho um forte interesse por empreendedorismo e adoro me conectar com pessoas e ideias novas."
+    }
+]

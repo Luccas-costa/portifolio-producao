@@ -1,0 +1,25 @@
+.shimmerText {
+    position: relative;
+    display: inline-block;
+    color: #a1a1aa;
+    background: linear-gradient(90deg,
+            #a1a1aa 0%,
+            #3d3d3d 50%,
+            #a1a1aa 100%);
+    background-size: 200% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: shimmerTextAnim 4s infinite linear;
+}
+
+@keyframes shimmerTextAnim {
+    0% {
+        background-position: -100% 0;
+    }
+
+    100% {
+        background-position: 100% 0;
+    }
+}

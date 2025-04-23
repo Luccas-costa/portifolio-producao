@@ -5,7 +5,7 @@ import { ShootingStars } from 'ui/shooting-stars'
 import { StarsBackground } from 'ui/stars-background'
 
 import styles from '@/styles/professional.module.css'
-import Carousel from '@/app/(public)/private/carossel'
+import Carousel from '@/components/pages/professional/carossel'
 import Iphone from './iphone'
 
 export default function IndexMobile() {

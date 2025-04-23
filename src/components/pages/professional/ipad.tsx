@@ -1,3 +1,5 @@
+'use client'
+
 import {
   Microphone,
   BatteryCharging,
@@ -15,11 +17,32 @@ import {
 } from '@phosphor-icons/react/dist/ssr'
 import React, { useEffect, useState } from 'react'
 
+import styles from '@/styles/gpt-text-effect.module.css'
+
 export default function Ipad() {
-  const [inputValue, setInputValue] = useState<string>('')
   const [dateTime, setDateTime] = useState('')
   const [isChat, setIsChat] = useState<boolean>(true)
-  const [mensage, setMensage] = useState<string>('')
+  const [pergunta, setPergunta] = useState('')
+  const [resposta, setResposta] = useState('')
+  const [loading, setLoading] = useState(false)
+  const [perguntaEmTela, setPerguntaEmTela] = useState('')
+
+  const handleSubmit = async () => {
+    setLoading(true)
+    setPerguntaEmTela(pergunta)
+    setPergunta('')
+    setIsChat(false)
+
+    const res = await fetch('/api/pergunta', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ pergunta }),
+    })
+
+    const data = await res.json()
+    setResposta(data.resposta)
+    setLoading(false)
+  }
 
   useEffect(() => {
     const updateDateTime = () => {
@@ -45,22 +68,6 @@ export default function Ipad() {
 
     return () => clearInterval(interval)
   }, [])
-
-  const resposta = `Aqui estão algumas ideias para introduzir o tema combate à arquitetura hostil com repertório relevante:\n\n
-  1. Contextualização do Problema\n
-  A arquitetura hostil é um conjunto de práticas de design urbano que busca afastar determinados grupos sociais de espaços públicos, como moradores de rua, skatistas e até mesmo jovens e idosos. Ela se manifesta em bancos com divisórias para impedir que alguém se deite, espinhos em calçadas, jatos d'água programados para expulsar pessoas e outras intervenções que limitam o uso do espaço urbano.\n\n
-  2. Repertório Filosófico e Sociológico\n
-  Michel Foucault: O conceito de biopolítica pode ser relacionado à arquitetura hostil, pois ela reflete o controle do Estado sobre os corpos no espaço público, determinando quem pode ou não ocupar certos lugares.\n
-  David Harvey: O direito à cidade é um princípio fundamental que se opõe à arquitetura hostil. Harvey defende que todos têm o direito de usufruir dos espaços urbanos e participar da sua construção.\n\n
-  3. Exemplos e Casos Reais\n
-  Londres e Nova York: Essas cidades são conhecidas por práticas hostis, como bancos inclinados e barras de metal para evitar que moradores de rua se acomodem.\n
-  São Paulo (2015): O caso da instalação de pedras pontiagudas embaixo de viadutos gerou revolta e levou à remoção dessas estruturas, mostrando a resistência da sociedade.\n
-  Movimento "Design for All": Iniciativas que defendem a acessibilidade e o uso democrático do espaço urbano, promovendo alternativas à arquitetura hostil.\n\n
-  4. Repertório Artístico e Cultural\n
-  Filme "Parasita" (2019): A desigualdade social é evidenciada no contraste entre os espaços da elite e os locais marginalizados. A arquitetura hostil pode ser vista como um reflexo dessa divisão.\n
-  Obra "A Cidade e as Serras" (Eça de Queirós): Critica a modernização excludente, que pode ser associada à segregação imposta pela arquitetura hostil.\n\n
-  5. Tese para a Introdução\n
-  Diante da crescente adoção de medidas que restringem o uso dos espaços públicos, surge um debate essencial sobre a função social da arquitetura e a necessidade de promover cidades mais inclusivas. O combate à arquitetura hostil é, portanto, um passo fundamental para garantir o direito à cidade e o respeito à dignidade humana.`
 
   return (
     <div className="translate-y-[370px] screen1070:translate-y-[170px]">
@@ -182,18 +189,14 @@ export default function Ipad() {
                             type="text"
                             className="h-[40px] w-full bg-transparent text-xs font-light text-zinc-400 outline-none placeholder:text-neutral-400/70"
                             placeholder="Ask anything"
-                            value={inputValue}
-                            onChange={(e) => setInputValue(e.target.value)}
+                            value={pergunta}
+                            onChange={(e) => setPergunta(e.target.value)}
                           />
                           <div className="flex items-center justify-between">
                             <div></div>
                             <button
-                              disabled={!inputValue.trim()}
-                              onClick={() => {
-                                setMensage(inputValue)
-                                setInputValue('')
-                                setIsChat(false)
-                              }}
+                              disabled={!pergunta.trim()}
+                              onClick={handleSubmit}
                               className="w-fit rounded-full bg-zinc-500 p-1 disabled:bg-neutral-600"
                             >
                               <ArrowUp size={14} weight="bold" color="black" />
@@ -218,11 +221,19 @@ export default function Ipad() {
                     <>
                       <div className="mx-auto flex w-[500px] flex-1 flex-col gap-5 pt-2">
                         <div className="max-w-[300px] self-end break-words rounded-2xl bg-[#2E2E2E]/40 px-4 py-2 text-xs font-light text-zinc-300">
-                          {mensage}
+                          {perguntaEmTela}
                         </div>
-                        <div className="max-h-[300px] max-w-[400px] whitespace-pre-wrap text-xs font-light text-zinc-300">
-                          {resposta}
-                        </div>
+                        {loading ? (
+                          <div className="max-h-[300px] max-w-[400px] whitespace-pre-wrap text-sm font-normal text-zinc-300">
+                            <span className={`${styles.shimmerText}`}>
+                              Buscando respostas...
+                            </span>
+                          </div>
+                        ) : (
+                          <div className="max-h-[300px] max-w-[400px] whitespace-pre-wrap text-xs font-light text-zinc-300">
+                            {resposta}
+                          </div>
+                        )}
                       </div>
                     </>
                   )}
@@ -238,11 +249,12 @@ export default function Ipad() {
                             type="text"
                             className="mr-[2%] h-[30px] w-[98%] bg-transparent text-xxs font-light text-zinc-300 outline-none placeholder:text-neutral-400/70"
                             placeholder="Ask anything"
-                            value={inputValue}
-                            onChange={(e) => setInputValue(e.target.value)}
+                            value={pergunta}
+                            onChange={(e) => setPergunta(e.target.value)}
                           />
                           <button
-                            disabled={!inputValue.trim()}
+                            disabled={!pergunta.trim()}
+                            onClick={handleSubmit}
                             className="h-fit w-fit rounded-full bg-zinc-300 p-1 transition-all duration-200 disabled:bg-neutral-600"
                           >
                             <ArrowUp size={14} weight="bold" color="black" />
