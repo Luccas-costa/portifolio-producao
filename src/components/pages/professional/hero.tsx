@@ -1,10 +1,11 @@
+/* eslint-disable prettier/prettier */
 import React from 'react'
 import MouseAnimated from '@/assets/mouse-animated'
 
 export default function Hero() {
   return (
     <>
-      <div className="screen95:h-[68vh] screen105:h-[72vh] relative h-[84vh] screen11:h-[78vh] screen11_5:h-[81vh]">
+      <div className="relative h-[84vh] screen95:h-[68vh] screen105:h-[72vh] screen11:h-[78vh] screen11_5:h-[81vh]">
         <div className="mx-auto mt-[90px] w-[160px] rounded-full border-2 border-white/10 bg-[radial-gradient(ellipse_at_center,_rgba(255,255,255,0.1),_rgba(255,255,255,0.3))] py-[6px] text-center text-base shadow-sm shadow-white/20">
           Web Developer
         </div>

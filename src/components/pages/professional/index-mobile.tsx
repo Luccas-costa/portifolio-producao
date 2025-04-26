@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React from 'react'
 
 import Hero from '@/components/pages/professional/hero'
@@ -33,7 +34,7 @@ export default function IndexMobile() {
         <div className="relative">
           <div
             style={{ zIndex: 2 }}
-            className="screen95:translate-y-[100px] screen105:translate-y-[60px] relative translate-y-[-50px] screen9:translate-y-[140px] screen11:translate-y-[0px] screen11_5:translate-y-[-20px]"
+            className="relative translate-y-[-50px] screen9:translate-y-[140px] screen95:translate-y-[100px] screen105:translate-y-[60px] screen11:translate-y-[0px] screen11_5:translate-y-[-20px]"
           >
             <CarosselMobile />
           </div>
