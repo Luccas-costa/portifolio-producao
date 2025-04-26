@@ -7,7 +7,7 @@ import clsx from 'clsx'
 import TekoBag from '../../../../public/projects/teko-bag.jpg'
 import Image from 'next/image'
 
-export default function Carousel() {
+export default function Carossel() {
   const cards = [
     'herobrine',
     'herobrine',

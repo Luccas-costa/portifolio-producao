@@ -5,8 +5,8 @@ import { ShootingStars } from 'ui/shooting-stars'
 import { StarsBackground } from 'ui/stars-background'
 
 import styles from '@/styles/professional.module.css'
-import Carousel from '@/components/pages/professional/carossel'
 import Iphone from './iphone'
+import CarosselMobile from './carossel-mobile'
 
 export default function IndexMobile() {
   return (
@@ -31,15 +31,20 @@ export default function IndexMobile() {
         <Hero />
 
         <div className="relative">
-          <div style={{ zIndex: 2 }} className="relative">
-            <Carousel />
+          <div
+            style={{ zIndex: 2 }}
+            className="screen95:translate-y-[100px] screen105:translate-y-[60px] relative translate-y-[-50px] screen9:translate-y-[140px] screen11:translate-y-[0px] screen11_5:translate-y-[-20px]"
+          >
+            <CarosselMobile />
           </div>
 
           <div
             style={{ zIndex: 1 }}
-            className="relative translate-y-[-160px] bg-[#121212] pb-[600px]"
+            className="relative translate-y-[-265px] bg-[#121212] pb-[600px] screen9:translate-y-[-270px]"
           >
-            <Iphone />
+            <div className="translate-y-[250px]">
+              <Iphone />
+            </div>
           </div>
         </div>
       </div>

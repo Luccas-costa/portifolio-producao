@@ -18,6 +18,13 @@ export async function POST(req: Request) {
     perguntasArray,
   ).bestMatch
 
+  // Verifica se a similaridade é menor que 50%
+  if (bestMatch.rating < 0.2) {
+    return NextResponse.json({
+      resposta: 'Nenhuma resposta encontrada com base na sua pergunta.',
+    })
+  }
+
   const resposta =
     perguntas.find((p) => p.pergunta === bestMatch.target)?.resposta ||
     'Não encontrei uma resposta adequada.'

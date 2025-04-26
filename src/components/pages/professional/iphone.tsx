@@ -136,13 +136,13 @@ export default function Iphone() {
                         {perguntaEmTela}
                       </div>
                       {loading ? (
-                        <div className="max-h-[300px] max-w-[240px] whitespace-pre-wrap text-xxs font-light text-zinc-300">
+                        <div className="max-h-[300px] max-w-[240px] whitespace-pre-wrap text-xs font-light text-zinc-300">
                           <span className={`${styles.shimmerText}`}>
                             Buscando respostas...
                           </span>
                         </div>
                       ) : (
-                        <div className="max-h-[300px] max-w-[240px] whitespace-pre-wrap text-xxs font-light text-zinc-300">
+                        <div className="max-h-[300px] max-w-[240px] whitespace-pre-wrap text-xs font-light text-zinc-300">
                           {resposta}
                         </div>
                       )}

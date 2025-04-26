@@ -5,9 +5,11 @@ import { ShootingStars } from 'ui/shooting-stars'
 import { StarsBackground } from 'ui/stars-background'
 
 import styles from '@/styles/professional.module.css'
-import Carousel from '@/components/pages/professional/carossel'
+import Carossel from '@/components/pages/professional/carossel'
+
 import Imac from './imac'
 import Ipad from './ipad'
+import CarosselMobile from './carossel-mobile'
 
 export default function IndexDesktop() {
   return (
@@ -34,19 +36,25 @@ export default function IndexDesktop() {
         <div className="relative">
           <div
             style={{ zIndex: 2 }}
-            className="relative overflow-visible screen1000:left-1/2 screen1000:translate-x-[-48.5%] screen1070:left-0 screen1070:translate-x-[0%]"
+            className="relative hidden overflow-visible screen1000:left-1/2 screen1000:translate-x-[-48.5%] screen1070:left-0 screen1070:block screen1070:translate-x-[0%]"
           >
-            <Carousel />
+            <Carossel />
+          </div>
+          <div
+            style={{ zIndex: 2 }}
+            className="relative flex h-full translate-y-[150px] screen1070:hidden"
+          >
+            <CarosselMobile />
           </div>
 
           <div
             style={{ zIndex: 1 }}
-            className="relative h-full translate-y-[-403px] bg-[#121212] pb-[400px] screen1070:translate-y-[-203px] screen1200:pb-0"
+            className="relative h-full translate-y-[-270px] bg-[#121212] pb-[400px] screen1070:translate-y-[-203px] screen1200:pb-0"
           >
             <div className="hidden pb-[400px] screen1200:block">
               <Imac />
             </div>
-            <div className="block pb-[400px] screen1200:hidden">
+            <div className="block translate-y-[200px] pb-[400px] screen1200:hidden">
               <Ipad />
             </div>
           </div>
