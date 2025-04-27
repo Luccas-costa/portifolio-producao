@@ -15,32 +15,47 @@ import {
   ArrowUp,
   OpenAiLogo,
 } from '@phosphor-icons/react/dist/ssr'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 
 import styles from '@/styles/gpt-text-effect.module.css'
 
 export default function Ipad() {
+  const inputRef = useRef<HTMLInputElement | null>(null)
+
+  useEffect(() => {
+    // Dá foco ao input assim que o componente é renderizado
+    inputRef.current?.focus()
+  }, [])
+
   const [dateTime, setDateTime] = useState('')
   const [isChat, setIsChat] = useState<boolean>(true)
   const [pergunta, setPergunta] = useState('')
-  const [resposta, setResposta] = useState('')
+  const [, setResposta] = useState('')
   const [loading, setLoading] = useState(false)
   const [perguntaEmTela, setPerguntaEmTela] = useState('')
+  const [mensagens, setMensagens] = useState<
+    { pergunta: string; resposta: string }[]
+  >([]) // NOVO
 
   const handleSubmit = async () => {
     setLoading(true)
-    setPerguntaEmTela(pergunta)
+    const perguntaAtual = pergunta
+    setPerguntaEmTela(perguntaAtual)
     setPergunta('')
     setIsChat(false)
 
     const res = await fetch('/api/pergunta', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ pergunta }),
+      body: JSON.stringify({ pergunta: perguntaAtual }),
     })
 
     const data = await res.json()
     setResposta(data.resposta)
+    setMensagens((prev) => [
+      ...prev,
+      { pergunta: perguntaAtual, resposta: data.resposta },
+    ]) // NOVO
     setLoading(false)
   }
 
@@ -48,7 +63,6 @@ export default function Ipad() {
     const updateDateTime = () => {
       const now = new Date()
 
-      // Obtém partes separadas da data/hora
       const time = now.toLocaleTimeString('en-US', {
         hour: 'numeric',
         minute: '2-digit',
@@ -59,7 +73,6 @@ export default function Ipad() {
       const day = now.getDate()
       const month = now.toLocaleDateString('en-US', { month: 'short' })
 
-      // Monta a string final: 7:15 AM Sun 20 Oct
       setDateTime(`${time} ${weekday} ${day} ${month}`)
     }
 
@@ -166,10 +179,10 @@ export default function Ipad() {
               </div>
             </div>
 
-            <div className="flex-1 rounded-b-xl border-x border-b border-[#2E2E2E] bg-[#121212]">
+            <div className="flex-1 overflow-y-auto rounded-b-xl border-x border-b border-[#2E2E2E] bg-[#121212]">
               <div className="flex h-full w-full flex-col">
                 <div
-                  className={`flex-1 ${isChat ? 'overflow-hidden' : 'overflow-auto'}`}
+                  className={`flex-1 ${isChat ? 'overflow-hidden' : 'overflow-y-auto'}`}
                 >
                   <div className="sticky top-0 flex items-center justify-between bg-[#121212] px-4 pt-4">
                     <div className="flex items-center gap-1 text-lg font-normal text-zinc-500">
@@ -185,23 +198,36 @@ export default function Ipad() {
                           Ask about luccas
                         </div>
                         <div className="mt-2 flex h-[70px] w-[400px] flex-col rounded-2xl bg-[#2E2E2E]/40 px-3">
-                          <input
-                            type="text"
-                            className="h-[40px] w-full bg-transparent text-xs font-light text-zinc-400 outline-none placeholder:text-neutral-400/70"
-                            placeholder="Ask anything"
-                            value={pergunta}
-                            onChange={(e) => setPergunta(e.target.value)}
-                          />
-                          <div className="flex items-center justify-between">
-                            <div></div>
-                            <button
-                              disabled={!pergunta.trim()}
-                              onClick={handleSubmit}
-                              className="w-fit rounded-full bg-zinc-500 p-1 disabled:bg-neutral-600"
-                            >
-                              <ArrowUp size={14} weight="bold" color="black" />
-                            </button>
-                          </div>
+                          <form
+                            onSubmit={(e) => {
+                              e.preventDefault() // previne o comportamento padrão de recarregar a página
+                              if (pergunta.trim()) handleSubmit()
+                            }}
+                            className="flex w-full flex-col"
+                          >
+                            <input
+                              ref={inputRef}
+                              type="text"
+                              className="h-[40px] w-full bg-transparent text-xs font-light text-zinc-400 outline-none placeholder:text-neutral-400/70"
+                              placeholder="Ask anything"
+                              value={pergunta}
+                              onChange={(e) => setPergunta(e.target.value)}
+                            />
+                            <div className="flex items-center justify-between">
+                              <div></div>
+                              <button
+                                type="submit"
+                                disabled={!pergunta.trim()}
+                                className="w-fit rounded-full bg-zinc-500 p-1 disabled:bg-neutral-600"
+                              >
+                                <ArrowUp
+                                  size={14}
+                                  weight="bold"
+                                  color="black"
+                                />
+                              </button>
+                            </div>
+                          </form>
                         </div>
 
                         <div className="flex items-center gap-1 pt-1 text-center text-xs font-light text-zinc-400/60">
@@ -219,20 +245,28 @@ export default function Ipad() {
                     </>
                   ) : (
                     <>
-                      <div className="mx-auto flex w-[500px] flex-1 flex-col gap-5 pt-2">
-                        <div className="max-w-[300px] self-end break-words rounded-2xl bg-[#2E2E2E]/40 px-4 py-2 text-xs font-light text-zinc-300">
-                          {perguntaEmTela}
-                        </div>
-                        {loading ? (
-                          <div className="max-h-[300px] max-w-[400px] whitespace-pre-wrap text-sm font-normal text-zinc-300">
-                            <span className={`${styles.shimmerText}`}>
-                              Buscando respostas...
-                            </span>
-                          </div>
-                        ) : (
-                          <div className="max-h-[300px] max-w-[400px] whitespace-pre-wrap text-xs font-light text-zinc-300">
-                            {resposta}
-                          </div>
+                      <div className="mx-auto flex w-[500px] flex-1 flex-col gap-5 pt-4">
+                        {mensagens.map((m, index) => (
+                          <React.Fragment key={index}>
+                            <div className="max-w-[300px] self-end break-words rounded-2xl bg-[#2E2E2E]/40 px-4 py-2 text-xs font-light text-zinc-300">
+                              {m.pergunta}
+                            </div>
+                            <div className="max-h-[300px] max-w-[400px] whitespace-pre-wrap rounded-2xl bg-[#2E2E2E]/40 px-4 py-2 text-xs font-light text-zinc-300">
+                              {m.resposta}
+                            </div>
+                          </React.Fragment>
+                        ))}
+                        {loading && (
+                          <>
+                            <div className="max-w-[300px] self-end break-words rounded-2xl bg-[#2E2E2E]/40 px-4 py-2 text-xs font-light text-zinc-300">
+                              {perguntaEmTela}
+                            </div>
+                            <div className="max-h-[300px] max-w-[400px] whitespace-pre-wrap text-sm font-normal text-zinc-300">
+                              <span className={`${styles.shimmerText}`}>
+                                Buscando respostas...
+                              </span>
+                            </div>
+                          </>
                         )}
                       </div>
                     </>
@@ -244,8 +278,15 @@ export default function Ipad() {
                       <div
                         className={`mb-2 mt-2 flex h-[30px] w-[510px] flex-col rounded-2xl bg-[#2E2E2E]/40 px-3`}
                       >
-                        <div className="flex items-center">
+                        <form
+                          onSubmit={(e) => {
+                            e.preventDefault() // previne o comportamento padrão de recarregar a página
+                            if (pergunta.trim()) handleSubmit()
+                          }}
+                          className="flex items-center"
+                        >
                           <input
+                            ref={inputRef}
                             type="text"
                             className="mr-[2%] h-[30px] w-[98%] bg-transparent text-xxs font-light text-zinc-300 outline-none placeholder:text-neutral-400/70"
                             placeholder="Ask anything"
@@ -253,13 +294,13 @@ export default function Ipad() {
                             onChange={(e) => setPergunta(e.target.value)}
                           />
                           <button
+                            type="submit"
                             disabled={!pergunta.trim()}
-                            onClick={handleSubmit}
                             className="h-fit w-fit rounded-full bg-zinc-300 p-1 transition-all duration-200 disabled:bg-neutral-600"
                           >
                             <ArrowUp size={14} weight="bold" color="black" />
                           </button>
-                        </div>
+                        </form>
                       </div>
                     </div>
                   </>

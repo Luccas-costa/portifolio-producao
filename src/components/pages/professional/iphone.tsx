@@ -13,21 +13,32 @@ import {
   WifiHigh,
 } from '@phosphor-icons/react/dist/ssr'
 import { GalleryHorizontalEnd } from 'lucide-react'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 
 import styles from '@/styles/gpt-text-effect.module.css'
 
 export default function Iphone() {
+  const inputRef = useRef<HTMLInputElement | null>(null)
+
+  useEffect(() => {
+    // Dá foco ao input assim que o componente é renderizado
+    inputRef.current?.focus()
+  }, [])
+
   const [time, setTime] = useState('')
   const [isChat, setIsChat] = useState<boolean>(true)
   const [pergunta, setPergunta] = useState('')
-  const [resposta, setResposta] = useState('')
+  const [, setResposta] = useState('')
   const [loading, setLoading] = useState(false)
   const [perguntaEmTela, setPerguntaEmTela] = useState('')
+  const [mensagens, setMensagens] = useState<
+    { pergunta: string; resposta: string }[]
+  >([])
 
   const handleSubmit = async () => {
     setLoading(true)
-    setPerguntaEmTela(pergunta)
+    const perguntaAtual = pergunta
+    setPerguntaEmTela(perguntaAtual)
     setPergunta('')
     setIsChat(false)
 
@@ -39,6 +50,10 @@ export default function Iphone() {
 
     const data = await res.json()
     setResposta(data.resposta)
+    setMensagens((prev) => [
+      ...prev,
+      { pergunta: perguntaAtual, resposta: data.resposta },
+    ])
     setLoading(false)
   }
 
@@ -98,27 +113,36 @@ export default function Iphone() {
                       Ask about luccas
                     </div>
                     <div className="mt-2 flex h-[70px] w-[300px] flex-col rounded-2xl bg-[#2E2E2E]/40 px-3">
-                      <input
-                        type="text"
-                        className="h-[40px] w-full bg-transparent text-xs font-light text-zinc-400 outline-none placeholder:text-neutral-400/70"
-                        placeholder="Ask anything"
-                        value={pergunta}
-                        onChange={(e) => setPergunta(e.target.value)}
-                      />
-                      <div className="flex items-center justify-between">
-                        <div></div>
-                        <button
-                          disabled={!pergunta.trim()}
-                          onClick={handleSubmit}
-                          className="w-fit rounded-full bg-zinc-500 p-1 disabled:bg-neutral-600"
-                        >
-                          <ArrowUp size={14} weight="bold" color="black" />
-                        </button>
-                      </div>
+                      <form
+                        onSubmit={(e) => {
+                          e.preventDefault() // previne o comportamento padrão de recarregar a página
+                          if (pergunta.trim()) handleSubmit()
+                        }}
+                        className="flex w-full flex-col"
+                      >
+                        <input
+                          ref={inputRef}
+                          type="text"
+                          className="h-[40px] w-full bg-transparent text-xs font-light text-zinc-400 outline-none placeholder:text-neutral-400/70"
+                          placeholder="Ask anything"
+                          value={pergunta}
+                          onChange={(e) => setPergunta(e.target.value)}
+                        />
+                        <div className="flex items-center justify-between">
+                          <div></div>
+                          <button
+                            type="submit"
+                            disabled={!pergunta.trim()}
+                            className="w-fit rounded-full bg-zinc-500 p-1 disabled:bg-neutral-600"
+                          >
+                            <ArrowUp size={14} weight="bold" color="black" />
+                          </button>
+                        </div>
+                      </form>
                     </div>
 
                     <div className="flex items-center gap-1 pt-1 text-center text-xs font-light text-zinc-400/60">
-                      <div>Powerded by</div>
+                      <div>Powered by</div>
                       <div className="flex items-center gap-[2px]">
                         <OpenAiLogo
                           size={12}
@@ -132,19 +156,27 @@ export default function Iphone() {
                 ) : (
                   <>
                     <div className="mx-auto flex w-[500px] flex-1 flex-col gap-5 pl-4 pr-[190px] pt-10">
-                      <div className="max-w-[300px] self-end break-words rounded-2xl bg-[#2E2E2E]/40 px-4 py-2 text-xs font-light text-zinc-300">
-                        {perguntaEmTela}
-                      </div>
-                      {loading ? (
-                        <div className="max-h-[300px] max-w-[240px] whitespace-pre-wrap text-xs font-light text-zinc-300">
-                          <span className={`${styles.shimmerText}`}>
-                            Buscando respostas...
-                          </span>
-                        </div>
-                      ) : (
-                        <div className="max-h-[300px] max-w-[240px] whitespace-pre-wrap text-xs font-light text-zinc-300">
-                          {resposta}
-                        </div>
+                      {mensagens.map((m, index) => (
+                        <React.Fragment key={index}>
+                          <div className="max-w-[300px] self-end break-words rounded-2xl bg-[#2E2E2E]/40 px-4 py-2 text-xs font-light text-zinc-300">
+                            {m.pergunta}
+                          </div>
+                          <div className="max-h-[300px] max-w-[400px] whitespace-pre-wrap rounded-2xl bg-[#2E2E2E]/40 px-4 py-2 text-xs font-light text-zinc-300">
+                            {m.resposta}
+                          </div>
+                        </React.Fragment>
+                      ))}
+                      {loading && (
+                        <>
+                          <div className="max-w-[300px] self-end break-words rounded-2xl bg-[#2E2E2E]/40 px-4 py-2 text-xs font-light text-zinc-300">
+                            {perguntaEmTela}
+                          </div>
+                          <div className="max-h-[300px] max-w-[400px] whitespace-pre-wrap text-sm font-normal text-zinc-300">
+                            <span className={`${styles.shimmerText}`}>
+                              Buscando respostas...
+                            </span>
+                          </div>
+                        </>
                       )}
                     </div>
                   </>
@@ -157,8 +189,15 @@ export default function Iphone() {
                   <div
                     className={`mb-2 mt-2 flex h-[30px] w-[300px] flex-col rounded-2xl bg-[#2E2E2E]/40 px-3`}
                   >
-                    <div className="flex items-center">
+                    <form
+                      onSubmit={(e) => {
+                        e.preventDefault() // previne o comportamento padrão de recarregar a página
+                        if (pergunta.trim()) handleSubmit()
+                      }}
+                      className="flex items-center"
+                    >
                       <input
+                        ref={inputRef}
                         type="text"
                         className="mr-[2%] h-[30px] w-[98%] bg-transparent text-xxs font-light text-zinc-300 outline-none placeholder:text-neutral-400/70"
                         placeholder="Ask anything"
@@ -166,13 +205,13 @@ export default function Iphone() {
                         onChange={(e) => setPergunta(e.target.value)}
                       />
                       <button
+                        type="submit"
                         disabled={!pergunta.trim()}
-                        onClick={handleSubmit}
                         className="h-fit w-fit rounded-full bg-zinc-300 p-1 transition-all duration-200 disabled:bg-neutral-600"
                       >
                         <ArrowUp size={14} weight="bold" color="black" />
                       </button>
-                    </div>
+                    </form>
                   </div>
                 </div>
               </>

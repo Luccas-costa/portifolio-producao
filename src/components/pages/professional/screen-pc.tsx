@@ -147,7 +147,7 @@ export default function ScreenPc() {
                       </span>
                     </div>
                   ) : (
-                    <div className="max-h-[300px] max-w-[400px] whitespace-pre-wrap text-xs font-light text-zinc-300">
+                    <div className="max-h-[300px] max-w-[400px] whitespace-pre-wrap rounded-2xl bg-[#2E2E2E]/40 px-4 py-2 text-xs font-light text-zinc-300">
                       {resposta}
                     </div>
                   )}
