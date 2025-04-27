@@ -1,19 +1,18 @@
 /* eslint-disable prettier/prettier */
 'use client'
-import React, { useEffect, useState } from 'react'
-import MouseAnimated from '@/assets/mouse-animated'
+import React from 'react'
+// Importando o MouseAnimated de forma dinâmica, apenas no cliente
+import dynamic from 'next/dynamic'
+
+const MouseAnimated = dynamic(() => import('@/assets/mouse-animated'), {
+  ssr: false,  // Desabilita a renderização no lado do servidor
+})
 
 interface HeroProps {
   isMobile: boolean
 }
 
 export default function Hero({ isMobile }: HeroProps) {
-  const [isClient, setIsClient] = useState(false)
-
-  useEffect(() => {
-    setIsClient(true) // Esse código só vai rodar no lado do cliente
-  }, [])
-
   return (
     <>
       {isMobile ? (
@@ -36,7 +35,7 @@ export default function Hero({ isMobile }: HeroProps) {
             </div>
 
             <div className="absolute short800and865:bottom-[0px] short800and865min:bottom-[0px] bottom-[20px] left-1/2 -translate-x-1/2">
-              {isClient && <MouseAnimated />} {/* Renderiza somente no cliente */}
+              <MouseAnimated /> {/* Agora é renderizado no cliente */}
             </div>
           </div>
         </>
@@ -60,7 +59,7 @@ export default function Hero({ isMobile }: HeroProps) {
             </div>
 
             <div className="absolute short800and865:bottom-[0px] short800and865min:bottom-[0px] bottom-[150px] left-1/2 -translate-x-1/2 screen450:bottom-[100px]">
-              {isClient && <MouseAnimated />} {/* Renderiza somente no cliente */}
+              <MouseAnimated /> {/* Agora é renderizado no cliente */}
             </div>
           </div>
         </>
