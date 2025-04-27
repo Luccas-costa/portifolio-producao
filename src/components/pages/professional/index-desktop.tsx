@@ -15,7 +15,7 @@ import CarosselMobile from './carossel-mobile'
 export default function IndexDesktop() {
   return (
     <div
-      className={`relative min-h-screen w-screen bg-black pt-[65px] text-white`}
+      className={`relative min-h-screen w-screen bg-black short800and865:pt-[0px] pt-[65px] text-white`}
     >
       {/* Background */}
       <div
@@ -50,7 +50,7 @@ export default function IndexDesktop() {
 
           <div
             style={{ zIndex: 1 }}
-            className="short900and1070:translate-y-[-345px] short1024and1070:translate-y-[-315px] short900and1400min:translate-y-[-281px] short1024and1400min:translate-y-[-251px] short900and1300min:translate-y-[-260px] short1024and1300min:translate-y-[-230px]  short900and1070min:translate-y-[-230px] short1024and1070min:translate-y-[-200px] relative h-full translate-y-[-270px] bg-[#121212] pb-[400px] screen1070:translate-y-[-170px] screen1200:pb-0 screen1300:translate-y-[-210px]"
+            className="short800and1070:translate-y-[-375px] short900and1070:translate-y-[-345px] short1024and1070:translate-y-[-315px] short800and1400min:translate-y-[-311px] short900and1400min:translate-y-[-281px] short1024and1400min:translate-y-[-251px] short800and1300min:translate-y-[-290px] short900and1300min:translate-y-[-260px] short1024and1300min:translate-y-[-230px] short800and1070min:translate-y-[-262px]  short900and1070min:translate-y-[-230px] short1024and1070min:translate-y-[-200px] relative h-full translate-y-[-270px] bg-[#121212] pb-[400px] screen1070:translate-y-[-170px] screen1200:pb-0 screen1300:translate-y-[-210px]"
           >
             <div className="hidden translate-y-[150px] pb-[400px] screen1200:block">
               <Imac />

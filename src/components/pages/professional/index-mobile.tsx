@@ -12,7 +12,7 @@ import CarosselMobile from './carossel-mobile'
 export default function IndexMobile() {
   return (
     <div
-      className={`relative min-h-screen w-screen bg-black short900and700:pt-[0px] pt-[65px] text-white`}
+      className={`relative min-h-screen w-screen bg-black short800and768:pt-[0px] short900and700:pt-[0px] pt-[65px] text-white`}
     >
       {/* Background */}
       <div
@@ -41,7 +41,7 @@ export default function IndexMobile() {
 
           <div
             style={{ zIndex: 1 }}
-            className="short900and700min:translate-y-[-345px] short1024and700min:translate-y-[-315px] short900and700:translate-y-[-330px] short1024and700:translate-y-[-300px]  short900and650:translate-y-[-298px] short1024and650:translate-y-[-268px] short900and600:translate-y-[-269px] short1024and600:translate-y-[-235px] short900and550:translate-y-[-238px] short1024and550:translate-y-[-208px] short900and500:translate-y-[-208px] short1024and500:translate-y-[-175px] short900and450:translate-y-[-178px] short1024and450:translate-y-[-148px] screen670:translate-y-[-270px] screen600:translate-y-[-235px] screen550:translate-y-[-195px] screen500:translate-y-[-163px] relative translate-y-[-80px] bg-[#121212] pb-[700px] screen400:translate-y-[-103px] screen450:translate-y-[-133px]"
+            className="short800and700min:translate-y-[-375px] short900and700min:translate-y-[-345px] short1024and700min:translate-y-[-315px] short800and700:translate-y-[-360px] short900and700:translate-y-[-330px] short1024and700:translate-y-[-300px] short800and650:translate-y-[-330px]  short900and650:translate-y-[-298px] short1024and650:translate-y-[-268px] short800and600:translate-y-[-299px] short900and600:translate-y-[-269px] short1024and600:translate-y-[-235px]  short800and550:translate-y-[-270px] short900and550:translate-y-[-238px] short1024and550:translate-y-[-208px] short800and500:translate-y-[-240px]  short900and500:translate-y-[-208px] short1024and500:translate-y-[-175px] short800and450:translate-y-[-210px] short900and450:translate-y-[-178px] short1024and450:translate-y-[-148px] screen670:translate-y-[-270px] screen600:translate-y-[-235px] screen550:translate-y-[-195px] screen500:translate-y-[-163px] relative translate-y-[-80px] bg-[#121212] pb-[700px] screen400:translate-y-[-103px] screen450:translate-y-[-133px]"
           >
             <div className="translate-y-[130px] screen450:translate-y-[300px]">
               <Iphone />
