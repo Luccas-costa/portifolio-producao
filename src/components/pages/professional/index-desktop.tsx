@@ -31,30 +31,30 @@ export default function IndexDesktop() {
 
       {/* Conteudo */}
       <div style={{ zIndex: 2 }} className="absolute w-full">
-        <Hero />
+        <Hero isMobile={false} />
 
         <div className="relative">
           <div
             style={{ zIndex: 2 }}
-            className="relative hidden overflow-visible screen1000:left-1/2 screen1000:translate-x-[-48.5%] screen1070:left-0 screen1070:block screen1070:translate-x-[0%]"
+            className="relative hidden translate-y-[40px] overflow-visible screen1000:left-1/2 screen1000:translate-x-[-48.5%] screen1070:block screen1070:translate-x-[-50%] screen1550:translate-x-[-48.5%]"
           >
             <Carossel />
           </div>
           <div
             style={{ zIndex: 2 }}
-            className="relative flex h-full translate-y-[150px] screen1070:hidden"
+            className="relative flex h-full translate-y-[100px] screen1070:hidden"
           >
             <CarosselMobile />
           </div>
 
           <div
             style={{ zIndex: 1 }}
-            className="relative h-full translate-y-[-270px] bg-[#121212] pb-[400px] screen1070:translate-y-[-203px] screen1200:pb-0"
+            className="short1024and1070:translate-y-[-315px] short1024and1400min:translate-y-[-251px] short1024and1300min:translate-y-[-230px] short1024and1070min:translate-y-[-200px] relative h-full translate-y-[-270px] bg-[#121212] pb-[400px] screen1070:translate-y-[-170px] screen1200:pb-0 screen1300:translate-y-[-210px]"
           >
-            <div className="hidden pb-[400px] screen1200:block">
+            <div className="hidden translate-y-[150px] pb-[400px] screen1200:block">
               <Imac />
             </div>
-            <div className="block translate-y-[200px] pb-[400px] screen1200:hidden">
+            <div className="block translate-y-[120px] pb-[400px] screen1200:hidden">
               <Ipad />
             </div>
           </div>

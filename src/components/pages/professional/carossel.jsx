@@ -33,7 +33,7 @@ export default function Carossel() {
         <Swiper
           slidesPerView={3}
           centeredSlides={true}
-          spaceBetween={30}
+          spaceBetween={20}
           grabCursor={true}
           loop={true}
           onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}

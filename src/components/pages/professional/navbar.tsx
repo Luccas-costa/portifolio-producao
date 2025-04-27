@@ -7,13 +7,13 @@ import styles from '@/styles/menu-burger.module.css'
 export default function Navbar() {
   return (
     <div
-      className="fixed top-0 flex h-[65px] w-full items-center justify-between bg-black/5 px-[20px] text-zinc-200/60 screen1:px-[270px] screen9:px-[100px]"
+      className="screen1500:px-[270px] fixed top-0 flex h-[65px] w-full items-center justify-between bg-black/5 px-[20px] text-zinc-200/60 screen700:px-[100px]"
       style={{ zIndex: 90 }}
     >
       <div className="min-w-[100px]">
         <Image src={logo} alt="logo" width={40} height={40} />
       </div>
-      <div className="hidden items-center gap-5 font-medium screen5:flex">
+      <div className="hidden items-center gap-5 font-medium screen1100:flex">
         <div className="transition-default cursor-pointer hover:text-white">
           About
         </div>
@@ -27,7 +27,7 @@ export default function Navbar() {
           Contact
         </div>
       </div>
-      <div className="hidden min-w-[100px] items-center gap-3 screen5:flex">
+      <div className="hidden min-w-[100px] items-center gap-3 screen1100:flex">
         <button className="transition-default font-medium hover:text-white">
           Login
         </button>
@@ -35,7 +35,7 @@ export default function Navbar() {
           Sign up
         </button>
       </div>
-      <div className="flex size-[40px] screen5:hidden">
+      <div className="flex size-[40px] screen1100:hidden">
         <div className="z-70 flex h-full w-full items-center justify-center">
           <button>
             <label className={`${styles.hamburger}`} style={{ zIndex: 70 }}>

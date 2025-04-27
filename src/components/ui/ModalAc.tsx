@@ -37,13 +37,13 @@ export default function AnimatedModalDemo({ darkis }: { darkis: boolean }) {
               </span>{' '}
             </h4>
             <hr className="mx-auto mb-8 w-3/4 rounded border border-white/10" />
-            <div className="screen11:px-[10px] screen10:px-[20px] screen9:px-[60px] screen8:px-[0px] screen2:px-[30px] screen1:px-[50px] screen02:px-[100px] flex flex-wrap items-center justify-center gap-4">
+            <div className="screen500:px-[10px] screen600:px-[20px] screen700:px-[60px] screen800:px-[0px] screen1400:px-[30px] screen1500:px-[50px] screen1800:px-[100px] flex flex-wrap items-center justify-center gap-4">
               {redesSociais.map((redesSociais: redesSociais) => (
                 <a
                   href={redesSociais.link}
                   target="_blank"
                   key={redesSociais.id}
-                  className={`screen11_5:size-24 screen5:size-32 flex size-16 items-center justify-center rounded-lg`}
+                  className={`screen450:size-24 screen1100:size-32 flex size-16 items-center justify-center rounded-lg`}
                   style={{ backgroundColor: redesSociais.cor }}
                   rel="noreferrer"
                 >
@@ -56,7 +56,7 @@ export default function AnimatedModalDemo({ darkis }: { darkis: boolean }) {
                 </a>
               ))}
             </div>
-            <div className="screen6:w-[70%] screen11_5:text-base mx-auto mt-8 w-full text-center text-sm text-white/15">
+            <div className="screen1000:w-[70%] screen450:text-base mx-auto mt-8 w-full text-center text-sm text-white/15">
               Se prefere a praticidade e{' '}
               <span className={`rounded-md border border-gray-200 bg-gray-100 px-1 py-0.5 ${darkis && 'border-neutral-700'} ${darkis && 'bg-white/20'}`}>
                 Certeza!
@@ -72,7 +72,7 @@ export default function AnimatedModalDemo({ darkis }: { darkis: boolean }) {
             {/* <button className="w-28 rounded-md border border-gray-300 bg-gray-200 px-2 py-1 text-sm text-black ${darkis && 'border-black ${darkis && 'bg-black ${darkis && 'text-white">
               Sair
             </button> */}
-            <button className={`screen11_5:text-sm w-48 rounded-md border border-black bg-black px-2 py-1 text-xs  ${darkis && 'bg-white'} ${darkis && 'text-black'}`}>
+            <button className={`screen450:text-sm w-48 rounded-md border border-black bg-black px-2 py-1 text-xs  ${darkis && 'bg-white'} ${darkis && 'text-black'}`}>
               Mandar uma mensagem
             </button>
           </ModalFooter>

@@ -29,21 +29,21 @@ export default function IndexMobile() {
 
       {/* Conteudo */}
       <div style={{ zIndex: 2 }} className="absolute w-full">
-        <Hero />
+        <Hero isMobile={true} />
 
         <div className="relative">
           <div
             style={{ zIndex: 2 }}
-            className="relative translate-y-[-50px] screen9:translate-y-[140px] screen95:translate-y-[100px] screen105:translate-y-[60px] screen11:translate-y-[0px] screen11_5:translate-y-[-20px]"
+            className="relative translate-y-[120px] screen450:translate-y-[140px]"
           >
             <CarosselMobile />
           </div>
 
           <div
             style={{ zIndex: 1 }}
-            className="relative translate-y-[-265px] bg-[#121212] pb-[600px] screen9:translate-y-[-270px]"
+            className="short1024and700min:translate-y-[-315px] short1024and700:translate-y-[-300px] short1024and650:translate-y-[-268px] short1024and600:translate-y-[-235px]  short1024and550:translate-y-[-208px] short1024and500:translate-y-[-175px] short1024and450:translate-y-[-148px] screen670:translate-y-[-270px] screen600:translate-y-[-235px] screen550:translate-y-[-195px] screen500:translate-y-[-163px] relative translate-y-[-80px] bg-[#121212] pb-[700px] screen400:translate-y-[-103px] screen450:translate-y-[-133px]"
           >
-            <div className="translate-y-[250px]">
+            <div className="translate-y-[130px] screen450:translate-y-[300px]">
               <Iphone />
             </div>
           </div>
