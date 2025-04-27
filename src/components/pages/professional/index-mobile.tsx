@@ -23,7 +23,7 @@ export default function IndexMobile() {
         <StarsBackground />
         <div
           className={`absolute left-1/2 top-[calc(100%-180px)] h-[768px] w-[180vw] -translate-x-1/2 rounded-[100%] border border-[#FF793F] bg-black ${styles.degrade2}`}
-          style={{ zIndex: 1 }}
+          style={{ zIndex: 3 }}
         ></div>
       </div>
 
