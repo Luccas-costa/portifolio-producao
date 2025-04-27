@@ -1,23 +1,19 @@
-// import React, { useEffect, useRef, useState } from 'react'
-
-// import Image from 'next/image'
-
-// export default function MouseAnimated() {
-//   return (
-//     <div className="flex w-full items-center justify-center">
-//       <video
-//         autoPlay
-//         loop
-//         muted
-//         playsInline
-//         className="h-[72px] w-[72px] object-contain"
-//       >
-//         <source src="/assets/animationmouse.mp4" type="video/mp4" />
-//         Seu navegador não suporta a reprodução de vídeos.
-//       </video>
-//     </div>
-//   )
-// }
+export default function MouseAnimated() {
+  return (
+    <div className="flex w-full items-center justify-center">
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="h-[72px] w-[72px] object-contain"
+      >
+        <source src="/assets/animationmouse.webm" type="video/webm" />
+        Seu navegador não suporta a reprodução de vídeos.
+      </video>
+    </div>
+  )
+}
 
 // export default function MouseAnimated() {
 //   return (
@@ -69,33 +65,33 @@
 //   )
 // }
 
-// components/LottieAnimation.tsx
-import Lottie from 'lottie-react'
-import animationData from '../../public/assets/animation.json' // Caminho do arquivo JSON
-import React from 'react'
+// // components/LottieAnimation.tsx
+// import Lottie from 'lottie-react'
+// import animationData from '../../public/assets/animation.json' // Caminho do arquivo JSON
+// import React from 'react'
 
-export default function MouseAnimated() {
-  // const defaultOptions = {
-  //   loop: true,
-  //   autoplay: true,
-  //   animationData,
-  //   rendererSettings: {
-  //     preserveAspectRatio: 'xMidYMid slice',
-  //   },
-  // }
+// export default function MouseAnimated() {
+//   // const defaultOptions = {
+//   //   loop: true,
+//   //   autoplay: true,
+//   //   animationData,
+//   //   rendererSettings: {
+//   //     preserveAspectRatio: 'xMidYMid slice',
+//   //   },
+//   // }
 
-  return (
-    <div>
-      <Lottie
-        loop={true}
-        animationData={animationData}
-        autoplay={true}
-        rendererSettings={{
-          preserveAspectRatio: 'xMidYMid slice',
-        }}
-        height={72}
-        width={72}
-      />
-    </div>
-  )
-}
+//   return (
+//     <div>
+//       <Lottie
+//         loop={true}
+//         animationData={animationData}
+//         autoplay={true}
+//         rendererSettings={{
+//           preserveAspectRatio: 'xMidYMid slice',
+//         }}
+//         height={72}
+//         width={72}
+//       />
+//     </div>
+//   )
+// }
