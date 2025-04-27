@@ -1,3 +1,4 @@
+'use client'
 // export default function MouseAnimated() {
 //   return (
 //     <div className="flex w-full items-center justify-center">
