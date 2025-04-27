@@ -98,37 +98,70 @@ const config: Config = {
         short1024and1070: {
           raw: '(max-height: 1024px) and (max-width: 1070px)',
         },
+        short900and1070: {
+          raw: '(max-height: 900px) and (max-width: 1070px)',
+        },
         short1024and700: {
           raw: '(max-height: 1024px) and (max-width: 700px)',
+        },
+        short900and700: {
+          raw: '(max-height: 900px) and (max-width: 700px)',
         },
         short1024and650: {
           raw: '(max-height: 1024px) and (max-width: 650px)',
         },
+        short900and650: {
+          raw: '(max-height: 900px) and (max-width: 650px)',
+        },
         short1024and600: {
           raw: '(max-height: 1024px) and (max-width: 600px)',
+        },
+        short900and600: {
+          raw: '(max-height: 900px) and (max-width: 600px)',
         },
         short1024and550: {
           raw: '(max-height: 1024px) and (max-width: 550px)',
         },
+        short900and550: {
+          raw: '(max-height: 900px) and (max-width: 550px)',
+        },
         short1024and500: {
           raw: '(max-height: 1024px) and (max-width: 500px)',
         },
+        short900and500: {
+          raw: '(max-height: 900px) and (max-width: 500px)',
+        },
         short1024and450: {
           raw: '(max-height: 1024px) and (max-width: 450px)',
+        },
+        short900and450: {
+          raw: '(max-height: 900px) and (max-width: 450px)',
         },
 
         // min width and max height
         short1024and700min: {
           raw: '(max-height: 1024px) and (min-width: 700px)',
         },
+        short900and700min: {
+          raw: '(max-height: 900px) and (min-width: 700px)',
+        },
         short1024and1070min: {
           raw: '(max-height: 1024px) and (min-width: 1070px)',
+        },
+        short900and1070min: {
+          raw: '(max-height: 900px) and (min-width: 1070px)',
         },
         short1024and1300min: {
           raw: '(max-height: 1024px) and (min-width: 1300px)',
         },
+        short900and1300min: {
+          raw: '(max-height: 900px) and (min-width: 1300px)',
+        },
         short1024and1400min: {
           raw: '(max-height: 1024px) and (min-width: 1400px)',
+        },
+        short900and1400min: {
+          raw: '(max-height: 900px) and (min-width: 1400px)',
         },
 
         'max-1460': {

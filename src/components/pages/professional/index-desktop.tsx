@@ -50,7 +50,7 @@ export default function IndexDesktop() {
 
           <div
             style={{ zIndex: 1 }}
-            className="short1024and1070:translate-y-[-315px] short1024and1400min:translate-y-[-251px] short1024and1300min:translate-y-[-230px] short1024and1070min:translate-y-[-200px] relative h-full translate-y-[-270px] bg-[#121212] pb-[400px] screen1070:translate-y-[-170px] screen1200:pb-0 screen1300:translate-y-[-210px]"
+            className="short900and1070:translate-y-[-345px] short1024and1070:translate-y-[-315px] short900and1400min:translate-y-[-281px] short1024and1400min:translate-y-[-251px] short900and1300min:translate-y-[-260px] short1024and1300min:translate-y-[-230px]  short900and1070min:translate-y-[-230px] short1024and1070min:translate-y-[-200px] relative h-full translate-y-[-270px] bg-[#121212] pb-[400px] screen1070:translate-y-[-170px] screen1200:pb-0 screen1300:translate-y-[-210px]"
           >
             <div className="hidden translate-y-[150px] pb-[400px] screen1200:block">
               <Imac />
