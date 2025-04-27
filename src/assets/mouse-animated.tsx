@@ -1,19 +1,19 @@
-export default function MouseAnimated() {
-  return (
-    <div className="flex w-full items-center justify-center">
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="h-[72px] w-[72px] object-contain"
-      >
-        <source src="/assets/animationmouse.webm" type="video/webm" />
-        Seu navegador não suporta a reprodução de vídeos.
-      </video>
-    </div>
-  )
-}
+// export default function MouseAnimated() {
+//   return (
+//     <div className="flex w-full items-center justify-center">
+//       <video
+//         autoPlay
+//         loop
+//         muted
+//         playsInline
+//         className="h-[72px] w-[72px] object-contain"
+//       >
+//         <source src="/assets/animationmouse.webm" type="video/webm" />
+//         Seu navegador não suporta a reprodução de vídeos.
+//       </video>
+//     </div>
+//   )
+// }
 
 // export default function MouseAnimated() {
 //   return (
@@ -95,3 +95,36 @@ export default function MouseAnimated() {
 //     </div>
 //   )
 // }
+
+import { useEffect, useState } from 'react'
+import Lottie from 'lottie-react'
+import animationData from '../../public/assets/animation.json' // ou o caminho correto para o seu arquivo de animação
+
+export default function MouseAnimated() {
+  const [isClient, setIsClient] = useState(false)
+
+  useEffect(() => {
+    // Esse código será executado apenas no cliente
+    setIsClient(true)
+  }, [])
+
+  if (!isClient) {
+    // Retorna null ou um fallback enquanto o componente é carregado no servidor
+    return null
+  }
+
+  return (
+    <div>
+      <Lottie
+        loop={true}
+        animationData={animationData}
+        autoplay={true}
+        rendererSettings={{
+          preserveAspectRatio: 'xMidYMid slice',
+        }}
+        height={72}
+        width={72}
+      />
+    </div>
+  )
+}
