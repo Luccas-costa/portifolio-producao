@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React from 'react'
 
 import Hero from '@/components/pages/professional/hero'

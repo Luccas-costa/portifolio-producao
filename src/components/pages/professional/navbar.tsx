@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React from 'react'
 import logo from 'public/logos/logo-tranparente.png'
 import Image from 'next/image'
