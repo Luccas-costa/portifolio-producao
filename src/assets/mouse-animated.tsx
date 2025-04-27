@@ -1,4 +1,7 @@
-import React from 'react'
+'use client'
+// import React, { useEffect, useRef, useState } from 'react'
+
+// import Image from 'next/image'
 
 // export default function MouseAnimated() {
 //   return (
@@ -17,30 +20,23 @@ import React from 'react'
 //   )
 // }
 
-import Image from 'next/image'
-
-export default function MouseAnimated() {
-  return (
-    <div className="flex w-full items-center justify-center">
-      <Image
-        src="/assets/animationmouse.gif"
-        width={72}
-        height={72}
-        alt="Animation mouse"
-      />
-    </div>
-  )
-}
-
-// 'use client'
-
-// import Image from 'next/image'
-// import React, { useEffect, useRef, useState } from 'react'
+// export default function MouseAnimated() {
+//   return (
+//     <div className="flex w-full items-center justify-center">
+//       <Image
+//         src="/assets/animationmouse.gif"
+//         width={72}
+//         height={72}
+//         alt="Animation mouse"
+//       />
+//     </div>
+//   )
+// }
 
 // export default function MouseAnimated() {
 //   const [currentFrame, setCurrentFrame] = useState(0)
-//   const frameCount = 100 // total de frames
-//   const fps = 30 // frames por segundo (ajuste se quiser)
+//   const frameCount = 32 // total de frames
+//   const fps = 25 // frames por segundo (ajuste se quiser)
 //   const intervalRef = useRef<NodeJS.Timeout | null>(null)
 
 //   useEffect(() => {
@@ -58,7 +54,7 @@ export default function MouseAnimated() {
 //   }, [])
 
 //   const frameNumber = String(currentFrame + 1).padStart(3, '0') // ex: '001'
-//   const frameSrc = `/assets/mouse_animation/ezgif-frame-${frameNumber}.png`
+//   const frameSrc = `/assets/mouse_animation/frame_${frameNumber}.png`
 
 //   return (
 //     <div className="flex w-full items-center justify-center">
@@ -73,3 +69,34 @@ export default function MouseAnimated() {
 //     </div>
 //   )
 // }
+
+// components/LottieAnimation.tsx
+import Lottie from 'lottie-react'
+import animationData from '../../public/assets/animation.json' // Caminho do arquivo JSON
+import React from 'react'
+
+export default function MouseAnimated() {
+  // const defaultOptions = {
+  //   loop: true,
+  //   autoplay: true,
+  //   animationData,
+  //   rendererSettings: {
+  //     preserveAspectRatio: 'xMidYMid slice',
+  //   },
+  // }
+
+  return (
+    <div>
+      <Lottie
+        loop={true}
+        animationData={animationData}
+        autoplay={true}
+        rendererSettings={{
+          preserveAspectRatio: 'xMidYMid slice',
+        }}
+        height={72}
+        width={72}
+      />
+    </div>
+  )
+}
