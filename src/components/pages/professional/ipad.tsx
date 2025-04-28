@@ -208,7 +208,7 @@ export default function Ipad() {
                             <input
                               ref={inputRef}
                               type="text"
-                              className="h-[40px] w-full bg-transparent text-xs font-light text-zinc-400 outline-none placeholder:text-neutral-400/70"
+                              className="h-[40px] w-full bg-transparent text-base font-light text-zinc-400 outline-none placeholder:text-neutral-400/70"
                               placeholder="Ask anything"
                               value={pergunta}
                               onChange={(e) => setPergunta(e.target.value)}
@@ -276,7 +276,7 @@ export default function Ipad() {
                   <>
                     <div className="flex items-center justify-center border-none bg-[#121212] shadow-none">
                       <div
-                        className={`mb-2 mt-2 flex h-[30px] w-[510px] flex-col rounded-2xl bg-[#2E2E2E]/40 px-3`}
+                        className={`mb-2 mt-2 flex h-[40px] w-[510px] flex-col rounded-2xl bg-[#2E2E2E]/40 px-3`}
                       >
                         <form
                           onSubmit={(e) => {
@@ -288,7 +288,7 @@ export default function Ipad() {
                           <input
                             ref={inputRef}
                             type="text"
-                            className="mr-[2%] h-[30px] w-[98%] bg-transparent text-xxs font-light text-zinc-300 outline-none placeholder:text-neutral-400/70"
+                            className="mr-[2%] h-[40px] w-[98%] bg-transparent text-base font-light text-zinc-300 outline-none placeholder:text-neutral-400/70"
                             placeholder="Ask anything"
                             value={pergunta}
                             onChange={(e) => setPergunta(e.target.value)}
@@ -298,7 +298,7 @@ export default function Ipad() {
                             disabled={!pergunta.trim()}
                             className="h-fit w-fit rounded-full bg-zinc-300 p-1 transition-all duration-200 disabled:bg-neutral-600"
                           >
-                            <ArrowUp size={14} weight="bold" color="black" />
+                            <ArrowUp size={18} weight="bold" color="black" />
                           </button>
                         </form>
                       </div>

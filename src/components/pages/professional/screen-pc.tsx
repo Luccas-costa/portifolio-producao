@@ -17,21 +17,32 @@ import {
 } from '@phosphor-icons/react/dist/ssr'
 import Image from 'next/image'
 
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import Folder from 'ui/folder'
 
 import styles from '@/styles/gpt-text-effect.module.css'
 
 export default function ScreenPc() {
+  const inputRef = useRef<HTMLInputElement | null>(null)
+
+  useEffect(() => {
+    // Dá foco ao input assim que o componente é renderizado
+    inputRef.current?.focus()
+  }, [])
+
   const [isChat, setIsChat] = useState<boolean>(false)
   const [pergunta, setPergunta] = useState('')
-  const [resposta, setResposta] = useState('')
+  const [, setResposta] = useState('')
   const [loading, setLoading] = useState(false)
   const [perguntaEmTela, setPerguntaEmTela] = useState('')
+  const [mensagens, setMensagens] = useState<
+    { pergunta: string; resposta: string }[]
+  >([])
 
   const handleSubmit = async () => {
     setLoading(true)
-    setPerguntaEmTela(pergunta)
+    const perguntaAtual = pergunta
+    setPerguntaEmTela(perguntaAtual)
     setPergunta('')
     setIsChat(true)
 
@@ -43,6 +54,10 @@ export default function ScreenPc() {
 
     const data = await res.json()
     setResposta(data.resposta)
+    setMensagens((prev) => [
+      ...prev,
+      { pergunta: perguntaAtual, resposta: data.resposta },
+    ]) // NOVO
     setLoading(false)
   }
 
@@ -136,20 +151,28 @@ export default function ScreenPc() {
             </div>
             {isChat ? (
               <>
-                <div className="mx-auto flex w-[500px] flex-1 flex-col gap-5">
-                  <div className="max-w-[300px] self-end break-words rounded-2xl bg-[#2E2E2E]/40 px-4 py-2 text-xs font-light text-zinc-300">
-                    {perguntaEmTela}
-                  </div>
-                  {loading ? (
-                    <div className="max-h-[300px] max-w-[400px] whitespace-pre-wrap text-xs font-light text-zinc-300">
-                      <span className={`${styles.shimmerText}`}>
-                        Buscando respostas...
-                      </span>
-                    </div>
-                  ) : (
-                    <div className="max-h-[300px] max-w-[400px] whitespace-pre-wrap rounded-2xl bg-[#2E2E2E]/40 px-4 py-2 text-xs font-light text-zinc-300">
-                      {resposta}
-                    </div>
+                <div className="mx-auto flex w-[500px] flex-1 flex-col gap-5 pt-4">
+                  {mensagens.map((m, index) => (
+                    <React.Fragment key={index}>
+                      <div className="max-w-[300px] self-end break-words rounded-2xl bg-[#2E2E2E]/40 px-4 py-2 text-xs font-light text-zinc-300">
+                        {m.pergunta}
+                      </div>
+                      <div className="max-h-[300px] max-w-[400px] whitespace-pre-wrap rounded-2xl bg-[#2E2E2E]/40 px-4 py-2 text-xs font-light text-zinc-300">
+                        {m.resposta}
+                      </div>
+                    </React.Fragment>
+                  ))}
+                  {loading && (
+                    <>
+                      <div className="max-w-[300px] self-end break-words rounded-2xl bg-[#2E2E2E]/40 px-4 py-2 text-xs font-light text-zinc-300">
+                        {perguntaEmTela}
+                      </div>
+                      <div className="max-h-[300px] max-w-[400px] whitespace-pre-wrap text-sm font-normal text-zinc-300">
+                        <span className={`${styles.shimmerText}`}>
+                          Buscando respostas...
+                        </span>
+                      </div>
+                    </>
                   )}
                 </div>
               </>
@@ -160,52 +183,61 @@ export default function ScreenPc() {
                     Ask about luccas
                   </div>
                   <div className="mt-2 flex h-[70px] w-[400px] flex-col rounded-2xl bg-[#2E2E2E]/40 px-3">
-                    <input
-                      type="text"
-                      className="h-[40px] w-full bg-transparent text-xs font-light text-zinc-300 outline-none placeholder:text-neutral-400/70"
-                      placeholder="Ask anything"
-                      value={pergunta}
-                      onChange={(e) => setPergunta(e.target.value)}
-                    />
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2">
-                        <div className="group w-fit cursor-pointer rounded-full border border-[#52525b] p-1 transition-all duration-200 hover:bg-[#52525b]">
-                          <Plus
-                            size={12}
-                            weight="bold"
-                            className="text-[#52525b] group-hover:text-white"
-                          />
-                        </div>
-                        <div className="group flex w-fit cursor-pointer items-center gap-1 rounded-full border border-[#52525b] p-1 transition-all duration-200 hover:bg-[#52525b]">
-                          <Globe
-                            size={15}
-                            weight="bold"
-                            className="text-[#52525b] group-hover:text-white"
-                          />
-                          <div className="text-xs font-light text-neutral-500 group-hover:text-white">
-                            Search
+                    <form
+                      onSubmit={(e) => {
+                        e.preventDefault() // previne o comportamento padrão de recarregar a página
+                        if (pergunta.trim()) handleSubmit()
+                      }}
+                      className="flex w-full flex-col"
+                    >
+                      <input
+                        ref={inputRef}
+                        type="text"
+                        className="h-[40px] w-full bg-transparent text-xs font-light text-zinc-300 outline-none placeholder:text-neutral-400/70"
+                        placeholder="Ask anything"
+                        value={pergunta}
+                        onChange={(e) => setPergunta(e.target.value)}
+                      />
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2">
+                          <div className="group w-fit cursor-pointer rounded-full border border-[#52525b] p-1 transition-all duration-200 hover:bg-[#52525b]">
+                            <Plus
+                              size={12}
+                              weight="bold"
+                              className="text-[#52525b] group-hover:text-white"
+                            />
+                          </div>
+                          <div className="group flex w-fit cursor-pointer items-center gap-1 rounded-full border border-[#52525b] p-1 transition-all duration-200 hover:bg-[#52525b]">
+                            <Globe
+                              size={15}
+                              weight="bold"
+                              className="text-[#52525b] group-hover:text-white"
+                            />
+                            <div className="text-xs font-light text-neutral-500 group-hover:text-white">
+                              Search
+                            </div>
+                          </div>
+                          <div className="group flex w-fit cursor-pointer items-center gap-1 rounded-full border border-[#52525b] p-1 transition-all duration-200 hover:bg-[#52525b]">
+                            <Lightbulb
+                              size={15}
+                              weight="bold"
+                              className="text-[#52525b] group-hover:text-white"
+                            />
+                            <div className="text-xs font-light text-neutral-500 group-hover:text-white">
+                              Reason
+                            </div>
                           </div>
                         </div>
-                        <div className="group flex w-fit cursor-pointer items-center gap-1 rounded-full border border-[#52525b] p-1 transition-all duration-200 hover:bg-[#52525b]">
-                          <Lightbulb
-                            size={15}
-                            weight="bold"
-                            className="text-[#52525b] group-hover:text-white"
-                          />
-                          <div className="text-xs font-light text-neutral-500 group-hover:text-white">
-                            Reason
-                          </div>
-                        </div>
-                      </div>
 
-                      <button
-                        disabled={!pergunta.trim()}
-                        onClick={handleSubmit}
-                        className="w-fit rounded-full bg-zinc-300 p-1 disabled:bg-neutral-600"
-                      >
-                        <ArrowUp size={14} weight="bold" color="black" />
-                      </button>
-                    </div>
+                        <button
+                          type="submit"
+                          disabled={!pergunta.trim()}
+                          className="w-fit rounded-full bg-zinc-300 p-1 disabled:bg-neutral-600"
+                        >
+                          <ArrowUp size={14} weight="bold" color="black" />
+                        </button>
+                      </div>
+                    </form>
                   </div>
                   <div className="flex items-center gap-1 text-center text-xxs font-light text-zinc-400/60">
                     <div>Powerded by</div>
@@ -225,22 +257,29 @@ export default function ScreenPc() {
               <div
                 className={`mb-2 mt-2 flex h-[30px] w-[510px] flex-col rounded-2xl bg-[#2E2E2E]/40 px-3`}
               >
-                <div className="flex items-center">
+                <form
+                  onSubmit={(e) => {
+                    e.preventDefault() // previne o comportamento padrão de recarregar a página
+                    if (pergunta.trim()) handleSubmit()
+                  }}
+                  className="flex items-center"
+                >
                   <input
+                    ref={inputRef}
                     type="text"
-                    className="mr-[2%] h-[30px] w-[98%] bg-transparent text-xxs font-light text-zinc-300 outline-none placeholder:text-neutral-400/70"
+                    className="mr-[2%] h-[30px] w-[98%] bg-transparent text-xs font-light text-zinc-300 outline-none placeholder:text-neutral-400/70"
                     placeholder="Ask anything"
                     value={pergunta}
                     onChange={(e) => setPergunta(e.target.value)}
                   />
                   <button
+                    type="submit"
                     disabled={!pergunta.trim()}
-                    onClick={handleSubmit}
                     className="h-fit w-fit rounded-full bg-zinc-300 p-1 transition-all duration-200 disabled:bg-neutral-600"
                   >
                     <ArrowUp size={14} weight="bold" color="black" />
                   </button>
-                </div>
+                </form>
               </div>
             </div>
           </>
