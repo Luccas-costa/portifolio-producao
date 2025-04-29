@@ -17,19 +17,12 @@ import {
 } from '@phosphor-icons/react/dist/ssr'
 import Image from 'next/image'
 
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState } from 'react'
 import Folder from 'ui/folder'
 
 import styles from '@/styles/gpt-text-effect.module.css'
 
 export default function ScreenPc() {
-  const inputRef = useRef<HTMLInputElement | null>(null)
-
-  useEffect(() => {
-    // Dá foco ao input assim que o componente é renderizado
-    inputRef.current?.focus()
-  }, [])
-
   const [isChat, setIsChat] = useState<boolean>(false)
   const [pergunta, setPergunta] = useState('')
   const [, setResposta] = useState('')
@@ -191,7 +184,6 @@ export default function ScreenPc() {
                       className="flex w-full flex-col"
                     >
                       <input
-                        ref={inputRef}
                         type="text"
                         className="h-[40px] w-full bg-transparent text-xs font-light text-zinc-300 outline-none placeholder:text-neutral-400/70"
                         placeholder="Ask anything"
@@ -265,7 +257,6 @@ export default function ScreenPc() {
                   className="flex items-center"
                 >
                   <input
-                    ref={inputRef}
                     type="text"
                     className="mr-[2%] h-[30px] w-[98%] bg-transparent text-xs font-light text-zinc-300 outline-none placeholder:text-neutral-400/70"
                     placeholder="Ask anything"

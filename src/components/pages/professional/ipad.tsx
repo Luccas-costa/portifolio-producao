@@ -15,18 +15,11 @@ import {
   ArrowUp,
   OpenAiLogo,
 } from '@phosphor-icons/react/dist/ssr'
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import styles from '@/styles/gpt-text-effect.module.css'
 
 export default function Ipad() {
-  const inputRef = useRef<HTMLInputElement | null>(null)
-
-  useEffect(() => {
-    // Dá foco ao input assim que o componente é renderizado
-    inputRef.current?.focus()
-  }, [])
-
   const [dateTime, setDateTime] = useState('')
   const [isChat, setIsChat] = useState<boolean>(true)
   const [pergunta, setPergunta] = useState('')
@@ -206,7 +199,6 @@ export default function Ipad() {
                             className="flex w-full flex-col"
                           >
                             <input
-                              ref={inputRef}
                               type="text"
                               className="h-[40px] w-full bg-transparent text-base font-light text-zinc-400 outline-none placeholder:text-neutral-400/70"
                               placeholder="Ask anything"
@@ -286,7 +278,6 @@ export default function Ipad() {
                           className="flex items-center"
                         >
                           <input
-                            ref={inputRef}
                             type="text"
                             className="mr-[2%] h-[40px] w-[98%] bg-transparent text-base font-light text-zinc-300 outline-none placeholder:text-neutral-400/70"
                             placeholder="Ask anything"
