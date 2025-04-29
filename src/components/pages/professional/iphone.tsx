@@ -73,7 +73,7 @@ export default function Iphone() {
 
   return (
     <div className="translate-y-[160px]">
-      <div className="mx-auto flex h-[650px] w-[350px] translate-y-[170px] flex-col items-center justify-center rounded-2xl border border-[#2E2E2E] p-2">
+      <div className="mx-auto flex h-[650px] w-[350px] translate-y-[170px] flex-col items-center justify-center rounded-2xl border border-[#2E2E2E] bg-[#121212] p-2">
         <div className="absolute left-[-6px] top-[105px] h-[24px] w-[5px] rounded-l-md border border-[#2E2E2E]"></div>
         <div className="absolute left-[-8px] top-[140px] h-[50px] w-[7px] rounded-l-md border border-[#2E2E2E]"></div>
         <div className="absolute left-[-8px] top-[200px] h-[50px] w-[7px] rounded-l-md border border-[#2E2E2E]"></div>
@@ -266,9 +266,9 @@ export default function Iphone() {
           </div>
         </div>
       </div>
-      <div className="mx-auto h-[30px] w-[40px] translate-y-[563%] rounded-b-lg border-x border-b border-[#2E2E2E]"></div>
-      <div className="mx-auto h-[30px] w-[10px] translate-y-[563%] border-x border-[#2E2E2E]"></div>
-      <div className="mx-auto h-[30px] w-[10px] translate-y-[563%] rounded-bl-xl border-x border-[#2E2E2E]"></div>
+      <div className="mx-auto h-[30px] w-[40px] translate-y-[563%] rounded-b-lg border-x border-b border-[#2E2E2E] bg-[#121212]"></div>
+      <div className="mx-auto h-[30px] w-[10px] translate-y-[563%] border-x border-[#2E2E2E] bg-[#121212]"></div>
+      <div className="mx-auto h-[30px] w-[10px] translate-y-[563%] rounded-bl-xl border-x border-[#2E2E2E] bg-[#121212]"></div>
       <div className="mx-auto h-[10px] w-[50px] translate-x-[29px] translate-y-[1593%] border-y border-r border-[#2E2E2E] bg-[#121212]"></div>
       <div className="absolute bottom-[-159px] left-[calc(50%+50px)] h-[10px] w-[700px] border-y border-r border-[#2E2E2E] bg-[#121212]"></div>
     </div>

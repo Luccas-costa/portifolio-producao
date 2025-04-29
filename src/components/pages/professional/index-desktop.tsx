@@ -52,13 +52,27 @@ export default function IndexDesktop() {
             style={{ zIndex: 1 }}
             className="short800and1070:translate-y-[-375px] short900and1070:translate-y-[-345px] short1024and1070:translate-y-[-315px] short800and1400min:translate-y-[-311px] short900and1400min:translate-y-[-281px] short1024and1400min:translate-y-[-251px] short800and1300min:translate-y-[-290px] short900and1300min:translate-y-[-260px] short1024and1300min:translate-y-[-230px] short800and1070min:translate-y-[-262px]  short900and1070min:translate-y-[-230px] short1024and1070min:translate-y-[-200px] relative h-full translate-y-[-270px] bg-[#121212] pb-[400px] screen1070:translate-y-[-170px] screen1200:pb-0 screen1300:translate-y-[-210px]"
           >
-            <div className="hidden translate-y-[150px] pb-[400px] screen1200:block">
+            <div
+              className={`absolute right-0 translate-x-[50%] h-[800px] w-[768px] rounded-[100%] screen1200:top-[360px] top-[300px] border border-[#FF793F] bg-black ${styles.degrade2}`}
+              style={{ zIndex: 1 }}
+            />
+            <div
+              className={`absolute left-0 translate-x-[-50%] h-[800px] w-[768px] rounded-[100%] top-[1035px] border border-[#FF793F] bg-black ${styles.degrade2}`}
+              style={{ zIndex: 1 }}
+            />
+            <div
+              className={`absolute left-[280px] h-[200px] w-[200px] rounded-[100%] top-[1700px] border border-[#FF793F] bg-black ${styles.degrade4}`}
+              style={{ zIndex: 1 }}
+            />
+            <div style={{ zIndex: 2 }} className="relative hidden translate-y-[150px] pb-[600px] screen1200:block">
               <Imac />
             </div>
-            <div className="block translate-y-[120px] pb-[400px] screen1200:hidden">
+            <div style={{ zIndex: 2 }} className="relative block translate-y-[120px] pb-[400px] screen1200:hidden">
               <Ipad />
             </div>
           </div>
+
+          <div className='h-screen bg-[#121212] screen1070:translate-y-[-210px] translate-y-[-270px]'></div>
         </div>
       </div>
     </div>

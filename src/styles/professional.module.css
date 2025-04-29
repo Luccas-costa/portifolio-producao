@@ -10,6 +10,14 @@
     background: radial-gradient(closest-side, #121212 82%, #FF7F11);
 }
 
+.degrade4 {
+    background: radial-gradient(closest-side, #121212ab 70%, #FF7F11);
+}
+
+.degrade5 {
+    background: radial-gradient(closest-side, #121212ab 60%, #FF7F11);
+}
+
 .degrade3 {
     background: linear-gradient(to bottom, #000000, #1a0a00, #422500, #663800, #A34700, #663800, #422500, #1a0a00, #000000);
 }

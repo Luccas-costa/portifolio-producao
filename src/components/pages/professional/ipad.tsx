@@ -84,7 +84,7 @@ export default function Ipad() {
 
   return (
     <div className="translate-y-[370px] screen1070:translate-y-[170px]">
-      <div className="mx-auto flex h-[900px] w-[750px] translate-y-[170px] flex-col items-center justify-center rounded-2xl border border-[#2E2E2E] p-4">
+      <div className="mx-auto flex h-[900px] w-[750px] translate-y-[170px] flex-col items-center justify-center rounded-2xl border border-[#2E2E2E] bg-[#121212] p-4">
         <div
           className="relative h-full w-full rounded-xl bg-cover bg-center"
           style={{
@@ -315,9 +315,9 @@ export default function Ipad() {
           </div>
         </div>
       </div>
-      <div className="mx-auto h-[30px] w-[80px] translate-y-[563%] rounded-b-2xl border-x border-b border-[#2E2E2E]"></div>
-      <div className="mx-auto h-[30px] w-[10px] translate-y-[563%] border-x border-[#2E2E2E]"></div>
-      <div className="mx-auto h-[30px] w-[10px] translate-y-[563%] rounded-bl-xl border-x border-[#2E2E2E]"></div>
+      <div className="mx-auto h-[30px] w-[80px] translate-y-[563%] rounded-b-2xl border-x border-b border-[#2E2E2E] bg-[#121212]"></div>
+      <div className="mx-auto h-[30px] w-[10px] translate-y-[563%] border-x border-[#2E2E2E] bg-[#121212]"></div>
+      <div className="mx-auto h-[30px] w-[10px] translate-y-[563%] rounded-bl-xl border-x border-[#2E2E2E] bg-[#121212]"></div>
       <div className="mx-auto h-[10px] w-[50px] translate-x-[29px] translate-y-[1593%] border-y border-r border-[#2E2E2E] bg-[#121212]"></div>
       <div className="absolute bottom-[-159px] left-[calc(50%+50px)] h-[10px] w-[700px] border-y border-r border-[#2E2E2E] bg-[#121212]"></div>
     </div>
