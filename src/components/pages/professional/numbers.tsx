@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React from 'react'
 import styles from '@/styles/feixe-de-luz.module.css'
 
@@ -5,7 +6,7 @@ export default function Numbers() {
   return (
     <div className="relative h-[500px] w-full screen670:h-[250px]">
       <div
-        className={`screen768:text-3xl relative flex h-full w-full flex-col overflow-hidden bg-[#E97511]/85 text-3xl font-black screen670:flex-row screen670:text-2xl screen1000:text-4xl`}
+        className={`relative flex h-full w-full flex-col overflow-hidden bg-[#E97511]/85 text-3xl font-black screen670:flex-row screen670:text-2xl screen768:text-3xl`}
       >
         <div className="flex h-1/3 w-full items-center justify-center px-[10px] text-center screen670:h-full screen670:w-1/3">
           3 anos de experiência
