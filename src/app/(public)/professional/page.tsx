@@ -1,6 +1,6 @@
 'use client'
-import IndexDesktop from '@/components/pages/professional/index-desktop'
-import IndexMobile from '@/components/pages/professional/index-mobile'
+import IndexDesktop from '@/components/pages/professional/index/index-desktop'
+import IndexMobile from '@/components/pages/professional/index/index-mobile'
 import { useState, useEffect } from 'react'
 
 // import { BackgroundSpotlightAC } from 'ui/Background-spotlightAC'

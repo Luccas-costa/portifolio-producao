@@ -53,7 +53,7 @@
     ".next/types/**/*.ts",
     "src/components/pages/testes/splide/teste-001.jsx",
     "src/app/api/chat/route.js",
-    "src/components/pages/professional/carossel.jsx"
+    "src/components/pages/professional/carossel/carossel.jsx"
   ],
   "exclude": [
     "node_modules"

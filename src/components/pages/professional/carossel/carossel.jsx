@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import { useState, useRef, useEffect } from 'react'
 import clsx from 'clsx'
-import TekoBag from '../../../../public/projects/cardbranco.png'
+import TekoBag from '../../../../../public/projects/cardbranco.png'
 import Image from 'next/image'
 
 export default function Carossel() {

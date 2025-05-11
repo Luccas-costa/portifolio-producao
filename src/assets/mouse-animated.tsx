@@ -99,7 +99,7 @@
 
 import { useEffect, useState } from 'react'
 import Lottie from 'lottie-react'
-import animationData from '../../public/assets/animation.json' // ou o caminho correto para o seu arquivo de animação
+import animationData from '../../public/assets/mouse_animation/animation.json' // ou o caminho correto para o seu arquivo de animação
 
 export default function MouseAnimated() {
   const [isClient, setIsClient] = useState(false)
