@@ -1,14 +1,14 @@
 @keyframes slideLight {
     0% {
-        transform: translateX(-100%) rotate(20deg) translateY(-30px);
+        transform: translateX(-250%) rotate(20deg) translateY(-25%);
     }
 
     60% {
-        transform: translateX(100vw) rotate(20deg) translateY(-30px);
+        transform: translateX(110vw) rotate(20deg) translateY(-25%);
     }
 
     100% {
-        transform: translateX(100vw) rotate(20deg) translateY(-30px);
+        transform: translateX(110vw) rotate(20deg) translateY(-25%);
         /* pausa */
     }
 }
