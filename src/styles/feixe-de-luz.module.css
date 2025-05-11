@@ -1,0 +1,18 @@
+@keyframes slideLight {
+    0% {
+        transform: translateX(-100%) rotate(20deg) translateY(-30px);
+    }
+
+    60% {
+        transform: translateX(100vw) rotate(20deg) translateY(-30px);
+    }
+
+    100% {
+        transform: translateX(100vw) rotate(20deg) translateY(-30px);
+        /* pausa */
+    }
+}
+
+.feixe {
+    animation: slideLight 10s linear infinite;
+}

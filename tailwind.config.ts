@@ -11,6 +11,7 @@ const config: Config = {
     extend: {
       animation: {
         spotlight: 'spotlight 2s ease .75s 1 forwards',
+        spinslow: 'spin 20s linear infinite',
       },
       keyframes: {
         spotlight: {
@@ -43,6 +44,7 @@ const config: Config = {
         screen630: '630px',
         screen670: '670px',
         screen700: '700px',
+        screen768: '768px',
         screen800: '800px',
         screen900: '900px',
         screen1000: '1000px',

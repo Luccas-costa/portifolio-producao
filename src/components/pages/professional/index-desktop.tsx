@@ -11,6 +11,7 @@ import Carossel from '@/components/pages/professional/carossel'
 import Imac from './imac'
 import Ipad from './ipad'
 import CarosselMobile from './carossel-mobile'
+import Numbers from './numbers'
 
 export default function IndexDesktop() {
   return (
@@ -31,7 +32,7 @@ export default function IndexDesktop() {
       </div>
 
       {/* Conteudo */}
-      <div style={{ zIndex: 2 }} className="absolute w-full">
+      <div style={{ zIndex: 2 }} className="absolute w-full" id='professional'>
         <Hero isMobile={false} />
 
         <div className="relative">
@@ -72,7 +73,9 @@ export default function IndexDesktop() {
             </div>
           </div>
 
-          <div className='h-screen bg-[#121212] screen1070:translate-y-[-210px] translate-y-[-270px]'></div>
+          <div style={{ zIndex: 2 }} className='relative h-screen bg-[#121212] screen1070:translate-y-[-210px] translate-y-[-270px]'>
+            <Numbers />
+          </div>
         </div>
       </div>
     </div>

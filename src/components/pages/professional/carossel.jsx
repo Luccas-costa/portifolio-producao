@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import { useState, useRef, useEffect } from 'react'
 import clsx from 'clsx'
-import TekoBag from '../../../../public/projects/teko-bag.jpg'
+import TekoBag from '../../../../public/projects/cardbranco.png'
 import Image from 'next/image'
 
 export default function Carossel() {
@@ -28,7 +28,10 @@ export default function Carossel() {
   }, [])
 
   return (
-    <div className="relative min-h-full w-screen overflow-visible">
+    <a
+      className="relative min-h-full w-screen overflow-visible"
+      href="#professional"
+    >
       <div ref={swiperRef}>
         <Swiper
           slidesPerView={3}
@@ -51,9 +54,9 @@ export default function Carossel() {
                 <div
                   style={{ userSelect: 'none' }}
                   className={clsx(
-                    'mt-[80px] aspect-[3/5] w-full max-w-[300px] overflow-hidden rounded-lg bg-[radial-gradient(circle,_rgba(255,255,255,0.3),_rgba(255,255,255,0.2))] text-xl font-semibold shadow-md transition-all duration-300 ease-in-out screen1070:aspect-[5/3] screen1070:max-w-[500px]',
+                    'mt-[80px] aspect-[5/3] w-full max-w-[500px] overflow-hidden rounded-lg border border-white/10 bg-[radial-gradient(circle,_rgba(255,255,255,0.25),_rgba(255,255,255,0.15))] text-xl font-semibold shadow-md transition-all duration-300 ease-in-out',
                     isActive
-                      ? 'z-10 -translate-y-[50px] scale-105 opacity-100'
+                      ? 'z-10 -translate-y-[50px] scale-105 opacity-80'
                       : 'translate-y-0 scale-100 opacity-60',
                   )}
                 >
@@ -69,6 +72,6 @@ export default function Carossel() {
           })}
         </Swiper>
       </div>
-    </div>
+    </a>
   )
 }

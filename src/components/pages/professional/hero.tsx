@@ -42,7 +42,7 @@ export default function Hero({ isMobile }: HeroProps) {
       ) : (
         <>
           <div className="relative short800and865:h-[calc(68vh+65px)] h-[68vh]">
-            <div className="mx-auto mt-[90px] w-[160px] rounded-full border-2 border-white/10 bg-[radial-gradient(ellipse_at_center,_rgba(255,255,255,0.1),_rgba(255,255,255,0.3))] py-[6px] text-center text-base shadow-sm shadow-white/20">
+            <div className={`relative mx-auto flex items-center justify-center mt-[90px] w-[160px] rounded-full border-2 border-white/10 bg-[radial-gradient(ellipse_at_center,_rgba(255,255,255,0.1),_rgba(255,255,255,0.3))] py-[6px] text-center text-base shadow-sm shadow-white/20 overflow-hidden`}>
               Web Developer
             </div>
 
