@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import '../../globals.css'
 import { Inter, Montserrat } from 'next/font/google'
-import Navbar from '@/components/pages/professional/sections/navbar'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -34,7 +33,6 @@ export default function RootLayout({
       <body
         className={`${inter.className} ${montserrat.variable} bg-black antialiased transition-all duration-200`}
       >
-        <Navbar />
         {children}
       </body>
     </html>
