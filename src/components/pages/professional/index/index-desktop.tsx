@@ -40,6 +40,7 @@ export default function IndexDesktop() {
         <Hero isMobile={false} />
 
         <div className="relative">
+          
           <div
             style={{ zIndex: 2 }}
             className="relative hidden translate-y-[40px] overflow-visible screen1000:left-1/2 screen1000:translate-x-[-48.5%] screen1070:block screen1070:translate-x-[-50%] screen1550:translate-x-[-48.5%]"
@@ -87,6 +88,7 @@ export default function IndexDesktop() {
           </div>
 
           <div style={{ zIndex: 2 }} className='relative h-screen bg-[#121212] screen1070:translate-y-[-210px] translate-y-[-270px]'>
+            <StarsBackground />
             <Numbers />
             <About />
           </div>

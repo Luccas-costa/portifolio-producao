@@ -12,6 +12,7 @@ import Iphone from '../chatbot/iphone'
 import Numbers from '../sections/numbers'
 import styles from '@/styles/professional.module.css'
 import CarosselMobile from '../carossel/carossel-mobile'
+import About from '../sections/about'
 
 export default function IndexMobile() {
   return (
@@ -77,7 +78,9 @@ export default function IndexMobile() {
           </div>
 
           <div style={{ zIndex: 2 }} className='relative h-screen bg-[#121212] translate-y-[-270px]'>
+            <StarsBackground />
             <Numbers />
+            <About />
           </div>
         </div>
       </div>
