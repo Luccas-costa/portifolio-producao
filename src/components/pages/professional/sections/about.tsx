@@ -12,9 +12,9 @@ import codigodebarras from '../../../../../public/assets/codigodebarras.png'
 
 export default function About() {
   return (
-    <div className={`mt-[200px] pb-[170px]`}>
+    <div className={`mt-[200px] pb-[300px] screen1200:pb-[170px]`}>
       <div className="flex h-full w-full flex-wrap justify-center gap-[20px] screen1200:flex-nowrap screen1300:gap-[100px] screen1500:ml-[150px] screen1500:justify-normal">
-        <div className="mb-[100px] flex h-[500px] w-[450px] flex-col rounded-xl bg-zinc-200 screen500:h-[550px] screen500:w-[500px]">
+        <div className="mb-[100px] flex h-[470px] w-[420px] flex-col rounded-xl bg-zinc-200 screen500:h-[550px] screen500:w-[500px]">
           <div className="mb-[-10px] pt-[2px] text-center text-sm font-light text-zinc-950">
             2025
           </div>
@@ -39,15 +39,15 @@ export default function About() {
         <div className="ml-0 flex h-[570px] translate-x-[10%] flex-col justify-between screen800:ml-[150px] screen800:translate-x-0 screen1200:ml-0">
           <>
             <div
-              className={`relative text-[84px] text-zinc-200 screen550:text-8xl ${styles.monserrat} translate-x-[-36px] font-black screen550:translate-x-[-45px] screen630:translate-x-[-10px] screen670:translate-x-0`}
+              className={`relative text-[74px] text-zinc-200 screen500:text-[84px] screen550:text-8xl ${styles.monserrat} translate-x-[-20px] font-black screen500:translate-x-[-36px] screen550:translate-x-[-45px] screen630:translate-x-[-10px] screen670:translate-x-0`}
             >
-              <div className="absolute right-[30px] top-[-42px] rotate-[10deg] screen550:right-[20px] screen550:top-[-60px] screen630:right-[70px] screen670:right-[118px]">
+              <div className="absolute right-[30px] top-[-47px] rotate-[10deg] screen500:top-[-42px] screen550:right-[20px] screen550:top-[-60px] screen630:right-[70px] screen670:right-[118px]">
                 <Image src={ovini} alt="assinatura" width={100} height={100} />
               </div>
               ab<span className="text-[#E97511]">o</span>ut m
               <span className="text-[#E97511]">e</span>
             </div>
-            <div className="mt-5 flex max-w-[520px] translate-x-[-68px] items-center justify-center gap-2 pl-2 text-zinc-200 screen630:translate-x-[-10px] screen670:translate-x-0 screen1200:mt-3 screen1200:justify-normal">
+            <div className="mt-5 flex max-w-[520px] translate-x-[-50px] items-center justify-center gap-2 pl-2 text-zinc-200 screen500:translate-x-[-68px] screen630:translate-x-[-10px] screen670:translate-x-0 screen1200:mt-3 screen1200:justify-normal">
               <div className="h-1 w-[30px] rounded-sm bg-[#E97511]" />
               <div className="flex items-center gap-1 text-lg">
                 <span>E a final quem é Luccas Costa?</span>
