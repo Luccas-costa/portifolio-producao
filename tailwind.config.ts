@@ -35,6 +35,7 @@ const config: Config = {
         // min width
         screen350: '350px',
         screen400: '400px',
+        screen440: '440px',
         screen450: '450px',
         screen500: '500px',
         screen520: '520px',
