@@ -1,0 +1,36 @@
+.button .icon {
+    background: white;
+    margin-left: 1em;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.8em;
+    /* antes 2.2em */
+    width: 2.8em;
+    /* antes 2.2em */
+    border-radius: 1em;
+    /* proporcional ao novo tamanho */
+    box-shadow: 0.1em 0.1em 0.6em 0.2em #714da6;
+    right: 0.3em;
+    transition: all 0.3s;
+}
+
+.button:hover .icon {
+    width: calc(100% - 0.6em);
+}
+
+.button .icon svg {
+    width: 1.4em;
+    /* antes 1.1em */
+    transition: transform 0.3s;
+    color: #714da6;
+}
+
+.button:hover .icon svg {
+    transform: translateX(0.1em);
+}
+
+.button:active .icon {
+    transform: scale(0.95);
+}

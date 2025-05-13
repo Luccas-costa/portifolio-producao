@@ -4,6 +4,8 @@ import Image from 'next/image'
 
 import { ShootingStars } from 'ui/shooting-stars'
 import { StarsBackground } from 'ui/stars-background'
+
+import ovini from "../../../../../public/assets/icons/astronaut/ovini2.png"
 import rocket from "../../../../../public/assets/icons/astronaut/rocket.png"
 import astronaut from "../../../../../public/assets/icons/astronaut/astronaut-orange.png"
 
@@ -52,6 +54,9 @@ export default function IndexMobile() {
             <div className={`absolute right-0 translate-x-[66%] h-[800px] w-[768px] screen1200:top-[400px] top-[340px]`}>
               <Image src={astronaut} alt="Luccas" width={50} height={50} />
             </div>
+            <div className={`absolute left-0 translate-x-[5%] h-[800px] w-[768px] screen1200:top-[1000px] top-[940px] rotate-[-5deg]`}>
+              <Image src={ovini} alt="Luccas" width={50} height={50} />
+            </div>
             <div
               className={`absolute right-0 translate-x-[50%] w-[500px] h-[550px] screen600:h-[800px] screen600:w-[768px] rounded-[100%] screen1200:top-[360px] top-[300px] border border-[#FF793F] bg-black ${styles.degrade2}`}
               style={{ zIndex: 1 }}
@@ -77,10 +82,14 @@ export default function IndexMobile() {
             </div>
           </div>
 
-          <div style={{ zIndex: 2 }} className='relative h-screen bg-[#121212] translate-y-[-270px]'>
-            <StarsBackground />
-            <Numbers />
-            <About />
+          <div style={{ zIndex: 2 }} className='relative h-full bg-[#121212] translate-y-[-270px]'>
+            <div className='static' style={{ zIndex: 2 }}>
+              <StarsBackground />
+            </div>
+            <div className='relative' style={{ zIndex: 3 }}>
+              <Numbers />
+              <About />
+            </div>
           </div>
         </div>
       </div>
