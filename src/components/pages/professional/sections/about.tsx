@@ -24,16 +24,13 @@ export default function About() {
           <div className="flex h-[50px] items-center justify-between rounded-b-md bg-zinc-200 px-[20px]">
             <div
               style={{ fontWeight: 300 }}
-              className={`text-2xl text-zinc-950 ${styles.monserrat}`}
+              className={`text-xl text-zinc-950 screen440:text-2xl ${styles.monserrat}`}
             >
               Luccas Costa
             </div>
-            <Image
-              src={codigodebarras}
-              alt="codigodebarras"
-              width={160}
-              height={160}
-            />
+            <div className="w-[140px] screen440:w-[160px]">
+              <Image src={codigodebarras} alt="codigodebarras" />
+            </div>
           </div>
         </div>
         <div className="ml-0 flex h-[570px] translate-x-[10%] flex-col justify-between screen800:ml-[150px] screen800:translate-x-0 screen1200:ml-0">
