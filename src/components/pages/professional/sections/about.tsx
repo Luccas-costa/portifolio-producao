@@ -51,7 +51,7 @@ export default function About() {
               </div>
               <div className="block h-1 w-[30px] rounded-sm bg-[#E97511] screen1200:hidden" />
             </div>
-            <div className="text-light mt-10 max-w-[440px] translate-x-[-48px] justify-center pl-2 text-center text-zinc-200 screen500:max-w-[500px] screen500:translate-x-[-65px] screen550:max-w-[550px] screen550:text-lg screen630:max-w-[600px] screen630:translate-x-[-50px] screen670:max-w-[650px] screen670:translate-x-[-70px] screen1200:mt-7 screen1200:translate-x-0 screen1200:justify-normal screen1200:text-start">
+            <div className="text-light mt-10 max-w-[440px] translate-x-[-48px] justify-center pl-2 text-center text-zinc-200 screen500:max-w-[490px] screen500:translate-x-[-65px] screen550:max-w-[540px] screen550:text-lg screen630:max-w-[600px] screen630:translate-x-[-50px] screen670:max-w-[650px] screen670:translate-x-[-70px] screen1200:mt-7 screen1200:translate-x-0 screen1200:justify-normal screen1200:text-start">
               Olá, sou Luccas Costa. Sou de Sao Paulo - Sao jose dos campos.
               Atualmente tenho 18 anos e sou apaixonado por tecnologia e
               inovação, sempre buscando maneiras de tornar o mundo um lugar
