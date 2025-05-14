@@ -7,6 +7,8 @@ import { StarsBackground } from 'ui/stars-background'
 
 import ovini from "../../../../../public/assets/icons/astronaut/ovini2.png"
 import rocket from "../../../../../public/assets/icons/astronaut/rocket.png"
+import galaxy from "../../../../../public/assets/icons/astronaut/galaxy.png"
+import satelite from "../../../../../public/assets/icons/astronaut/satelite.png"
 import astronaut from "../../../../../public/assets/icons/astronaut/astronaut-orange.png"
 
 import Hero from '../sections/hero'
@@ -89,6 +91,12 @@ export default function IndexMobile() {
             <div className='relative' style={{ zIndex: 3 }}>
               <Numbers />
               <About />
+              <div className='absolute top-[580px] left-[40px] screen700:top-[310px]'>
+                <Image src={galaxy} width={50} height={50} alt="Luccas" />
+              </div>
+              <div className='absolute top-[1960px] right-[40px] rotate-[40deg] screen550:top-[1760px] screen700:top-[1510px]'>
+                <Image src={satelite} width={50} height={50} alt="Luccas" />
+              </div>
             </div>
           </div>
         </div>

@@ -9,6 +9,8 @@ import styles from '@/styles/professional.module.css'
 
 import ovini from "../../../../../public/assets/icons/astronaut/ovini2.png"
 import rocket from "../../../../../public/assets/icons/astronaut/rocket.png"
+import galaxy from "../../../../../public/assets/icons/astronaut/galaxy.png"
+import satelite from "../../../../../public/assets/icons/astronaut/satelite.png"
 import astronaut from "../../../../../public/assets/icons/astronaut/astronaut-orange.png"
 
 import Imac from '../chatbot/imac'
@@ -102,6 +104,12 @@ export default function IndexDesktop() {
             <div className='relative' style={{ zIndex: 3 }}>
               <Numbers />
               <About />
+              <div className='absolute top-[310px] left-[40px]'>
+                <Image src={galaxy} width={50} height={50} alt="Luccas" />
+              </div>
+              <div className='absolute top-[1550px] right-[40px] rotate-[40deg] screen1200:top-[1010px]'>
+                <Image src={satelite} width={50} height={50} alt="Luccas" />
+              </div>
             </div>
             {/* <div className='translate-y-[10px] bg-[#121212] screen1070:h-[210px] h-[270px] w-full'></div> */}
           </div>
