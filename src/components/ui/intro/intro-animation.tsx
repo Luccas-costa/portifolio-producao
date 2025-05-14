@@ -3,10 +3,10 @@ import { motion } from 'framer-motion'
 import React, { useEffect, useState } from 'react'
 
 export default function IntroAnimation() {
-  const [yValue1, setYValue1] = useState(-320) // T | O
-  const [yValue2, setYValue2] = useState(155) // E | A
-  const [yValue3, setYValue3] = useState(480) // K | G
-  const [yValue4, setYValue4] = useState(-480) // B
+  const [yValue1, setYValue1] = useState(-320) // L | A
+  const [yValue2, setYValue2] = useState(155) // U | S
+  const [yValue3, setYValue3] = useState(480) // C
+  const [yValue4, setYValue4] = useState(-480) // C
 
   useEffect(() => {
     const handleResize = () => {
