@@ -37,7 +37,7 @@ export default function Skills() {
     <div className="relative h-full w-full">
       <div
         style={{ zIndex: 1 }}
-        className="absolute left-1/2 top-0 h-full w-[110vw] translate-x-[-50%] rotate-[2deg] bg-[#714da6] pb-[80px]"
+        className="absolute left-1/2 top-0 h-full w-[110vw] translate-x-[-50%] rotate-[3.5deg] bg-[#714da6] pb-[80px] screen630:rotate-[2deg]"
       ></div>
 
       <div
