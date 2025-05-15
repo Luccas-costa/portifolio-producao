@@ -29,7 +29,7 @@ export default function Skills() {
         className="relative h-[80px] w-full overflow-hidden bg-[#E97511]"
       >
         <div
-          className={`flex h-full translate-x-[-14px] items-center gap-[50px] text-4xl font-semibold text-zinc-900 ${sliderStyle.sliderTrack} ${styles.monserrat}`}
+          className={`flex h-full translate-x-[-14px] items-center gap-[30px] text-3xl font-semibold text-zinc-900 screen630:gap-[50px] screen630:text-4xl ${sliderStyle.sliderTrack} ${styles.monserrat}`}
         >
           {duplicated.map((text, index) => (
             <React.Fragment key={index}>
