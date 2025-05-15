@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from '@/styles/fonts.module.css'
 import sliderStyle from '@/styles/slider.module.css'
 import { Asterisk } from '@phosphor-icons/react/dist/ssr'
@@ -15,6 +15,22 @@ const items = [
 ]
 
 export default function Skills() {
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    // Função para verificar o tamanho da tela
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 550)
+    }
+
+    // Adiciona o event listener no resize
+    checkScreenSize()
+    window.addEventListener('resize', checkScreenSize)
+
+    // Remove o event listener quando o componente desmonta
+    return () => window.removeEventListener('resize', checkScreenSize)
+  }, [])
+
   const duplicated = [...items, ...items]
 
   return (
@@ -29,11 +45,11 @@ export default function Skills() {
         className="relative h-[80px] w-full overflow-hidden bg-[#E97511]"
       >
         <div
-          className={`flex h-full translate-x-[-14px] items-center gap-[30px] text-3xl font-semibold text-zinc-900 screen630:gap-[50px] screen630:text-4xl ${sliderStyle.sliderTrack} ${styles.monserrat}`}
+          className={`flex h-full translate-x-[-14px] items-center gap-[20px] text-xl font-semibold text-zinc-900 screen550:gap-[30px] screen550:text-3xl screen630:gap-[50px] screen630:text-4xl ${sliderStyle.sliderTrack} ${styles.monserrat}`}
         >
           {duplicated.map((text, index) => (
             <React.Fragment key={index}>
-              <Asterisk size={32} weight="bold" />
+              <Asterisk size={isMobile ? 22 : 32} weight="bold" />
               <div>{text}</div>
             </React.Fragment>
           ))}
