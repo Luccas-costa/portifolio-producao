@@ -17,6 +17,7 @@ import Imac from '../chatbot/imac'
 import Ipad from '../chatbot/ipad'
 import Hero from '../sections/hero'
 import About from '../sections/about'
+import Skills from '../sections/skills'
 import Numbers from '../sections/numbers'
 import Carossel from '../carossel/carossel'
 import CarosselMobile from '../carossel/carossel-mobile'
@@ -110,6 +111,8 @@ export default function IndexDesktop() {
               <div className='absolute top-[1550px] right-[40px] rotate-[40deg] screen1200:top-[1010px]'>
                 <Image src={satelite} width={50} height={50} alt="Luccas" />
               </div>
+
+              <Skills />
             </div>
             {/* <div className='translate-y-[10px] bg-[#121212] screen1070:h-[210px] h-[270px] w-full'></div> */}
           </div>

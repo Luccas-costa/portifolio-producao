@@ -12,11 +12,12 @@ import satelite from "../../../../../public/assets/icons/astronaut/satelite.png"
 import astronaut from "../../../../../public/assets/icons/astronaut/astronaut-orange.png"
 
 import Hero from '../sections/hero'
+import About from '../sections/about'
 import Iphone from '../chatbot/iphone'
+import Skills from '../sections/skills'
 import Numbers from '../sections/numbers'
 import styles from '@/styles/professional.module.css'
 import CarosselMobile from '../carossel/carossel-mobile'
-import About from '../sections/about'
 
 export default function IndexMobile() {
   return (
@@ -97,6 +98,8 @@ export default function IndexMobile() {
               <div className='absolute top-[1960px] right-[40px] rotate-[40deg] screen550:top-[1760px] screen700:top-[1510px]'>
                 <Image src={satelite} width={50} height={50} alt="Luccas" />
               </div>
+
+              <Skills />
             </div>
           </div>
         </div>
