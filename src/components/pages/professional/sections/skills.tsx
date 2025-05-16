@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
-import styles from '@/styles/fonts.module.css'
+import styles from '@/styles/globals/fonts.module.css'
 import sliderStyle from '@/styles/slider.module.css'
 import { Asterisk } from '@phosphor-icons/react/dist/ssr'
 
@@ -10,8 +10,8 @@ const items = [
   'Website Design',
   'Dashboard',
   'API Development',
-  'Database Design',
-  'DevOps & Deployment',
+  'Full-Stack',
+  'DevOps',
 ]
 
 export default function Skills() {

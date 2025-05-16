@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useInView } from 'framer-motion'
 import styles from '@/styles/feixe-de-luz.module.css'
+import gradients from '@/styles/globals/gradients.module.css'
 
 function useCount(to: number, duration: number, start: boolean) {
   const [count, setCount] = useState(0)
@@ -42,7 +43,7 @@ export default function Numbers() {
     <div ref={ref} className="relative h-[500px] w-full screen670:h-[250px]">
       <div
         // eslint-disable-next-line prettier/prettier
-        className={`relative flex h-full w-full flex-col overflow-hidden bg-[#E97511]/85 text-3xl font-black screen670:flex-row screen670:text-2xl screen768:text-3xl screen900:text-4xl ${styles.monserrat}`}
+        className={`relative flex h-full w-full flex-col overflow-hidden text-3xl font-black screen670:flex-row screen670:text-2xl screen768:text-3xl screen900:text-4xl ${styles.monserrat} ${gradients.numbers}`}
       >
         <div className="flex h-1/3 w-full items-center justify-center px-[10px] text-center screen670:h-full screen670:w-1/3">
           {count1} anos de experiência
@@ -58,7 +59,7 @@ export default function Numbers() {
         ></div>
       </div>
       <div
-        className={`relative flex h-[4px] w-full translate-y-[8px] items-center justify-center overflow-hidden bg-[#E97511]/85`}
+        className={`relative flex h-[4px] w-full translate-y-[8px] items-center justify-center overflow-hidden ${gradients.numbers}`}
       >
         <div
           className={`pointer-events-nones absolute h-[408%] w-[105px] translate-x-[-50px] rotate-[6deg] bg-white mix-blend-screen blur-2xl ${styles.feixe}`}

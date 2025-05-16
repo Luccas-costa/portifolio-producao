@@ -18,6 +18,7 @@ import Skills from '../sections/skills'
 import Numbers from '../sections/numbers'
 import styles from '@/styles/professional.module.css'
 import CarosselMobile from '../carossel/carossel-mobile'
+import Projects from '../sections/projects'
 
 export default function IndexMobile() {
   return (
@@ -100,6 +101,7 @@ export default function IndexMobile() {
               </div>
 
               <Skills />
+              <Projects />
             </div>
           </div>
         </div>

@@ -131,7 +131,7 @@ export default function Imac() {
         </div>
       </div>
       <div className="mx-auto h-[400px] w-[400px] border border-[#2E2E2E] bg-[#121212]">
-        <div className="relative mx-auto mt-[80px] size-[150px] rounded-full border border-[#2E2E2E]"></div>
+        <div className="relative mx-auto mt-[80px] size-[150px] rounded-full border-b border-[#2E2E2E]"></div>
       </div>
       <div className="mx-auto h-[30px] w-[440px] border border-[#2E2E2E] bg-[#121212]"></div>
     </div>

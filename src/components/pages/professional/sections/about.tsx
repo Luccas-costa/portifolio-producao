@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 
-import styles from '@/styles/fonts.module.css'
+import styles from '@/styles/globals/fonts.module.css'
 
 import ButtonSlider from '@/components/ui/button-slider'
 

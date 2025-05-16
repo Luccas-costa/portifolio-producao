@@ -20,6 +20,7 @@ import About from '../sections/about'
 import Skills from '../sections/skills'
 import Numbers from '../sections/numbers'
 import Carossel from '../carossel/carossel'
+import Projects from '../sections/projects'
 import CarosselMobile from '../carossel/carossel-mobile'
 
 export default function IndexDesktop() {
@@ -113,6 +114,7 @@ export default function IndexDesktop() {
               </div>
 
               <Skills />
+              <Projects />
             </div>
             {/* <div className='translate-y-[10px] bg-[#121212] screen1070:h-[210px] h-[270px] w-full'></div> */}
           </div>
