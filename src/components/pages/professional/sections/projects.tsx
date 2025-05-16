@@ -14,12 +14,12 @@ export default function Projects() {
       <div className="flex flex-col items-center gap-[70px]">
         {/* titulos */}
         <div
-          className={`${fonts.monserrat} flex flex-col justify-center gap-6 text-center text-zinc-200`}
+          className={`${fonts.monserrat} flex flex-col justify-center gap-4 text-center text-zinc-200 screen550:gap-6`}
         >
           {/* titulo */}
           <div className="text-5xl">My Works</div>
           {/* subtitulo */}
-          <div className="max-w-[550px] text-zinc-300/80 screen550:px-3">
+          <div className="max-w-[550px] px-3 text-zinc-300/80 screen550:px-0">
             Projetos que refletem minha jornada como desenvolvedor,
             transformando ideias em experiências digitais com propósito,
             qualidade e atenção aos detalhes.
