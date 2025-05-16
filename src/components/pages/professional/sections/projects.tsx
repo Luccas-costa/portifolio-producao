@@ -154,7 +154,7 @@ const Card = ({ title, subtitle, image, gitname, url }: CardProps) => {
 const CardMobile = ({ title, subtitle, image, gitname, url }: CardProps) => {
   return (
     <div
-      className={`h-[800px] w-[390px] rounded-xl border border-[#2a2a2a] bg-[#1a1a1a]/75 p-5 screen450:w-[440px] screen500:h-[1000px] screen500:w-[490px] screen600:w-[590px] screen700:w-[690px] screen800:w-[790px] screen900:w-[890px]`}
+      className={`h-[800px] w-[360px] rounded-xl border border-[#2a2a2a] bg-[#1a1a1a]/75 p-5 screen400:w-[390px] screen450:w-[440px] screen500:h-[1000px] screen500:w-[490px] screen600:w-[590px] screen700:w-[690px] screen800:w-[790px] screen900:w-[890px]`}
     >
       <div className="flex flex-col">
         <div
@@ -192,7 +192,7 @@ const CardMobile = ({ title, subtitle, image, gitname, url }: CardProps) => {
           </a>
         </div>
         <a href={url} target="_blank" rel="noreferrer">
-          <div className="group relative flex h-[410px] w-[350px] items-center justify-center overflow-hidden rounded-xl screen450:w-[400px] screen500:h-[610px] screen500:w-[450px] screen600:w-[550px] screen700:w-[650px] screen800:w-[750px] screen900:w-[850px]">
+          <div className="group relative flex h-[410px] w-[320px] items-center justify-center overflow-hidden rounded-xl screen400:w-[350px] screen450:w-[400px] screen500:h-[610px] screen500:w-[450px] screen600:w-[550px] screen700:w-[650px] screen800:w-[750px] screen900:w-[850px]">
             <Image src={image} alt={title} />
             <div className="absolute bottom-3 right-3 rotate-[45deg] opacity-0 transition-opacity group-hover:opacity-100">
               <ArrowRight
