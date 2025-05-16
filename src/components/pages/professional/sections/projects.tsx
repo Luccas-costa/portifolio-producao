@@ -19,7 +19,7 @@ export default function Projects() {
           {/* titulo */}
           <div className="text-5xl">My Works</div>
           {/* subtitulo */}
-          <div className="max-w-[550px] text-zinc-300/80">
+          <div className="max-w-[550px] text-zinc-300/80 screen550:px-3">
             Projetos que refletem minha jornada como desenvolvedor,
             transformando ideias em experiências digitais com propósito,
             qualidade e atenção aos detalhes.
