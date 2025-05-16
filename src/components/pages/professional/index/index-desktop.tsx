@@ -22,6 +22,7 @@ import Numbers from '../sections/numbers'
 import Carossel from '../carossel/carossel'
 import Projects from '../sections/projects'
 import CarosselMobile from '../carossel/carossel-mobile'
+import Called from '../sections/called'
 
 export default function IndexDesktop() {
   return (
@@ -115,6 +116,7 @@ export default function IndexDesktop() {
 
               <Skills />
               <Projects />
+              <Called />
             </div>
             {/* <div className='translate-y-[10px] bg-[#121212] screen1070:h-[210px] h-[270px] w-full'></div> */}
           </div>
