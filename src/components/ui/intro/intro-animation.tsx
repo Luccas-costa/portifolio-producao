@@ -104,13 +104,13 @@ export default function IntroAnimation() {
         <div className="translate-y-[-40px] screen450:translate-y-[-45px] screen700:translate-y-[-65px] screen900:translate-y-[-120px]">
           C
         </div>
-        <div className="translate-y-[-64px] screen450:translate-y-[-87px] screen700:translate-y-[-135px] screen900:translate-y-[-200px]">
+        <div className="translate-y-[-65px] screen450:translate-y-[-87px] screen700:translate-y-[-135px] screen900:translate-y-[-200px]">
           C
         </div>
-        <div className="translate-y-[-90px] screen450:translate-y-[-134px] screen700:translate-y-[-205px] screen900:translate-y-[-280px]">
+        <div className="translate-y-[-91px] screen450:translate-y-[-134px] screen700:translate-y-[-205px] screen900:translate-y-[-280px]">
           C
         </div>
-        <div className="translate-y-[-112px] screen450:translate-y-[-180px] screen700:translate-y-[-275px] screen900:translate-y-[-360px]">
+        <div className="translate-y-[-113px] screen450:translate-y-[-180px] screen700:translate-y-[-275px] screen900:translate-y-[-360px]">
           C
         </div>
       </motion.div>
