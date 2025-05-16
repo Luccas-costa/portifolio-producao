@@ -36,7 +36,7 @@ export default function Professional() {
 
   return (
     <>
-      {isintro ? (
+      {!isintro ? (
         <IntroAnimationUse />
       ) : (
         <div className="h-screen w-screen bg-neutral-900">
