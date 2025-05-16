@@ -101,16 +101,16 @@ export default function IntroAnimation() {
           mass: 1,
         }}
       >
-        <div className="translate-y-[-40px] screen450:translate-y-[-43px] screen700:translate-y-[-65px] screen900:translate-y-[-120px]">
+        <div className="translate-y-[-38px] screen450:translate-y-[-45px] screen700:translate-y-[-65px] screen900:translate-y-[-120px]">
           C
         </div>
-        <div className="translate-y-[-66px] screen450:translate-y-[-85px] screen700:translate-y-[-135px] screen900:translate-y-[-200px]">
+        <div className="translate-y-[-64px] screen450:translate-y-[-87px] screen700:translate-y-[-135px] screen900:translate-y-[-200px]">
           C
         </div>
-        <div className="translate-y-[-92px] screen450:translate-y-[-132px] screen700:translate-y-[-205px] screen900:translate-y-[-280px]">
+        <div className="translate-y-[-90px] screen450:translate-y-[-134px] screen700:translate-y-[-205px] screen900:translate-y-[-280px]">
           C
         </div>
-        <div className="translate-y-[-114px] screen450:translate-y-[-178px] screen700:translate-y-[-275px] screen900:translate-y-[-360px]">
+        <div className="translate-y-[-112px] screen450:translate-y-[-180px] screen700:translate-y-[-275px] screen900:translate-y-[-360px]">
           C
         </div>
       </motion.div>
