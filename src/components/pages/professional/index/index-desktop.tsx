@@ -18,11 +18,12 @@ import Ipad from '../chatbot/ipad'
 import Hero from '../sections/hero'
 import About from '../sections/about'
 import Skills from '../sections/skills'
+import Called from '../sections/called'
+import Footer from '../sections/footer'
 import Numbers from '../sections/numbers'
 import Carossel from '../carossel/carossel'
 import Projects from '../sections/projects'
 import CarosselMobile from '../carossel/carossel-mobile'
-import Called from '../sections/called'
 
 export default function IndexDesktop() {
   return (
@@ -92,10 +93,10 @@ export default function IndexDesktop() {
               className={`absolute left-[280px] h-[200px] w-[200px] rounded-[100%] top-[1700px] border border-[#FF793F] bg-black ${styles.degrade4}`}
               style={{ zIndex: 1 }}
             />
-            <div style={{ zIndex: 2 }} className="relative hidden translate-y-[150px] pb-[600px] screen1200:block">
+            <div style={{ zIndex: 2 }} id='specialization' className="relative hidden translate-y-[150px] pb-[600px] screen1200:block">
               <Imac />
             </div>
-            <div style={{ zIndex: 2 }} className="relative block translate-y-[120px] pb-[400px] screen1200:hidden">
+            <div style={{ zIndex: 2 }} id='specialization' className="relative block translate-y-[120px] pb-[400px] screen1200:hidden">
               <Ipad />
             </div>
           </div>
@@ -105,7 +106,9 @@ export default function IndexDesktop() {
               <StarsBackground />
             </div>
             <div className='relative' style={{ zIndex: 3 }}>
-              <Numbers />
+              <div className='screen1070:translate-y-[0px] translate-y-[-50px]'>
+                <Numbers />
+              </div>
               <About />
               <div className='absolute top-[310px] left-[40px]'>
                 <Image src={galaxy} width={50} height={50} alt="Luccas" />
@@ -118,9 +121,10 @@ export default function IndexDesktop() {
               <Projects />
               <Called />
             </div>
-            {/* <div className='translate-y-[10px] bg-[#121212] screen1070:h-[210px] h-[270px] w-full'></div> */}
+            <div style={{ zIndex: 3 }} className="screen1070:h-[410px] h-[470px] screen1070:translate-y-[210px] translate-y-[270px] w-full bg-red-500 absolute bottom-0">
+              <Footer />
+            </div>
           </div>
-          {/* <div className="h-9 w-full bg-red-500"></div> */}
         </div>
       </div>
     </div>

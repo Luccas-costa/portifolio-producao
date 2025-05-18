@@ -15,11 +15,12 @@ import Hero from '../sections/hero'
 import About from '../sections/about'
 import Iphone from '../chatbot/iphone'
 import Skills from '../sections/skills'
+import Called from '../sections/called'
 import Numbers from '../sections/numbers'
+import Projects from '../sections/projects'
 import styles from '@/styles/professional.module.css'
 import CarosselMobile from '../carossel/carossel-mobile'
-import Projects from '../sections/projects'
-import Called from '../sections/called'
+import Footer from '../sections/footer'
 
 export default function IndexMobile() {
   return (
@@ -92,7 +93,9 @@ export default function IndexMobile() {
               <StarsBackground />
             </div>
             <div className='relative' style={{ zIndex: 3 }}>
-              <Numbers />
+              <div className='screen650:translate-y-[-50px] translate-y-[0px]'>
+                <Numbers />
+              </div>
               <About />
               <div className='absolute top-[580px] left-[40px] screen700:top-[310px]'>
                 <Image src={galaxy} width={50} height={50} alt="Luccas" />
@@ -104,6 +107,9 @@ export default function IndexMobile() {
               <Skills />
               <Projects />
               <Called />
+            </div>
+            <div style={{ zIndex: 3 }} className="screen1070:h-[410px] screen500:h-[470px] h-[600px] screen1070:translate-y-[210px] translate-y-[270px] w-full bg-red-500 absolute bottom-0">
+              <Footer />
             </div>
           </div>
         </div>

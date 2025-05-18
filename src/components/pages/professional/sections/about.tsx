@@ -31,7 +31,10 @@ export default function About() {
   return (
     <div>
       {isMobile ? (
-        <div className={`mt-[200px] pb-[300px] screen1200:pb-[170px]`}>
+        <div
+          className={`mt-[200px] pb-[300px] screen1200:pb-[170px]`}
+          id="about"
+        >
           <div className="flex h-full w-full flex-wrap justify-center gap-[20px] screen1200:flex-nowrap screen1300:gap-[100px] screen1500:ml-[150px] screen1500:justify-normal">
             <div className="mb-[100px] flex h-[400px] w-[350px] flex-col rounded-xl bg-zinc-200 screen440:h-[450px] screen440:w-[400px] screen500:h-[480px] screen500:w-[430px] screen550:h-[550px] screen550:w-[500px]">
               <div className="mb-[-10px] pt-[2px] text-center text-sm font-light text-zinc-950">
@@ -60,8 +63,7 @@ export default function About() {
                   <div className="absolute right-[-26px] top-[-49px] h-[80px] w-[80px] rotate-[10deg] screen550:right-[-30px] screen550:top-[-60px] screen550:h-[100px] screen550:w-[100px]">
                     <Image src={ovini} alt="assinatura" />
                   </div>
-                  ab<span className="text-[#E97511]">o</span>ut m
-                  <span className="text-[#E97511]">e</span>
+                  about m<span className="text-[#E97511]">e</span>
                 </div>
                 <div className="mt-5 flex items-center gap-2">
                   <div className="h-1 w-[30px] rounded-sm bg-[#E97511]" />
@@ -97,7 +99,10 @@ export default function About() {
           </div>
         </div>
       ) : (
-        <div className={`mt-[200px] pb-[300px] screen1200:pb-[170px]`}>
+        <div
+          className={`mt-[200px] pb-[300px] screen1200:pb-[170px]`}
+          id="about"
+        >
           <div className="flex h-full w-full flex-wrap justify-center gap-[20px] screen1200:flex-nowrap screen1300:gap-[100px] screen1500:ml-[150px] screen1500:justify-normal">
             <div className="mb-[100px] flex h-[400px] w-[350px] flex-col rounded-xl bg-zinc-200 screen440:h-[450px] screen440:w-[400px] screen500:h-[480px] screen500:w-[430px] screen550:h-[550px] screen550:w-[500px]">
               <div className="mb-[-10px] pt-[2px] text-center text-sm font-light text-zinc-950">
@@ -126,8 +131,7 @@ export default function About() {
                   <div className="absolute right-[-24px] top-[-30px] h-[80px] w-[80px] rotate-[10deg] screen440:right-[11px] screen500:top-[-42px] screen500:h-[100px] screen500:w-[100px] screen550:right-[0px] screen550:top-[-60px] screen630:right-[70px] screen670:right-[118px]">
                     <Image src={ovini} alt="assinatura" />
                   </div>
-                  ab<span className="text-[#E97511]">o</span>ut m
-                  <span className="text-[#E97511]">e</span>
+                  about m<span className="text-[#E97511]">e</span>
                 </div>
                 <div className="mt-5 flex max-w-[520px] translate-x-[-50px] items-center justify-center gap-2 pl-2 text-zinc-200 screen500:translate-x-[-58px] screen630:translate-x-[-10px] screen670:translate-x-0 screen1200:mt-3 screen1200:justify-normal">
                   <div className="h-1 w-[30px] rounded-sm bg-[#E97511]" />

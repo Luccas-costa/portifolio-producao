@@ -10,7 +10,7 @@ import { ArrowRight, GithubLogo, ShoppingCart } from '@phosphor-icons/react'
 export default function Projects() {
   const [verMais, setVerMais] = useState(false)
   return (
-    <div className={`mt-[250px] pb-[200px]`}>
+    <div className={`mt-[250px] pb-[200px]`} id="projects">
       <div className="flex flex-col items-center gap-[70px]">
         {/* titulos */}
         <div

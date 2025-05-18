@@ -15,18 +15,18 @@ export default function Navbar() {
         <Image src={logo} alt="logo" width={40} height={40} />
       </div>
       <div className="hidden items-center gap-5 font-medium screen1100:flex">
-        <div className="transition-default cursor-pointer hover:text-white">
+        <a href='#about' className="transition-default cursor-pointer hover:text-white">
           About
-        </div>
-        <div className="transition-default cursor-pointer hover:text-white">
-          specialization
-        </div>
-        <div className="transition-default cursor-pointer hover:text-white">
+        </a>
+        <a href='#specialization' className="transition-default cursor-pointer hover:text-white">
+          Specialization
+        </a>
+        <a href='#projects' className="transition-default cursor-pointer hover:text-white">
           Projects
-        </div>
-        <div className="transition-default cursor-pointer hover:text-white">
+        </a>
+        <a href='#contact' className="transition-default cursor-pointer hover:text-white">
           Contact
-        </div>
+        </a>
       </div>
       <div className="hidden min-w-[100px] items-center gap-3 screen1100:flex">
         <button className="transition-default font-medium hover:text-white">
