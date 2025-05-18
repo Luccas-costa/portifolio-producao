@@ -112,20 +112,20 @@ const ItemList = ({
 }) => {
   return (
     <div className="flex flex-col">
-      <div className="text-base font-medium text-neutral-600 screen600:text-lg">
+      <div className="text-center text-base font-medium text-neutral-600 screen500:text-start screen600:text-lg">
         {title}
       </div>
       {Array.isArray(subtitle) ? (
         subtitle.map((item, index) => (
           <div
             key={index}
-            className="pl-1 text-sm text-zinc-300 screen600:text-base"
+            className="pl-1 text-center text-sm text-zinc-300 screen500:text-start screen600:text-base"
           >
             {item}
           </div>
         ))
       ) : (
-        <div className="pl-1 text-sm text-zinc-300 screen600:text-base">
+        <div className="pl-1 text-center text-sm text-zinc-300 screen500:text-start screen600:text-base">
           {subtitle}
         </div>
       )}
