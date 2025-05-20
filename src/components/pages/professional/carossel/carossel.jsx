@@ -4,8 +4,8 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import { useState, useRef, useEffect } from 'react'
 import clsx from 'clsx'
-import TekoBag from '../../../../../public/projects/cardbranco.png'
-import Image from 'next/image'
+// import TekoBag from '../../../../../public/projects/cardbranco.png'
+// import Image from 'next/image'
 
 export default function Carossel() {
   const cards = [
@@ -60,12 +60,12 @@ export default function Carossel() {
                       : 'translate-y-0 scale-100 opacity-60',
                   )}
                 >
-                  <Image
+                  {/* <Image
                     src={TekoBag}
                     alt="herobrine"
                     fill
                     className="object-cover"
-                  />
+                  /> */}
                 </div>
               </SwiperSlide>
             )
