@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Notes() {
   return (
-    <div className="min-h-screen bg-[#121212] text-zinc-200">
+    <div className="min-h-screen overflow-y-auto bg-[#121212] text-zinc-200">
       <div className="flex h-screen w-full items-center justify-center">
         <div className="h-[800px] w-full max-w-[600px] rounded-xl border border-[#2E2E2E] p-3">
           <div className="flex flex-col">

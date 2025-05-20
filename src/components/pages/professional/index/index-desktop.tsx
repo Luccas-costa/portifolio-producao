@@ -106,7 +106,7 @@ export default function IndexDesktop() {
               <StarsBackground />
             </div>
             <div className='relative' style={{ zIndex: 3 }}>
-              <div className='screen1070:translate-y-[0px] translate-y-[-50px]'>
+              <div className='tall1000and1070min:translate-y-[0px] tall900and1070min:translate-y-[-42px] tall800and1070min:translate-y-[-72px] translate-y-[-105px]'>
                 <Numbers />
               </div>
               <About />

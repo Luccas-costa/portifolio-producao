@@ -184,6 +184,9 @@ const config: Config = {
         short1024and1070min: {
           raw: '(max-height: 1024px) and (min-width: 1070px)',
         },
+        short1000and1070min: {
+          raw: '(max-height: 1024px) and (min-width: 1070px)',
+        },
         short900and1070min: {
           raw: '(max-height: 900px) and (min-width: 1070px)',
         },
@@ -207,6 +210,19 @@ const config: Config = {
         },
         short800and1400min: {
           raw: '(max-height: 800px) and (min-width: 1400px)',
+        },
+        // min width and min height
+        tall1000and1070min: {
+          raw: '(min-height: 1000px) and (min-width: 1070px)',
+        },
+        tall900and1070min: {
+          raw: '(min-height: 900px) and (min-width: 1070px)',
+        },
+        tall800and1070min: {
+          raw: '(min-height: 800px) and (min-width: 1070px)',
+        },
+        tall700and1070min: {
+          raw: '(min-height: 700px) and (min-width: 1070px)',
         },
 
         'max-1460': {
