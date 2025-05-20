@@ -18,7 +18,8 @@ export default function Notes() {
               <li>3. Criar oque vai ir dentro de Slides</li>
               <li>4. Criar oque vai ir dentro de Projetos</li>
               <li>5. Revisar todo texto do site para mudar para o portugues</li>
-              <li>6. Começar a desenhar pagina pessoal</li>
+              <li>6. criar navbar do menuburger</li>
+              <li>7. Começar a desenhar pagina pessoal</li>
             </ul>
           </div>
         </div>

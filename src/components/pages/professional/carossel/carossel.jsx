@@ -54,7 +54,7 @@ export default function Carossel() {
                 <div
                   style={{ userSelect: 'none' }}
                   className={clsx(
-                    'mt-[80px] aspect-[5/3] w-full max-w-[500px] overflow-hidden rounded-lg border border-white/10 bg-[radial-gradient(circle,_rgba(255,255,255,0.25),_rgba(255,255,255,0.15))] text-xl font-semibold shadow-md transition-all duration-300 ease-in-out',
+                    'mt-[80px] aspect-[5/3] w-full max-w-[500px] overflow-hidden rounded-lg border border-white/10 bg-[radial-gradient(circle,_rgba(255,255,255,0.25),_rgba(255,255,255,0.15))] text-xl font-semibold shadow-md transition-all duration-300 ease-in-out screen1700:max-w-[570px]',
                     isActive
                       ? 'z-10 -translate-y-[50px] scale-105 opacity-80'
                       : 'translate-y-0 scale-100 opacity-60',
