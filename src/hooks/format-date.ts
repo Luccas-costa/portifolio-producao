@@ -13,3 +13,15 @@ export function FormatDate(): string {
 
   return `${hora}:${minuto}:${segundo} - ${dia}/${mes}/${ano}`
 }
+
+export function ShortFormatDate(): string {
+  const agora = new Date()
+
+  const pad = (n: number) => n.toString().padStart(2, '0')
+
+  const dia = pad(agora.getDate())
+  const mes = pad(agora.getMonth() + 1)
+  const ano = agora.getFullYear().toString().slice(-2) // pega os dois últimos dígitos do ano
+
+  return `${dia}${mes}${ano}`
+}
