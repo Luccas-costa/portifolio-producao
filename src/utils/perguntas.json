@@ -32,6 +32,10 @@
         "resposta": "Atualmente não estou em um relacionamento sério."
     },
     {
+        "pergunta": "E quem e o luccas.",
+        "resposta": "Luccas (eu) sou um jovem de 18 anos, apaixonado pelo futuro. Sou um programador fullstack, com foco no frontend. Sou um programador de nascença, cresci vendo meu pai programando e transformando o mundo em um lugar melhor. Além da programação sou apaixonado por Jiu-Jitsu e seu lifestyle, já pratico há mais de 12 anos (atualmente sou um faixa azul buscando novos desafios). Aspiro para meu futuro um Lucas mais maduro, realizado profissionalmente, visando com força o empreendedorismo na área de tecnologia. E é isso, esse é um breve resumo sobre algumas curiosidades sobre o Luccas, se quiser saber mais de algo não duvide em me perguntar."
+    },
+    {
         "pergunta": "Me fale um pouco do Luccas.",
         "resposta": "Luccas (eu) sou um jovem de 18 anos, apaixonado pelo futuro. Sou um programador fullstack, com foco no frontend. Sou um programador de nascença, cresci vendo meu pai programando e transformando o mundo em um lugar melhor. Além da programação sou apaixonado por Jiu-Jitsu e seu lifestyle, já pratico há mais de 12 anos (atualmente sou um faixa azul buscando novos desafios). Aspiro para meu futuro um Lucas mais maduro, realizado profissionalmente, visando com força o empreendedorismo na área de tecnologia. E é isso, esse é um breve resumo sobre algumas curiosidades sobre o Luccas, se quiser saber mais de algo não duvide em me perguntar."
     },
@@ -45,7 +49,7 @@
     },
     {
         "pergunta": "Você pratica esportes",
-        "resposta": "Sim, hoje pratico vários esportes como: trilha (correr, andar, pular) e jiu-jitsu que pratico já fazem 12 anos, sou um atual faixa azul que visa a preta."
+        "resposta": "Sim, hoje pratico vários esportes como: triatlon (corrida, nadao, pedal) e jiu-jitsu que pratico já fazem 12 anos, sou um atual faixa azul que visa a preta."
     },
     {
         "pergunta": "Como você começou na área de desenvolvimento?",

@@ -16,6 +16,7 @@ import {
   OpenAiLogo,
 } from '@phosphor-icons/react/dist/ssr'
 import React, { useEffect, useState } from 'react'
+import { SendQuestion } from '@/db/insert-questions'
 
 import styles from '@/styles/gpt-text-effect.module.css'
 
@@ -31,6 +32,7 @@ export default function Ipad() {
   >([]) // NOVO
 
   const handleSubmit = async () => {
+    if (!pergunta.trim()) return
     setLoading(true)
     const perguntaAtual = pergunta
     setPerguntaEmTela(perguntaAtual)
@@ -44,6 +46,9 @@ export default function Ipad() {
     })
 
     const data = await res.json()
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const sendQuestiondb = await SendQuestion(perguntaAtual)
+
     setResposta(data.resposta)
     setMensagens((prev) => [
       ...prev,
