@@ -32,7 +32,7 @@ export default function RegisterSide() {
         Ainda não tem uma conta? <br /> clique no botão abaixo para criar uma já
       </div>
       <Link
-        href="/register"
+        href="/register?noIntro=true"
         className="mt-2 flex h-[50px] w-[250px] items-center justify-center rounded-xl border border-zinc-950 font-semibold text-zinc-950 transition-all duration-200 hover:bg-zinc-950 hover:text-white"
         style={{ zIndex: 2 }}
       >

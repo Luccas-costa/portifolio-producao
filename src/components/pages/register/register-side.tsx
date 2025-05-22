@@ -137,7 +137,7 @@ export default function LoginSide() {
       </button>
 
       <Link
-        href="/login"
+        href="/login?noIntro=true"
         className="text-center font-light text-zinc-300 underline"
       >
         Já tem uma conta?
