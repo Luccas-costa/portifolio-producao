@@ -4,6 +4,7 @@ import Image from 'next/image'
 import logo from 'public/logos/logo-tranparente.png'
 import styles from '@/styles/menu-burger.module.css'
 import { motion, AnimatePresence } from 'framer-motion'
+import Link from 'next/link'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -53,12 +54,18 @@ export default function Navbar() {
 
       {/* Ações Desktop */}
       <div className="hidden min-w-[100px] items-center gap-3 screen1100:flex">
-        <button className="transition-default font-medium hover:text-white">
+        <Link
+          href={'/login'}
+          className="transition-default font-medium hover:text-white"
+        >
           Login
-        </button>
-        <button className="transition-default rounded-lg bg-white px-2 py-1 font-medium text-zinc-900 hover:bg-white/50">
+        </Link>
+        <Link
+          href={'/register'}
+          className="transition-default rounded-lg bg-white px-2 py-1 font-medium text-zinc-900 hover:bg-white/50"
+        >
           Sign up
-        </button>
+        </Link>
       </div>
 
       {/* Menu Mobile */}

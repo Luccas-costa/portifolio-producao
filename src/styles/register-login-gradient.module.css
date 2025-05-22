@@ -1,0 +1,15 @@
+.degrade1 {
+    background: radial-gradient(closest-side, #121212 82%, #ff11b8);
+}
+
+.degrade1buble {
+    background: radial-gradient(closest-side, #12121257 76%, #ff11b8);
+}
+
+.degrade2 {
+    background: radial-gradient(closest-side, #121212 82%, #FF7F11);
+}
+
+.degrade2buble {
+    background: radial-gradient(closest-side, #12121257 76%, #FF7F11);
+}

@@ -20,6 +20,7 @@ export default function Notes() {
               <li>5. Revisar todo texto do site para mudar para o portugues</li>
               <li className="text-green-500">6. criar navbar do menuburger</li>
               <div>7. Criar pagina de contato</div>
+              <div>Criar future de esqueceu sua senha</div>
               <li>8. Começar a desenhar pagina pessoal</li>
             </ul>
           </div>
