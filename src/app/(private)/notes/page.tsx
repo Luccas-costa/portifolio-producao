@@ -21,6 +21,7 @@ export default function Notes() {
               <li className="text-green-500">6. criar navbar do menuburger</li>
               <div>7. Criar pagina de contato</div>
               <div>Criar future de esqueceu sua senha</div>
+              <div>Criar future de apagar usuarios</div>
               <li>8. Começar a desenhar pagina pessoal</li>
             </ul>
           </div>

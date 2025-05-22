@@ -4,10 +4,18 @@ import LoginSide from '@/components/pages/login/login-side'
 import RegisterSide from '@/components/pages/login/register-side'
 import IntroAnimationUse from '@/components/ui/intro/intro-animation-use'
 import fonts from '@/styles/globals/fonts.module.css'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 
 export default function Login() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <PageLogin />
+    </Suspense>
+  )
+}
+
+function PageLogin() {
   const searchParams = useSearchParams()
   const noIntro = searchParams.get('noIntro') === 'true'
 
