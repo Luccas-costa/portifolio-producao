@@ -10,7 +10,7 @@ import { VerifyUser } from '@/db/verify-user'
 import Cookies from 'js-cookie'
 import { useRouter } from 'next/navigation'
 
-export default function LoginSide() {
+export default function LoginSideMobile() {
   const [passwordvisible, setPasswordvisible] = useState(false)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -64,18 +64,18 @@ export default function LoginSide() {
 
   return (
     <div
-      className={`${fonts.monserrat} flex h-full w-[calc(100%-450px)] flex-col items-center justify-center gap-[16px] screen1100:w-[calc(100%-550px)] screen1200:w-[calc(100%-650px)]`}
+      className={`${fonts.monserrat} flex h-[calc(100vh-100px)] w-full flex-col items-center justify-center gap-[16px] screen1100:w-[calc(100%-550px)] screen1200:w-[calc(100%-650px)]`}
     >
-      <div className="translate-y-[-20px] text-7xl font-bold text-white">
+      <div className="translate-y-[-20px] text-6xl font-bold text-white screen400:text-[64px] screen550:text-7xl">
         Fazer login
       </div>
 
       <div
-        className={`flex h-[70px] w-[500px] items-center justify-center rounded-2xl ${emailError ? 'bg-red-500/30' : 'bg-white/10'} px-5`}
+        className={`flex h-[70px] w-[350px] items-center justify-center rounded-2xl screen400:w-[390px] screen450:w-[440px] screen550:w-[500px] ${emailError ? 'bg-red-500/30' : 'bg-white/10'} px-5`}
       >
         <input
           type="text"
-          className="w-[450px] bg-transparent text-lg font-medium text-white placeholder:font-medium placeholder:text-zinc-300 focus:outline-none"
+          className="w-[400px] bg-transparent text-lg font-medium text-white placeholder:font-medium placeholder:text-zinc-300 focus:outline-none screen550:w-[450px]"
           placeholder="E-mail"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -84,11 +84,11 @@ export default function LoginSide() {
       </div>
 
       <div
-        className={`flex h-[70px] w-[500px] items-center justify-center rounded-2xl ${passwordError ? 'bg-red-500/30' : 'bg-white/10'} px-5`}
+        className={`flex h-[70px] w-[350px] items-center justify-center rounded-2xl screen400:w-[390px] screen450:w-[440px] screen550:w-[500px] ${passwordError ? 'bg-red-500/30' : 'bg-white/10'} px-5`}
       >
         <input
           type={passwordvisible ? 'text' : 'password'}
-          className="w-[450px] bg-transparent text-lg font-medium text-white placeholder:font-medium placeholder:text-zinc-300 focus:outline-none"
+          className="w-[400px] bg-transparent text-lg font-medium text-white placeholder:font-medium placeholder:text-zinc-300 focus:outline-none screen550:w-[450px]"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
@@ -116,7 +116,7 @@ export default function LoginSide() {
 
       <button
         onClick={handleSubmit}
-        className="h-[60px] w-[500px] transform select-none rounded-2xl bg-gradient-to-r from-[#FF7F11] to-[#FF11B8] text-lg font-bold text-zinc-950 transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95"
+        className="h-[60px] w-[350px] transform select-none rounded-2xl bg-gradient-to-r from-[#FF7F11] to-[#FF11B8] text-lg font-bold text-zinc-950 transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95 screen400:w-[390px] screen450:w-[440px] screen550:w-[500px]"
       >
         Entrar
       </button>
