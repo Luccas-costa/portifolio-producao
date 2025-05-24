@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 export default function RegisterSide() {
   return (
-    <div className="relative flex h-full w-[650px] flex-col items-center justify-center gap-4 overflow-hidden rounded-r-2xl bg-zinc-200">
+    <div className="relative flex h-[1000px] w-full flex-col items-center justify-center gap-4 overflow-hidden rounded-r-2xl bg-zinc-200 screen900:h-full screen900:w-[450px] screen1100:w-[550px] screen1200:w-[650px]">
       <div
         className="absolute bottom-[-90px] left-[-1px] h-[700px] w-[700px] rotate-[173deg] select-none"
         style={{ zIndex: 1 }}
@@ -20,13 +20,13 @@ export default function RegisterSide() {
         <Image src={shape} alt="shape" className="blur-lg" />
       </div>
       <div
-        className="text-center text-7xl font-bold text-zinc-950"
+        className="text-center text-6xl font-bold text-zinc-950 screen1100:text-7xl"
         style={{ zIndex: 2 }}
       >
         Nao tem uma conta?
       </div>
       <div
-        className="max-w-[35vw] text-center text-xl font-light text-zinc-950"
+        className="max-w-[80vw] text-center text-xl font-light text-zinc-950 screen900:max-w-[35vw]"
         style={{ zIndex: 2 }}
       >
         Ainda não tem uma conta? <br /> clique no botão abaixo para criar uma já

@@ -40,7 +40,7 @@ function PageLogin() {
         <IntroAnimationUse />
       ) : (
         <div
-          className={`${fonts.monserrat} flex h-screen items-center justify-center overflow-hidden bg-[#121212]`}
+          className={`${fonts.monserrat} flex h-screen flex-col items-center justify-center overflow-y-auto bg-[#121212] screen900:flex-row screen900:overflow-hidden`}
         >
           <RegisterSide />
           <LoginSide />

@@ -11,7 +11,8 @@ import FotoPerfil from 'public/my/my2.jpg'
 import GitImage from '@/assets/logos/github-mark.svg'
 import { ShootingStars } from 'ui/shooting-stars'
 import { StarsBackground } from 'ui/stars-background'
-import AnimatedModalDemo from '@/components/ui/ModalAc'
+import Link from 'next/link'
+// import AnimatedModalDemo from '@/components/ui/ModalAc'
 
 export default function IndexDesktop() {
   return (
@@ -100,9 +101,13 @@ export default function IndexDesktop() {
           className="mt-[30px] flex flex-col items-center justify-center p-[1rem]"
           style={{ zIndex: 10 }}
         >
-          <div className="z-10 rounded-lg bg-white px-2 py-1 font-semibold text-black">
-            <AnimatedModalDemo darkis={true} />
-          </div>
+          <Link
+            href={'/contact'}
+            className="z-10 rounded-lg bg-white px-5 py-3 font-semibold text-black"
+          >
+            {/* <AnimatedModalDemo darkis={true} /> */}
+            Contato
+          </Link>
         </div>
       </div>
     </div>
