@@ -6,6 +6,8 @@ import IntroAnimationUse from '@/components/ui/intro/intro-animation-use'
 import fonts from '@/styles/globals/fonts.module.css'
 import { useState, useEffect, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
+import LoginSideMobile from '@/components/pages/register/login-side-mobile'
+import RegisterSideMobile from '@/components/pages/register/register-side-mobile'
 
 export default function Register() {
   return (
@@ -39,12 +41,20 @@ function PageRegister() {
       {isintro ? (
         <IntroAnimationUse />
       ) : (
-        <div
-          className={`${fonts.monserrat} flex h-screen items-center justify-center overflow-hidden bg-[#121212]`}
-        >
-          <LoginSide />
-          <RegisterSide />
-        </div>
+        <>
+          <div
+            className={`${fonts.monserrat} flex h-full flex-col bg-[#121212] screen1000:hidden`}
+          >
+            <RegisterSideMobile />
+            <LoginSideMobile />
+          </div>
+          <div
+            className={`${fonts.monserrat} hidden h-screen items-center overflow-hidden bg-[#121212] screen1000:flex`}
+          >
+            <LoginSide />
+            <RegisterSide />
+          </div>
+        </>
       )}
     </>
   )

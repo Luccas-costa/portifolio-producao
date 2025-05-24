@@ -4,29 +4,29 @@ import React from 'react'
 import Link from 'next/link'
 // import styles from '@/styles/register-login-gradient.module.css'
 
-export default function RegisterSide() {
+export default function RegisterSideMobile() {
   return (
-    <div className="relative flex h-full w-[450px] flex-col items-center justify-center gap-4 overflow-hidden rounded-r-2xl bg-zinc-200 screen1100:w-[550px] screen1200:w-[650px]">
+    <div className="relative flex h-[calc(100vh-200px)] w-full flex-col items-center justify-center gap-4 overflow-hidden rounded-t-2xl bg-zinc-200 screen1100:w-[550px] screen1200:w-[650px]">
       <div
-        className="absolute bottom-[-90px] left-[-1px] h-[700px] w-[700px] rotate-[173deg] select-none"
+        className="absolute bottom-[-210px] left-[-1px] h-[700px] w-[700px] rotate-[173deg] select-none"
         style={{ zIndex: 1 }}
       >
         <Image src={shape} alt="shape" className="blur-lg" />
       </div>
       <div
-        className="absolute right-[80px] top-[-210px] h-[700px] w-[700px] rotate-[-22deg] select-none"
+        className="absolute right-[80px] top-[-300px] h-[700px] w-[700px] rotate-[-22deg] select-none"
         style={{ zIndex: 1 }}
       >
         <Image src={shape} alt="shape" className="blur-lg" />
       </div>
       <div
-        className="text-center text-7xl font-bold text-zinc-950"
+        className="text-center text-6xl font-bold text-zinc-950 screen1100:text-7xl"
         style={{ zIndex: 2 }}
       >
         Já tem uma conta?
       </div>
       <div
-        className="max-w-[35vw] text-center text-xl font-light text-zinc-950"
+        className="max-w-[80vw] text-center text-xl font-light text-zinc-950"
         style={{ zIndex: 2 }}
       >
         Se já tem uma conta? <br /> clique no botão abaixo para fazer login já
