@@ -1,8 +1,10 @@
 import styles from '@/styles/button-slider.module.css'
+import Link from 'next/link'
 
 export default function ButtonSlider() {
   return (
-    <button
+    <Link
+      href="/contact"
       className={`${styles.button} relative flex h-[3.5em] cursor-pointer select-none items-center overflow-hidden rounded-[1.2em] bg-[#E97511] px-[1.5em] pr-[4em] text-[20px] font-medium text-white shadow-[inset_0_0_1.6em_-0.6em_#714da6]`}
     >
       Contate-me
@@ -20,6 +22,6 @@ export default function ButtonSlider() {
           ></path>
         </svg>
       </div>
-    </button>
+    </Link>
   )
 }

@@ -2,6 +2,7 @@ import Image from 'next/image'
 import shape from '../../../../public/assets/shape-login-register.png'
 import React from 'react'
 import Link from 'next/link'
+import { ArrowLeft } from '@phosphor-icons/react/dist/ssr'
 // import styles from '@/styles/register-login-gradient.module.css'
 
 export default function RegisterSide() {
@@ -19,6 +20,14 @@ export default function RegisterSide() {
       >
         <Image src={shape} alt="shape" className="blur-lg" />
       </div>
+      <Link
+        style={{ zIndex: 2 }}
+        href="/professional"
+        className="absolute left-4 top-4 flex cursor-pointer items-center gap-1 text-lg font-medium text-black"
+      >
+        <ArrowLeft size={24} weight="bold" color="black" />
+        <div>Voltar</div>
+      </Link>
       <div
         className="text-center text-6xl font-bold text-zinc-950 screen1100:text-7xl"
         style={{ zIndex: 2 }}

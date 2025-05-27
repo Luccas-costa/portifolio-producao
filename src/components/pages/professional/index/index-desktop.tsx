@@ -24,6 +24,7 @@ import Numbers from '../sections/numbers'
 import Carossel from '../carossel/carossel'
 import Projects from '../sections/projects'
 import CarosselMobile from '../carossel/carossel-mobile'
+import Link from 'next/link'
 
 export default function IndexDesktop() {
   return (
@@ -120,6 +121,7 @@ export default function IndexDesktop() {
               <Skills />
               <Projects />
               <Called />
+              <Link href={'/'} className='bg-zinc-200 rounded-lg w-[80%] font-medium hover:bg-zinc-300 h-[50px] text-zinc-950 flex items-center justify-center mx-auto screen1070:translate-y-[-230px] translate-y-[-290px]'>Voltar para home</Link>
             </div>
             <div style={{ zIndex: 3 }} className="screen1070:h-[410px] h-[470px] screen1070:translate-y-[210px] translate-y-[270px] w-full bg-red-500 absolute bottom-0">
               <Footer />

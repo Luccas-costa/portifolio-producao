@@ -2,6 +2,7 @@ import React from 'react'
 import fonts from '@/styles/globals/fonts.module.css'
 import Image from 'next/image'
 import Imagem from '../../../../../public/assets/call-to-action.png'
+import Link from 'next/link'
 
 export default function Called() {
   return (
@@ -13,9 +14,12 @@ export default function Called() {
           >
             Vamos mudar <br /> o mundo junto?
           </div>
-          <button className="h-[50px] w-[150px] cursor-pointer rounded-xl bg-zinc-200 text-lg font-bold text-[#714da6] transition-all hover:bg-[#714da6] hover:text-zinc-200">
+          <Link
+            href="/contact"
+            className="flex h-[50px] w-[150px] cursor-pointer items-center justify-center rounded-xl bg-zinc-200 text-lg font-bold text-[#714da6] transition-all hover:bg-[#714da6] hover:text-zinc-200"
+          >
             Contate-me
-          </button>
+          </Link>
         </div>
         <div className="flex h-[350px] w-[350px] justify-center pr-[20px] screen550:h-[450px] screen550:w-[450px] screen1000:h-[500px] screen1000:w-[650px] screen1000:justify-end screen1100:pr-[60px] screen1200:pr-[120px] screen550max:mx-auto screen550max:mb-[50px]">
           <Image src={Imagem} alt="Imagem" />

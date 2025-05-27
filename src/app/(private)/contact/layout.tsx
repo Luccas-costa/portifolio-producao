@@ -31,7 +31,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${inter.className} ${montserrat.variable} bg-black antialiased transition-all duration-200`}
+        className={`${inter.className} ${montserrat.variable} bg-[#121212] text-zinc-200 antialiased transition-all duration-200`}
       >
         {children}
       </body>

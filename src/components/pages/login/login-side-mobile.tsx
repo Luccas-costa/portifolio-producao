@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import fonts from '@/styles/globals/fonts.module.css'
 import {
+  ArrowLeft,
   EnvelopeSimple,
   LockLaminated,
   LockLaminatedOpen,
@@ -9,6 +10,7 @@ import {
 import { VerifyUser } from '@/db/verify-user'
 import Cookies from 'js-cookie'
 import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 
 export default function LoginSideMobile() {
   const [passwordvisible, setPasswordvisible] = useState(false)
@@ -66,6 +68,15 @@ export default function LoginSideMobile() {
     <div
       className={`${fonts.monserrat} flex h-[calc(100vh-100px)] w-full flex-col items-center justify-center gap-[16px] screen1100:w-[calc(100%-550px)] screen1200:w-[calc(100%-650px)]`}
     >
+      <Link
+        style={{ zIndex: 2 }}
+        href="/"
+        className="absolute left-4 top-4 flex cursor-pointer items-center gap-1 text-lg font-medium text-white"
+      >
+        <ArrowLeft size={24} weight="bold" color="white" />
+        <div>Voltar</div>
+      </Link>
+
       <div className="translate-y-[-20px] text-6xl font-bold text-white screen400:text-[64px] screen550:text-7xl">
         Fazer login
       </div>

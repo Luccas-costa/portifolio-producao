@@ -1,5 +1,6 @@
 /* eslint-disable prettier/prettier */
 import React from 'react'
+import Link from 'next/link'
 import Image from 'next/image'
 
 import { ShootingStars } from 'ui/shooting-stars'
@@ -15,12 +16,12 @@ import Hero from '../sections/hero'
 import About from '../sections/about'
 import Iphone from '../chatbot/iphone'
 import Skills from '../sections/skills'
+import Footer from '../sections/footer'
 import Called from '../sections/called'
 import Numbers from '../sections/numbers'
 import Projects from '../sections/projects'
 import styles from '@/styles/professional.module.css'
 import CarosselMobile from '../carossel/carossel-mobile'
-import Footer from '../sections/footer'
 
 export default function IndexMobile() {
   return (
@@ -107,6 +108,7 @@ export default function IndexMobile() {
               <Skills />
               <Projects />
               <Called />
+                 <Link href={'/'} className='bg-zinc-200 rounded-lg w-[90%] font-medium hover:bg-zinc-300 h-[50px] text-zinc-950 flex items-center justify-center mx-auto  screen500:translate-y-[-250px] translate-y-[-350px]'>Voltar para home</Link>
             </div>
             <div style={{ zIndex: 3 }} className="screen1070:h-[410px] screen500:h-[470px] h-[600px] screen1070:translate-y-[210px] translate-y-[270px] w-full bg-red-500 absolute bottom-0">
               <Footer />
