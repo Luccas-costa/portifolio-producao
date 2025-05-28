@@ -20,19 +20,19 @@ export default function TextSideMobile() {
         <Image src={shape} alt="shape" className="blur-lg" />
       </div>
       <div
-        className="text-center text-6xl font-bold text-zinc-950 screen1100:text-7xl"
+        className="px-2 text-center text-4xl font-bold text-zinc-950 screen500:text-5xl screen670:text-6xl screen1100:text-7xl"
         style={{ zIndex: 2 }}
       >
         Vamos conversar. Conte-me um pouco sobre o que deseja.
       </div>
       <div
-        className="max-w-[80vw] text-center text-xl font-light text-zinc-950"
+        className="text-center text-lg font-light text-zinc-950 screen500:text-xl"
         style={{ zIndex: 2 }}
       >
         Vamos criar algo juntos 🤟
       </div>
       <div
-        className="mt-2 flex h-[100px] items-center gap-3 rounded-xl bg-white/20 pl-8 pr-12"
+        className="mt-2 flex h-[100px] items-center gap-3 rounded-xl bg-white/20 pl-2 pr-4 screen450:pl-8 screen450:pr-12"
         style={{ zIndex: 2 }}
       >
         <div

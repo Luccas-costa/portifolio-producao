@@ -44,7 +44,7 @@ function PageLogin() {
       ) : (
         <>
           <div
-            className={`${fonts.monserrat} flex h-full flex-col bg-[#121212] screen1000:hidden`}
+            className={`${fonts.monserrat} flex h-full flex-col gap-[120px] bg-[#121212] screen1000:hidden`}
           >
             <TextSideMobile />
             <FormSideMobile />
