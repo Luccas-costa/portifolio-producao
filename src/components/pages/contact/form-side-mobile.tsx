@@ -77,7 +77,7 @@ export default function FormSide() {
   }
 
   return (
-    <div className="flex h-screen w-[calc(100%-450px)] items-center justify-center screen1100:w-[calc(100%-550px)] screen1200:w-[calc(100%-650px)]">
+    <div className="flex h-screen w-full items-center justify-center">
       {passo === 0 && (
         <Form1
           data={data}
@@ -135,33 +135,33 @@ const Form1 = ({ data, setData, handlerToggle }: Form1Props) => {
       </div>
 
       <div
-        className={`flex h-[70px] w-[500px] items-center justify-center rounded-2xl ${nameError ? 'bg-red-500/30' : 'bg-white/10'} px-5`}
+        className={`flex h-[70px] w-[350px] items-center justify-center rounded-2xl screen400:w-[390px] screen450:w-[440px] screen550:w-[500px] ${nameError ? 'bg-red-500/30' : 'bg-white/10'} px-5`}
       >
         <input
           type="text"
           value={data.name}
           onChange={(e) => setData({ ...data, name: e.target.value })}
-          className="w-[450px] bg-transparent text-lg font-medium text-white placeholder:font-medium placeholder:text-zinc-300 focus:outline-none"
+          className="w-[400px] bg-transparent text-lg font-medium text-white placeholder:font-medium placeholder:text-zinc-300 focus:outline-none"
           placeholder="Full name"
         />
         <User size={28} weight="light" color="#ffffff" />
       </div>
 
       <div
-        className={`flex h-[70px] w-[500px] items-center justify-center rounded-2xl ${emailError ? 'bg-red-500/30' : 'bg-white/10'} px-5`}
+        className={`flex h-[70px] w-[350px] items-center justify-center rounded-2xl screen400:w-[390px] screen450:w-[440px] screen550:w-[500px] ${emailError ? 'bg-red-500/30' : 'bg-white/10'} px-5`}
       >
         <input
           type="text"
           value={data.email}
           onChange={(e) => setData({ ...data, email: e.target.value })}
-          className="w-[450px] bg-transparent text-lg font-medium text-white placeholder:font-medium placeholder:text-zinc-300 focus:outline-none"
+          className="w-[400px] bg-transparent text-lg font-medium text-white placeholder:font-medium placeholder:text-zinc-300 focus:outline-none"
           placeholder="E-mail"
         />
         <EnvelopeSimple size={28} weight="light" color="#ffffff" />
       </div>
 
       <div
-        className={`flex w-[500px] rounded-2xl ${messageError ? 'bg-red-500/30' : 'bg-white/10'} p-5`}
+        className={`flex w-[350px] rounded-2xl screen400:w-[390px] screen450:w-[440px] screen550:w-[500px] ${messageError ? 'bg-red-500/30' : 'bg-white/10'} p-5`}
       >
         <textarea
           rows={6}
@@ -176,7 +176,7 @@ const Form1 = ({ data, setData, handlerToggle }: Form1Props) => {
 
       <button
         onClick={handleClick}
-        className="h-[60px] w-[500px] transform select-none rounded-xl bg-gradient-to-r from-[#FF7F11] to-[#FF11B8] text-lg font-bold text-zinc-950 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+        className="h-[60px] w-[350px] transform select-none rounded-xl bg-gradient-to-r from-[#FF7F11] to-[#FF11B8] text-lg font-bold text-zinc-950 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] screen400:w-[390px] screen450:w-[440px] screen550:w-[500px]"
       >
         Avançar
       </button>
@@ -250,7 +250,7 @@ const Form2 = ({
       </div>
 
       {/* Textarea */}
-      <div className="mt-4 flex w-[500px] rounded-2xl bg-white/10 p-5">
+      <div className="mt-4 flex w-[350px] rounded-2xl bg-white/10 p-5 screen400:w-[390px] screen450:w-[440px] screen550:w-[500px]">
         <textarea
           rows={6}
           value={dataReviews.message}
@@ -290,7 +290,7 @@ const Form2 = ({
 
       <button
         onClick={handlerSubmit}
-        className="min-h-[60px] w-[500px] transform select-none rounded-xl bg-gradient-to-r from-[#FF7F11] to-[#FF11B8] text-lg font-bold text-zinc-950 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+        className="h-[60px] w-[350px] transform select-none rounded-xl bg-gradient-to-r from-[#FF7F11] to-[#FF11B8] text-lg font-bold text-zinc-950 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] screen400:w-[390px] screen450:w-[440px] screen550:w-[500px]"
       >
         {dataReviews.message === ''
           ? 'Enviar apenas formulario'
