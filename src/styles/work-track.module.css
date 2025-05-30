@@ -1,0 +1,7 @@
+.bannerstripes {
+    background: repeating-linear-gradient(45deg,
+            #FFB200,
+            #FFB200 10px,
+            #1C1C1C 10px,
+            #1C1C1C 20px);
+}

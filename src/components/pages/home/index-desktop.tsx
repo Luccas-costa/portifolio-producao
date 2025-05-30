@@ -80,14 +80,15 @@ export default function IndexDesktop() {
 
           <div className="mt-[30px] flex h-full w-full flex-col gap-[30px]">
             <OldStyleButton
-              title="Portfólio pessoal"
-              Imagem="/logos/favicon.ico"
-              link="/private"
-            />
-            <OldStyleButton
               title="Portfólio profissional"
               Imagem="/logos/favicon.ico"
               link="/professional"
+            />
+            <OldStyleButton
+              title="Portfólio pessoal"
+              Imagem="/logos/favicon.ico"
+              link="/private"
+              inwork
             />
             <OldStyleButton
               title="GitHub"
