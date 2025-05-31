@@ -5,7 +5,11 @@ import Link from 'next/link'
 import { ArrowLeft } from '@phosphor-icons/react/dist/ssr'
 // import styles from '@/styles/register-login-gradient.module.css'
 
-export default function RegisterSide() {
+interface RegisterSideProps {
+  route?: string | null
+}
+
+export default function RegisterSide({ route }: RegisterSideProps) {
   return (
     <div className="relative flex h-full w-[450px] flex-col items-center justify-center gap-4 overflow-hidden rounded-r-2xl bg-zinc-200 screen1100:w-[550px] screen1200:w-[650px]">
       <div
@@ -41,7 +45,11 @@ export default function RegisterSide() {
         Ainda não tem uma conta? <br /> clique no botão abaixo para criar uma já
       </div>
       <Link
-        href="/register?noIntro=true"
+        href={
+          route
+            ? `/register?noIntro=true&goingTo=${route}`
+            : '/register?noIntro=true'
+        }
         className="mt-2 flex h-[50px] w-[250px] items-center justify-center rounded-xl border border-zinc-950 font-semibold text-zinc-950 transition-all duration-200 hover:bg-zinc-950 hover:text-white"
         style={{ zIndex: 2 }}
       >

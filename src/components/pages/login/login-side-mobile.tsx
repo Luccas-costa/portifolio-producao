@@ -12,7 +12,11 @@ import Cookies from 'js-cookie'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 
-export default function LoginSideMobile() {
+interface LoginSideMobileProps {
+  route?: string | null
+}
+
+export default function LoginSideMobile({ route }: LoginSideMobileProps) {
   const [passwordvisible, setPasswordvisible] = useState(false)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -59,8 +63,13 @@ export default function LoginSideMobile() {
       Cookies.remove('token')
       // Seta novo cookie com validade 7 dias
       Cookies.set('token', result.message, { expires: 7, path: '/' })
-      // Redireciona para /dashboard
-      router.push('/dashboard')
+
+      // Se route existir, redireciona para ele, senão vai para /dashboard
+      if (route) {
+        router.push('/' + route)
+      } else {
+        router.push('/professional')
+      }
     }
   }
 

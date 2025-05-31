@@ -19,7 +19,10 @@ export default function Register() {
 
 function PageRegister() {
   const searchParams = useSearchParams()
+
+  // Verifica se existe o parâmetro noIntro na URL
   const noIntro = searchParams.get('noIntro') === 'true'
+  const goingTo = searchParams.get('goingTo')
 
   const [isintro, setIsintro] = useState(false)
 
@@ -45,14 +48,14 @@ function PageRegister() {
           <div
             className={`${fonts.monserrat} flex h-full flex-col bg-[#121212] screen1000:hidden`}
           >
-            <RegisterSideMobile />
-            <LoginSideMobile />
+            <RegisterSideMobile route={goingTo} />
+            <LoginSideMobile route={goingTo} />
           </div>
           <div
             className={`${fonts.monserrat} hidden h-screen items-center overflow-hidden bg-[#121212] screen1000:flex`}
           >
-            <LoginSide />
-            <RegisterSide />
+            <LoginSide route={goingTo} />
+            <RegisterSide route={goingTo} />
           </div>
         </>
       )}

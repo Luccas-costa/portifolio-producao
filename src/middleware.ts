@@ -12,8 +12,19 @@ export function middleware(request: NextRequest) {
 
   if (isProtected) {
     if (!token) {
-      // Redireciona para login se não tiver token
-      return NextResponse.redirect(new URL('/login', request.url))
+      // Extrai o parâmetro "goingTo" da URL, se existir
+      const goingTo = request.nextUrl.searchParams.get('goingTo')
+
+      // Cria a URL de redirecionamento para /login
+      const loginUrl = new URL('/login', request.url)
+
+      // Se houver o parâmetro "goingTo", adiciona ele na URL de redirecionamento
+      if (goingTo) {
+        loginUrl.searchParams.set('goingTo', goingTo)
+      }
+
+      // Redireciona para /login com ou sem o parâmetro "goingTo"
+      return NextResponse.redirect(loginUrl)
     }
 
     // Aqui você pode também descriptografar e validar o token.

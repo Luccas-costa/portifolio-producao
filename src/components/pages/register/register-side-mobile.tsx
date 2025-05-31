@@ -12,7 +12,11 @@ import { CreateUser } from '@/db/create-user'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 
-export default function LoginSideMobile() {
+interface RegisterSideMobileProps {
+  route?: string | null
+}
+
+export default function RegisterSideMobile({ route }: RegisterSideMobileProps) {
   const [passwordvisible, setPasswordvisible] = useState(true)
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
@@ -62,7 +66,12 @@ export default function LoginSideMobile() {
       }
       setTimeout(() => setError(''), 5000) // ✅ Apaga erro depois de 3s
     } else {
-      router.push('/login')
+      // Se route existir, redireciona para ele, senão vai para /login
+      if (route) {
+        router.push('/' + route)
+      } else {
+        router.push('/login')
+      }
     }
   }
 

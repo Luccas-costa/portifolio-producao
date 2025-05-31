@@ -19,13 +19,16 @@ export default function Login() {
 
 function PageLogin() {
   const searchParams = useSearchParams()
+
+  // Verifica se existe o parâmetro noIntro na URL
   const noIntro = searchParams.get('noIntro') === 'true'
+  const goingTo = searchParams.get('goingTo')
 
   const [isintro, setIsintro] = useState(false)
 
   useEffect(() => {
     if (noIntro) {
-      setIsintro(false) // pula a intro se noIntro for true
+      setIsintro(false) // Pula a intro se noIntro for true
     } else {
       setIsintro(true)
       const timer = setTimeout(() => {
@@ -45,14 +48,14 @@ function PageLogin() {
           <div
             className={`${fonts.monserrat} flex h-full flex-col bg-[#121212] screen1000:hidden`}
           >
-            <LoginSideMobile />
-            <RegisterSideMobile />
+            <LoginSideMobile route={goingTo} />
+            <RegisterSideMobile route={goingTo} />
           </div>
           <div
             className={`${fonts.monserrat} hidden h-screen items-center overflow-hidden bg-[#121212] screen1000:flex`}
           >
-            <RegisterSide />
-            <LoginSide />
+            <RegisterSide route={goingTo} />
+            <LoginSide route={goingTo} />
           </div>
         </>
       )}

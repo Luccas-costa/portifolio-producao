@@ -4,7 +4,11 @@ import React from 'react'
 import Link from 'next/link'
 // import styles from '@/styles/register-login-gradient.module.css'
 
-export default function RegisterSideMobile() {
+interface LoginSideMobileProps {
+  route?: string | null
+}
+
+export default function LoginSideMobile({ route }: LoginSideMobileProps) {
   return (
     <div className="relative flex h-[calc(100vh-200px)] w-full flex-col items-center justify-center gap-4 overflow-hidden rounded-t-2xl bg-zinc-200 screen1100:w-[550px] screen1200:w-[650px]">
       <div
@@ -32,7 +36,9 @@ export default function RegisterSideMobile() {
         Se já tem uma conta? <br /> clique no botão abaixo para fazer login já
       </div>
       <Link
-        href="/login?noIntro=true"
+        href={
+          route ? `/login?noIntro=true&goingTo=${route}` : '/login?noIntro=true'
+        }
         className="mt-2 flex h-[50px] w-[250px] items-center justify-center rounded-xl border border-zinc-950 font-semibold text-zinc-950 transition-all duration-200 hover:bg-zinc-950 hover:text-white"
         style={{ zIndex: 2 }}
       >

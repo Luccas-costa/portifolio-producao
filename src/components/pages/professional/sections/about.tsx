@@ -103,7 +103,7 @@ export default function About() {
           className={`mt-[200px] pb-[300px] screen1200:pb-[170px]`}
           id="about"
         >
-          <div className="flex h-full w-full flex-wrap justify-center gap-[20px] screen1200:flex-nowrap screen1300:gap-[100px] screen1500:ml-[150px] screen1500:justify-normal">
+          <div className="flex h-full w-full flex-wrap justify-center gap-[20px] screen1200:flex-nowrap screen1300:gap-[100px] screen1500:ml-[150px] screen1500:justify-normal screen1550:ml-0 screen1550:justify-center">
             <div className="mb-[100px] flex h-[400px] w-[350px] flex-col rounded-xl bg-zinc-200 screen440:h-[450px] screen440:w-[400px] screen500:h-[480px] screen500:w-[430px] screen550:h-[550px] screen550:w-[500px]">
               <div className="mb-[-10px] pt-[2px] text-center text-sm font-light text-zinc-950">
                 2025

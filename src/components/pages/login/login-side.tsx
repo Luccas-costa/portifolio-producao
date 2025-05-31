@@ -10,7 +10,11 @@ import { VerifyUser } from '@/db/verify-user'
 import Cookies from 'js-cookie'
 import { useRouter } from 'next/navigation'
 
-export default function LoginSide() {
+interface LoginSideProps {
+  route?: string | null
+}
+
+export default function LoginSide({ route }: LoginSideProps) {
   const [passwordvisible, setPasswordvisible] = useState(false)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -57,8 +61,13 @@ export default function LoginSide() {
       Cookies.remove('token')
       // Seta novo cookie com validade 7 dias
       Cookies.set('token', result.message, { expires: 7, path: '/' })
-      // Redireciona para /dashboard
-      router.push('/dashboard')
+
+      // Se route existir, redireciona para ele, senão vai para /professional
+      if (route) {
+        router.push('/' + route)
+      } else {
+        router.push('/professional')
+      }
     }
   }
 
