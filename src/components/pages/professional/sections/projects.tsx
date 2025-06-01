@@ -3,9 +3,15 @@ import React, { useState } from 'react'
 import Image, { StaticImageData } from 'next/image'
 
 import fonts from '@/styles/globals/fonts.module.css'
-import Imagem from '../../../../../public/my/my2.jpg'
+import Imagem from '../../../../../public/projects/teko-bag.png'
+import Imagem2 from '../../../../../public/projects/emproducao.webp'
 
-import { ArrowRight, GithubLogo, ShoppingCart } from '@phosphor-icons/react'
+import {
+  ArrowRight,
+  GithubLogo,
+  ShoppingCart,
+  TrafficCone,
+} from '@phosphor-icons/react'
 
 export default function Projects() {
   const [verMais, setVerMais] = useState(false)
@@ -33,20 +39,23 @@ export default function Projects() {
             image={Imagem}
             gitname="teko-bag"
             url="https://teko-bag.com"
+            icon={1}
           />
           <Card
-            title="Teko Bag"
-            subtitle="Um ecoommerce focado na venda de eco-bags personalizadas. Um projeto de empreendorismo com foco na sustentabilidade e qualidade."
-            image={Imagem}
-            gitname="teko-bag"
-            url="https://teko-bag.com"
+            title="Em produção"
+            subtitle="Ainda estou criando esse novo projeto, assim que pronto colocarei ele aqui."
+            image={Imagem2}
+            gitname=""
+            url=""
+            icon={2}
           />
           <Card
-            title="Teko Bag"
-            subtitle="Um ecoommerce focado na venda de eco-bags personalizadas. Um projeto de empreendorismo com foco na sustentabilidade e qualidade."
-            image={Imagem}
-            gitname="teko-bag"
-            url="https://teko-bag.com"
+            title="Em produção"
+            subtitle="Ainda estou criando esse novo projeto, assim que pronto colocarei ele aqui."
+            image={Imagem2}
+            gitname=""
+            url=""
+            icon={2}
           />
 
           <div className="mt-6 cursor-pointer text-zinc-500/70 underline">
@@ -60,21 +69,24 @@ export default function Projects() {
             image={Imagem}
             gitname="teko-bag"
             url="https://teko-bag.com"
+            icon={1}
           />
           <CardMobile
-            title="Teko Bag"
-            subtitle="Um ecoommerce focado na venda de eco-bags personalizadas. Um projeto de empreendorismo com foco na sustentabilidade e qualidade."
-            image={Imagem}
-            gitname="teko-bag"
-            url="https://teko-bag.com"
+            title="Em produção"
+            subtitle="Ainda estou criando esse novo projeto, assim que pronto colocarei ele aqui."
+            image={Imagem2}
+            gitname=""
+            url=""
+            icon={2}
           />
           {verMais && (
             <CardMobile
-              title="Teko Bag"
-              subtitle="Um ecoommerce focado na venda de eco-bags personalizadas. Um projeto de empreendorismo com foco na sustentabilidade e qualidade."
-              image={Imagem}
-              gitname="teko-bag"
-              url="https://teko-bag.com"
+              title="Em produção"
+              subtitle="Ainda estou criando esse novo projeto, assim que pronto colocarei ele aqui."
+              image={Imagem2}
+              gitname=""
+              url=""
+              icon={2}
             />
           )}
 
@@ -96,9 +108,10 @@ type CardProps = {
   image: StaticImageData
   gitname: string
   url: string
+  icon: number
 }
 
-const Card = ({ title, subtitle, image, gitname, url }: CardProps) => {
+const Card = ({ title, subtitle, image, gitname, url, icon }: CardProps) => {
   return (
     <div
       className={`relative h-[600px] w-[990px] rounded-xl border border-[#2a2a2a] bg-[#1a1a1a]/75 p-5 screen1100:w-[1090px] screen1200:w-[1190px]`}
@@ -110,8 +123,18 @@ const Card = ({ title, subtitle, image, gitname, url }: CardProps) => {
             {subtitle}
           </div>
           <div className="mb-1 mt-2 flex items-center gap-1">
-            <ShoppingCart size={20} weight="light" color="#0d9488" />
-            <div className="text-light text-teal-600">ecommerce</div>
+            {icon === 1 && (
+              <>
+                <ShoppingCart size={20} weight="light" color="#0d9488" />
+                <div className="text-light text-teal-600">ecommerce</div>
+              </>
+            )}
+            {icon === 2 && (
+              <>
+                <TrafficCone size={20} weight="light" color="#f97316 " />
+                <div className="text-light text-orange-500">produção</div>
+              </>
+            )}
           </div>
           <a
             href={url}
@@ -136,7 +159,7 @@ const Card = ({ title, subtitle, image, gitname, url }: CardProps) => {
         </div>
         <a href={url} target="_blank" rel="noreferrer">
           <div className="group relative aspect-square h-[560px] overflow-hidden rounded-xl">
-            <Image src={image} alt={title} />
+            <Image src={image} alt={title} fill className="object-cover" />
             <div className="absolute bottom-3 right-3 rotate-[45deg] opacity-0 transition-opacity group-hover:opacity-100">
               <ArrowRight
                 size={32}
@@ -151,7 +174,14 @@ const Card = ({ title, subtitle, image, gitname, url }: CardProps) => {
   )
 }
 
-const CardMobile = ({ title, subtitle, image, gitname, url }: CardProps) => {
+const CardMobile = ({
+  title,
+  subtitle,
+  image,
+  gitname,
+  url,
+  icon,
+}: CardProps) => {
   return (
     <div
       className={`h-[800px] w-[360px] rounded-xl border border-[#2a2a2a] bg-[#1a1a1a]/75 p-5 screen400:w-[390px] screen450:w-[440px] screen500:h-[1000px] screen500:w-[490px] screen600:w-[590px] screen700:w-[690px] screen800:w-[790px] screen900:w-[890px]`}
@@ -167,8 +197,18 @@ const CardMobile = ({ title, subtitle, image, gitname, url }: CardProps) => {
             {subtitle}
           </div>
           <div className="mb-5 mt-2 flex items-center justify-center gap-1">
-            <ShoppingCart size={20} weight="light" color="#0d9488" />
-            <div className="text-light text-teal-600">ecommerce</div>
+            {icon === 1 && (
+              <>
+                <ShoppingCart size={20} weight="light" color="#0d9488" />
+                <div className="text-light text-teal-600">ecommerce</div>
+              </>
+            )}
+            {icon === 2 && (
+              <>
+                <TrafficCone size={20} weight="light" color="#f97316 " />
+                <div className="text-light text-orange-500">produção</div>
+              </>
+            )}
           </div>
           <a
             href={url}
@@ -193,7 +233,7 @@ const CardMobile = ({ title, subtitle, image, gitname, url }: CardProps) => {
         </div>
         <a href={url} target="_blank" rel="noreferrer">
           <div className="group relative flex h-[410px] w-[320px] items-center justify-center overflow-hidden rounded-xl screen400:w-[350px] screen450:w-[400px] screen500:h-[610px] screen500:w-[450px] screen600:w-[550px] screen700:w-[650px] screen800:w-[750px] screen900:w-[850px]">
-            <Image src={image} alt={title} />
+            <Image src={image} alt={title} fill className="object-cover" />
             <div className="absolute bottom-3 right-3 rotate-[45deg] opacity-0 transition-opacity group-hover:opacity-100">
               <ArrowRight
                 size={32}
