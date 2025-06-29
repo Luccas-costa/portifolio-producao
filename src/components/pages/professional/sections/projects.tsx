@@ -4,7 +4,8 @@ import Image, { StaticImageData } from 'next/image'
 
 import fonts from '@/styles/globals/fonts.module.css'
 import Imagem from '../../../../../public/projects/teko-bag.png'
-import Imagem3 from '../../../../../public/projects/criativos.png'
+// import Imagem3 from '../../../../../public/projects/criativos.png'
+import gif from '../../../../../public/projects/Vídeo do WhatsApp de 2025-06-29 à(s) 10.32.15_b6a87950.gif'
 import Imagem2 from '../../../../../public/projects/emproducao.webp'
 
 import {
@@ -47,12 +48,13 @@ export default function Projects() {
           <Card
             title="Criativos para storys"
             subtitle="Nas horas vagas crio alguns conteudos para storys do instagram. Videos animados, rapidos e interativos buscando maior engajamento para a empresa parceira."
-            image={Imagem3}
+            image={gif}
             gitname=""
             url="/professional/criatives"
             icon={3}
             gitIconNotVisible={true}
             linkNextTrue={true}
+            isgif={true}
           />
           <Card
             title="Em produção"
@@ -77,12 +79,15 @@ export default function Projects() {
             icon={1}
           />
           <CardMobile
-            title="Em produção"
-            subtitle="Ainda estou criando esse novo projeto, assim que pronto colocarei ele aqui."
-            image={Imagem2}
+            title="Criativos para storys"
+            subtitle="Nas horas vagas crio alguns conteudos para storys do instagram. Videos animados, rapidos e interativos buscando maior engajamento para a empresa parceira."
+            image={gif}
             gitname=""
-            url=""
-            icon={2}
+            url="/professional/criatives"
+            icon={3}
+            gitIconNotVisible={true}
+            linkNextTrue={true}
+            isgif={true}
           />
           {verMais && (
             <CardMobile
@@ -116,6 +121,7 @@ type CardProps = {
   icon: number
   gitIconNotVisible?: boolean
   linkNextTrue?: boolean
+  isgif?: boolean
 }
 
 const Card = ({
@@ -127,6 +133,7 @@ const Card = ({
   icon,
   gitIconNotVisible,
   linkNextTrue,
+  isgif,
 }: CardProps) => {
   return (
     <div
@@ -193,7 +200,18 @@ const Card = ({
         </div>
         <a href={url} target="_blank" rel="noreferrer">
           <div className="group relative aspect-square h-[560px] overflow-hidden rounded-xl">
-            <Image src={image} alt={title} fill className="object-cover" />
+            {isgif && (
+              <Image
+                src={image}
+                alt={title}
+                fill
+                unoptimized // necessário para garantir que o GIF preserve a animação
+                className="object-cover"
+              />
+            )}
+            {!isgif && (
+              <Image src={image} alt={title} fill className="object-cover" />
+            )}
             <div className="absolute bottom-3 right-3 rotate-[45deg] opacity-0 transition-opacity group-hover:opacity-100">
               <ArrowRight
                 size={32}
@@ -215,6 +233,9 @@ const CardMobile = ({
   gitname,
   url,
   icon,
+  gitIconNotVisible,
+  linkNextTrue,
+  isgif,
 }: CardProps) => {
   return (
     <div
@@ -243,31 +264,60 @@ const CardMobile = ({
                 <div className="text-light text-orange-500">produção</div>
               </>
             )}
+            {icon === 3 && (
+              <>
+                <MonitorPlay size={22} weight="light" color="#38bdf8 " />
+                <div className="text-light text-sky-400">criativos</div>
+              </>
+            )}
           </div>
-          <a
-            href={url}
-            target="_blank"
-            rel="noreferrer"
-            className="flex h-[40px] w-[150px] cursor-pointer items-center justify-center rounded-lg bg-zinc-200 font-medium text-zinc-950 transition-all hover:bg-zinc-300/70"
-          >
-            Visit Project
-          </a>
-          <a
-            href={`https://github.com/Luccas-costa/${gitname}`}
-            target="_blank"
-            rel="noreferrer"
-            className="lef-1/2 absolute bottom-5"
-          >
-            <GithubLogo
-              size={22}
-              weight="regular"
-              color="rgb(228 228 231 / 0.9)"
-            />
-          </a>
+          {!linkNextTrue && (
+            <a
+              href={url}
+              target="_blank"
+              rel="noreferrer"
+              className="flex h-[40px] w-[150px] cursor-pointer items-center justify-center rounded-lg bg-zinc-200 font-medium text-zinc-950 transition-all hover:bg-zinc-300/70"
+            >
+              Visit Project
+            </a>
+          )}
+          {linkNextTrue && (
+            <Link
+              href={url}
+              className="flex h-[40px] w-[150px] cursor-pointer items-center justify-center rounded-lg bg-zinc-200 font-medium text-zinc-950 transition-all hover:bg-zinc-300/70"
+            >
+              Visit Criatives
+            </Link>
+          )}
+          {!gitIconNotVisible && (
+            <a
+              href={`https://github.com/Luccas-costa/${gitname}`}
+              target="_blank"
+              rel="noreferrer"
+              className="lef-1/2 absolute bottom-5"
+            >
+              <GithubLogo
+                size={22}
+                weight="regular"
+                color="rgb(228 228 231 / 0.9)"
+              />
+            </a>
+          )}
         </div>
         <a href={url} target="_blank" rel="noreferrer">
           <div className="group relative flex h-[410px] w-[320px] items-center justify-center overflow-hidden rounded-xl screen400:w-[350px] screen450:w-[400px] screen500:h-[610px] screen500:w-[450px] screen600:w-[550px] screen700:w-[650px] screen800:w-[750px] screen900:w-[850px]">
-            <Image src={image} alt={title} fill className="object-cover" />
+            {isgif && (
+              <Image
+                src={image}
+                alt={title}
+                fill
+                unoptimized // necessário para garantir que o GIF preserve a animação
+                className="object-cover"
+              />
+            )}
+            {!isgif && (
+              <Image src={image} alt={title} fill className="object-cover" />
+            )}
             <div className="absolute bottom-3 right-3 rotate-[45deg] opacity-0 transition-opacity group-hover:opacity-100">
               <ArrowRight
                 size={32}
