@@ -4,14 +4,17 @@ import Image, { StaticImageData } from 'next/image'
 
 import fonts from '@/styles/globals/fonts.module.css'
 import Imagem from '../../../../../public/projects/teko-bag.png'
+import Imagem3 from '../../../../../public/projects/criativos.png'
 import Imagem2 from '../../../../../public/projects/emproducao.webp'
 
 import {
   ArrowRight,
   GithubLogo,
+  MonitorPlay,
   ShoppingCart,
   TrafficCone,
 } from '@phosphor-icons/react'
+import Link from 'next/link'
 
 export default function Projects() {
   const [verMais, setVerMais] = useState(false)
@@ -42,12 +45,14 @@ export default function Projects() {
             icon={1}
           />
           <Card
-            title="Em produção"
-            subtitle="Ainda estou criando esse novo projeto, assim que pronto colocarei ele aqui."
-            image={Imagem2}
+            title="Criativos para storys"
+            subtitle="Nas horas vagas crio alguns conteudos para storys do instagram. Videos animados, rapidos e interativos buscando maior engajamento para a empresa parceira."
+            image={Imagem3}
             gitname=""
-            url=""
-            icon={2}
+            url="/professional/criatives"
+            icon={3}
+            gitIconNotVisible={true}
+            linkNextTrue={true}
           />
           <Card
             title="Em produção"
@@ -109,9 +114,20 @@ type CardProps = {
   gitname: string
   url: string
   icon: number
+  gitIconNotVisible?: boolean
+  linkNextTrue?: boolean
 }
 
-const Card = ({ title, subtitle, image, gitname, url, icon }: CardProps) => {
+const Card = ({
+  title,
+  subtitle,
+  image,
+  gitname,
+  url,
+  icon,
+  gitIconNotVisible,
+  linkNextTrue,
+}: CardProps) => {
   return (
     <div
       className={`relative h-[600px] w-[990px] rounded-xl border border-[#2a2a2a] bg-[#1a1a1a]/75 p-5 screen1100:w-[1090px] screen1200:w-[1190px]`}
@@ -135,27 +151,45 @@ const Card = ({ title, subtitle, image, gitname, url, icon }: CardProps) => {
                 <div className="text-light text-orange-500">produção</div>
               </>
             )}
+            {icon === 3 && (
+              <>
+                <MonitorPlay size={22} weight="light" color="#38bdf8 " />
+                <div className="text-light text-sky-400">criativos</div>
+              </>
+            )}
           </div>
-          <a
-            href={url}
-            target="_blank"
-            rel="noreferrer"
-            className="flex h-[40px] w-[150px] cursor-pointer items-center justify-center rounded-lg bg-zinc-200 font-medium text-zinc-950 transition-all hover:bg-zinc-300/70"
-          >
-            Visit Project
-          </a>
-          <a
-            href={`https://github.com/Luccas-costa/${gitname}`}
-            target="_blank"
-            rel="noreferrer"
-            className="absolute bottom-8 left-9"
-          >
-            <GithubLogo
-              size={22}
-              weight="regular"
-              color="rgb(228 228 231 / 0.9)"
-            />
-          </a>
+          {!linkNextTrue && (
+            <a
+              href={url}
+              target="_blank"
+              rel="noreferrer"
+              className="flex h-[40px] w-[150px] cursor-pointer items-center justify-center rounded-lg bg-zinc-200 font-medium text-zinc-950 transition-all hover:bg-zinc-300/70"
+            >
+              Visit Project
+            </a>
+          )}
+          {linkNextTrue && (
+            <Link
+              href={url}
+              className="flex h-[40px] w-[150px] cursor-pointer items-center justify-center rounded-lg bg-zinc-200 font-medium text-zinc-950 transition-all hover:bg-zinc-300/70"
+            >
+              Visit Criatives
+            </Link>
+          )}
+          {!gitIconNotVisible && (
+            <a
+              href={`https://github.com/Luccas-costa/${gitname}`}
+              target="_blank"
+              rel="noreferrer"
+              className="absolute bottom-8 left-9"
+            >
+              <GithubLogo
+                size={22}
+                weight="regular"
+                color="rgb(228 228 231 / 0.9)"
+              />
+            </a>
+          )}
         </div>
         <a href={url} target="_blank" rel="noreferrer">
           <div className="group relative aspect-square h-[560px] overflow-hidden rounded-xl">

@@ -55,7 +55,7 @@ export default function IndexDesktop() {
           
           <div
             style={{ zIndex: 2 }}
-            className="relative hidden translate-y-[40px] overflow-visible screen1000:left-1/2 screen1000:translate-x-[-48.5%] screen1070:block screen1070:translate-x-[-50%] screen1550:translate-x-[-48.5%]"
+            className="relative hidden translate-y-[-16px] screen1100:translate-y-[-7px] screen1170:translate-y-[10px] screen1460:translate-y-[40px] overflow-visible screen1000:left-1/2 screen1000:translate-x-[-48.5%] screen1070:block screen1070:translate-x-[-50%] screen1550:translate-x-[-48.5%]"
           >
             <Carossel />
           </div>

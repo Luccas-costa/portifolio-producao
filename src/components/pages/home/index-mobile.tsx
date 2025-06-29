@@ -36,7 +36,10 @@ export default function IndexMobile() {
         </div>
 
         <div className="flex h-full max-h-max w-full flex-col items-center">
-          <div className="mt-[10vh] size-[170px] overflow-hidden rounded-full bg-neutral-950 shadow-xl">
+          <div
+            className="mt-[10vh] size-[170px] overflow-hidden rounded-full bg-neutral-950 shadow-xl"
+            style={{ zIndex: 4 }}
+          >
             <Image src={FotoPerfil} alt="Luccas" width={170} height={170} />
           </div>
 

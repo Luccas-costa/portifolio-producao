@@ -33,7 +33,7 @@ export default function IndexDesktop() {
       </div>
 
       {/* Conteudo */}
-      <div style={{ zIndex: 2 }}>
+      <div style={{ zIndex: 4 }}>
         <div className="absolute right-[20px] top-[20px] flex size-[30px] rotate-90 items-center justify-center rounded-full bg-zinc-200/40 shadow-xl hover:bg-zinc-200/60">
           <DotsThreeVertical size={22} weight="bold" color="white" />
         </div>
@@ -47,7 +47,10 @@ export default function IndexDesktop() {
         </div>
 
         <div className="flex h-full max-h-max w-full flex-col items-center">
-          <div className="mt-[10vh] size-[170px] overflow-hidden rounded-full bg-neutral-950 shadow-xl">
+          <div
+            className="mt-[10vh] size-[170px] overflow-hidden rounded-full bg-neutral-950 shadow-xl"
+            style={{ zIndex: 4 }}
+          >
             <Image src={FotoPerfil} alt="Luccas" width={170} height={170} />
           </div>
 
