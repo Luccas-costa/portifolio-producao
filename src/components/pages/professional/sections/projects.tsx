@@ -4,7 +4,7 @@ import Image, { StaticImageData } from 'next/image'
 
 import fonts from '@/styles/globals/fonts.module.css'
 import Imagem from '../../../../../public/projects/teko-bag.png'
-// import Imagem3 from '../../../../../public/projects/criativos.png'
+import Imagem3 from '../../../../../public/projects/criativos.png'
 import gif from '../../../../../public/projects/Vídeo do WhatsApp de 2025-06-29 à(s) 10.32.15_b6a87950.gif'
 import Imagem2 from '../../../../../public/projects/emproducao.webp'
 
@@ -80,14 +80,13 @@ export default function Projects() {
           />
           <CardMobile
             title="Criativos para storys"
-            subtitle="Nas horas vagas crio alguns conteudos para storys do instagram. Videos animados, rapidos e interativos buscando maior engajamento para a empresa parceira."
-            image={gif}
+            subtitle="Storys comerciais para empresas parceiras.. Videos animados, rapidos e interativos buscando maior engajamento para a empresa parceira."
+            image={Imagem3}
             gitname=""
             url="/professional/criatives"
             icon={3}
             gitIconNotVisible={true}
             linkNextTrue={true}
-            isgif={true}
           />
           {verMais && (
             <CardMobile
