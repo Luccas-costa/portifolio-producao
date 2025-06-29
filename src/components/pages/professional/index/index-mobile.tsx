@@ -48,7 +48,7 @@ export default function IndexMobile() {
         <div className="relative">
           <div
             style={{ zIndex: 2 }}
-            className="relative translate-y-[45px] screen400:translate-y-[70px] screen670:translate-y-[140px]"
+            className="relative translate-y-[31px] screen400:translate-y-[70px] screen670:translate-y-[140px]"
           >
             <CarosselMobile />
           </div>
