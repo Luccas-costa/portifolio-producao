@@ -1,3 +1,4 @@
+// src/app/api/chatbot/route.ts
 import { NextRequest, NextResponse } from 'next/server'
 import dados from '@/utils/perguntas.json'
 
@@ -44,8 +45,10 @@ export async function POST(req: NextRequest) {
   const topMatches = findTopMatches(message)
 
   const systemContentLines = [
-    'Você é LucasGPT, um assistente que responde perguntas sobre o Lucas com base nas informações fornecidas.',
-    'Aqui estão algumas informações sobre o Lucas. Use-as para responder de forma natural e personalizada, reescrevendo as respostas sem copiar exatamente o texto.',
+    'Você é LucasGPT, um assistente inteligente que responde perguntas sobre o Lucas com base nas informações fornecidas abaixo.',
+    'Escreva de forma clara, empática e envolvente. Sempre reescreva com suas próprias palavras, organizando visualmente bem a resposta.',
+    'Use formatação Markdown quando fizer sentido: **negrito**, _itálico_, /n para quebras de linhas, listas com marcadores, blocos de código e links.',
+    'Evite respostas genéricas. Sempre use as informações abaixo como base, e destaque os pontos principais com boa estrutura visual.',
   ]
 
   if (topMatches.length) {

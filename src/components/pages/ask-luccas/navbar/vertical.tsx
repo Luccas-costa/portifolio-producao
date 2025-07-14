@@ -8,6 +8,7 @@ import {
   StarAndCrescent,
   Sun,
   UserCircle,
+  ChatCircleDots,
 } from '@phosphor-icons/react'
 
 interface VerticalProps {
@@ -52,7 +53,7 @@ export default function Vertical({ handlerToggle, isOpen }: VerticalProps) {
     <div className="flex min-h-[calc(100dvh-85px)] w-full translate-x-[6px] translate-y-[20px] select-none flex-col justify-between">
       <div className="flex flex-col">
         <div
-          className={`flex items-center gap-2 rounded-lg p-[6px] py-0 transition-all duration-200 hover:cursor-pointer ${isOpen ? 'hover:bg-[#202123]' : ''}`}
+          className={`flex max-w-[230px] items-center gap-2 rounded-lg p-[6px] py-0 transition-all duration-200 hover:cursor-pointer ${isOpen ? 'hover:bg-[#202123]' : ''}`}
           onClick={() => handlerToggle()}
         >
           <Image
@@ -72,7 +73,7 @@ export default function Vertical({ handlerToggle, isOpen }: VerticalProps) {
 
         <div className="translate-x-[3px] translate-y-[10px]">
           <div
-            className={`group flex items-center gap-2 p-[6px] py-0 transition-all duration-200 hover:cursor-pointer ${
+            className={`group flex max-w-[230px] items-center gap-2 p-[6px] py-0 transition-all duration-200 hover:cursor-pointer ${
               isThemeOpen ? 'rounded-t-lg bg-[#202123]' : 'rounded-lg'
             } ${isOpen && 'hover:bg-[#202123]'}`}
             onClick={() => {
@@ -102,33 +103,57 @@ export default function Vertical({ handlerToggle, isOpen }: VerticalProps) {
             )}
           </div>
 
-          {isOpen &&
-            isThemeOpen &&
-            themeOptions.map(({ key, label, icon: Icon, rounded }) => (
-              <div
-                key={key}
-                className={`group flex items-center gap-2 bg-[#202123] p-[6px] py-0 transition-all duration-200 hover:cursor-pointer ${rounded} ${isOpen ? 'hover:bg-[#202123]' : ''}`}
-                onClick={() => {
-                  setSelectedTheme(key)
-                  setIsThemeOpen(false)
-                }}
-              >
-                <Icon
-                  size={40}
-                  className="h-[36px] w-[36px] rounded-lg p-2 text-[#9fa0a7] transition-all duration-200 group-hover:text-white"
-                  weight="bold"
-                />
-                <div className="flex translate-x-[-6px] items-center text-[12px] font-medium text-[#9fa0a7] transition-all duration-200 group-hover:text-white">
-                  <span>{label}</span>
-                </div>
-              </div>
-            ))}
+          {isOpen && (
+            <div
+              className={`overflow-hidden transition-[max-height,opacity] duration-300 ease-in-out ${
+                isThemeOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
+              }`}
+            >
+              {isThemeOpen &&
+                themeOptions.map(({ key, label, icon: Icon, rounded }, idx) => (
+                  <div
+                    key={key}
+                    className={`group flex max-w-[230px] items-center gap-2 bg-[#202123] p-[6px] py-0 transition-all duration-200 hover:cursor-pointer ${
+                      rounded
+                    } ${isOpen ? 'hover:bg-[#202123]' : ''}`}
+                    onClick={() => {
+                      setSelectedTheme(key)
+                      setIsThemeOpen(false)
+                    }}
+                    style={{ transitionDelay: `${idx * 75}ms` }} // delay para efeito cascata
+                  >
+                    <Icon
+                      size={40}
+                      className="h-[36px] w-[36px] rounded-lg p-2 text-[#9fa0a7] transition-all duration-200 group-hover:text-white"
+                      weight="bold"
+                    />
+                    <div className="flex translate-x-[-6px] items-center text-[12px] font-medium text-[#9fa0a7] transition-all duration-200 group-hover:text-white">
+                      <span>{label}</span>
+                    </div>
+                  </div>
+                ))}
+            </div>
+          )}
+        </div>
+        <div
+          className={`group flex max-w-[230px] translate-x-[3px] translate-y-[10px] items-center gap-2 rounded-lg p-[6px] py-0 transition-all duration-200 hover:cursor-pointer ${isOpen ? 'hover:bg-[#202123]' : ''}`}
+        >
+          <ChatCircleDots
+            size={40}
+            className="h-[36px] w-[36px] rounded-lg p-2 text-[#9fa0a7] transition-all duration-200 group-hover:text-white"
+            weight="bold"
+          />
+          {isOpen && (
+            <div className="translate-x-[-6px] text-[12px] font-medium text-[#9fa0a7] transition-all duration-200 group-hover:text-white">
+              Chat guiado
+            </div>
+          )}
         </div>
       </div>
 
       <div className="flex h-full flex-col gap-2">
         <div
-          className={`group flex translate-y-[4px] items-center gap-2 rounded-lg p-[6px] py-0 transition-all duration-200 hover:cursor-pointer ${isOpen ? 'hover:bg-[#202123]' : ''}`}
+          className={`group flex max-w-[230px] translate-y-[4px] items-center gap-2 rounded-lg p-[6px] py-0 transition-all duration-200 hover:cursor-pointer ${isOpen ? 'hover:bg-[#202123]' : ''}`}
         >
           <Question
             size={40}
@@ -142,7 +167,7 @@ export default function Vertical({ handlerToggle, isOpen }: VerticalProps) {
           )}
         </div>
         <div
-          className={`group flex items-center gap-2 rounded-lg p-[6px] py-0 transition-all duration-200 hover:cursor-pointer ${isOpen ? 'hover:bg-[#202123]' : ''}`}
+          className={`group flex max-w-[230px] items-center gap-2 rounded-lg p-[6px] py-0 transition-all duration-200 hover:cursor-pointer ${isOpen ? 'hover:bg-[#202123]' : ''}`}
         >
           <UserCircle
             size={40}
