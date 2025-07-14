@@ -8,7 +8,6 @@ import {
 } from '@phosphor-icons/react'
 import Image from 'next/image'
 import FotoPerfil from 'public/my/my2.jpg'
-import GitImage from '@/assets/logos/github-mark.svg'
 import { ShootingStars } from 'ui/shooting-stars'
 import { StarsBackground } from 'ui/stars-background'
 
@@ -77,14 +76,13 @@ export default function IndexMobile() {
               link="/professional"
             />
             <OldStyleButton
-              title="Portfólio pessoal"
-              Imagem="/logos/favicon.ico"
-              link="/private"
-              inwork
+              title="Gpt do luccas"
+              Imagem="/logos/askluccas.png"
+              link="/askluccas"
             />
             <OldStyleButton
               title="GitHub"
-              Imagem={GitImage}
+              Imagem="/logos/github-square.png"
               link="https://github.com/Luccas-costa"
             />
           </div>

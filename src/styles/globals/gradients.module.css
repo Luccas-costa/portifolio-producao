@@ -1,3 +1,11 @@
 .numbers {
     background: linear-gradient(-235deg, #E97511 40%, #714da6 90%);
 }
+
+.numbersText {
+    background: linear-gradient(-235deg, #E97511 40%, #714da6 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    /* opcional */
+}

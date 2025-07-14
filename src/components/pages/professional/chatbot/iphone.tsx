@@ -37,22 +37,32 @@ export default function Iphone() {
     setPergunta('')
     setIsChat(false)
 
-    const res = await fetch('/api/pergunta', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ pergunta }),
-    })
+    try {
+      const res = await fetch('/api/chatbot', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: perguntaAtual }),
+      })
 
-    const data = await res.json()
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const sendQuestiondb = await SendQuestion(perguntaAtual)
+      const data = await res.json()
 
-    setResposta(data.resposta)
-    setMensagens((prev) => [
-      ...prev,
-      { pergunta: perguntaAtual, resposta: data.resposta },
-    ])
-    setLoading(false)
+      await SendQuestion(perguntaAtual)
+
+      setResposta(data.reply)
+
+      setMensagens((prev) => [
+        ...prev,
+        { pergunta: perguntaAtual, resposta: data.reply },
+      ])
+    } catch (error) {
+      console.error('Erro ao enviar pergunta:', error)
+      setMensagens((prev) => [
+        ...prev,
+        { pergunta: perguntaAtual, resposta: 'Erro ao obter resposta da IA.' },
+      ])
+    } finally {
+      setLoading(false)
+    }
   }
 
   useEffect(() => {

@@ -45,7 +45,7 @@ export default function OldStyleButton({
         ></div>
 
         <div className="flex h-full w-full items-center justify-between px-[10px]">
-          <div className="size-[50px] overflow-hidden rounded">
+          <div className="size-[50px] overflow-hidden rounded-lg">
             <Image src={Imagem} alt="Luccas" width={50} height={50} />
           </div>
           <div className="text-lg font-medium text-zinc-600 screen400:text-xl">
