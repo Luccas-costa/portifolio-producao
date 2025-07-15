@@ -1,9 +1,14 @@
 import React from 'react'
 import { CaretUpDown } from '@phosphor-icons/react/dist/ssr'
 import Link from 'next/link'
-import { ArrowLeft } from '@phosphor-icons/react'
+import styles from '@/styles/menu-burger.module.css'
 
-export default function Horizontal() {
+interface HorizontalProps {
+  isOpen?: boolean
+  handlerToggle?: () => void
+}
+
+export default function Horizontal({ isOpen, handlerToggle }: HorizontalProps) {
   return (
     <div className="flex w-[100vw] items-center justify-between pr-[26px]">
       <div className="flex translate-x-[7px] translate-y-[4px] items-center gap-2 rounded-lg p-[6px]">
@@ -32,7 +37,7 @@ export default function Horizontal() {
           </div>
         </div>
       </div>
-      <div className="flex translate-y-[3px] gap-4">
+      <div className="hidden translate-y-[3px] gap-4 screen600:flex">
         <Link
           href="/profissional"
           className="text-[15px] text-[#9fa0a7] transition-all duration-200 hover:text-white"
@@ -49,13 +54,22 @@ export default function Horizontal() {
           href="/"
           className="group flex items-center gap-1 text-[15px] text-[#9fa0a7] transition-all duration-200 hover:text-white"
         >
-          <ArrowLeft
-            size={22}
-            className="translate-y-[-1px] text-[#9fa0a7] transition-all duration-200 group-hover:text-white"
-            weight="regular"
-          />
           <span>Voltar</span>
         </Link>
+      </div>
+      <div className="flex size-[40px] screen600:hidden">
+        <div className="z-70 flex h-full w-full items-center justify-center">
+          <label className={styles.hamburger} style={{ zIndex: 70 }}>
+            <input type="checkbox" checked={isOpen} onChange={handlerToggle} />
+            <svg viewBox="0 0 32 32">
+              <path
+                className={`${styles.line} ${styles.linetopbottom}`}
+                d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"
+              />
+              <path className={styles.line} d="M7 16 27 16" />
+            </svg>
+          </label>
+        </div>
       </div>
     </div>
   )
