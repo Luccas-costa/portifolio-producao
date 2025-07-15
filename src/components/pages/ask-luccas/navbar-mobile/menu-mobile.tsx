@@ -59,7 +59,7 @@ export default function MenuMobile({ isOpen, handlerToggle }: MenuMobileProps) {
             Ver portifólio
           </Link>
           <Link
-            href="/contate-me"
+            href="/login"
             className="flex h-[45px] w-1/3 items-center justify-center rounded-lg text-[15px] font-medium text-[#9fa0a7] transition-all duration-200 hover:bg-[#46464D] hover:text-white"
           >
             Contate-me
@@ -178,9 +178,12 @@ export default function MenuMobile({ isOpen, handlerToggle }: MenuMobileProps) {
               weight="bold"
             />
 
-            <div className="translate-x-[-6px] text-[12px] font-medium text-[#9fa0a7] transition-all duration-200 group-hover:text-white">
+            <Link
+              href="/login"
+              className="translate-x-[-6px] text-[12px] font-medium text-[#9fa0a7] transition-all duration-200 group-hover:text-white"
+            >
               Entrar
-            </div>
+            </Link>
           </div>
         </div>
       </div>

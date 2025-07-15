@@ -45,7 +45,7 @@ export default function Horizontal({ isOpen, handlerToggle }: HorizontalProps) {
           Ver portifólio
         </Link>
         <Link
-          href="/contate-me"
+          href="/login"
           className="text-[15px] text-[#9fa0a7] transition-all duration-200 hover:text-white"
         >
           Contate-me

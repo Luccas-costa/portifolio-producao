@@ -10,6 +10,7 @@ import {
   UserCircle,
   ChatCircleDots,
 } from '@phosphor-icons/react'
+import Link from 'next/link'
 
 interface VerticalProps {
   handlerToggle: (forceOpen?: boolean) => void
@@ -175,9 +176,12 @@ export default function Vertical({ handlerToggle, isOpen }: VerticalProps) {
             weight="bold"
           />
           {isOpen && (
-            <div className="translate-x-[-6px] text-[12px] font-medium text-[#9fa0a7] transition-all duration-200 group-hover:text-white">
+            <Link
+              href="/login"
+              className="translate-x-[-6px] text-[12px] font-medium text-[#9fa0a7] transition-all duration-200 group-hover:text-white"
+            >
               Entrar
-            </div>
+            </Link>
           )}
         </div>
       </div>
