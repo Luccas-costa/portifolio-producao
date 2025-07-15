@@ -91,7 +91,7 @@ export default function Chatbot() {
                 key={idx}
                 className={`flex w-full flex-col gap-1 ${msg.role === 'user' ? 'items-end' : 'items-start'}`}
               >
-                <div className="flex items-start gap-3">
+                <div className="flex items-start gap-0 screen600:gap-3">
                   {/* Círculo de imagem (somente para assistente) */}
                   {msg.role !== 'user' && (
                     <div className="mt-1 h-7 w-7 flex-shrink-0 overflow-hidden rounded-full">
@@ -106,7 +106,7 @@ export default function Chatbot() {
 
                   {/* Balão da mensagem */}
                   <div
-                    className={`relative max-w-[100%] rounded-2xl px-4 pt-3 text-sm ${
+                    className={`relative max-w-[100%] rounded-2xl pl-2 pr-4 pt-3 text-sm screen600:pl-4 ${
                       msg.role === 'user'
                         ? 'translate-y-[2px] rounded-2xl rounded-br-none bg-zinc-700/80 text-white shadow-md'
                         : 'rounded-bl-none text-zinc-200'

@@ -73,7 +73,7 @@ export default function ChatInput({
           </button>
         </div>
       </div>
-      <div className="traslate-x-[50vw] static bottom-0 h-[20px] translate-y-[10px] rounded-b-2xl text-center text-xxs font-light text-zinc-400/60 screen630:text-sm">
+      <div className="traslate-x-[50vw] static bottom-0 h-[20px] translate-y-[6px] rounded-b-2xl text-center text-xxs font-light text-zinc-400/60 screen600:translate-y-[10px] screen630:text-sm">
         O LuccasGpt pode cometer erros. Considere verificar informações
         importantes.
       </div>

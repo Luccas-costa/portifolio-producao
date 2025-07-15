@@ -48,7 +48,7 @@ export default function MenuMobile({ isOpen, handlerToggle }: MenuMobileProps) {
   }, [isOpen])
   return (
     <div
-      className={`absolute z-50 m-2 h-[calc(100dvh-68px)] w-[calc(100dvw-16px)] transform select-none rounded-lg bg-[#202123] transition-all duration-300 ease-out ${isOpen ? 'pointer-events-auto translate-y-0 opacity-100' : 'pointer-events-none -translate-y-5 opacity-0'}`}
+      className={`absolute z-50 m-2 h-[calc(100dvh-65px)] w-[calc(100dvw-16px)] transform select-none rounded-lg bg-[#202123] transition-all duration-300 ease-out ${isOpen ? 'pointer-events-auto translate-y-0 opacity-100' : 'pointer-events-none -translate-y-5 opacity-0'}`}
     >
       <div className="flex h-full flex-col p-3">
         <div className="flex items-center justify-center gap-1">
