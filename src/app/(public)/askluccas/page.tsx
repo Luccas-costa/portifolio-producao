@@ -6,6 +6,7 @@ import NavbarMobile from '@/components/pages/ask-luccas/navbar-mobile/navbar-mob
 
 export default function AskLuccas() {
   const [isOpen, setIsOpen] = useState(false)
+  const [guidedChat, setGuidedChat] = useState(false)
 
   const handlerToggle = (forceOpen?: boolean) => {
     if (forceOpen === true) {
@@ -15,13 +16,25 @@ export default function AskLuccas() {
     }
   }
 
+  const handlerToggleGuidedChat = () => {
+    setGuidedChat((prev) => !prev)
+  }
+
   return (
     <div className="relative h-[100dvh] w-full bg-black">
       <div className="absolute left-0 top-0 hidden screen600:block">
-        <Navbar isOpen={isOpen} handlerToggle={handlerToggle} />
+        <Navbar
+          isOpen={isOpen}
+          handlerToggle={handlerToggle}
+          handlerToggleGuidedChat={handlerToggleGuidedChat}
+          isGuidedChat={guidedChat}
+        />
       </div>
       <div className="absolute left-0 top-0 block screen600:hidden">
-        <NavbarMobile />
+        <NavbarMobile
+          handlerToggleGuidedChat={handlerToggleGuidedChat}
+          isGuidedChat={guidedChat}
+        />
       </div>
       <div
         className="flex h-full w-full items-end justify-center bg-black screen600:justify-end"
@@ -31,7 +44,7 @@ export default function AskLuccas() {
           className={`mx-2 mb-2 h-[calc(100%-60px)] w-[100%] screen600:mr-2 ${isOpen ? 'screen600:w-[calc(100%-250px)]' : 'screen600:w-[calc(100%-70px)]'} rounded-xl bg-[#202123] transition-all duration-200`}
           style={{ zIndex: 2 }}
         >
-          <Chatbot />
+          <Chatbot guidedChat={guidedChat} />
         </div>
       </div>
     </div>

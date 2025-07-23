@@ -11,13 +11,18 @@ import {
   ArrowClockwise,
 } from '@phosphor-icons/react'
 import Image from 'next/image'
+import ChatInputGuiado from './chat-input-guiado'
 
 type Message = {
   role: 'user' | 'assistant'
   content: string
 }
 
-export default function Chatbot() {
+interface ChatbotProps {
+  guidedChat?: boolean
+}
+
+export default function Chatbot({ guidedChat }: ChatbotProps) {
   const [chatStarted, setChatStarted] = useState(false)
   const [messages, setMessages] = useState<Message[]>([])
   const [loading, setLoading] = useState(false)
@@ -257,10 +262,17 @@ export default function Chatbot() {
         )}
       </div>
 
-      <ChatInput
-        onStartChat={handleStartChat}
-        onSendMessage={handleSendMessage}
-      />
+      {guidedChat ? (
+        <ChatInputGuiado
+          onStartChat={handleStartChat}
+          onSendMessage={handleSendMessage}
+        />
+      ) : (
+        <ChatInput
+          onStartChat={handleStartChat}
+          onSendMessage={handleSendMessage}
+        />
+      )}
     </div>
   )
 }

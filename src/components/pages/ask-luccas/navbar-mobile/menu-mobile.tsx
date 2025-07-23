@@ -12,9 +12,16 @@ import React, { useEffect, useState } from 'react'
 interface MenuMobileProps {
   isOpen: boolean
   handlerToggle: (value: boolean) => void
+  handlerToggleGuidedChat: () => void
+  isGuidedChat: boolean
 }
 
-export default function MenuMobile({ isOpen, handlerToggle }: MenuMobileProps) {
+export default function MenuMobile({
+  isOpen,
+  handlerToggle,
+  handlerToggleGuidedChat,
+  isGuidedChat,
+}: MenuMobileProps) {
   const [isThemeOpen, setIsThemeOpen] = useState(false)
   const [selectedTheme, setSelectedTheme] = useState<
     'system' | 'light' | 'dark'
@@ -138,6 +145,10 @@ export default function MenuMobile({ isOpen, handlerToggle }: MenuMobileProps) {
 
           <div
             className={`group flex w-full translate-y-[4px] items-center gap-2 rounded-lg p-[6px] py-0 transition-all duration-200 hover:cursor-pointer hover:bg-[#46464D]`}
+            onClick={() => {
+              handlerToggleGuidedChat()
+              handlerToggle(false)
+            }}
           >
             <ChatCircleDots
               size={38}
@@ -146,7 +157,7 @@ export default function MenuMobile({ isOpen, handlerToggle }: MenuMobileProps) {
             />
 
             <div className="translate-x-[-6px] text-[14px] font-medium text-[#9fa0a7] transition-all duration-200 group-hover:text-white">
-              Chat guiado
+              {isGuidedChat ? 'Chat livre' : 'Chat guiado'}
             </div>
           </div>
         </div>

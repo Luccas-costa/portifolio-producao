@@ -15,9 +15,16 @@ import Link from 'next/link'
 interface VerticalProps {
   handlerToggle: (forceOpen?: boolean) => void
   isOpen: boolean
+  handlerToggleGuidedChat?: () => void
+  isGuidedChat?: boolean
 }
 
-export default function Vertical({ handlerToggle, isOpen }: VerticalProps) {
+export default function Vertical({
+  handlerToggle,
+  isOpen,
+  handlerToggleGuidedChat,
+  isGuidedChat,
+}: VerticalProps) {
   const [isThemeOpen, setIsThemeOpen] = useState(false)
   const [selectedTheme, setSelectedTheme] = useState<
     'system' | 'light' | 'dark'
@@ -138,6 +145,7 @@ export default function Vertical({ handlerToggle, isOpen }: VerticalProps) {
         </div>
         <div
           className={`group flex max-w-[230px] translate-x-[3px] translate-y-[10px] items-center gap-2 rounded-lg p-[6px] py-0 transition-all duration-200 hover:cursor-pointer ${isOpen ? 'hover:bg-[#202123]' : ''}`}
+          onClick={handlerToggleGuidedChat}
         >
           <ChatCircleDots
             size={40}
@@ -146,7 +154,7 @@ export default function Vertical({ handlerToggle, isOpen }: VerticalProps) {
           />
           {isOpen && (
             <div className="translate-x-[-6px] text-[12px] font-medium text-[#9fa0a7] transition-all duration-200 group-hover:text-white">
-              Chat guiado
+              {isGuidedChat ? 'Chat livre' : 'Chat guiado'}
             </div>
           )}
         </div>
