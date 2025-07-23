@@ -12,6 +12,7 @@ import {
 } from '@phosphor-icons/react'
 import Image from 'next/image'
 import ChatInputGuiado from './chat-input-guiado'
+import { SendQuestion } from '@/db/insert-questions'
 
 type Message = {
   role: 'user' | 'assistant'
@@ -20,9 +21,13 @@ type Message = {
 
 interface ChatbotProps {
   guidedChat?: boolean
+  handlerToggleGuidedChat?: () => void
 }
 
-export default function Chatbot({ guidedChat }: ChatbotProps) {
+export default function Chatbot({
+  guidedChat,
+  handlerToggleGuidedChat,
+}: ChatbotProps) {
   const [chatStarted, setChatStarted] = useState(false)
   const [messages, setMessages] = useState<Message[]>([])
   const [loading, setLoading] = useState(false)
@@ -56,6 +61,8 @@ export default function Chatbot({ guidedChat }: ChatbotProps) {
     } finally {
       setLoading(false)
     }
+
+    await SendQuestion(message)
   }
 
   const handleRefresh = async (index: number, question: string) => {
@@ -271,6 +278,7 @@ export default function Chatbot({ guidedChat }: ChatbotProps) {
         <ChatInput
           onStartChat={handleStartChat}
           onSendMessage={handleSendMessage}
+          handlerToggleGuidedChat={handlerToggleGuidedChat}
         />
       )}
     </div>

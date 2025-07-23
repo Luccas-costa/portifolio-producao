@@ -6,11 +6,13 @@ import React, { useState } from 'react'
 interface ChatInputProps {
   onStartChat: () => void
   onSendMessage: (message: string) => void
+  handlerToggleGuidedChat?: () => void
 }
 
 export default function ChatInput({
   onStartChat,
   onSendMessage,
+  handlerToggleGuidedChat,
 }: ChatInputProps) {
   const [question, setQuestion] = useState('')
 
@@ -52,8 +54,11 @@ export default function ChatInput({
             >
               Quem é Luccas?
             </div>
-            <div className="cursor-pointer rounded-full border border-zinc-600 px-3 py-[6px] text-zinc-400 transition-all duration-300 hover:bg-zinc-600 hover:text-[#D9D9E3]">
-              Ver mais...
+            <div
+              className="cursor-pointer rounded-full border border-zinc-600 px-3 py-[6px] text-zinc-400 transition-all duration-300 hover:bg-zinc-600 hover:text-[#D9D9E3]"
+              onClick={handlerToggleGuidedChat}
+            >
+              Chat guiado
             </div>
           </div>
           <button

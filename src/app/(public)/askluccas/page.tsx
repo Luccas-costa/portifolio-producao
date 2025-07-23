@@ -44,7 +44,10 @@ export default function AskLuccas() {
           className={`mx-2 mb-2 h-[calc(100%-60px)] w-[100%] screen600:mr-2 ${isOpen ? 'screen600:w-[calc(100%-250px)]' : 'screen600:w-[calc(100%-70px)]'} rounded-xl bg-[#202123] transition-all duration-200`}
           style={{ zIndex: 2 }}
         >
-          <Chatbot guidedChat={guidedChat} />
+          <Chatbot
+            guidedChat={guidedChat}
+            handlerToggleGuidedChat={handlerToggleGuidedChat}
+          />
         </div>
       </div>
     </div>
