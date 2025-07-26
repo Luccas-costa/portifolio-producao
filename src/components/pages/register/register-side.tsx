@@ -67,9 +67,9 @@ export default function RegisterSide({ route }: RegisterSideProps) {
     } else {
       // Se route existir, redireciona para ele, senão vai para /login
       if (route) {
-        router.push('/' + route)
+        router.push('/login?noIntro=true&goingTo=' + route)
       } else {
-        router.push('/login')
+        router.push('/login?noIntro=true')
       }
     }
   }
@@ -146,7 +146,9 @@ export default function RegisterSide({ route }: RegisterSideProps) {
       </button>
 
       <Link
-        href="/login?noIntro=true"
+        href={
+          route ? `/login?noIntro=true&goingTo=${route}` : '/login?noIntro=true'
+        }
         className="text-center font-light text-zinc-300 underline"
       >
         Já tem uma conta?

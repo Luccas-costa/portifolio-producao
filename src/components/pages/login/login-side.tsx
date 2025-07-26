@@ -66,7 +66,7 @@ export default function LoginSide({ route }: LoginSideProps) {
       if (route) {
         router.push('/' + route)
       } else {
-        router.push('/professional')
+        router.push('/')
       }
     }
   }

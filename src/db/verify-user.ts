@@ -18,9 +18,8 @@ export async function VerifyUser(
 
     const data = await res.json()
 
-    if (data.exists) {
-      const token = await CreateToken()
-      // Retorna token para o client
+    if (data.exists && data.userCode) {
+      const token = await CreateToken(data.userCode)
       return { message: token || undefined }
     }
 

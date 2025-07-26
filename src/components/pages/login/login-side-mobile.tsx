@@ -68,7 +68,7 @@ export default function LoginSideMobile({ route }: LoginSideMobileProps) {
       if (route) {
         router.push('/' + route)
       } else {
-        router.push('/professional')
+        router.push('/')
       }
     }
   }
@@ -79,7 +79,7 @@ export default function LoginSideMobile({ route }: LoginSideMobileProps) {
     >
       <Link
         style={{ zIndex: 2 }}
-        href="/"
+        href={`/${route || ''}`}
         className="absolute left-4 top-4 flex cursor-pointer items-center gap-1 text-lg font-medium text-white"
       >
         <ArrowLeft size={24} weight="bold" color="white" />

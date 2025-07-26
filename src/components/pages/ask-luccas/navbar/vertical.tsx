@@ -175,23 +175,22 @@ export default function Vertical({
             </div>
           )}
         </div>
-        <div
-          className={`group flex max-w-[230px] items-center gap-2 rounded-lg p-[6px] py-0 transition-all duration-200 hover:cursor-pointer ${isOpen ? 'hover:bg-[#202123]' : ''}`}
-        >
-          <UserCircle
-            size={40}
-            className="h-[36px] w-[36px] rounded-lg p-2 text-[#9fa0a7] transition-all duration-200 group-hover:text-white"
-            weight="bold"
-          />
-          {isOpen && (
-            <Link
-              href="/login"
-              className="translate-x-[-6px] text-[12px] font-medium text-[#9fa0a7] transition-all duration-200 group-hover:text-white"
-            >
-              Entrar
-            </Link>
-          )}
-        </div>
+        <Link href="/login?goingTo=askluccas">
+          <div
+            className={`group flex max-w-[230px] items-center gap-2 rounded-lg p-[6px] py-0 transition-all duration-200 hover:cursor-pointer ${isOpen ? 'hover:bg-[#202123]' : ''}`}
+          >
+            <UserCircle
+              size={40}
+              className="h-[36px] w-[36px] rounded-lg p-2 text-[#9fa0a7] transition-all duration-200 group-hover:text-white"
+              weight="bold"
+            />
+            {isOpen && (
+              <div className="translate-x-[-6px] text-[12px] font-medium text-[#9fa0a7] transition-all duration-200 group-hover:text-white">
+                Entrar
+              </div>
+            )}
+          </div>
+        </Link>
       </div>
     </div>
   )

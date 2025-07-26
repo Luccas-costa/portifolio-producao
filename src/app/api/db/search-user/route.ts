@@ -14,15 +14,15 @@ export async function POST(req: NextRequest) {
 
   try {
     const result = await pool.query(
-      'SELECT 1 FROM users WHERE email = $1 AND password = $2 LIMIT 1',
+      'SELECT user_code FROM users WHERE email = $1 AND password = $2 LIMIT 1',
       [email, password],
     )
 
     const exists = (result.rowCount ?? 0) > 0
+    const userCode = exists ? result.rows[0].user_code : null
 
-    return NextResponse.json({ exists })
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  } catch (error: any) {
+    return NextResponse.json({ exists, userCode })
+  } catch (error: unknown) {
     console.error('Erro ao verificar usuário:', error)
     return NextResponse.json(
       { error: 'Erro ao verificar usuário.' },

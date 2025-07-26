@@ -1,3 +1,5 @@
+import { CreateRandomCode } from '@/hooks/create-random-code' // importa a função que criamos
+
 export async function CreateUser(
   name: string,
   email: string,
@@ -23,11 +25,14 @@ export async function CreateUser(
       return { error: 'Ja existe um usuário com esse e-mail' }
     }
 
+    // Gera o userCode (6 caracteres aleatórios)
+    const userCode = CreateRandomCode()
+
     // Só cria o usuário se o e-mail NÃO existir
     const res = await fetch('/api/db/insert-new-user', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, email, password }),
+      body: JSON.stringify({ name, email, password, userCode }), // <-- envia também o código
     })
 
     if (!res.ok) {

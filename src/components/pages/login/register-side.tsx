@@ -26,7 +26,7 @@ export default function RegisterSide({ route }: RegisterSideProps) {
       </div>
       <Link
         style={{ zIndex: 2 }}
-        href="/professional"
+        href={`/${route || ''}`}
         className="absolute left-4 top-4 flex cursor-pointer items-center gap-1 text-lg font-medium text-black"
       >
         <ArrowLeft size={24} weight="bold" color="black" />

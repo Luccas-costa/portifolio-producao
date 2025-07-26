@@ -68,7 +68,7 @@ export default function RegisterSideMobile({ route }: RegisterSideMobileProps) {
     } else {
       // Se route existir, redireciona para ele, senão vai para /login
       if (route) {
-        router.push('/' + route)
+        router.push('/login?noIntro=true&goingTo=' + route)
       } else {
         router.push('/login')
       }
@@ -81,7 +81,7 @@ export default function RegisterSideMobile({ route }: RegisterSideMobileProps) {
     >
       <Link
         style={{ zIndex: 2 }}
-        href="/"
+        href={`/${route || ''}`}
         className="absolute left-4 top-4 flex cursor-pointer items-center gap-1 text-lg font-medium text-white"
       >
         <ArrowLeft size={24} weight="bold" color="white" />
@@ -156,7 +156,9 @@ export default function RegisterSideMobile({ route }: RegisterSideMobileProps) {
       </button>
 
       <Link
-        href="/login?noIntro=true"
+        href={
+          route ? `/login?noIntro=true&goingTo=${route}` : '/login?noIntro=true'
+        }
         className="text-center font-light text-zinc-300 underline"
       >
         Já tem uma conta?

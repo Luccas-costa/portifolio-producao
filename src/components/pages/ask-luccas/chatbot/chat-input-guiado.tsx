@@ -66,7 +66,7 @@ export default function ChatInputGuiado({
                 {['Quem é luccas?'].map((q) => (
                   <div
                     key={q}
-                    className={`screen390:block hidden screen500:hidden ${getClassName(q)}`}
+                    className={`hidden screen390:block screen500:hidden ${getClassName(q)}`}
                     onClick={() => handleSelectQuestion(q)}
                   >
                     {q}
@@ -127,7 +127,7 @@ export default function ChatInputGuiado({
             disabled={isDisabled}
             className={`flex size-[36px] translate-x-[-13px] ${
               plusQuestion
-                ? 'screen775:translate-y-[71px] screen540:translate-y-[47px] screen535:translate-y-[90px] screen480:translate-y-[65px] screen460:translate-y-[91px] translate-y-[120px] screen600:translate-y-[117px] screen630:translate-y-[91px]'
+                ? 'translate-y-[120px] screen460:translate-y-[91px] screen480:translate-y-[65px] screen535:translate-y-[90px] screen540:translate-y-[47px] screen600:translate-y-[117px] screen630:translate-y-[91px] screen775:translate-y-[71px]'
                 : 'translate-y-[-2px] screen500:translate-y-[19px]'
             } items-center justify-center rounded-full transition-all duration-300 ${
               isDisabled
