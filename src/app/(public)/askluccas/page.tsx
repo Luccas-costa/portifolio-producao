@@ -1,12 +1,15 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from '@/components/pages/ask-luccas/navbar/navbar'
 import Chatbot from '@/components/pages/ask-luccas/chatbot/chatbot'
 import NavbarMobile from '@/components/pages/ask-luccas/navbar-mobile/navbar-mobile'
+import { decrypt } from '@/hooks/decrypt-token'
+import type { NextRequest } from 'next/server'
 
-export default function AskLuccas() {
+export default function AskLuccas(request: NextRequest) {
   const [isOpen, setIsOpen] = useState(false)
   const [guidedChat, setGuidedChat] = useState(false)
+  const [token, setToken] = useState<string>('')
 
   const handlerToggle = (forceOpen?: boolean) => {
     if (forceOpen === true) {
@@ -20,8 +23,15 @@ export default function AskLuccas() {
     setGuidedChat((prev) => !prev)
   }
 
+  useEffect(() => {
+    const token = request.cookies.get('token')?.value
+    const decryptedToken = decrypt(token || '')
+    setToken(decryptedToken)
+  }, [request.cookies])
+
   return (
     <div className="relative h-[100dvh] w-full bg-black">
+      <div className="absolute text-7xl text-green-500">{token}</div>
       <div className="absolute left-0 top-0 hidden screen600:block">
         <Navbar
           isOpen={isOpen}

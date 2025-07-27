@@ -29,6 +29,7 @@ export default function RootLayout({
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
         />
+        <meta name="theme-color" content="#BC6016" />
       </head>
       <body
         className={`${inter.className} ${montserrat.variable} bg-black antialiased transition-all duration-200`}
