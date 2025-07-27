@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import './globals.css'
 import { Inter } from 'next/font/google'
 
@@ -10,6 +10,10 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: 'Luccas Costa',
   description: '',
+}
+
+export const viewport: Viewport = {
+  themeColor: '#6F3EB7',
 }
 
 export default function RootLayout({
@@ -25,7 +29,6 @@ export default function RootLayout({
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
         />
-        <meta name="theme-color" content="#6F3EB7" />
       </head>
       <body
         className={`${inter.className} bg-zinc-200 antialiased transition-all duration-200`}

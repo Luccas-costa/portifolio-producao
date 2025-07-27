@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import '../../globals.css'
 import { Inter, Montserrat } from 'next/font/google'
 
@@ -16,6 +16,10 @@ export const metadata: Metadata = {
   title: 'Luccas Costa | Professional',
 }
 
+export const viewport: Viewport = {
+  themeColor: '#BC6016',
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -29,7 +33,6 @@ export default function RootLayout({
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
         />
-        <meta name="theme-color" content="#BC6016" />
       </head>
       <body
         className={`${inter.className} ${montserrat.variable} bg-black antialiased transition-all duration-200`}
