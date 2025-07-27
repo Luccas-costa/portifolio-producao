@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import '../../globals.css'
 import { Inter, Montserrat } from 'next/font/google'
 
@@ -14,6 +14,10 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   title: 'Luccas Costa | Login',
+}
+
+export const viewport: Viewport = {
+  themeColor: '#121212',
 }
 
 export default function RootLayout({
