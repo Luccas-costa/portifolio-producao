@@ -6,11 +6,13 @@ import MenuMobile from './menu-mobile'
 interface NavbarMobileProps {
   handlerToggleGuidedChat: () => void
   isGuidedChat: boolean
+  userName?: string
 }
 
 export default function NavbarMobile({
   handlerToggleGuidedChat,
   isGuidedChat,
+  userName,
 }: NavbarMobileProps) {
   const [isOpen, setIsOpen] = useState(false)
   const handlerToggle = (forceOpen?: boolean) => {
@@ -22,7 +24,11 @@ export default function NavbarMobile({
   }
   return (
     <>
-      <Horizontal isOpen={isOpen} handlerToggle={() => setIsOpen(!isOpen)} />
+      <Horizontal
+        isOpen={isOpen}
+        handlerToggle={() => setIsOpen(!isOpen)}
+        userName={userName}
+      />
       <MenuMobile
         isOpen={isOpen}
         handlerToggle={handlerToggle}

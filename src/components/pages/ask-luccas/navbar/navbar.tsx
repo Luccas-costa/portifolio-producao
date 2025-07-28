@@ -8,6 +8,7 @@ interface NavbarProps {
   handlerToggle: () => void
   handlerToggleGuidedChat?: () => void
   isGuidedChat?: boolean
+  userName?: string
 }
 
 export default function Navbar({
@@ -15,10 +16,11 @@ export default function Navbar({
   handlerToggle,
   handlerToggleGuidedChat,
   isGuidedChat,
+  userName,
 }: NavbarProps) {
   return (
     <div>
-      <Horizontal />
+      <Horizontal userName={userName} />
       <Vertical
         handlerToggle={handlerToggle}
         isOpen={isOpen}

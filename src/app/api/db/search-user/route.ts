@@ -18,10 +18,15 @@ export async function POST(req: NextRequest) {
       [email, password],
     )
 
-    const exists = (result.rowCount ?? 0) > 0
-    const userCode = exists ? result.rows[0].user_code : null
+    if ((result.rowCount ?? 0) === 0) {
+      return NextResponse.json(
+        { error: 'Email ou senha incorretos.' },
+        { status: 401 },
+      )
+    }
 
-    return NextResponse.json({ exists, userCode })
+    const userCode = result.rows[0].user_code
+    return NextResponse.json({ exists: true, userCode })
   } catch (error: unknown) {
     console.error('Erro ao verificar usuário:', error)
     return NextResponse.json(

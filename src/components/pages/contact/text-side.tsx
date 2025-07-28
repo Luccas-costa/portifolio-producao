@@ -2,12 +2,14 @@
 
 import Image from 'next/image'
 import shape from '../../../../public/assets/shape-login-register.png'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { ArrowLeft, EnvelopeSimple } from '@phosphor-icons/react/dist/ssr'
+import { GetUserName } from '@/hooks/get-username'
 
 export default function TextSide() {
   const [copied, setCopied] = useState(false)
+  const [userName, setUserName] = useState<string>('')
 
   const handleCopy = () => {
     navigator.clipboard.writeText('lucas.comercial@gmail.com')
@@ -16,6 +18,10 @@ export default function TextSide() {
       setCopied(false)
     }, 5000) // 3 segundos
   }
+
+  useEffect(() => {
+    GetUserName(setUserName)
+  }, []) // <-- rodar só 1 vez
 
   return (
     <div className="relative flex h-full w-[450px] flex-col items-center justify-center gap-4 overflow-hidden rounded-r-2xl bg-zinc-200 screen1100:w-[550px] screen1200:w-[650px]">
@@ -44,7 +50,7 @@ export default function TextSide() {
         className="px-8 text-center text-6xl font-bold text-zinc-950"
         style={{ zIndex: 2 }}
       >
-        Vamos conversar. Conte-me um pouco sobre o que deseja.
+        {userName}, Conte-me um pouco sobre o que deseja.
       </div>
 
       <div

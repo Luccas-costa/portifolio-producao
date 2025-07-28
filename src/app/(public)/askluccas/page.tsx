@@ -1,48 +1,41 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from '@/components/pages/ask-luccas/navbar/navbar'
 import Chatbot from '@/components/pages/ask-luccas/chatbot/chatbot'
 import NavbarMobile from '@/components/pages/ask-luccas/navbar-mobile/navbar-mobile'
-// import { decrypt } from '@/hooks/decrypt-token'
+import { GetUserName } from '@/hooks/get-username'
 
 export default function AskLuccas() {
   const [isOpen, setIsOpen] = useState(false)
   const [guidedChat, setGuidedChat] = useState(false)
-  // const [token, setToken] = useState<string>('')
+  const [userName, setUserName] = useState<string>('')
 
   const handlerToggle = (forceOpen?: boolean) => {
-    if (forceOpen === true) {
-      setIsOpen(true)
-    } else {
-      setIsOpen(!isOpen)
-    }
+    setIsOpen(forceOpen === true ? true : !isOpen)
   }
 
-  const handlerToggleGuidedChat = () => {
-    setGuidedChat((prev) => !prev)
-  }
+  const handlerToggleGuidedChat = () => setGuidedChat((prev) => !prev)
 
-  // useEffect(() => {
-  //   const token = request.cookies.get('token')?.value
-  //   const decryptedToken = decrypt(token || '')
-  //   setToken(decryptedToken)
-  // }, [request.cookies])
+  useEffect(() => {
+    GetUserName(setUserName)
+  }, []) // <-- rodar só 1 vez
 
   return (
     <div className="relative h-[100dvh] w-full bg-black">
-      {/* <div className="absolute text-7xl text-green-500">{token}</div> */}
       <div className="absolute left-0 top-0 hidden screen600:block">
         <Navbar
           isOpen={isOpen}
           handlerToggle={handlerToggle}
           handlerToggleGuidedChat={handlerToggleGuidedChat}
           isGuidedChat={guidedChat}
+          userName={userName}
         />
       </div>
       <div className="absolute left-0 top-0 block screen600:hidden">
         <NavbarMobile
           handlerToggleGuidedChat={handlerToggleGuidedChat}
           isGuidedChat={guidedChat}
+          userName={userName}
         />
       </div>
       <div

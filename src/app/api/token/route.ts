@@ -1,7 +1,11 @@
+// app/api/token/route.ts
 import { NextRequest, NextResponse } from 'next/server'
 import crypto from 'crypto'
+import { ShortFormatDate } from '@/hooks/format-date'
 
 const TOKEN_KEY = process.env.TOKEN_KEY
+const TOKEN_SIGNATURE = process.env.TOKEN_SIGNATURE || 'defaultSignature'
+const TOKEN_KEYWORD = process.env.TOKEN_KEYWORD || 'defaultKeyword'
 
 if (!TOKEN_KEY || TOKEN_KEY.length !== 64) {
   throw new Error(
@@ -37,11 +41,18 @@ function decrypt(encryptedText: string): string {
 
 export async function POST(request: NextRequest) {
   try {
-    const { token } = await request.json()
+    const { userCode } = await request.json()
 
-    if (typeof token !== 'string' || token.trim() === '') {
-      return NextResponse.json({ error: 'Token inválido' }, { status: 400 })
+    if (typeof userCode !== 'string' || userCode.trim() === '') {
+      return NextResponse.json(
+        { error: 'Código de usuário inválido' },
+        { status: 400 },
+      )
     }
+
+    // Monta o token já no servidor
+    const date = ShortFormatDate()
+    const token = `${TOKEN_SIGNATURE}-${date}-${TOKEN_KEYWORD}-${userCode}`
 
     const encrypted = encrypt(token)
     return NextResponse.json({ encrypted })
@@ -57,7 +68,6 @@ export async function POST(request: NextRequest) {
 export async function GET(request: NextRequest) {
   try {
     const encryptedToken = request.nextUrl.searchParams.get('token')
-
     if (!encryptedToken) {
       return NextResponse.json(
         { error: 'Token criptografado não fornecido' },

@@ -1,12 +1,14 @@
 'use client'
 import Image from 'next/image'
 import shape from '../../../../public/assets/shape-login-register.png'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { EnvelopeSimple } from '@phosphor-icons/react'
+import { GetUserName } from '@/hooks/get-username'
 // import styles from '@/styles/register-login-gradient.module.css'
 
 export default function TextSideMobile() {
   const [copied, setCopied] = useState(false)
+  const [userName, setUserName] = useState<string>('')
 
   const handleCopy = () => {
     navigator.clipboard.writeText('lucas.comercial@gmail.com')
@@ -15,6 +17,11 @@ export default function TextSideMobile() {
       setCopied(false)
     }, 5000) // 3 segundos
   }
+
+  useEffect(() => {
+    GetUserName(setUserName)
+  }, []) // <-- rodar só 1 vez
+
   return (
     <div className="relative flex h-[calc(100vh-200px)] w-full flex-col items-center justify-center gap-4 overflow-hidden rounded-b-2xl bg-zinc-200 screen1100:w-[550px] screen1200:w-[650px]">
       <div
@@ -33,7 +40,7 @@ export default function TextSideMobile() {
         className="px-2 text-center text-4xl font-bold text-zinc-950 screen500:text-5xl screen670:text-6xl screen1100:text-7xl"
         style={{ zIndex: 2 }}
       >
-        Vamos conversar. Conte-me um pouco sobre o que deseja.
+        {userName}, Conte-me um pouco sobre o que deseja.
       </div>
       <div
         className="text-center text-lg font-light text-zinc-950 screen500:text-xl"
