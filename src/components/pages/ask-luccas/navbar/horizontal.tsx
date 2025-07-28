@@ -20,9 +20,9 @@ export default function Horizontal({
   return (
     <>
       {/* Componente global que cria a animação de hover */}
-      {/* <div className="opacity-0 screen768:opacity-100"> */}
-      <ButtonAnimedByCursor />
-      {/* </div> */}
+      <div className="opacity-0 screen768:opacity-100">
+        <ButtonAnimedByCursor />
+      </div>
 
       <div className="flex w-[100vw] items-center justify-between pr-[26px]">
         <div className="flex translate-x-[7px] translate-y-[4px] items-center gap-2 rounded-lg p-[6px]">
