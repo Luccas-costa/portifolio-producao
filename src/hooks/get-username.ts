@@ -12,7 +12,7 @@ export async function GetUserName(setUserName: (name: string) => void) {
     const res = await fetch('/api/token/descrypt')
     const data = await res.json()
 
-    if (!data?.token) return
+    if (!data?.token) return 'Usuario nao esta logado'
 
     const userCode = data.token.slice(-6)
     const dataname = await SearchUserByCode(userCode)

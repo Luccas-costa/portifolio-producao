@@ -8,7 +8,7 @@ import { GetUserName } from '@/hooks/get-username'
 export default function AskLuccas() {
   const [isOpen, setIsOpen] = useState(false)
   const [guidedChat, setGuidedChat] = useState(false)
-  const [userName, setUserName] = useState<string>('Carregando')
+  const [userName, setUserName] = useState<string>('Carregando...')
 
   const handlerToggle = (forceOpen?: boolean) => {
     setIsOpen(forceOpen === true ? true : !isOpen)
@@ -18,10 +18,10 @@ export default function AskLuccas() {
 
   useEffect(() => {
     GetUserName(setUserName)
-    // if (userName == '') {
-    //   setUserName('Entrar')
-    // }
-  }, []) // <-- rodar só 1 vez
+    if (userName === 'Usuario nao esta logado') {
+      setUserName('Entrar')
+    }
+  }, [userName]) // <-- rodar só 1 vez
 
   return (
     <div className="relative h-[100dvh] w-full bg-black">
