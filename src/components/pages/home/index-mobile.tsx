@@ -2,7 +2,7 @@ import React from 'react'
 import styles from '@/styles/Hero.module.css'
 import OldStyleButton from 'ui/old-style-button'
 import {
-  DotsThreeVertical,
+  // DotsThreeVertical,
   GithubLogo,
   InstagramLogo,
 } from '@phosphor-icons/react'
@@ -30,9 +30,9 @@ export default function IndexMobile() {
 
       {/* Conteudo */}
       <div style={{ zIndex: 2 }}>
-        <div className="absolute right-[20px] top-[20px] flex size-[30px] rotate-90 items-center justify-center rounded-full bg-zinc-200/40 shadow-xl hover:bg-zinc-200/60">
+        {/* <div className="absolute right-[20px] top-[20px] flex size-[30px] rotate-90 items-center justify-center rounded-full bg-zinc-200/40 shadow-xl hover:bg-zinc-200/60">
           <DotsThreeVertical size={22} weight="bold" color="white" />
-        </div>
+        </div> */}
 
         <div className="flex h-full max-h-max w-full flex-col items-center">
           <div
