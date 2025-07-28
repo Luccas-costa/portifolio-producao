@@ -18,10 +18,13 @@ export default function AskLuccas() {
 
   useEffect(() => {
     GetUserName(setUserName)
+  }, []) // busca apenas 1 vez
+
+  useEffect(() => {
     if (userName === 'Usuario nao esta logado') {
       setUserName('Entrar')
     }
-  }, [userName]) // <-- rodar só 1 vez
+  }, [userName]) // troca para "Entrar" se vier a mensagem
 
   return (
     <div className="relative h-[100dvh] w-full bg-black">
