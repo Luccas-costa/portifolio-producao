@@ -7,7 +7,7 @@ import {
   InstagramLogo,
 } from '@phosphor-icons/react'
 import Image from 'next/image'
-import FotoPerfil from 'public/my/my2.jpg'
+import FotoPerfil from 'public/my/my3.png'
 import { ShootingStars } from 'ui/shooting-stars'
 import { StarsBackground } from 'ui/stars-background'
 
