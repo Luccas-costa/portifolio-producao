@@ -2,7 +2,6 @@ import React from 'react'
 import styles from '@/styles/Hero.module.css'
 import OldStyleButton from 'ui/old-style-button'
 import {
-  DotsThreeVertical,
   GithubLogo,
   InstagramLogo,
 } from '@phosphor-icons/react'
