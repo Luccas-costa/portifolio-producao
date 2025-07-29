@@ -35,8 +35,8 @@ export default function Numbers() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
 
-  const count1 = useCount(3, 1000, isInView)
-  const count2 = useCount(1200000, 2000, isInView)
+  const count1 = useCount(4, 1000, isInView)
+  const count2 = useCount(100, 2000, isInView)
   const count3 = useCount(100, 2000, isInView)
 
   return (
@@ -49,7 +49,7 @@ export default function Numbers() {
           {count1} anos de experiência
         </div>
         <div className="flex h-1/3 w-full items-center justify-center px-[10px] text-center screen670:h-full screen670:w-1/3">
-          R$ {count2.toLocaleString('pt-BR')}
+          {count2.toLocaleString('pt-BR')}% de satisfação
         </div>
         <div className="flex h-1/3 w-full items-center justify-center px-[10px] text-center screen670:h-full screen670:w-1/3">
           + {Math.floor(count3)} de projetos
