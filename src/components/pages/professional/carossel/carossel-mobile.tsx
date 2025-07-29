@@ -8,12 +8,19 @@ import {
   // CarouselNext,
   // CarouselPrevious,
 } from '@/components/ui/carousel'
+import Slide1 from './slides/slide1'
+import Slide2 from './slides/slide2'
+import Slide3 from './slides/slide3'
+import Slide4 from './slides/slide4'
+import Slide5 from './slides/slide5'
+import Slide6 from './slides/slide6'
 
 export default function CarosselMobile() {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [api, setApi] = React.useState<any>(null)
+  const components = [Slide1, Slide2, Slide3, Slide4, Slide5, Slide6]
   const [selectedIndex, setSelectedIndex] = React.useState(0)
-  const totalSlides = 5
+  const totalSlides = 6
 
   React.useEffect(() => {
     if (!api) return
@@ -40,9 +47,7 @@ export default function CarosselMobile() {
               className="flex items-center justify-center"
             >
               <div className="m-3 flex aspect-[5/3] w-full max-w-[700px] items-center justify-center rounded-lg bg-[radial-gradient(circle,_rgba(255,255,255,0.3),_rgba(255,255,255,0.2))] shadow-md">
-                <span className="text-center text-2xl text-white">
-                  {index + 1}
-                </span>
+                {React.createElement(components[index])}
               </div>
             </CarouselItem>
           ))}

@@ -85,14 +85,14 @@ export default function Horizontal({
         <div className="hidden translate-y-[3px] gap-4 screen600:flex">
           <Link
             id="btnAnimated3"
-            href="/profissional"
+            href="/professional"
             className="text-[15px] text-[#9fa0a7] transition-all duration-200 hover:text-white"
           >
             Ver portifólio
           </Link>
           <Link
             id="btnAnimated4"
-            href="/login"
+            href="/contact"
             className="text-[15px] text-[#9fa0a7] transition-all duration-200 hover:text-white"
           >
             Contate-me

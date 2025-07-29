@@ -4,11 +4,19 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import { useState, useRef, useEffect } from 'react'
 import clsx from 'clsx'
+import Slide1 from './slides/slide1'
+import Slide2 from './slides/slide2'
+import Slide3 from './slides/slide3'
+import Slide4 from './slides/slide4'
+import Slide5 from './slides/slide5'
+import Slide6 from './slides/slide6'
 // import TekoBag from '../../../../../public/projects/cardbranco.png'
 // import Image from 'next/image'
 
 export default function Carossel() {
+  const components = [Slide1, Slide2, Slide3, Slide4, Slide5, Slide6]
   const cards = [
+    'herobrine',
     'herobrine',
     'herobrine',
     'herobrine',
@@ -46,6 +54,7 @@ export default function Carossel() {
               index === activeIndex ||
               (index === 0 && activeIndex === cards.length)
 
+            const SlideComponent = components[index]
             return (
               <SwiperSlide
                 key={index}
@@ -60,12 +69,7 @@ export default function Carossel() {
                       : 'translate-y-0 scale-100 opacity-60',
                   )}
                 >
-                  {/* <Image
-                    src={TekoBag}
-                    alt="herobrine"
-                    fill
-                    className="object-cover"
-                  /> */}
+                  <SlideComponent />
                 </div>
               </SwiperSlide>
             )
