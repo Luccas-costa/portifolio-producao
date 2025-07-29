@@ -4,8 +4,8 @@ import Image, { StaticImageData } from 'next/image'
 
 import fonts from '@/styles/globals/fonts.module.css'
 import Imagem from '../../../../../public/projects/teko-bag.png'
-import Imagem3 from '../../../../../public/projects/criativos.png'
-import gif from '../../../../../public/projects/Vídeo do WhatsApp de 2025-06-29 à(s) 10.32.15_b6a87950.gif'
+// import Imagem3 from '../../../../../public/projects/criativos.png'
+// import gif from '../../../../../public/projects/Vídeo do WhatsApp de 2025-06-29 à(s) 10.32.15_b6a87950.gif'
 import Imagem2 from '../../../../../public/projects/emproducao.webp'
 
 import {
@@ -45,7 +45,7 @@ export default function Projects() {
             url="https://teko-bag.com"
             icon={1}
           />
-          <Card
+          {/* <Card
             title="Criativos para storys"
             subtitle="Nas horas vagas crio alguns conteudos para storys do instagram. Videos animados, rapidos e interativos buscando maior engajamento para a empresa parceira."
             image={gif}
@@ -55,6 +55,14 @@ export default function Projects() {
             gitIconNotVisible={true}
             linkNextTrue={true}
             isgif={true}
+          /> */}
+          <Card
+            title="Em produção"
+            subtitle="Ainda estou criando esse novo projeto, assim que pronto colocarei ele aqui."
+            image={Imagem2}
+            gitname=""
+            url=""
+            icon={2}
           />
           <Card
             title="Em produção"
@@ -78,7 +86,7 @@ export default function Projects() {
             url="https://teko-bag.com"
             icon={1}
           />
-          <CardMobile
+          {/* <CardMobile
             title="Criativos para storys"
             subtitle="Storys comerciais para empresas parceiras.. Videos animados, rapidos e interativos buscando maior engajamento para a empresa parceira."
             image={Imagem3}
@@ -87,6 +95,14 @@ export default function Projects() {
             icon={3}
             gitIconNotVisible={true}
             linkNextTrue={true}
+          /> */}
+          <CardMobile
+            title="Em produção"
+            subtitle="Ainda estou criando esse novo projeto, assim que pronto colocarei ele aqui."
+            image={Imagem2}
+            gitname=""
+            url=""
+            icon={2}
           />
           {verMais && (
             <CardMobile
