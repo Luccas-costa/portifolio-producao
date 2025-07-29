@@ -54,10 +54,10 @@ export default function Slide4() {
 
 "
         />
-        <div className="pb-2 text-3xl screen480:py-4">
+        <div className="pb-1 text-3xl screen400:pb-2 screen480:py-4">
           Ferramentas Poderosas
         </div>
-        <div className="max-w-[80%] text-center text-xl text-zinc-300">
+        <div className="max-w-[98%] text-center text-base text-zinc-300 screen480:max-w-[80%] screen480:text-xl">
           Next.js, React, Tailwind e metodologias ágeis garantem qualidade e
           velocidade.
         </div>
