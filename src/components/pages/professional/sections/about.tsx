@@ -6,7 +6,7 @@ import styles from '@/styles/globals/fonts.module.css'
 
 import ButtonSlider from '@/components/ui/button-slider'
 
-import my from '../../../../../public/my/my2.jpg'
+import my from '../../../../../public/my/my3.jpg'
 import assinatura from '../../../../../public/my/assinatura.png'
 import ovini from '../../../../../public/assets/icons/astronaut/ovini1.png'
 import codigodebarras from '../../../../../public/assets/codigodebarras.png'

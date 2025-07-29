@@ -38,7 +38,7 @@ export default function Carossel() {
   return (
     <a
       className="relative min-h-full w-screen overflow-visible"
-      href="#professional"
+      href="#contact"
     >
       <div ref={swiperRef}>
         <Swiper
