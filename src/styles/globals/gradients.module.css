@@ -28,18 +28,8 @@
 /* teste background */
 
 .teste2 {
-    background: linear-gradient(180deg,
-            rgba(8, 8, 30, 0.6) 0%,
-            /* topo com transparência */
-            rgba(8, 8, 30, 0) 68.29%,
-            /* transparente no meio */
-            rgba(8, 8, 30, 0.6) 100%
-            /* base com transparência */
-        );
-    pointer-events: none;
-    /* não bloqueia interação */
+    background: linear-gradient(180deg, #08081E 0%, rgba(8, 8, 30, 0) 68.29%, #08081E 100%);
 }
-
 
 .teste {
     background: conic-gradient(from 90deg at 50% 50%, #0C0C0C 0deg, #B1B1B1 100deg, #f8f8f8 360deg);

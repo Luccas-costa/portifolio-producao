@@ -1,5 +1,12 @@
-import React from 'react'
+/* eslint-disable prettier/prettier */
+/* eslint-disable react/jsx-no-comment-textnodes */
+'use client'
+
 import Image from 'next/image'
+import { useLayoutEffect, useRef } from 'react'
+
+import animated from '@/styles/globals/animated.module.css'
+import gradient from '@/styles/globals/gradients.module.css'
 
 import {
   ArrowRight,
@@ -7,47 +14,54 @@ import {
   CurrencyCircleDollar,
   PaintBrush,
 } from '@phosphor-icons/react/dist/ssr'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import gsap from 'gsap'
 
-import logo from 'public/logos/logo-tranparente.png'
 import circulo from 'public/assets/circulo.svg'
-
-import animated from '@/styles/globals/animated.module.css'
-import gradient from '@/styles/globals/gradients.module.css'
-// import Card from './card'
+import logo from 'public/logos/logo-tranparente.png'
 
 export default function Hero() {
+  const container = useRef<HTMLDivElement | null>(null)
+
+  useLayoutEffect(() => {
+    gsap.registerPlugin(ScrollTrigger)
+
+    const ctx = gsap.context(() => {
+      gsap.to('#divGradient', {
+        opacity: 0,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '#divPai',
+          start: 'top top',
+          end: '+=2000',
+          pin: true,
+          scrub: true,
+          invalidateOnRefresh: true,
+          // markers: true
+        },
+      })
+
+      requestAnimationFrame(() => {
+        ScrollTrigger.refresh()
+      })
+    }, container)
+
+    return () => ctx.revert()
+  }, [])
+
   return (
-    <div className="absolute flex h-[100vh] w-full items-center justify-center overflow-hidden bg-[#08081E]">
-      {/* Gradient */}
-      <div
-        className={`absolute top-0 z-10 h-[100vh] w-[100vw] ${gradient.sobreposicao}`}
-      ></div>
-      {/* NORMAL */}
-      {/* <div
-        className={`h-[160vh] w-1/2 translate-y-[200px] ${gradient.conicGradient}`}
-      ></div>
-      <div
-        className={`h-[160vh] w-1/2 translate-y-[200px] ${gradient.conicGradient} scale-x-[-1]`}
-      ></div> */}
-      {/* DIFERENTE */}
-      <div
-        className={`h-[160vh] w-1/2 translate-y-[200px] ${gradient.conicGradient2}`}
-      ></div>
-      <div
-        className={`h-[160vh] w-1/2 translate-y-[200px] ${gradient.conicGradient2} scale-x-[-1]`}
-      ></div>
+    <div ref={container} className="relative">
+      {/* Parte fixa na tela, fora do container animado */}
 
-      {/* Conteudo */}
-
-      {/* title */}
-      <div className="font-clash mix-color-dodge absolute top-[37%] z-20 h-full w-[75%] text-center text-[6.3vw] font-medium leading-[1] text-[#808080]">
+      {/* <div className="absolute top-[37%] z-20 h-full w-[75%] text-center font-clash text-[6.3vw] font-medium leading-[1] text-[#808080] mix-color-dodge">
+        A melhor comunidade de desenvolvimento
+      </div> */}
+      <div className="absolute top-[37%] z-20 h-full w-[75%] text-center font-clash text-[6.3vw] font-medium leading-[1] text-[#808080] mix-color-dodge">
         A melhor comunidade de desenvolvimento
       </div>
 
-      {/* <Card /> */}
-
       {/* top section */}
-      <div className="absolute top-[80px] z-20 flex w-[450px] flex-col items-center justify-center gap-5">
+      <div className="fixed left-1/2 top-[80px] z-20 flex w-[450px] translate-x-[-50%] flex-col items-center justify-center gap-5">
         <div className="text-center text-xl text-white/80">
           Nosso foco é te tornar um desenvolvedor único, valorizado e altamente
           lucrativo
@@ -66,7 +80,7 @@ export default function Hero() {
       </div>
 
       {/* NavBar */}
-      <div className="absolute top-[40px] z-20 flex w-[90%] items-center justify-between">
+      <div className="fixed left-[10%] top-[40px] z-20 flex w-[80%] items-center justify-between">
         {/* fazer ela ficar meio transparente */}
         <Image width={40} height={40} src={logo} alt="logo" />
         <div className="cursor-pointer text-sm text-white/60 hover:underline">
@@ -75,7 +89,7 @@ export default function Hero() {
       </div>
 
       {/* Footer */}
-      <div className="absolute bottom-[60px] z-20 flex w-[90%] items-center justify-between">
+      <div className="fixed bottom-[60px] left-[10%] z-20 flex w-[80%] items-center justify-between">
         {/* Tags */}
         <div className="flex flex-col justify-start">
           <div className="flex items-center gap-[6px]">
@@ -122,6 +136,31 @@ export default function Hero() {
             />
           </div>
         </div>
+      </div>
+
+      {/* Background */}
+      <div
+        id="divPai"
+        className="relative min-h-[300vh] w-full overflow-hidden bg-[#08081E]"
+      >
+        <div id="divGradient" className="flex h-[100vh] w-full bg-[#08081E]">
+          <div className={`h-[136vh] w-[50%] ${gradient.teste}`}></div>
+          <div
+            className={`h-[136vh] w-[50%] ${gradient.teste} [transform:rotateY(180deg)]`}
+          ></div>
+        </div>
+
+        {/* <div id="divGradient2" className="flex h-[100vh] w-full bg-[#08081E]">
+          <div className={`h-[136vh] w-[50%] ${gradient.testeoff}`}></div>
+          <div
+            className={`h-[136vh] w-[50%] ${gradient.testeoff} [transform:rotateY(180deg)]`}
+          ></div>
+        </div> */}
+
+        <div
+          id="sobreposicao"
+          className={`pointer-events-none absolute left-0 top-0 h-[100vh] w-full ${gradient.teste2}`}
+        ></div>
       </div>
     </div>
   )
