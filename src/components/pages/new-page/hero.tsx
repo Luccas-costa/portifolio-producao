@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 'use client'
 
 import Image from 'next/image'
@@ -23,98 +22,103 @@ import Card from './card'
 export default function Hero() {
   const container = useRef<HTMLDivElement | null>(null)
 
-useLayoutEffect(() => {
-  gsap.registerPlugin(ScrollTrigger)
+  useLayoutEffect(() => {
+    gsap.registerPlugin(ScrollTrigger)
 
-  const ctx = gsap.context(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: '#divPai',
-        start: 'top top',
-        end: '+=2000',
-        pin: true,
-        scrub: 2,
-        // markers: true,
-      },
-    })
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: '#divPai',
+          start: 'top top',
+          end: '+=2000',
+          pin: true,
+          scrub: 2,
+          // markers: true,
+        },
+      })
 
-    // Gradientes e texto
-    tl.to('#divGradient', { opacity: 0, ease: 'none' })
-      .from('#divGradient2', { opacity: 0, ease: 'none' }, '<')
-      .to('#tituloHero', { opacity: 0, ease: 'none' }, '<')
+      // Gradientes e texto
+      tl.to('#divGradient', { opacity: 0, ease: 'none' })
+        .from('#divGradient2', { opacity: 0, ease: 'none' }, '<')
+        .to('#tituloHero', { opacity: 0, ease: 'none' }, '<')
 
-    // Cards — animação sequencial de entrada e saída
-    const listaCards = gsap.utils.toArray('.card') as HTMLElement[]
-    listaCards.forEach((card, i) => {
+      // Cards — animação sequencial de entrada e saída
+      const listaCards = gsap.utils.toArray('.card') as HTMLElement[]
+      listaCards.forEach((card, i) => {
+        tl.from(
+          card,
+          {
+            opacity: 0,
+            filter: 'blur(30px)',
+            y: 30,
+            duration: 0.5,
+          },
+          i === 0 ? '>' : '+=0.3',
+        )
+        tl.to(
+          card,
+          {
+            opacity: 0,
+            filter: 'blur(30px)',
+            y: 30,
+            duration: 0.5,
+          },
+          '+=0.5',
+        )
+      })
+
+      // Pega a duração atual da timeline para posicionar as animações divObrigado
+      const duracaoCards = tl.duration()
+
+      // Começa 0.5 segundos antes do final da timeline
       tl.from(
-        card,
+        '#divObrigado',
         {
           opacity: 0,
-          filter: 'blur(30px)',
-          y: 30,
           duration: 0.5,
         },
-        i === 0 ? '>' : '+=0.3'
+        duracaoCards - 0.5,
       )
+
       tl.to(
-        card,
+        '#divObrigado',
         {
-          opacity: 0,
-          filter: 'blur(30px)',
-          y: 30,
-          duration: 0.5,
+          scaleX: 1,
+          rotateX: 0,
+          bottom: 0,
+          borderRadius: 0,
+          duration: 1,
+          ease: 'power1.out',
         },
-        '+=0.5'
+        duracaoCards - 0.5,
       )
-    })
 
-    // Pega a duração atual da timeline para posicionar as animações divObrigado
-    const duracaoCards = tl.duration()
+      requestAnimationFrame(() => {
+        ScrollTrigger.refresh()
+      })
+    }, container)
 
-    // Começa 0.5 segundos antes do final da timeline
-    tl.from(
-      '#divObrigado',
-      {
-        opacity: 0,
-        duration: 0.5,
-      },
-      duracaoCards - 0.5
-    )
-
-    tl.to(
-      '#divObrigado',
-      {
-        scaleX: 1,
-        rotateX: 0,
-        bottom: 0,
-        borderRadius: 0,
-        duration: 1,
-        ease: 'power1.out',
-      },
-      duracaoCards - 0.5
-    )
-
-    requestAnimationFrame(() => {
-      ScrollTrigger.refresh()
-    })
-  }, container)
-
-  return () => ctx.revert()
-}, [])
+    return () => ctx.revert()
+  }, [])
 
   return (
-    <div ref={container} className="relative font-poppins" >
+    <div ref={container} className="font-poppins relative">
       {/* Texto fixo */}
-      <div id="tituloHero" className="fixed left-1/2 top-[37vh] z-50 w-[75vw] -translate-x-1/2 text-center font-clash text-[6.3vw] font-medium leading-[1] text-[#808080] mix-color-dodge">
+      <div
+        id="tituloHero"
+        className="fixed left-1/2 top-[37vh] z-50 w-[75vw] -translate-x-1/2 text-center font-clash text-[6.3vw] font-medium leading-[1] text-[#808080] mix-color-dodge"
+      >
         A melhor comunidade de desenvolvimento
       </div>
 
-<div id="divCards" className="fixed left-1/2 top-[37vh] z-40 flex flex-col items-center -translate-x-1/2">
-  <Card title="Card 1" className="card" />
-  <Card title="Card 2" className="card" />
-  <Card title="Card 3" className="card" />
-</div>
-
+      <div
+        id="divCards"
+        className="fixed left-1/2 top-[37vh] z-40 flex -translate-x-1/2 flex-col items-center"
+      >
+        <Card title="Card 1" className="card" />
+        <Card title="Card 2" className="card" />
+        <Card title="Card 3" className="card" />
+      </div>
 
       {/* Top section */}
       <div className="fixed left-1/2 top-[80px] z-20 flex w-[450px] translate-x-[-50%] flex-col items-center justify-center gap-5">
@@ -147,11 +151,19 @@ useLayoutEffect(() => {
       <div className="fixed bottom-[60px] left-[10%] z-20 flex w-[80%] items-center justify-between">
         <div className="flex flex-col justify-start">
           <div className="flex items-center gap-[6px]">
-            <PaintBrush size={26} color="rgba(255, 255, 255, 0.6)" weight="regular" />
+            <PaintBrush
+              size={26}
+              color="rgba(255, 255, 255, 0.6)"
+              weight="regular"
+            />
             <div className="text-lg text-white/60">Design</div>
           </div>
           <div className="flex items-center gap-[6px]">
-            <CurrencyCircleDollar size={26} color="rgba(255, 255, 255, 0.6)" weight="regular" />
+            <CurrencyCircleDollar
+              size={26}
+              color="rgba(255, 255, 255, 0.6)"
+              weight="regular"
+            />
             <div className="text-lg text-white/60">Mercado</div>
           </div>
           <div className="flex items-center gap-[6px]">
@@ -160,7 +172,9 @@ useLayoutEffect(() => {
           </div>
         </div>
 
-        <div className="font-clash text-sm font-medium text-white/60">Luccas costa</div>
+        <div className="font-clash text-sm font-medium text-white/60">
+          Luccas costa
+        </div>
 
         <div className="relative bottom-[0px] right-[0px]">
           <Image
@@ -181,15 +195,23 @@ useLayoutEffect(() => {
         </div>
       </div>
 
-<div className='z-50 fixed  transition-all duration-300 w-full h-[100vh]' style={{ perspective: '3000px', perspectiveOrigin: '50% 50%' }}>
-  <div
-    id="divObrigado"
-    style={{ transform: 'rotateX(90deg) scale(0.45)', transformStyle: 'preserve-3d' }}
-    className="w-full h-[100vh] absolute bottom-[-18%] bg-[#E6E6E6] flex items-center justify-center rounded-[40px]"
-  >
-    <div className="text-[6.5vw] font-clash text-zinc-800 font-medium">Obrigado</div>
-  </div>
-</div>
+      <div
+        className="fixed z-50 h-[100vh] w-full transition-all duration-300"
+        style={{ perspective: '3000px', perspectiveOrigin: '50% 50%' }}
+      >
+        <div
+          id="divObrigado"
+          style={{
+            transform: 'rotateX(90deg) scale(0.45)',
+            transformStyle: 'preserve-3d',
+          }}
+          className="absolute bottom-[-18%] flex h-[100vh] w-full items-center justify-center rounded-[40px] bg-[#E6E6E6]"
+        >
+          <div className="font-clash text-[6.5vw] font-medium text-zinc-800">
+            Obrigado
+          </div>
+        </div>
+      </div>
 
       {/* Background */}
       <div
