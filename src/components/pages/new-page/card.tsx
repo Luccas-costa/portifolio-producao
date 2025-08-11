@@ -1,9 +1,14 @@
 import { ShieldCheckered } from '@phosphor-icons/react/dist/ssr'
 import React from 'react'
 
-export default function Card() {
+interface CardProps {
+  className?: string
+  title: string
+}
+
+export default function Card({ className = '', title }: CardProps) {
   return (
-    <div className="absolute left-1/2 top-[37%] z-20 h-full translate-x-[-50%]">
+    <div className={`absolute left-1/2 top-0 translate-x-[-50%] ${className}`}>
       <div
         className="relative flex h-[150px] w-[450px] flex-col items-start gap-3 rounded-[16px] border-[1.2px] border-white/20 bg-gradient-to-b from-white/10 to-white/30 px-5 py-6"
         style={{
@@ -31,7 +36,7 @@ export default function Card() {
 
         {/* TEXTO */}
         <div className="font-clash text-2xl font-medium text-white">
-          Teste Gratuitamente
+          {title}
         </div>
         <div className="text-lg text-white/60">
           Nosso foco é te tornar um desenvolvedor unico, valorizado e altamente

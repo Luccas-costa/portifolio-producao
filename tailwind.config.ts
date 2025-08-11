@@ -30,6 +30,8 @@ const config: Config = {
       },
       fontFamily: {
         montserrat: ['Montserrat', 'sans-serif'],
+        sans: ['var(--font-poppins)', 'system-ui', 'sans-serif'],
+        poppins: ['var(--font-poppins)', 'system-ui', 'sans-serif'],
         clash: ['var(--font-clash)', 'sans-serif'],
       },
       fontSize: {
