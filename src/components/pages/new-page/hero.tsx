@@ -222,22 +222,24 @@ export default function Hero() {
         {/* divGradient (primeira camada) */}
         <div
           id="divGradient"
+          style={{ fontSize: '0' }}
           className="absolute inset-0 flex h-[100vh] w-full bg-[#08081E]"
         >
-          <div className={`h-[136vh] w-[50%] ${gradient.teste}`} />
+          <div className={`h-[136vh] w-[calc(50%+1px)] ${gradient.teste}`} />
           <div
-            className={`h-[136vh] w-[50%] ${gradient.teste} [transform:rotateY(180deg)]`}
+            className={`-ml-[1px] h-[136vh] w-[50%] ${gradient.teste} [transform:scaleX(-1)]`}
           />
         </div>
 
         {/* divGradient2 (segunda camada por cima) */}
         <div
           id="divGradient2"
+          style={{ fontSize: '0' }}
           className="absolute inset-0 flex h-[100vh] w-full bg-[#08081E]"
         >
-          <div className={`h-[136vh] w-[50%] ${gradient.testeoff}`} />
+          <div className={`h-[136vh] w-[calc(50%+1px)] ${gradient.testeoff}`} />
           <div
-            className={`h-[136vh] w-[50%] ${gradient.testeoff} [transform:rotateY(180deg)]`}
+            className={`-ml-[1px] h-[136vh] w-[50%] ${gradient.testeoff} [transform:scaleX(-1)]`}
           />
         </div>
 

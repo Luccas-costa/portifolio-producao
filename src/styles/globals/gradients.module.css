@@ -27,8 +27,16 @@
 
 /* teste background */
 
+.teste,
+.testeoff {
+    backface-visibility: hidden;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
 .teste2 {
-    background: linear-gradient(180deg, #08081E 0%, rgba(8, 8, 30, 0) 68.29%, #08081E 100%);
+    background: linear-gradient(180deg, #08081eb4 0%, rgba(8, 8, 30, 0) 68.29%, #08081eb4 100%);
 }
 
 .teste {
