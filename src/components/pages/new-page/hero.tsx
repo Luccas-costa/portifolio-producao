@@ -1,5 +1,3 @@
-/* eslint-disable prettier/prettier */
-/* eslint-disable react/jsx-no-comment-textnodes */
 'use client'
 
 import Image from 'next/image'
@@ -52,11 +50,7 @@ export default function Hero() {
   return (
     <div ref={container} className="relative">
       {/* Parte fixa na tela, fora do container animado */}
-
-      {/* <div className="absolute top-[37%] z-20 h-full w-[75%] text-center font-clash text-[6.3vw] font-medium leading-[1] text-[#808080] mix-color-dodge">
-        A melhor comunidade de desenvolvimento
-      </div> */}
-      <div className="absolute top-[37%] z-20 h-full w-[75%] text-center font-clash text-[6.3vw] font-medium leading-[1] text-[#808080] mix-color-dodge">
+      <div className="font-clash mix-color-dodge fixed left-1/2 top-[37vh] z-50 w-[75vw] -translate-x-1/2 text-center text-[6.3vw] font-medium leading-[1] text-[#808080]">
         A melhor comunidade de desenvolvimento
       </div>
 
