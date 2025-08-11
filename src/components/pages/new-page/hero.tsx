@@ -102,7 +102,8 @@ export default function Hero() {
   }, [])
 
   return (
-    <div ref={container} className="font-poppins relative">
+    // eslint-disable-next-line prettier/prettier
+    <div ref={container} className="relative font-poppins">
       {/* Texto fixo */}
       <div
         id="tituloHero"
