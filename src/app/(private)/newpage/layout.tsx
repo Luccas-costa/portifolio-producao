@@ -1,25 +1,35 @@
 import type { Metadata, Viewport } from 'next'
-import './globals.css'
-import { Inter } from 'next/font/google'
+import '../../globals.css'
+import { Poppins } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import localFont from 'next/font/local'
 
 const clash = localFont({
   src: [
     {
-      path: './fonts/ClashDisplay-Regular.woff2',
+      path: '../../fonts/ClashDisplay-Regular.woff2',
       weight: '400',
       style: 'normal',
     },
-    { path: './fonts/ClashDisplay-Bold.woff2', weight: '700', style: 'normal' },
+    {
+      path: '../../fonts/ClashDisplay-Medium.woff2',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: '../../fonts/ClashDisplay-Bold.woff2',
+      weight: '700',
+      style: 'normal',
+    },
   ],
   variable: '--font-clash',
   display: 'swap',
 })
 
-const inter = Inter({
+const poppins = Poppins({
   subsets: ['latin'],
   display: 'swap',
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
 })
 
 export const metadata: Metadata = {
@@ -46,7 +56,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${inter.className} ${clash.variable} antialiased transition-all duration-200`}
+        className={`${poppins.className} ${clash.variable} antialiased transition-all duration-200`}
       >
         {children}
         <Analytics />

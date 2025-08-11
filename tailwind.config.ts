@@ -9,6 +9,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      // mixBlendMode: {
+      //   'color-dodge': 'color-dodge',
+      // },
       animation: {
         spotlight: 'spotlight 2s ease .75s 1 forwards',
         spinslow: 'spin 20s linear infinite',
@@ -27,6 +30,7 @@ const config: Config = {
       },
       fontFamily: {
         montserrat: ['Montserrat', 'sans-serif'],
+        clash: ['var(--font-clash)', 'sans-serif'],
       },
       fontSize: {
         xxs: '0.625rem',
@@ -285,6 +289,16 @@ const config: Config = {
       },
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [
+    require('tailwindcss-animate'),
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    function ({ addUtilities }: any) {
+      addUtilities({
+        '.mix-color-dodge': {
+          'mix-blend-mode': 'color-dodge',
+        },
+      })
+    },
+  ],
 }
 export default config
