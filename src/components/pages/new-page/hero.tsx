@@ -18,6 +18,7 @@ import gsap from 'gsap'
 import circulo from 'public/assets/circulo.svg'
 import logo from 'public/logos/logo-tranparente.png'
 import Card from './card'
+import ButtonSlider from '@/components/ui/button-slider'
 
 export default function Hero() {
   const container = useRef<HTMLDivElement | null>(null)
@@ -71,13 +72,22 @@ export default function Hero() {
       const duracaoCards = tl.duration()
 
       // Começa 0.5 segundos antes do final da timeline
+
+      tl.to('#divTop', {
+        zIndex: 0,
+      })
+
+      tl.to('#divNavBar', {
+        zIndex: 0,
+      })
+
       tl.from(
         '#divObrigado',
         {
           opacity: 0,
-          duration: 0.5,
+          duration: 1,
         },
-        duracaoCards - 0.5,
+        duracaoCards - 1,
       )
 
       tl.to(
@@ -87,7 +97,7 @@ export default function Hero() {
           rotateX: 0,
           bottom: 0,
           borderRadius: 0,
-          duration: 1,
+          duration: 3,
           ease: 'power1.out',
         },
         duracaoCards - 0.5,
@@ -109,12 +119,13 @@ export default function Hero() {
         id="tituloHero"
         className="fixed left-1/2 top-[37vh] z-50 w-[75vw] -translate-x-1/2 text-center font-clash text-[6.3vw] font-medium leading-[1] text-[#808080] mix-color-dodge"
       >
-        A melhor comunidade de desenvolvimento
+        {/* A melhor comunidade de desenvolvimento */}
+        Transformando o futuro uma solução por vez.
       </div>
 
       <div
         id="divCards"
-        className="fixed left-1/2 top-[37vh] z-40 flex -translate-x-1/2 flex-col items-center"
+        className="fixed left-1/2 top-[37vh] z-[50] flex -translate-x-1/2 flex-col items-center"
       >
         <Card title="Card 1" className="card" />
         <Card title="Card 2" className="card" />
@@ -122,29 +133,31 @@ export default function Hero() {
       </div>
 
       {/* Top section */}
-      <div className="fixed left-1/2 top-[80px] z-20 flex w-[450px] translate-x-[-50%] flex-col items-center justify-center gap-5">
+      <div
+        id="divTop"
+        className="fixed left-1/2 top-[80px] z-[60] flex w-[450px] translate-x-[-50%] flex-col items-center justify-center gap-5"
+      >
         <div className="text-center text-xl text-white/80">
-          Nosso foco é te tornar um desenvolvedor único, valorizado e altamente
-          lucrativo
+          Vamos conversar e juntos transformar sua ideia em um projeto de
+          sucesso.
         </div>
         <div className="flex w-full items-center justify-center gap-5">
-          <button className="flex items-center gap-3 rounded-[48px] bg-white/80 pb-[6px] pl-5 pr-[6px] pt-[6px] text-xl text-[#08081E]">
-            <div>Inscrever-se</div>
-            <div className="flex size-9 -rotate-45 items-center justify-center rounded-full bg-[#08081E]">
-              <ArrowRight size={16} color="white" weight="regular" />
-            </div>
-          </button>
-          <button className="h-[48px] w-[122px] rounded-[48px] bg-white/20 px-5 py-[6px] text-xl text-white/80">
-            Contato
+          <ButtonSlider chosen={true} />
+          <button className="h-[48px] w-[153px] rounded-[48px] bg-white/20 px-5 py-[6px] text-xl text-white/80 transition-all duration-200 hover:scale-105 hover:bg-white/30">
+            Sobre mim
           </button>
         </div>
       </div>
 
       {/* NavBar */}
-      <div className="fixed left-[10%] top-[40px] z-20 flex w-[80%] items-center justify-between">
+      <div
+        id="divNavBar"
+        className="fixed left-[10%] top-[40px] z-[60] flex w-[80%] items-center justify-between"
+      >
         <Image width={40} height={40} src={logo} alt="logo" />
         <div className="cursor-pointer text-sm text-white/60 hover:underline">
-          Comunidade GitHub
+          Fazer login
+          {/* Bem vindo Luccas */}
         </div>
       </div>
 
@@ -173,7 +186,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="font-clash text-sm font-medium text-white/60">
+        <div className="translate-y-[80px] font-clash text-sm font-medium text-white/60">
           Luccas costa
         </div>
 
@@ -205,8 +218,12 @@ export default function Hero() {
           style={{
             transform: 'rotateX(90deg) scale(0.45)',
             transformStyle: 'preserve-3d',
+            backgroundImage: "url('/backgrounds/background-newpage.jpg')",
+            backgroundSize: 'cover', // para cobrir toda a área do elemento
+            backgroundPosition: 'center', // para centralizar a imagem
+            backgroundRepeat: 'no-repeat', // para evitar repetição da imagem
           }}
-          className="absolute bottom-[-18%] flex h-[100vh] w-full items-center justify-center rounded-[40px] bg-[#E6E6E6]"
+          className="absolute bottom-[-21%] flex h-[100vh] w-full items-center justify-center rounded-[40px]"
         >
           <div className="font-clash text-[6.5vw] font-medium text-zinc-800">
             Obrigado
@@ -225,9 +242,11 @@ export default function Hero() {
           style={{ fontSize: '0' }}
           className="absolute inset-0 flex h-[100vh] w-full bg-[#08081E]"
         >
-          <div className={`h-[136vh] w-[calc(50%+1px)] ${gradient.teste}`} />
           <div
-            className={`-ml-[1px] h-[136vh] w-[50%] ${gradient.teste} [transform:scaleX(-1)]`}
+            className={`h-[150vh] w-[calc(50%+1px)] ${gradient.conicGradient}`}
+          />
+          <div
+            className={`-ml-[1px] h-[150vh] w-[50%] ${gradient.conicGradient} [transform:scaleX(-1)]`}
           />
         </div>
 
@@ -237,16 +256,18 @@ export default function Hero() {
           style={{ fontSize: '0' }}
           className="absolute inset-0 flex h-[100vh] w-full bg-[#08081E]"
         >
-          <div className={`h-[136vh] w-[calc(50%+1px)] ${gradient.testeoff}`} />
           <div
-            className={`-ml-[1px] h-[136vh] w-[50%] ${gradient.testeoff} [transform:scaleX(-1)]`}
+            className={`h-[150vh] w-[calc(50%+1px)] ${gradient.conicGradient2}`}
+          />
+          <div
+            className={`-ml-[1px] h-[150vh] w-[50%] ${gradient.conicGradient2} [transform:scaleX(-1)]`}
           />
         </div>
 
         {/* Sobreposição */}
         <div
           id="sobreposicao"
-          className={`pointer-events-none absolute left-0 top-0 h-[100vh] w-full ${gradient.teste2}`}
+          className={`pointer-events-none absolute left-0 top-0 h-[100vh] w-full ${gradient.sobreposicao}`}
         />
       </div>
     </div>

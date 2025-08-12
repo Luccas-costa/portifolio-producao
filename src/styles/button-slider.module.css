@@ -34,3 +34,41 @@
 .button:active .icon {
     transform: scale(0.95);
 }
+
+.button2 .icon2 {
+    background: #08081E;
+    margin-left: 1em;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 42px;
+    /* antes 2.2em */
+    width: 42px;
+    /* antes 2.2em */
+    border-radius: 100em;
+    /* proporcional ao novo tamanho */
+    box-shadow: 0.1em 0.1em 0.6em 0.2em #d8d8ff;
+    right: 0.3em;
+    transition: all 0.3s;
+}
+
+.button2:hover .icon2 {
+    width: calc(100% - 0.6em);
+}
+
+.button2 .icon2 svg {
+    width: 22px;
+    /* antes 1.1em */
+    transition: transform 0.3s;
+    color: #fff;
+    rotate: -45deg;
+}
+
+.button2:hover .icon2 svg {
+    transform: translateX(0.1em);
+}
+
+.button2:active .icon2 {
+    transform: scale(0.95);
+}

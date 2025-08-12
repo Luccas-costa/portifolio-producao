@@ -87,7 +87,7 @@ export default function About() {
                 </div>
               </div>
               <div className="mt-12 flex flex-col items-center">
-                <ButtonSlider />
+                <ButtonSlider chosen={false} />
                 <Image
                   src={assinatura}
                   alt="assinatura"
@@ -155,7 +155,7 @@ export default function About() {
                 </div>
               </>
               <div className="mt-16 flex translate-x-[-48px] flex-col items-center pl-2 screen500:translate-x-[-52px] screen630:translate-x-[-50px] screen670:translate-x-[-70px] screen1200:mt-0 screen1200:translate-x-0 screen1200:flex-row screen1200:gap-5">
-                <ButtonSlider />
+                <ButtonSlider chosen={false} />
                 <Image
                   src={assinatura}
                   alt="assinatura"

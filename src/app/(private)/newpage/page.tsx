@@ -1,6 +1,6 @@
 // app/(private)/newpage/page.tsx
 import type { Metadata, Viewport } from 'next'
-import Hero from '@/components/pages/new-page/hero'
+import Content from './content'
 
 export const metadata: Metadata = {
   title: 'Luccas Costa',
@@ -12,9 +12,5 @@ export const viewport: Viewport = {
 }
 
 export default function NewPage() {
-  return (
-    <>
-      <Hero />
-    </>
-  )
+  return <Content />
 }
