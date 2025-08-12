@@ -31,7 +31,7 @@ export default function Hero() {
         scrollTrigger: {
           trigger: '#divPai',
           start: 'top top',
-          end: '+=2000',
+          end: '+=3000',
           pin: true,
           scrub: 2,
           // markers: true,
@@ -39,9 +39,9 @@ export default function Hero() {
       })
 
       // Gradientes e texto
-      tl.to('#divGradient', { opacity: 0, ease: 'none' })
-        .from('#divGradient2', { opacity: 0, ease: 'none' }, '<')
-        .to('#tituloHero', { opacity: 0, ease: 'none' }, '<')
+      tl.to('#divGradient', { opacity: 0, ease: 'none', duration: 2 })
+        .from('#divGradient2', { opacity: 0, ease: 'none', duration: 2 }, '<')
+        .to('#tituloHero', { opacity: 0, ease: 'none', duration: 2 }, '<')
 
       // Cards — animação sequencial de entrada e saída
       const listaCards = gsap.utils.toArray('.card') as HTMLElement[]
@@ -125,11 +125,11 @@ export default function Hero() {
 
       <div
         id="divCards"
-        className="fixed left-1/2 top-[37vh] z-[50] flex -translate-x-1/2 flex-col items-center"
+        className="fixed left-1/2 top-[37vh] z-[60] flex -translate-x-1/2 flex-col items-center"
       >
-        <Card title="Card 1" className="card" />
-        <Card title="Card 2" className="card" />
-        <Card title="Card 3" className="card" />
+        <Card title="Card 1" className="card" card={1} />
+        <Card title="Card 2" className="card" card={2} />
+        <Card title="Um pouco sobre mim" className="card" card={3} />
       </div>
 
       {/* Top section */}
