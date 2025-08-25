@@ -111,7 +111,7 @@ export default function IndexMobile() {
                  <Link href={'/'} className='bg-zinc-200 rounded-lg w-[90%] font-medium hover:bg-zinc-300 h-[50px] text-zinc-950 flex items-center justify-center mx-auto  screen500:translate-y-[-250px] translate-y-[-350px]'>Voltar para home</Link>
             </div>
             <div style={{ zIndex: 3 }} className="screen1070:h-[410px] screen500:h-[470px] h-[600px] screen1070:translate-y-[210px] translate-y-[270px] w-full bg-red-500 absolute bottom-0">
-              <Footer />
+              <Footer isVisibleMenu={true} />
             </div>
           </div>
         </div>

@@ -3,7 +3,11 @@ import React, { useState } from 'react'
 
 import { motion } from 'framer-motion'
 
-export default function Footer() {
+interface FooterProps {
+  isVisibleMenu?: boolean
+}
+
+export default function Footer({ isVisibleMenu }: FooterProps) {
   return (
     <div className="h-full w-full bg-[#141414] pt-[20px]" id="contact">
       <div className="h-full">
@@ -86,13 +90,19 @@ export default function Footer() {
               ]}
             />
           </div>
-          <div className="flex flex-col">
-            <div className="mb-[20px] hidden w-full items-center justify-center screen500:flex">
-              <NavBar />
-            </div>
-            <div className="mb-[20px] mt-[20px] flex w-full items-center justify-center screen500:hidden">
-              <MobileNavBar />
-            </div>
+          <div
+            className={`flex flex-col ${!isVisibleMenu ? 'mt-[100px]' : ''}`}
+          >
+            {isVisibleMenu && (
+              <>
+                <div className="mb-[20px] hidden w-full items-center justify-center screen500:flex">
+                  <NavBar />
+                </div>
+                <div className="mb-[20px] mt-[20px] flex w-full items-center justify-center screen500:hidden">
+                  <MobileNavBar />
+                </div>
+              </>
+            )}
             <div className="pb-1 text-center text-sm font-medium text-neutral-600 screen500:text-base">
               <div>Typeface by Luccas | © 2025 Data Privacy Imprint</div>
             </div>

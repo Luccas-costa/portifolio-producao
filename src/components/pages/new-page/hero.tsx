@@ -19,6 +19,9 @@ import circulo from 'public/assets/circulo.svg'
 import logo from 'public/logos/logo-tranparente.png'
 import Card from './card'
 import ButtonSlider from '@/components/ui/button-slider'
+import Section1 from './sections/section1'
+import Section2 from './sections/section2'
+import Section3 from './sections/section3'
 
 export default function Hero() {
   const container = useRef<HTMLDivElement | null>(null)
@@ -31,7 +34,7 @@ export default function Hero() {
         scrollTrigger: {
           trigger: '#divPai',
           start: 'top top',
-          end: '+=3000',
+          end: '+=5000', // aumentei pra dar espaço pras novas seções
           pin: true,
           scrub: 2,
           // markers: true,
@@ -71,16 +74,11 @@ export default function Hero() {
       // Pega a duração atual da timeline para posicionar as animações divObrigado
       const duracaoCards = tl.duration()
 
-      // Começa 0.5 segundos antes do final da timeline
+      // Reseta z-index de navbar e top
+      tl.to('#divTop', { zIndex: 0 })
+      tl.to('#divNavBar', { zIndex: 0 })
 
-      tl.to('#divTop', {
-        zIndex: 0,
-      })
-
-      tl.to('#divNavBar', {
-        zIndex: 0,
-      })
-
+      // Entrada da divObrigado
       tl.from(
         '#divObrigado',
         {
@@ -103,6 +101,45 @@ export default function Hero() {
         duracaoCards - 0.5,
       )
 
+      // Simulação do scroll entre seções
+      // Nova1 entra, Obrigado sai pra cima
+      tl.fromTo(
+        '#divNova2',
+        { yPercent: 100 },
+        { yPercent: 0, duration: 2, ease: 'power1.inOut' },
+        '+=2',
+      )
+      tl.fromTo(
+        '#divNova1',
+        { yPercent: 100 },
+        { yPercent: 0, duration: 2, ease: 'power1.inOut' },
+        '+=1',
+      )
+      tl.to(
+        '#divObrigado',
+        { yPercent: -100, duration: 2, ease: 'power1.inOut' },
+        '<',
+      )
+
+      // Nova2 entra, Nova1 sai pra cima
+      tl.fromTo(
+        '#divNova3',
+        { yPercent: 100 },
+        { yPercent: 0, duration: 2, ease: 'power1.inOut' },
+        '+=2',
+      )
+      tl.fromTo(
+        '#divNova2',
+        { yPercent: 100 },
+        { yPercent: 0, duration: 2, ease: 'power1.inOut' },
+        '+=1',
+      )
+      tl.to(
+        '#divNova1',
+        { yPercent: -100, duration: 2, ease: 'power1.inOut' },
+        '<',
+      )
+
       requestAnimationFrame(() => {
         ScrollTrigger.refresh()
       })
@@ -120,7 +157,7 @@ export default function Hero() {
         className="fixed left-1/2 top-[37vh] z-50 w-[75vw] -translate-x-1/2 text-center font-clash text-[6.3vw] font-medium leading-[1] text-[#808080] mix-color-dodge"
       >
         {/* A melhor comunidade de desenvolvimento */}
-        Transformando o futuro uma solução por vez.
+        Transformando o futuro uma solução por vez
       </div>
 
       <div
@@ -209,25 +246,44 @@ export default function Hero() {
         </div>
       </div>
 
+      {/* Container Obrigado + próximas seções */}
       <div
         className="fixed z-50 h-[100vh] w-full transition-all duration-300"
         style={{ perspective: '3000px', perspectiveOrigin: '50% 50%' }}
       >
+        {/* Obrigado */}
         <div
           id="divObrigado"
           style={{
             transform: 'rotateX(90deg) scale(0.45)',
             transformStyle: 'preserve-3d',
-            backgroundImage: "url('/backgrounds/background-newpage.jpg')",
-            backgroundSize: 'cover', // para cobrir toda a área do elemento
-            backgroundPosition: 'center', // para centralizar a imagem
-            backgroundRepeat: 'no-repeat', // para evitar repetição da imagem
           }}
-          className="absolute bottom-[-21%] flex h-[100vh] w-full items-center justify-center rounded-[40px]"
+          className="absolute bottom-[-21%] flex h-[100vh] w-full items-center justify-center rounded-[40px] bg-zinc-200"
         >
           <div className="font-clash text-[6.5vw] font-medium text-zinc-800">
             Obrigado
           </div>
+        </div>
+
+        <div
+          id="divNova1"
+          className="fixed z-40 flex h-[100vh] w-full items-center justify-center bg-[#101030] text-4xl text-white"
+        >
+          <Section1 />
+        </div>
+
+        <div
+          id="divNova2"
+          className="fixed z-30 flex h-[100vh] w-full items-center justify-center bg-[#202040] text-4xl text-white"
+        >
+          <Section2 />
+        </div>
+
+        <div
+          id="divNova3"
+          className="fixed z-30 flex h-[100vh] w-full items-center justify-center bg-[#202040] text-4xl text-white"
+        >
+          <Section3 />
         </div>
       </div>
 
