@@ -24,7 +24,7 @@ export default function IndexMobile() {
         <ShootingStars />
         <StarsBackground />
         <div
-          className={`absolute left-1/2 top-[calc(100%-250px)] h-[400px] w-[1000px] -translate-x-1/2 rounded-[100%] border border-[#B48CDE] bg-black ${styles.degrade2}`}
+          className={`absolute left-1/2 top-[calc(100%-75px)] h-[400px] w-[1000px] -translate-x-1/2 rounded-[100%] border border-[#B48CDE] bg-black ${styles.degrade2}`}
         ></div>
       </div>
 
