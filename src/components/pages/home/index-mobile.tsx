@@ -19,7 +19,7 @@ export default function IndexMobile() {
       {/* Background */}
       <div
         style={{ zIndex: 1, pointerEvents: 'none' }}
-        className="absolute bottom-0 flex h-full w-full min-h-[100vh] flex-col items-center overflow-hidden"
+        className="absolute bottom-0 flex h-full min-h-[100vh] w-full flex-col items-center overflow-hidden"
       >
         <ShootingStars />
         <StarsBackground />
