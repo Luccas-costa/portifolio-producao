@@ -85,6 +85,7 @@ export default function IndexDesktop() {
               title="Portfólio profissional"
               Imagem="/logos/favicon.ico"
               link="/professional"
+              inwork
             />
             <OldStyleButton
               title="Gpt do luccas"
