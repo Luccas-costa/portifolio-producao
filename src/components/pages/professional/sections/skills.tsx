@@ -14,7 +14,11 @@ const items = [
   'DevOps',
 ]
 
-export default function Skills() {
+interface SkillsProps {
+  isFaixa?: boolean
+}
+
+export default function Skills({ isFaixa }: SkillsProps) {
   const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
@@ -35,11 +39,17 @@ export default function Skills() {
 
   return (
     <div className="relative h-full w-full">
-      <div
-        style={{ zIndex: 1 }}
-        className="absolute left-1/2 top-0 h-full w-[110vw] translate-x-[-50%] rotate-[3.5deg] bg-[#714da6] pb-[80px] screen630:rotate-[2deg]"
-      ></div>
-
+      {isFaixa ? (
+        <div
+          style={{ zIndex: 1 }}
+          className="absolute left-1/2 top-0 h-full w-[110vw] translate-x-[-50%] rotate-[3.5deg] bg-[#714da6] pb-[80px] opacity-0 screen630:rotate-[2deg]"
+        ></div>
+      ) : (
+        <div
+          style={{ zIndex: 1 }}
+          className="absolute left-1/2 top-0 h-full w-[110vw] translate-x-[-50%] rotate-[3.5deg] bg-[#714da6] pb-[80px] screen630:rotate-[2deg]"
+        ></div>
+      )}
       <div
         style={{ zIndex: 2 }}
         className="relative h-[80px] w-full overflow-hidden bg-[#E97511]"
