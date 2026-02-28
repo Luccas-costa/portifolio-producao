@@ -1,5 +1,4 @@
 'use client'
-import { Button } from '@/components/ui/button'
 import CustomCursor from './teste'
 
 export default function Home() {
@@ -19,8 +18,6 @@ export default function Home() {
       >
         Link
       </a>
-
-      <Button va>OK</Button>
     </main>
   )
 }
