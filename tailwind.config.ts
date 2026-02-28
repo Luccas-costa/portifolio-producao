@@ -9,9 +9,6 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      // mixBlendMode: {
-      //   'color-dodge': 'color-dodge',
-      // },
       animation: {
         spotlight: 'spotlight 2s ease .75s 1 forwards',
         spinslow: 'spin 20s linear infinite',
@@ -38,7 +35,6 @@ const config: Config = {
         xxs: '0.625rem',
       },
       screens: {
-        // min width
         screen350: '350px',
         screen390: '390px',
         screen400: '400px',
@@ -75,42 +71,90 @@ const config: Config = {
         screen1800: '1800px',
         screen1900: '1900px',
         screen2000: '2000px',
-
-        // max width
-        screen2000max: { max: '2000px' },
-        screen1900max: { max: '1900px' },
-        screen1800max: { max: '1800px' },
-        screen1700max: { max: '1700px' },
-        screen1600max: { max: '1600px' },
-        screen1500max: { max: '1500px' },
-        screen1400max: { max: '1400px' },
-        screen1300max: { max: '1300px' },
-        screen1200max: { max: '1200px' },
-        screen1100max: { max: '1100px' },
-        screen1000max: { max: '1000px' },
-        screen900max: { max: '900px' },
-        screen800max: { max: '800px' },
-        screen700max: { max: '700px' },
-        screen600max: { max: '600px' },
-        screen550max: { max: '550px' },
-        screen500max: { max: '500px' },
-        screen450max: { max: '450px' },
-        screen400max: { max: '400px' },
-        screen350max: { max: '350px' },
-
-        // min height
-        tall500: { raw: '(min-height: 500px)' },
-        tall600: { raw: '(min-height: 600px)' },
-        tall700: { raw: '(min-height: 700px)' },
-        tall800: { raw: '(min-height: 800px)' },
-        tall900: { raw: '(min-height: 900px)' },
-        tall1000: { raw: '(min-height: 1000px)' },
-        tall1024: { raw: '(min-height: 1024px)' },
-
-        // max height
-        short1024: { raw: '(max-height: 1024px)' },
-
-        // max width and height
+        screen2000max: {
+          max: '2000px',
+        },
+        screen1900max: {
+          max: '1900px',
+        },
+        screen1800max: {
+          max: '1800px',
+        },
+        screen1700max: {
+          max: '1700px',
+        },
+        screen1600max: {
+          max: '1600px',
+        },
+        screen1500max: {
+          max: '1500px',
+        },
+        screen1400max: {
+          max: '1400px',
+        },
+        screen1300max: {
+          max: '1300px',
+        },
+        screen1200max: {
+          max: '1200px',
+        },
+        screen1100max: {
+          max: '1100px',
+        },
+        screen1000max: {
+          max: '1000px',
+        },
+        screen900max: {
+          max: '900px',
+        },
+        screen800max: {
+          max: '800px',
+        },
+        screen700max: {
+          max: '700px',
+        },
+        screen600max: {
+          max: '600px',
+        },
+        screen550max: {
+          max: '550px',
+        },
+        screen500max: {
+          max: '500px',
+        },
+        screen450max: {
+          max: '450px',
+        },
+        screen400max: {
+          max: '400px',
+        },
+        screen350max: {
+          max: '350px',
+        },
+        tall500: {
+          raw: '(min-height: 500px)',
+        },
+        tall600: {
+          raw: '(min-height: 600px)',
+        },
+        tall700: {
+          raw: '(min-height: 700px)',
+        },
+        tall800: {
+          raw: '(min-height: 800px)',
+        },
+        tall900: {
+          raw: '(min-height: 900px)',
+        },
+        tall1000: {
+          raw: '(min-height: 1000px)',
+        },
+        tall1024: {
+          raw: '(min-height: 1024px)',
+        },
+        short1024: {
+          raw: '(max-height: 1024px)',
+        },
         short1024and1070: {
           raw: '(max-height: 1024px) and (max-width: 1070px)',
         },
@@ -180,8 +224,6 @@ const config: Config = {
         short800and450: {
           raw: '(max-height: 800px) and (max-width: 450px)',
         },
-
-        // min width and max height
         short1024and700min: {
           raw: '(max-height: 1024px) and (min-width: 700px)',
         },
@@ -224,7 +266,6 @@ const config: Config = {
         short800and1400min: {
           raw: '(max-height: 800px) and (min-width: 1400px)',
         },
-        // min width and min height
         tall1000and1070min: {
           raw: '(min-height: 1000px) and (min-width: 1070px)',
         },
@@ -237,7 +278,6 @@ const config: Config = {
         tall700and1070min: {
           raw: '(min-height: 700px) and (min-width: 1070px)',
         },
-
         'max-1460': {
           max: '1460px',
         },
