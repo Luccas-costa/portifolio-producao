@@ -8,6 +8,8 @@ import {
   ArrowRightIcon,
   GlobeIcon,
 } from '@phosphor-icons/react'
+import Testemunials from './testemunial'
+import CardsProject from './cards-project'
 
 export default function Display() {
   const [activeIndex, setActiveIndex] = useState(0) // primeiro ativo
@@ -16,7 +18,7 @@ export default function Display() {
 
   return (
     <div className="mt-[140px] flex h-full w-full justify-center">
-      <div className="relative h-full w-[80vw] border border-zinc-400/30 bg-white shadow-lg">
+      <div className="relative h-full w-[80vw] border border-zinc-400/30 bg-white pb-[200px] shadow-lg">
         <div className="absolute h-[26px] w-[1px] translate-y-[-13px] bg-black"></div>
         <div className="absolute h-[1px] w-[20px] bg-black"></div>
         <div className="absolute right-0 h-[26px] w-[1px] translate-y-[-13px] bg-black"></div>
@@ -63,6 +65,16 @@ export default function Display() {
             />
           </div>
         </div>
+
+        <div className="relative">
+          <Testemunials />
+          <div className="bg-black-500 absolute z-40 h-[26px] w-[1px] translate-y-[-13px] bg-black"></div>
+          <div className="absolute z-40 h-[1px] w-[20px] bg-black"></div>
+          <div className="absolute right-0 z-40 h-[26px] w-[1px] translate-y-[-13px] bg-black"></div>
+          <div className="absolute right-0 z-40 h-[1px] w-[20px] bg-black"></div>
+        </div>
+
+        <CardsProject />
       </div>
     </div>
   )

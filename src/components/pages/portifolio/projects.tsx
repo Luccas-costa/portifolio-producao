@@ -4,6 +4,7 @@ import imagel from '../../../../public/portifolio/laudyF.png'
 import images from '../../../../public/portifolio/testesyscare.png'
 import React from 'react'
 import Display from './display'
+import fonts from '@/styles/globals/fonts.module.css'
 
 export default function Projects() {
   return (
@@ -20,7 +21,9 @@ export default function Projects() {
       </div>
 
       <div className="w-full">
-        <div className="mr-[180px] text-end text-lg font-semibold text-green-600">
+        <div
+          className={`${fonts.geistmono}mr-[180px] text-end text-lg font-semibold text-green-600`}
+        >
           Trusted by 40+ founders
         </div>
       </div>
