@@ -7,11 +7,11 @@ import { useInView } from 'framer-motion'
 import fonts from '@/styles/globals/fonts.module.css'
 import animated from '@/styles/globals/animated.module.css'
 
-// import TeamIcon from './ui/team-icon'
+import TeamIcon from './ui/team-icon'
 import BadgeIcon from './ui/badge-icon'
-// import EyeIcon from './ui/eye-icon'
+import EyeIcon from './ui/eye-icon'
 import HighIcon from './ui/high-icon'
-// import PalletIcon from './ui/pallet-icon'
+import PalletIcon from './ui/pallet-icon'
 import KmIcon from './ui/km-icon'
 
 export default function Benefitis() {
@@ -71,14 +71,12 @@ export default function Benefitis() {
                   title="Look 10x bigger"
                   description="Professional design that makes you feel established from day one."
                   borderbottom
-                  //   icon={TeamIcon}
-                  icon={HighIcon}
+                  icon={TeamIcon}
                 />
                 <Card
                   title="Thoughtful design"
                   description="I focus on clear, intuitive design that makes your product easy to understand."
-                  //   icon={PalletIcon}
-                  icon={HighIcon}
+                  icon={PalletIcon}
                 />
               </div>
               <div className="flex h-full w-1/3 flex-col border-r border-white/10">
@@ -86,8 +84,7 @@ export default function Benefitis() {
                   title="Transparent pricing"
                   description="All projects are fixed scope with upfront pricing, so there's no surprises."
                   borderbottom
-                  icon={HighIcon}
-                  //   icon={EyeIcon}
+                  icon={EyeIcon}
                 />
                 <Card
                   title="Industry experience"

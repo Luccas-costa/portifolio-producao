@@ -1,22 +1,17 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-import Lottie from 'lottie-react'
+import dynamic from 'next/dynamic'
 import animationData from '../../../../../public/portifolio/lotties/pallet.json'
+
+const Lottie = dynamic(() => import('lottie-react'), {
+  ssr: false,
+})
 
 interface MouseAnimatedProps {
   size?: number
 }
 
 export default function PalletIcon({ size = 72 }: MouseAnimatedProps) {
-  const [isClient, setIsClient] = useState(false)
-
-  useEffect(() => {
-    setIsClient(true)
-  }, [])
-
-  if (!isClient) return null
-
   return (
     <div
       style={{
