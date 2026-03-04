@@ -2,7 +2,7 @@
 import React from 'react'
 import GradientStripsBG from './GradientBarsBg'
 import { Navbar } from './navbar'
-// import MouseAnimated from '@/assets/mouse-animated'
+import MouseAnimated from '@/assets/mouse-animated'
 import fonts from '@/styles/globals/fonts.module.css'
 import { ArrowDownIcon, ArrowDownRightIcon } from '@phosphor-icons/react'
 
@@ -83,9 +83,9 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* <div className="absolute bottom-5 left-1/2 translate-x-[-50%]">
+      <div className="absolute bottom-5 left-1/2 translate-x-[-50%]">
         <MouseAnimated size={52} />
-      </div> */}
+      </div>
     </div>
   )
 }
