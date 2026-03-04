@@ -64,19 +64,19 @@ export default function Benefitis() {
             <div className="absolute bottom-0 left-1/3 z-40 h-[1px] w-[26px] translate-x-[-13px] bg-white"></div>
             <div className="absolute right-1/3 top-0 z-40 h-[20px] w-[1px] bg-white"></div>
             <div className="absolute right-1/3 top-0 z-40 h-[1px] w-[26px] translate-x-[13px] bg-white"></div>
-            {/* 
+
             <div className="flex">
               <div className="flex h-full w-1/3 flex-col border-r border-white/10">
                 <Card
                   title="Look 10x bigger"
                   description="Professional design that makes you feel established from day one."
                   borderbottom
-                  icon={TeamIcon}
+                  //   icon={TeamIcon}
                 />
                 <Card
                   title="Thoughtful design"
                   description="I focus on clear, intuitive design that makes your product easy to understand."
-                  icon={PalletIcon}
+                  //   icon={PalletIcon}
                 />
               </div>
               <div className="flex h-full w-1/3 flex-col border-r border-white/10">
@@ -84,12 +84,12 @@ export default function Benefitis() {
                   title="Transparent pricing"
                   description="All projects are fixed scope with upfront pricing, so there's no surprises."
                   borderbottom
-                  icon={EyeIcon}
+                  //   icon={EyeIcon}
                 />
                 <Card
                   title="Industry experience"
                   description="I have been working in the field creating and developing projects for over 4 years."
-                  icon={HighIcon}
+                  //   icon={HighIcon}
                 />
               </div>
               <div className="flex h-full w-1/3 flex-col">
@@ -97,16 +97,16 @@ export default function Benefitis() {
                   title="Reliable timelines"
                   description="Webflow streamlines development, so most projects launch in 4–6 weeks."
                   borderbottom
-                  icon={KmIcon}
+                  //   icon={KmIcon}
                 />
                 <Card
                   title="Satisfaction guaranteed"
                   description="Satisfaction guaranteed
 More than 50 testimonials about my work are available for your review."
-                  icon={BadgeIcon}
+                  //   icon={BadgeIcon}
                 />
               </div>
-            </div> */}
+            </div>
           </div>
         </div>
       </div>
@@ -114,33 +114,33 @@ More than 50 testimonials about my work are available for your review."
   )
 }
 
-// interface CardProps {
-//   title: string
-//   description: string
-//   borderbottom?: boolean
-//   icon: React.ElementType
-// }
+interface CardProps {
+  title: string
+  description: string
+  borderbottom?: boolean
+  //   icon: React.ElementType
+}
 
-// export const Card = ({
-//   title,
-//   description,
-//   borderbottom,
-//   icon: Icon,
-// }: CardProps) => {
-//   return (
-//     <div
-//       className={`flex min-h-64 flex-col items-start justify-between px-12 py-8 ${
-//         borderbottom ? 'border-b border-white/10' : ''
-//       }`}
-//     >
-//       <div className="flex size-[3rem] items-center justify-center rounded-[0.5rem] border border-white/10 bg-white/10">
-//         <Icon size={32} />
-//       </div>
+export const Card = ({
+  title,
+  description,
+  borderbottom,
+  //   icon: Icon,
+}: CardProps) => {
+  return (
+    <div
+      className={`flex min-h-64 flex-col items-start justify-between px-12 py-8 ${
+        borderbottom ? 'border-b border-white/10' : ''
+      }`}
+    >
+      <div className="flex size-[3rem] items-center justify-center rounded-[0.5rem] border border-white/10 bg-white/10">
+        {/* <Icon size={32} /> */}
+      </div>
 
-//       <div>
-//         <div className="text-xl font-medium text-white">{title}</div>
-//         <div className="text-white/60">{description}</div>
-//       </div>
-//     </div>
-//   )
-// }
+      <div>
+        <div className="text-xl font-medium text-white">{title}</div>
+        <div className="text-white/60">{description}</div>
+      </div>
+    </div>
+  )
+}
