@@ -5,7 +5,7 @@ import Image from 'next/image'
 import imagel from '../../../../public/portifolio/laudyF.png'
 import images from '../../../../public/portifolio/testesyscare.png'
 import React, { useRef } from 'react'
-// import Display from './display'
+import Display from './display'
 import fonts from '@/styles/globals/fonts.module.css'
 import animated from '@/styles/globals/animated.module.css'
 import styles from '@/styles/globals/gradients.module.css'
@@ -90,11 +90,11 @@ export default function Projects() {
           </div>
         </div>
 
-        {/* <div ref={displayRef} className="w-full">
+        <div ref={displayRef} className="w-full">
           <Display />
         </div>
 
-        <Infos /> */}
+        {/* <Infos />  */}
       </div>
     </motion.div>
   )
