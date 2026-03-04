@@ -7,3 +7,36 @@
         transform: rotate(360deg);
     }
 }
+
+.typewriter {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.typewriter-animate {
+    animation: typing 1.6s steps(23);
+}
+
+.typewriter-animate2 {
+    animation: typing 0.8s steps(4);
+}
+
+.typewriter-animate3 {
+    width: 0%;
+    animation: typing 1s steps(7) forwards;
+}
+
+.typewriter-animate4 {
+    width: 0%;
+    animation: typing 1.1s steps(8) forwards;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}

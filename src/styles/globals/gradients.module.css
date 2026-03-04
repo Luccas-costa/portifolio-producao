@@ -34,3 +34,15 @@
     background: conic-gradient(from 90deg at 50% 50%, #F8F8F8 0deg, #0C0C0C 6deg, #B1B1B1 356deg, #F8F8F8 360deg);
     mix-blend-mode: color-dodge;
 }
+
+/* src/styles/globals/gradients.module.css */
+
+.bgLines {
+    background-color: #1B1B1B;
+
+    background-image: repeating-linear-gradient(-45deg,
+            #27272798 0px,
+            #27272798 2px,
+            transparent 2px,
+            transparent 6px);
+}

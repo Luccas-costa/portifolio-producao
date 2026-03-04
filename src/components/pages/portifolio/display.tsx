@@ -13,12 +13,19 @@ import CardsProject from './cards-project'
 
 export default function Display() {
   const [activeIndex, setActiveIndex] = useState(0) // primeiro ativo
+  const [activeLink, setActiveLink] = useState('Laudy')
 
-  const links = ['Laudy', 'Syscare', 'Mmadame', 'Tekobag']
+  const handleLinkClick = (label: string) => {
+    setActiveLink(label)
+    const index = links.findIndex((link) => link === label)
+    setActiveIndex(index)
+  }
+
+  const links = ['Laudy', 'Syscare', 'MundoMadame', 'Tekobag']
 
   return (
     <div className="mt-[140px] flex h-full w-full justify-center">
-      <div className="relative h-full w-[80vw] border border-zinc-400/30 bg-white pb-[200px] shadow-lg">
+      <div className="relative h-full w-[80vw] border border-zinc-400/30 bg-white pb-[120px] shadow-lg">
         <div className="absolute h-[26px] w-[1px] translate-y-[-13px] bg-black"></div>
         <div className="absolute h-[1px] w-[20px] bg-black"></div>
         <div className="absolute right-0 h-[26px] w-[1px] translate-y-[-13px] bg-black"></div>
@@ -38,7 +45,7 @@ export default function Display() {
                   key={label}
                   title={label}
                   active={activeIndex === index}
-                  onClick={() => setActiveIndex(index)}
+                  onClick={() => handleLinkClick(label)}
                 />
               ))}
             </div>
@@ -51,13 +58,16 @@ export default function Display() {
             <div></div>
             <div className="flex h-[40px] w-full flex-1 items-center gap-1 rounded-full border border-black/10 bg-[#F2F2F2] px-3 text-sm text-black">
               <GlobeIcon size={16} color="black" weight="light" />
-              <div>laudycardio.com</div>
+              {activeLink === 'Laudy' && <div>laudycardio.com</div>}
+              {activeLink === 'Syscare' && <div>syscare.com</div>}
+              {activeLink === 'MundoMadame' && <div>mundomadame.com</div>}
+              {activeLink === 'Tekobag' && <div>tekobag.com</div>}
             </div>
           </div>
 
           <div className="mx-auto mb-[10px] mt-2 aspect-video w-[98%] rounded-xl bg-[#F1F1F1] p-[4px]">
             <Image
-              src="/portifolio/telalaudy.png"
+              src={`/portifolio/tela${activeLink}.png`}
               alt="project screenshot"
               width={1200}
               height={675}
