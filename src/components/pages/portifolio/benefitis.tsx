@@ -8,11 +8,11 @@ import fonts from '@/styles/globals/fonts.module.css'
 import animated from '@/styles/globals/animated.module.css'
 
 import TeamIcon from './ui/team-icon'
-import BadgeIcon from './ui/badge-icon'
+// import BadgeIcon from './ui/badge-icon'
 import EyeIcon from './ui/eye-icon'
-import HighIcon from './ui/high-icon'
+// import HighIcon from './ui/high-icon'
 import PalletIcon from './ui/pallet-icon'
-import KmIcon from './ui/km-icon'
+// import KmIcon from './ui/km-icon'
 
 export default function Benefitis() {
   const ref = useRef(null)
@@ -89,7 +89,8 @@ export default function Benefitis() {
                 <Card
                   title="Industry experience"
                   description="I have been working in the field creating and developing projects for over 4 years."
-                  icon={HighIcon}
+                  //   icon={HighIcon}
+                  icon={TeamIcon}
                 />
               </div>
               <div className="flex h-full w-1/3 flex-col">
@@ -97,13 +98,15 @@ export default function Benefitis() {
                   title="Reliable timelines"
                   description="Webflow streamlines development, so most projects launch in 4–6 weeks."
                   borderbottom
-                  icon={KmIcon}
+                  //   icon={KmIcon}
+                  icon={TeamIcon}
                 />
                 <Card
                   title="Satisfaction guaranteed"
                   description="Satisfaction guaranteed
 More than 50 testimonials about my work are available for your review."
-                  icon={BadgeIcon}
+                  //   icon={BadgeIcon}
+                  icon={TeamIcon}
                 />
               </div>
             </div>
