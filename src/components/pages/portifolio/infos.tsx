@@ -1,4 +1,4 @@
-import Benefitis from './benefitis'
+// import Benefitis from './benefitis'
 import Mission from './mission'
 
 export default function Infos() {
@@ -8,7 +8,7 @@ export default function Infos() {
         <div className="mb-[115px]">
           <Mission />
         </div>
-        <Benefitis />
+        {/* <Benefitis /> */}
       </div>
     </div>
   )

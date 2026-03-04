@@ -10,7 +10,7 @@ import fonts from '@/styles/globals/fonts.module.css'
 import animated from '@/styles/globals/animated.module.css'
 import styles from '@/styles/globals/gradients.module.css'
 import { motion, useInView, useScroll, useTransform } from 'framer-motion'
-// import Infos from './infos'
+import Infos from './infos'
 
 export default function Projects() {
   const typeWriterRef = useRef(null)
@@ -94,7 +94,7 @@ export default function Projects() {
           <Display />
         </div>
 
-        {/* <Infos />  */}
+        <Infos />
       </div>
     </motion.div>
   )
