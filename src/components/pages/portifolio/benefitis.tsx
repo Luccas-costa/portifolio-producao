@@ -7,12 +7,12 @@ import { useInView } from 'framer-motion'
 import fonts from '@/styles/globals/fonts.module.css'
 import animated from '@/styles/globals/animated.module.css'
 
-import TeamIcon from './ui/team-icon'
-// import BadgeIcon from './ui/badge-icon'
-import EyeIcon from './ui/eye-icon'
-// import HighIcon from './ui/high-icon'
-import PalletIcon from './ui/pallet-icon'
-// import KmIcon from './ui/km-icon'
+// import TeamIcon from './ui/team-icon'
+import BadgeIcon from './ui/badge-icon'
+// import EyeIcon from './ui/eye-icon'
+import HighIcon from './ui/high-icon'
+// import PalletIcon from './ui/pallet-icon'
+import KmIcon from './ui/km-icon'
 
 export default function Benefitis() {
   const ref = useRef(null)
@@ -71,12 +71,14 @@ export default function Benefitis() {
                   title="Look 10x bigger"
                   description="Professional design that makes you feel established from day one."
                   borderbottom
-                  icon={TeamIcon}
+                  //   icon={TeamIcon}
+                  icon={HighIcon}
                 />
                 <Card
                   title="Thoughtful design"
                   description="I focus on clear, intuitive design that makes your product easy to understand."
-                  icon={PalletIcon}
+                  //   icon={PalletIcon}
+                  icon={HighIcon}
                 />
               </div>
               <div className="flex h-full w-1/3 flex-col border-r border-white/10">
@@ -84,13 +86,13 @@ export default function Benefitis() {
                   title="Transparent pricing"
                   description="All projects are fixed scope with upfront pricing, so there's no surprises."
                   borderbottom
-                  icon={EyeIcon}
+                  icon={HighIcon}
+                  //   icon={EyeIcon}
                 />
                 <Card
                   title="Industry experience"
                   description="I have been working in the field creating and developing projects for over 4 years."
-                  //   icon={HighIcon}
-                  icon={TeamIcon}
+                  icon={HighIcon}
                 />
               </div>
               <div className="flex h-full w-1/3 flex-col">
@@ -98,15 +100,13 @@ export default function Benefitis() {
                   title="Reliable timelines"
                   description="Webflow streamlines development, so most projects launch in 4–6 weeks."
                   borderbottom
-                  //   icon={KmIcon}
-                  icon={TeamIcon}
+                  icon={KmIcon}
                 />
                 <Card
                   title="Satisfaction guaranteed"
                   description="Satisfaction guaranteed
 More than 50 testimonials about my work are available for your review."
-                  //   icon={BadgeIcon}
-                  icon={TeamIcon}
+                  icon={BadgeIcon}
                 />
               </div>
             </div>
