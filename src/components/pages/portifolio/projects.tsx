@@ -5,13 +5,12 @@ import Image from 'next/image'
 import imagel from '../../../../public/portifolio/laudyF.png'
 import images from '../../../../public/portifolio/testesyscare.png'
 import React, { useRef } from 'react'
-import Display from './display'
+// import Display from './display'
 import fonts from '@/styles/globals/fonts.module.css'
 import animated from '@/styles/globals/animated.module.css'
-// 1. Importe o novo módulo CSS
 import styles from '@/styles/globals/gradients.module.css'
 import { motion, useInView, useScroll, useTransform } from 'framer-motion'
-import Infos from './infos'
+// import Infos from './infos'
 
 export default function Projects() {
   const typeWriterRef = useRef(null)
@@ -91,11 +90,11 @@ export default function Projects() {
           </div>
         </div>
 
-        <div ref={displayRef} className="w-full">
+        {/* <div ref={displayRef} className="w-full">
           <Display />
         </div>
 
-        <Infos />
+        <Infos /> */}
       </div>
     </motion.div>
   )
